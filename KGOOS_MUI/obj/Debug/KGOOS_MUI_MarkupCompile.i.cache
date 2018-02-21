@@ -1,0 +1,20 @@
+﻿KGOOS_MUI
+
+
+winexe
+C#
+.cs
+\\vmware-host\Shared Folders\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\obj\Debug\
+KGOOS_MUI
+none
+false
+DEBUG;TRACE
+\\vmware-host\Shared Folders\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\App.xaml
+101207687881
+12084155889
+17-237622959
+17201143289
+LoginWindow.xaml;MainWindow.xaml;Pages\Login.xaml;Pages\ModernUI.Theme1.xaml;Pages\Sacn\ScanManage.xaml;Pages\Settings\About.xaml;Pages\Settings\Appearance.xaml;Pages\Tran\TranManage.xaml;Pages\SettingsPage.xaml;Pages\Tran\Weigh.xaml;
+
+False
+
