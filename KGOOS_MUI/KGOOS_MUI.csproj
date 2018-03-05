@@ -86,7 +86,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\Sacn\ScanManage.xaml">
+    <Page Include="Pages\Scan\Inquire.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Scan\ScanManage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Scan\Weigh.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -97,8 +105,14 @@
     <Compile Include="Pages\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Sacn\ScanManage.xaml.cs">
+    <Compile Include="Pages\Scan\Inquire.xaml.cs">
+      <DependentUpon>Inquire.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Scan\ScanManage.xaml.cs">
       <DependentUpon>ScanManage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Scan\Weigh.xaml.cs">
+      <DependentUpon>Weigh.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Settings\About.xaml.cs">
       <DependentUpon>About.xaml</DependentUpon>
@@ -125,14 +139,7 @@
     <Compile Include="Pages\SettingsPage.xaml.cs">
       <DependentUpon>SettingsPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Tran\Weigh.xaml.cs">
-      <DependentUpon>Weigh.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Page Include="Pages\Tran\Weigh.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -18,7 +18,7 @@
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
         <Image Name="image1" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center"
-               Width="200" Height="200" Source="/Img/1.jpg" MouseDown="Image_MouseDown">
+               Width="200" Height="200" Source="/Img/1.jpg">
             
         </Image>
         

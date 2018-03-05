@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace KGOOS_MUI.Pages
+namespace KGOOS_MUI.Pages.Scan
 {
     /// <summary>
-    /// Interaction logic for TranManage.xaml
+    /// Interaction logic for ScanManage.xaml
     /// </summary>
-    public partial class TranManage : UserControl
+    public partial class ScanManage : UserControl
     {
-        public TranManage()
+        public ScanManage()
         {
             InitializeComponent();
             BitmapImage bi = new BitmapImage();
@@ -28,7 +28,14 @@ namespace KGOOS_MUI.Pages
             bi.BeginInit();
             bi.UriSource = new Uri(@"C:\1.jpg", UriKind.RelativeOrAbsolute);
             bi.EndInit();
-            image1.Source = bi;  
-        }       
+            image1.Source = bi;
+        }
+
+        private void Image_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Weigh tw = new Weigh();
+            MainWindow mw = System.Windows.Window.GetWindow(this) as MainWindow;
+            mw.ContentSource = new Uri("/Pages/Scan/Weigh.xaml", UriKind.RelativeOrAbsolute);
+        }
     }
 }

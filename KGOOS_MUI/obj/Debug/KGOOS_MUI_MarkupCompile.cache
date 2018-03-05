@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 \\vmware-host\Shared Folders\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\App.xaml
-101207687881
+11493136793
 12084155889
-13-1400112637
+14-90569250
 17201143289
-LoginWindow.xaml;MainWindow.xaml;Pages\Login.xaml;Pages\ModernUI.Theme1.xaml;Pages\Sacn\ScanManage.xaml;Pages\Settings\About.xaml;Pages\Settings\Appearance.xaml;Pages\Tran\TranManage.xaml;Pages\SettingsPage.xaml;Pages\Tran\Weigh.xaml;
+LoginWindow.xaml;MainWindow.xaml;Pages\Login.xaml;Pages\ModernUI.Theme1.xaml;Pages\Scan\Inquire.xaml;Pages\Scan\ScanManage.xaml;Pages\Scan\Weigh.xaml;Pages\Settings\About.xaml;Pages\Settings\Appearance.xaml;Pages\Tran\TranManage.xaml;Pages\SettingsPage.xaml;
 
 False
 

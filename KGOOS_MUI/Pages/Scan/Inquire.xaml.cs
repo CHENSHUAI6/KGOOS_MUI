@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace KGOOS_MUI.Pages.Sacn
+namespace KGOOS_MUI.Pages.Scan
 {
     /// <summary>
-    /// Interaction logic for ScanManage.xaml
+    /// Interaction logic for Inquire.xaml
     /// </summary>
-    public partial class ScanManage : UserControl
+    public partial class Inquire : UserControl
     {
-        public ScanManage()
+        public Inquire()
         {
             InitializeComponent();
         }
