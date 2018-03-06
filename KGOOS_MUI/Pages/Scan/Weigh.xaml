@@ -99,8 +99,11 @@
                 <CheckBox Content="手动扫描时间" Margin="0,48,0,4" VerticalAlignment="Top" FontFamily="宋体" FontSize="11" />
                 <CheckBox Content="备注栏回车打印" Margin="0,64,0,4" VerticalAlignment="Top" FontFamily="宋体" FontSize="11" />
                 <CheckBox Content="重量大于0" Margin="0,80,0,4" VerticalAlignment="Top" FontFamily="宋体" FontSize="11" />
-                <TextBlock Width="55" Text="记录数：" Margin="150,2,2,2" FontSize="15" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                <TextBlock Name="TBnum" Width="55" Text="0" Margin="210,2,2,2" FontSize="36" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="Red" FontWeight="Bold"/>
+                <TextBlock Width="55" Text="记录数：" Margin="150,2,2,2" FontSize="15" FontFamily="宋体" 
+                           HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBlock Name="TBnum" Width="55" Text="0" Margin="210,2,2,2" FontSize="36" 
+                           FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Top" 
+                           Foreground="Red" FontWeight="Bold"/>
             </Grid>
         </Grid>
         <Border Grid.Row="2" VerticalAlignment="Bottom" Background="Black" BorderBrush="Black" BorderThickness="1"/>
