@@ -125,6 +125,10 @@
       <DependentUpon>Appearance.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Settings\AppearanceViewModel.cs" />
+    <Page Include="Pages\Tran\ConTran.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\Tran\TranManage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -133,6 +137,9 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Compile Include="Pages\Tran\ConTran.xaml.cs">
+      <DependentUpon>ConTran.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Tran\TranManage.xaml.cs">
       <DependentUpon>TranManage.xaml</DependentUpon>
     </Compile>

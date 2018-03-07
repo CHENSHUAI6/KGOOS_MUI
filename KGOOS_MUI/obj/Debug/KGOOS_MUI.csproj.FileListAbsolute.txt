@@ -31,3 +31,5 @@
 \\vmware-host\Shared Folders\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Scan\Weigh.g.cs
 \\vmware-host\Shared Folders\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Scan\Inquire.baml
 \\vmware-host\Shared Folders\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Scan\Inquire.g.cs
+\\vmware-host\Shared Folders\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Tran\ConTran.baml
+\\vmware-host\Shared Folders\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Tran\ConTran.g.cs
