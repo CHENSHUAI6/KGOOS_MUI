@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-\\vmware-host\Shared Folders\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\obj\Debug\
+D:\KGOOS_MUI\KGOOS_MUI\obj\Debug\
 KGOOS_MUI
 none
 false
 DEBUG;TRACE
-\\vmware-host\Shared Folders\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\App.xaml
+D:\KGOOS_MUI\KGOOS_MUI\App.xaml
 121901147578
 12084155889
 151338633518
-17201143289
+171922282033
 LoginWindow.xaml;MainWindow.xaml;Pages\Login.xaml;Pages\ModernUI.Theme1.xaml;Pages\Scan\Inquire.xaml;Pages\Scan\ScanManage.xaml;Pages\Scan\Weigh.xaml;Pages\Settings\About.xaml;Pages\Settings\Appearance.xaml;Pages\Tran\ConTran.xaml;Pages\Tran\TranManage.xaml;Pages\SettingsPage.xaml;
 
 False

@@ -33,3 +33,38 @@
 \\vmware-host\Shared Folders\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Scan\Inquire.g.cs
 \\vmware-host\Shared Folders\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Tran\ConTran.baml
 \\vmware-host\Shared Folders\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Tran\ConTran.g.cs
+D:\KGOOS_MUI\KGOOS_MUI\obj\Debug\KGOOS_MUI.exe
+D:\KGOOS_MUI\KGOOS_MUI\obj\Debug\KGOOS_MUI.pdb
+D:\KGOOS_MUI\KGOOS_MUI\bin\Debug\KGOOS_MUI.exe
+D:\KGOOS_MUI\KGOOS_MUI\bin\Debug\KGOOS_MUI.pdb
+D:\KGOOS_MUI\KGOOS_MUI\bin\Debug\FirstFloor.ModernUI.dll
+D:\KGOOS_MUI\KGOOS_MUI\bin\Debug\FirstFloor.ModernUI.xml
+D:\KGOOS_MUI\KGOOS_MUI\obj\Debug\KGOOS_MUI.csprojResolveAssemblyReference.cache
+D:\KGOOS_MUI\KGOOS_MUI\obj\Debug\LoginWindow.baml
+D:\KGOOS_MUI\KGOOS_MUI\obj\Debug\MainWindow.baml
+D:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Login.baml
+D:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\ModernUI.Theme1.baml
+D:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Scan\Inquire.baml
+D:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Scan\ScanManage.baml
+D:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Scan\Weigh.baml
+D:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Settings\About.baml
+D:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Settings\Appearance.baml
+D:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Tran\ConTran.baml
+D:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Tran\TranManage.baml
+D:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\SettingsPage.baml
+D:\KGOOS_MUI\KGOOS_MUI\obj\Debug\App.baml
+D:\KGOOS_MUI\KGOOS_MUI\obj\Debug\LoginWindow.g.cs
+D:\KGOOS_MUI\KGOOS_MUI\obj\Debug\MainWindow.g.cs
+D:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Login.g.cs
+D:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Scan\Inquire.g.cs
+D:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Scan\ScanManage.g.cs
+D:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Scan\Weigh.g.cs
+D:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Settings\About.g.cs
+D:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Settings\Appearance.g.cs
+D:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Tran\ConTran.g.cs
+D:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Tran\TranManage.g.cs
+D:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\SettingsPage.g.cs
+D:\KGOOS_MUI\KGOOS_MUI\obj\Debug\App.g.cs
+D:\KGOOS_MUI\KGOOS_MUI\obj\Debug\KGOOS_MUI_Content.g.cs
+D:\KGOOS_MUI\KGOOS_MUI\obj\Debug\KGOOS_MUI_MarkupCompile.cache
+D:\KGOOS_MUI\KGOOS_MUI\obj\Debug\KGOOS_MUI.g.resources

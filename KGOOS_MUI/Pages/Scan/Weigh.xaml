@@ -111,11 +111,11 @@
         <!--下端表格-->
         <ScrollViewer Grid.Row="3">
             <StackPanel MinWidth="200">
-                <DataGrid Name="DG1" ItemsSource="{Binding}" AutoGenerateColumns="False" FontSize="18" FontFamily="宋体" LoadingRow="DG1_LoadingRow" >
+                <DataGrid Name="DG1" ItemsSource="{Binding}" AutoGenerateColumns="False" FontSize="18" FontFamily="宋体" LoadingRow="DG1_LoadingRow">
                     <DataGrid.Columns>
                         <!--<mui:DataGridCheckBoxColumn Header="选择" Binding="{Binding IsMember}" />-->
-                        <mui:DataGridTextColumn Header="扫描时间"  Binding="{Binding FirstName}"/>
-                        <mui:DataGridTextColumn Header="运单编号" Binding="{Binding LastName}" />
+                        <DataGridTextColumn  Header="扫描时间"  Binding="{Binding FirstName}" IsReadOnly="True"  CanUserSort="False" CanUserResize="True"/>
+                        <DataGridTextColumn Header="运单编号" Binding="{Binding LastName}" />
                         <!--<mui:DataGridTextColumn Header="件数" Binding="{Binding Email}"/>
                         <mui:DataGridTextColumn Header="秤重" Binding="{Binding Email}"/>
                         <mui:DataGridTextColumn Header="备注" Binding="{Binding Email}"/>

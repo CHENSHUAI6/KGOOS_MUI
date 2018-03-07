@@ -28,15 +28,15 @@ namespace KGOOS_MUI.Pages.Tran
         public void colorDG()
         {
 
-            for (int i = 0; i < this.DG1.Items.Count; i++)
-            {
-                DataRowView drv = DG1.Items[i] as DataRowView;
-                DataGridRow row = (DataGridRow)this.DG1.ItemContainerGenerator.ContainerFromIndex(i);
-                if (i == 2)
-                {
-                    row.Background = new SolidColorBrush(Colors.Blue);
-                }
-            }
+            //for (int i = 0; i < this.DG1.Items.Count; i++)
+            //{
+            //    DataRowView drv = DG1.Items[i] as DataRowView;
+            //    DataGridRow row = (DataGridRow)this.DG1.ItemContainerGenerator.ContainerFromIndex(i);
+            //    if (i == 2)
+            //    {
+            //        row.Background = new SolidColorBrush(Colors.Blue);
+            //    }
+            //}
         }
         public void getData()
         {
@@ -61,8 +61,8 @@ namespace KGOOS_MUI.Pages.Tran
                 }
             }
 
-            this.DG1.CanUserAddRows = false;
-            this.DG1.ItemsSource = dt.DefaultView;
+            //this.DG1.CanUserAddRows = false;
+            //this.DG1.ItemsSource = dt.DefaultView;
         }
 
         //datagrid赋值
