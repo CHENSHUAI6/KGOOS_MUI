@@ -39,7 +39,6 @@ D:\KGOOS_MUI\KGOOS_MUI\bin\Debug\KGOOS_MUI.exe
 D:\KGOOS_MUI\KGOOS_MUI\bin\Debug\KGOOS_MUI.pdb
 D:\KGOOS_MUI\KGOOS_MUI\bin\Debug\FirstFloor.ModernUI.dll
 D:\KGOOS_MUI\KGOOS_MUI\bin\Debug\FirstFloor.ModernUI.xml
-D:\KGOOS_MUI\KGOOS_MUI\obj\Debug\KGOOS_MUI.csprojResolveAssemblyReference.cache
 D:\KGOOS_MUI\KGOOS_MUI\obj\Debug\LoginWindow.baml
 D:\KGOOS_MUI\KGOOS_MUI\obj\Debug\MainWindow.baml
 D:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Login.baml
@@ -68,3 +67,7 @@ D:\KGOOS_MUI\KGOOS_MUI\obj\Debug\App.g.cs
 D:\KGOOS_MUI\KGOOS_MUI\obj\Debug\KGOOS_MUI_Content.g.cs
 D:\KGOOS_MUI\KGOOS_MUI\obj\Debug\KGOOS_MUI_MarkupCompile.cache
 D:\KGOOS_MUI\KGOOS_MUI\obj\Debug\KGOOS_MUI.g.resources
+D:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Control\AutoCompleteTextBox.baml
+D:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Control\AutoCompleteTextBox.g.cs
+D:\KGOOS_MUI\KGOOS_MUI\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\KGOOS_MUI\KGOOS_MUI\obj\Debug\KGOOS_MUI_MarkupCompile.lref

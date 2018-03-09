@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KGOOS_MUI.Model;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Data;
@@ -42,7 +43,13 @@ namespace KGOOS_MUI.Pages.Scan
 
             //Bind the DataGrid to the customer data
             //DG1.DataContext = custdata;
-            getData();
+            List<AutoCompleteEntry> tlist = new List<AutoCompleteEntry>();
+            tlist.Add(new AutoCompleteEntry("第九人民医院", null));
+            tlist.Add(new AutoCompleteEntry("第八人民医院", null));
+            tlist.Add(new AutoCompleteEntry("第七人民医院", null));
+            tlist.Add(new AutoCompleteEntry("第五人民医院", null));
+            this.TBName.AddItemSource(tlist);
+            getTableData();
             //colorDG();
         }
 
@@ -66,7 +73,7 @@ namespace KGOOS_MUI.Pages.Scan
         /// <summary>
         /// datagrid赋值
         /// </summary>
-        public void getData()
+        public void getTableData()
         {
             DataTable dt = new DataTable();
             dt.Columns.Add(new DataColumn("IsMember", typeof(object)));

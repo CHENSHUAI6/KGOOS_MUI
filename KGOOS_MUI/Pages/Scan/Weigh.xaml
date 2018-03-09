@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+             xmlns:tbnew="clr-namespace:KGOOS_MUI.Control"
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="1200">
     <Grid Style="{StaticResource ContentRoot}">
@@ -82,8 +83,11 @@
 
                 <!--第三行-->
                 <TextBlock Width="50" Grid.Row="2" Text="旺旺名" Margin="7,2,2,2" FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                <TextBox Name="TBName" Width="130" Grid.Row="2" Text="" Margin="60,2,2,2" FontSize="12" FontFamily="宋体" 
-                         HorizontalAlignment="Left" VerticalAlignment="Center" KeyDown="TBName_KeyDown" />
+                <!--<TextBox Name="TBName" Width="130" Grid.Row="2" Text="" Margin="60,2,2,2" FontSize="12" FontFamily="宋体" 
+                         HorizontalAlignment="Left" VerticalAlignment="Center" KeyDown="TBName_KeyDown" />-->
+                <tbnew:AutoCompleteTextBox x:Name="TBName" Height="22" Width="130" Grid.Row="2" Text="" Margin="60,2,2,2" 
+                                           FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center" 
+                                           KeyDown="TBName_KeyDown" />
                 <TextBlock Width="50" Grid.Row="2" Text="存放货架" Margin="200,2,2,2" FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                 <TextBox Width="100" Grid.Row="2" Text="" Margin="260,2,2,2" FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                 <TextBlock Width="30" Grid.Row="2" Text="备注" Margin="370,2,2,2" FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center"/>

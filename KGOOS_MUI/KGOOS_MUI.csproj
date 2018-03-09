@@ -62,6 +62,10 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Control\AutoCompleteTextBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="LoginWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -72,6 +76,9 @@
     </Page>
     <Compile Include="Common\BaseClass.cs" />
     <Compile Include="Common\DBClass.cs" />
+    <Compile Include="Control\AutoCompleteTextBox.xaml.cs">
+      <DependentUpon>AutoCompleteTextBox.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
@@ -103,6 +110,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Compile Include="Model\AutoCompleteEntry.cs" />
     <Compile Include="Pages\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
