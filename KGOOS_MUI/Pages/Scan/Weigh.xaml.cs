@@ -43,14 +43,41 @@ namespace KGOOS_MUI.Pages.Scan
 
             //Bind the DataGrid to the customer data
             //DG1.DataContext = custdata;
-            List<AutoCompleteEntry> tlist = new List<AutoCompleteEntry>();
-            tlist.Add(new AutoCompleteEntry("第九人民医院", null));
-            tlist.Add(new AutoCompleteEntry("第八人民医院", null));
-            tlist.Add(new AutoCompleteEntry("第七人民医院", null));
-            tlist.Add(new AutoCompleteEntry("第五人民医院", null));
-            this.TBName.AddItemSource(tlist);
+
+            #region 下拉联想框数据导入（已注掉）
+            //List<AutoCompleteEntry> tlist = new List<AutoCompleteEntry>();
+            //tlist.Add(new AutoCompleteEntry("第九人民医院", null));
+            //tlist.Add(new AutoCompleteEntry("第八人民医院", null));
+            //tlist.Add(new AutoCompleteEntry("第七人民医院", null));
+            //tlist.Add(new AutoCompleteEntry("第五人民医院", null));
+            //tlist.Add(new AutoCompleteEntry("第九人民医院", null));
+            //tlist.Add(new AutoCompleteEntry("第八人民医院", null));
+            //tlist.Add(new AutoCompleteEntry("第七人民医院", null));
+            //tlist.Add(new AutoCompleteEntry("第五人民医院", null));
+            //tlist.Add(new AutoCompleteEntry("第九人民医院", null));
+            //tlist.Add(new AutoCompleteEntry("第八人民医院", null));
+            //tlist.Add(new AutoCompleteEntry("第七人民医院", null));
+            //tlist.Add(new AutoCompleteEntry("第五人民医院", null));
+            //tlist.Add(new AutoCompleteEntry("第九人民医院", null));
+            //tlist.Add(new AutoCompleteEntry("第八人民医院", null));
+            //tlist.Add(new AutoCompleteEntry("第七人民医院", null));
+            //tlist.Add(new AutoCompleteEntry("第五人民医院", null));
+            //this.TBName.AddItemSource(tlist);
+            #endregion
+
             getTableData();
             //colorDG();
+        }
+
+        /// <summary>
+        /// 初始化函数
+        /// </summary>
+        public void initialize()
+        {
+            //if (CBInputTime.Checked == true)
+            //{
+
+            //}
         }
 
         /// <summary>
@@ -214,6 +241,18 @@ namespace KGOOS_MUI.Pages.Scan
                 this.TBNote.Focus();
 
             }
+        }
+
+        private void CBInputTime_Checked(object sender, RoutedEventArgs e)
+        {
+            TBsacnTime.Enabled = false;
+            MessageBox.Show("手动输入扫描时间已开启");
+        }
+
+        private void CBInputTime_Unchecked(object sender, RoutedEventArgs e)
+        {
+            TBsacnTime.Enabled = true;
+            MessageBox.Show("扫描时间为默认获取");
         }
 
 

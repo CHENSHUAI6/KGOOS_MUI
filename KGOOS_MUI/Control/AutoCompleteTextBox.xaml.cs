@@ -34,6 +34,7 @@ namespace KGOOS_MUI.Control
         private bool insertText;
         private int delayTime;
         private int searchThreshold;
+        private int n;
 
         #endregion 成员变量
 
@@ -106,6 +107,11 @@ namespace KGOOS_MUI.Control
             }
         }
 
+        public new void Focus()
+        {
+            textBox.Focus();
+        }
+
         public int DelayTime
         {
             get { return delayTime; }
@@ -127,7 +133,6 @@ namespace KGOOS_MUI.Control
             autoCompletionList.Add(entry);
         }
 
-
         /// <summary>
         /// 添加源-人工增加部分
         /// </summary>
@@ -139,7 +144,6 @@ namespace KGOOS_MUI.Control
             }
 
         }
-
 
         /// <summary>
         /// 清空Item
@@ -162,6 +166,7 @@ namespace KGOOS_MUI.Control
 
         private void TextChanged()
         {
+            n = 0;
             try
             {
                 comboBox.Items.Clear();
@@ -171,8 +176,10 @@ namespace KGOOS_MUI.Control
                     {
                         foreach (string word in entry.KeywordStrings)
                         {
-                            if (word.Contains(textBox.Text))
+                            //n 为显示的个数
+                            if (word.Contains(textBox.Text) && n < 5)
                             {
+                                n++;
                                 ComboBoxItem cbItem = new ComboBoxItem();
                                 cbItem.Content = entry.ToString();
                                 comboBox.Items.Add(cbItem);
@@ -219,12 +226,6 @@ namespace KGOOS_MUI.Control
                 }
                 else TextChanged();
             }
-        }
-
-
-        public void Focus()
-        {
-            textBox.Focus();
         }
 
         //获得焦点时
