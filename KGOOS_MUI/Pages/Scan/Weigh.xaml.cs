@@ -1,4 +1,5 @@
-﻿using KGOOS_MUI.Model;
+﻿using KGOOS_MUI.Common;
+using KGOOS_MUI.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -34,11 +35,11 @@ namespace KGOOS_MUI.Pages.Scan
             public string Email { get; set; }
             public bool IsMember { get; set; }
         }
-
+        private string workerId = "";
         public Weigh()
         {
             InitializeComponent();
-
+            initialize();
             //ObservableCollection<Customer> custdata = GetData();
 
             //Bind the DataGrid to the customer data
@@ -65,81 +66,127 @@ namespace KGOOS_MUI.Pages.Scan
             //this.TBName.AddItemSource(tlist);
             #endregion
 
-            getTableData();
             //colorDG();
         }
 
         /// <summary>
-        /// 初始化函数
+        /// 自定义初始化函数
         /// </summary>
         public void initialize()
         {
-            //if (CBInputTime.Checked == true)
-            //{
-
-            //}
+            workerId = "chy";
+            getTableData();
         }
 
         /// <summary>
-        /// 无用，待删除
+        /// 写入数据库
         /// </summary>
-        public void colorDG()
+        public void inputDB()
         {
-
-            for (int i = 0; i < this.DG1.Items.Count; i++)
+            try
             {
-                DataRowView drv = DG1.Items[i] as DataRowView;
-                DataGridRow row = (DataGridRow)this.DG1.ItemContainerGenerator.ContainerFromIndex(i);
-                if (i == 2)
+                string sql = "";
+                string Weight_Time, Id, Weight_Num, Weight_Weitgh, Weight_Note, Weight_Last, Weight_Shelf,
+                    Weight_UserId, Weight_UserName, Weight_Size, Weight_Helf, Weight_ConID;
+                DataSet ds = new DataSet();
+                if (CBInputTime.IsChecked == true)
                 {
-                    row.Background = new SolidColorBrush(Colors.Blue);
+                    Weight_Time = TBsacnTime.Value.ToString();
                 }
+                else
+                {
+                    Weight_Time = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                }
+                Id = BaseClass.getInsertMaxId("T_Weight", "Id", "000001");
+                Weight_ConID = TBtranId.Text;
+                Weight_Num = "0";
+                Weight_Weitgh = TBweigh.Text;
+                Weight_Note = TBNote.Text;
+                Weight_Last = TBlastStand.Text;
+                Weight_Shelf = TBShelf.Text;
+                Weight_UserId = TBName.Text;
+                Weight_UserName = TBName.Text;
+                Weight_Size = TBSize.Text;
+                Weight_Helf = "10";
+                sql = "select * from T_Weight as t1 where t1.Weight_ConID = '" + Weight_ConID + "'";
+                ds = DBClass.execQuery(sql);
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    sql = "update T_Weight set Weight_Time = '{0}', Weight_Num = '{2}', Weight_Weitgh = '{3}', " +
+                        "Weight_Note = '{4}', Weight_Last = '{5}',Weight_Shelf = '{6}',Weight_UserId = '{7}', " +
+                        "Weight_UserName = '{8}', Weight_Size = '{9}', Weight_Helf = '{10}', Weight_WorkderId = '{11}' " +
+                        "where Weight_ConID = '{1}'";
+                }
+                else
+                {
+                    sql = "insert into T_Weight " +
+                    "(Weight_Time,Weight_ConID,Weight_Num,Weight_Weitgh,Weight_Note,Weight_Last,Weight_Shelf,Weight_UserId, " +
+                    "Weight_UserName,Weight_Size,Weight_Helf,Weight_WorkderId, Id) " +
+                    "values ('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}')";
+                }
+
+                sql = string.Format(sql, Weight_Time, Weight_ConID, Weight_Num, Weight_Weitgh, Weight_Note, Weight_Last, Weight_Shelf,
+                    Weight_UserId, Weight_UserName, Weight_Size, Weight_Helf, workerId, Id);
+                int n = DBClass.execUpdate(sql);
+            }catch(Exception e)
+            {
+                MessageBox.Show("操作失败。请重试");
             }
+            
+
         }
+
 
         /// <summary>
         /// datagrid赋值
         /// </summary>
         public void getTableData()
         {
+            string sql = "";
+            DataSet ds = new DataSet();
+            sql = "select * from T_Weight as t1 where t1.Weight_WorkderId = '" + workerId + "' " +
+                "and t1.Weight_Type is null";
+            ds = DBClass.execQuery(sql);
             DataTable dt = new DataTable();
-            dt.Columns.Add(new DataColumn("IsMember", typeof(object)));
-            dt.Columns.Add(new DataColumn("FirstName", typeof(string)));
-            dt.Columns.Add(new DataColumn("LastName", typeof(string)));
-            for (int i = 0; i < 6; i++)
+            dt.Columns.Add(new DataColumn("IsSelect", typeof(object)));
+            dt.Columns.Add(new DataColumn("Weight_Time", typeof(string)));
+            dt.Columns.Add(new DataColumn("Weight_ConID", typeof(string)));
+            dt.Columns.Add(new DataColumn("Weight_Num", typeof(string)));
+            dt.Columns.Add(new DataColumn("Weight_Weitgh", typeof(string)));
+            dt.Columns.Add(new DataColumn("Weight_Note", typeof(string)));
+            dt.Columns.Add(new DataColumn("Weight_Last", typeof(string)));
+            dt.Columns.Add(new DataColumn("Weight_Shelf", typeof(string)));
+            dt.Columns.Add(new DataColumn("Weight_UserId", typeof(string)));
+            dt.Columns.Add(new DataColumn("Weight_UserName", typeof(string)));
+            dt.Columns.Add(new DataColumn("Weight_Size", typeof(string)));
+            dt.Columns.Add(new DataColumn("Weight_Helf", typeof(string)));
+
+            if (ds.Tables[0].Rows.Count > 0 )
             {
-                DataRow dr = dt.NewRow();
-                if (i == 3)
+                //给记录框赋值
+                TBNum.Text = ds.Tables[0].Rows.Count.ToString();
+
+                for (int i = 0; i < ds.Tables[0].Rows.Count; i++ )
                 {
-                    dr["IsMember"] = true;
-                    dr["FirstName"] = DBNull.Value;
-                    dr["LastName"] = DBNull.Value;
+                    DataRow dr = dt.NewRow();
+                    dr["IsSelect"] = false;
+                    dr["Weight_Time"] = ds.Tables[0].Rows[i]["Weight_Time"];
+                    dr["Weight_ConID"] = ds.Tables[0].Rows[i]["Weight_ConID"];
+                    dr["Weight_Num"] = ds.Tables[0].Rows[i]["Weight_Num"];
+                    dr["Weight_Weitgh"] = ds.Tables[0].Rows[i]["Weight_Weitgh"];
+                    dr["Weight_Note"] = ds.Tables[0].Rows[i]["Weight_Note"];
+                    dr["Weight_Last"] = ds.Tables[0].Rows[i]["Weight_Last"];
+                    dr["Weight_Shelf"] = ds.Tables[0].Rows[i]["Weight_Shelf"];
+                    dr["Weight_UserId"] = ds.Tables[0].Rows[i]["Weight_UserId"];
+                    dr["Weight_UserName"] = ds.Tables[0].Rows[i]["Weight_UserName"];
+                    dr["Weight_Size"] = ds.Tables[0].Rows[i]["Weight_Size"];
+                    dr["Weight_Helf"] = ds.Tables[0].Rows[i]["Weight_Helf"];
                     dt.Rows.Add(dr);
                 }
-                else
-                {
-                    dr["IsMember"] = false;
-                    dr["FirstName"] = i;
-                    dr["LastName"] = "tom" + i.ToString();
-                    dt.Rows.Add(dr);
-                }
+                
             }
             this.DG1.CanUserAddRows = false;
-            this.DG1.ItemsSource = dt.DefaultView;
-        }
-
-        /// <summary>
-        /// datagrid赋值(无用，待删除)
-        /// </summary>
-        /// <returns></returns>
-        private ObservableCollection<Customer> GetData()
-        {
-            var customers = new ObservableCollection<Customer>();
-            customers.Add(new Customer { FirstName = "Orlando", LastName = "Gee", Email = "122", IsMember = true });
-            customers.Add(new Customer { FirstName = "Keith", LastName = "Harris", Email = "dsm", IsMember = true });
-            customers.Add(new Customer { FirstName = "Donna", LastName = "Carreras", Email = "works.com", IsMember = false });
-            customers.Add(new Customer { FirstName = "Janet", LastName = "Gates", Email = "e-w.com", IsMember = true });
-            return customers;
+            this.DG1.ItemsSource = dt.DefaultView;     
         }
 
         /// <summary>
@@ -149,17 +196,17 @@ namespace KGOOS_MUI.Pages.Scan
         /// <param name="e"></param>
         private void DG1_LoadingRow(object sender, DataGridRowEventArgs e)
         {
-            e.Row.Header = e.Row.GetIndex() + 1;
-            var drv = e.Row.Item as DataRowView;
-            switch (drv["FirstName"].ToString())
-            {
-                case "1": e.Row.Background = new SolidColorBrush(Colors.Green);
-                    break;
-                case "2": e.Row.Background = new SolidColorBrush(Colors.Yellow);
-                    break;
-                case "3": e.Row.Background = new SolidColorBrush(Colors.CadetBlue);
-                    break;
-            }
+            //e.Row.Header = e.Row.GetIndex() + 1;
+            //var drv = e.Row.Item as DataRowView;
+            //switch (drv["Id"].ToString())
+            //{
+            //    case "1": e.Row.Background = new SolidColorBrush(Colors.Green);
+            //        break;
+            //    case "2": e.Row.Background = new SolidColorBrush(Colors.Yellow);
+            //        break;
+            //    case "3": e.Row.Background = new SolidColorBrush(Colors.CadetBlue);
+            //        break;
+            //}
         }
 
         /// <summary>
@@ -245,14 +292,53 @@ namespace KGOOS_MUI.Pages.Scan
 
         private void CBInputTime_Checked(object sender, RoutedEventArgs e)
         {
-            TBsacnTime.Enabled = false;
+            TBsacnTime.Enabled = true;
             MessageBox.Show("手动输入扫描时间已开启");
         }
 
         private void CBInputTime_Unchecked(object sender, RoutedEventArgs e)
         {
-            TBsacnTime.Enabled = true;
+            TBsacnTime.Enabled = false;
             MessageBox.Show("扫描时间为默认获取");
+        }
+
+
+        private void CBNoZero_Checked(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("默认重量大于 0 ");
+        }
+
+        private void CBNoZero_Unchecked(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("默认重量大于 0 取消");
+        }
+
+        /// <summary>
+        /// 备注回车事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TBNote_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                inputDB();
+                getTableData();
+            }
+        }
+
+        private void BTNSave_Click(object sender, RoutedEventArgs e)
+        {
+            string sql = "";
+            sql = "update T_Weight set Weight_Type = 'N' " +
+                "where Weight_Type is null " +
+                "and Weight_WorkderId = '" + workerId + "'";
+            int n = DBClass.execUpdate(sql);
+            if (n > 0)
+            {
+                MessageBox.Show("保存成功！");
+                getTableData();
+            }
         }
 
 

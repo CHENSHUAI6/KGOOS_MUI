@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\chy\Desktop\KGOOS_MUI\KGOOS_MUI\obj\Debug\
+D:\KGOOS_MUI\KGOOS_MUI\obj\Debug\
 KGOOS_MUI
 none
 false
 DEBUG;TRACE
-C:\Users\chy\Desktop\KGOOS_MUI\KGOOS_MUI\App.xaml
+D:\KGOOS_MUI\KGOOS_MUI\App.xaml
 13-1098741450
 12084155889
 18-2098652416
-17518531412
+171922282033
 Control\AutoCompleteTextBox.xaml;LoginWindow.xaml;MainWindow.xaml;Pages\Login.xaml;Pages\ModernUI.Theme1.xaml;Pages\Scan\Inquire.xaml;Pages\Scan\ScanManage.xaml;Pages\Scan\Weigh.xaml;Pages\Settings\About.xaml;Pages\Settings\Appearance.xaml;Pages\Tran\ConTran.xaml;Pages\Tran\TranManage.xaml;Pages\SettingsPage.xaml;
 
 False

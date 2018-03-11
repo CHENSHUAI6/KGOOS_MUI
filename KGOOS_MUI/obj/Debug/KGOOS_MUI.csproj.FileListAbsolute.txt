@@ -69,7 +69,6 @@ D:\KGOOS_MUI\KGOOS_MUI\obj\Debug\KGOOS_MUI_MarkupCompile.cache
 D:\KGOOS_MUI\KGOOS_MUI\obj\Debug\KGOOS_MUI.g.resources
 D:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Control\AutoCompleteTextBox.baml
 D:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Control\AutoCompleteTextBox.g.cs
-D:\KGOOS_MUI\KGOOS_MUI\obj\Debug\GeneratedInternalTypeHelper.g.cs
 D:\KGOOS_MUI\KGOOS_MUI\obj\Debug\KGOOS_MUI_MarkupCompile.lref
 D:\KGOOS_MUI\KGOOS_MUI\obj\Debug\KGOOS_MUI.csprojResolveAssemblyReference.cache
 \\vmware-host\Shared Folders\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\obj\Debug\Control\AutoCompleteTextBox.baml
@@ -113,3 +112,4 @@ C:\Users\chy\Desktop\KGOOS_MUI\KGOOS_MUI\obj\Debug\KGOOS_MUI_MarkupCompile.cache
 C:\Users\chy\Desktop\KGOOS_MUI\KGOOS_MUI\obj\Debug\KGOOS_MUI_MarkupCompile.lref
 C:\Users\chy\Desktop\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Scan\Weigh.baml
 C:\Users\chy\Desktop\KGOOS_MUI\KGOOS_MUI\obj\Debug\KGOOS_MUI.g.resources
+D:\KGOOS_MUI\KGOOS_MUI\obj\Debug\GeneratedInternalTypeHelper.g.cs
