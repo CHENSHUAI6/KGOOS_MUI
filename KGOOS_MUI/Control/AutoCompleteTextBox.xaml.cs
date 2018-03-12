@@ -35,6 +35,7 @@ namespace KGOOS_MUI.Control
         private int delayTime;
         private int searchThreshold;
         private int n;
+        private int nSize = 10;
 
         #endregion 成员变量
 
@@ -82,6 +83,15 @@ namespace KGOOS_MUI.Control
             {
                 insertText = true;
                 textBox.Text = value;
+            }
+        }
+        public object Tag
+        {
+            get { return textBox.Tag; }
+            set
+            {
+                insertText = true;
+                textBox.Tag = value;
             }
         }
 
@@ -160,7 +170,10 @@ namespace KGOOS_MUI.Control
             {
                 insertText = true;
                 ComboBoxItem cbItem = (ComboBoxItem)comboBox.SelectedItem;
-                textBox.Text = cbItem.Content.ToString();
+                string Id_Name = cbItem.Content.ToString();
+                string[] s = Id_Name.Split(new char[] { ' ' });
+                textBox.Text = s[s.Length-1];
+                textBox.Tag = s[0];
             }
         }
 
@@ -177,7 +190,7 @@ namespace KGOOS_MUI.Control
                         foreach (string word in entry.KeywordStrings)
                         {
                             //n 为显示的个数
-                            if (word.Contains(textBox.Text) && n < 5)
+                            if (word.Contains(textBox.Text) && n < nSize)
                             {
                                 n++;
                                 ComboBoxItem cbItem = new ComboBoxItem();

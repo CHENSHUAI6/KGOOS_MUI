@@ -10,6 +10,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -45,27 +46,6 @@ namespace KGOOS_MUI.Pages.Scan
             //Bind the DataGrid to the customer data
             //DG1.DataContext = custdata;
 
-            #region 下拉联想框数据导入（已注掉）
-            //List<AutoCompleteEntry> tlist = new List<AutoCompleteEntry>();
-            //tlist.Add(new AutoCompleteEntry("第九人民医院", null));
-            //tlist.Add(new AutoCompleteEntry("第八人民医院", null));
-            //tlist.Add(new AutoCompleteEntry("第七人民医院", null));
-            //tlist.Add(new AutoCompleteEntry("第五人民医院", null));
-            //tlist.Add(new AutoCompleteEntry("第九人民医院", null));
-            //tlist.Add(new AutoCompleteEntry("第八人民医院", null));
-            //tlist.Add(new AutoCompleteEntry("第七人民医院", null));
-            //tlist.Add(new AutoCompleteEntry("第五人民医院", null));
-            //tlist.Add(new AutoCompleteEntry("第九人民医院", null));
-            //tlist.Add(new AutoCompleteEntry("第八人民医院", null));
-            //tlist.Add(new AutoCompleteEntry("第七人民医院", null));
-            //tlist.Add(new AutoCompleteEntry("第五人民医院", null));
-            //tlist.Add(new AutoCompleteEntry("第九人民医院", null));
-            //tlist.Add(new AutoCompleteEntry("第八人民医院", null));
-            //tlist.Add(new AutoCompleteEntry("第七人民医院", null));
-            //tlist.Add(new AutoCompleteEntry("第五人民医院", null));
-            //this.TBName.AddItemSource(tlist);
-            #endregion
-
             //colorDG();
         }
 
@@ -76,6 +56,7 @@ namespace KGOOS_MUI.Pages.Scan
         {
             workerId = "chy";
             getTableData();
+            getAutoCompleteTextBox();
         }
 
         /// <summary>
@@ -104,7 +85,7 @@ namespace KGOOS_MUI.Pages.Scan
                 Weight_Note = TBNote.Text;
                 Weight_Last = TBlastStand.Text;
                 Weight_Shelf = TBShelf.Text;
-                Weight_UserId = TBName.Text;
+                Weight_UserId = TBName.Tag.ToString();
                 Weight_UserName = TBName.Text;
                 Weight_Size = TBSize.Text;
                 Weight_Helf = "10";
@@ -134,8 +115,7 @@ namespace KGOOS_MUI.Pages.Scan
             }
             
 
-        }
-
+        }   
 
         /// <summary>
         /// datagrid赋值
@@ -187,6 +167,30 @@ namespace KGOOS_MUI.Pages.Scan
             }
             this.DG1.CanUserAddRows = false;
             this.DG1.ItemsSource = dt.DefaultView;     
+        }
+
+        /// <summary>
+        /// 下拉联系框赋值
+        /// </summary>
+        public void getAutoCompleteTextBox()
+        {
+            string sql = "";
+            string strIdName = "";
+            DataSet ds = new DataSet();
+            List<AutoCompleteEntry> tlist = new List<AutoCompleteEntry>();
+
+            sql = "select t1.tb_user, t1.id_name from T_User as t1";
+            ds = DBClass.execQuery(sql);
+            
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+                {
+                    strIdName = ds.Tables[0].Rows[i][0] + "   " + ds.Tables[0].Rows[i][1];
+                    tlist.Add(new AutoCompleteEntry(strIdName, null));
+                }
+            }
+            this.TBName.AddItemSource(tlist);
         }
 
         /// <summary>
@@ -341,6 +345,74 @@ namespace KGOOS_MUI.Pages.Scan
             }
         }
 
+        private void BTNDelete_Click(object sender, RoutedEventArgs e)
+        {
+            string sql = "";
+            DataSet ds = new DataSet();
+            sql = "select * from T_Weight as t1 where t1.Weight_WorkderId = '" + workerId + "' " +
+                "and t1.Weight_Type is null";
+            ds = DBClass.execQuery(sql);
+            for (int i = 0; i < ds.Tables[0].Rows.Count; i++ )
+            {
+                string str = GetCheckBoxValue(i, 0);
+            }
+        }
+
+        /// <summary>
+        /// 得到CheckBox里的值
+        /// </summary>
+        /// <param name="rowIndex">行索引</param>
+        /// <param name="cellIndex">列索引</param>
+        /// <returns>CheckBox里的值</returns>
+        private string GetCheckBoxValue(int rowIndex, int cellIndex)
+        {
+            var obj = VisualTreeHelper.GetChild((ContentPresenter)GetDataGridCell(rowIndex, cellIndex).Content, 0);
+            CheckBox chk = null;
+            if (obj != null && obj.DependencyObjectType.Name == "CheckBox")
+            {
+                chk = (CheckBox)obj;
+            }
+            return chk.IsChecked.ToString();
+        }
+
+        /// <summary>
+        /// 得到DataGrid的一个单元格
+        /// </summary>
+        /// <param name="rowIndex">行索引</param>
+        /// <param name="cellIndex">列索引</param>
+        /// <returns></returns>
+        private DataGridCell GetDataGridCell(int rowIndex, int cellIndex)
+        {
+            DataGridRow row = (DataGridRow)DG1.ItemContainerGenerator.ContainerFromIndex(rowIndex);
+            DG1.UpdateLayout();
+            row = (DataGridRow)DG1.ItemContainerGenerator.ContainerFromIndex(rowIndex);
+            DataGridCellsPresenter presenter = GetVisualChild<DataGridCellsPresenter>(row);
+            DataGridCell cell = (DataGridCell)presenter.ItemContainerGenerator.ContainerFromIndex(cellIndex);
+            DG1.ScrollIntoView(row, DG1.Columns[cellIndex]);
+            cell = (DataGridCell)presenter.ItemContainerGenerator.ContainerFromIndex(cellIndex);
+
+            return cell;
+        }
+
+        public static T GetVisualChild<T>(Visual parent) where T : Visual
+        {
+            T childContent = default(T);
+            int numVisuals = VisualTreeHelper.GetChildrenCount(parent);
+            for (int i = 0; i < numVisuals; i++)
+            {
+                Visual v = (Visual)VisualTreeHelper.GetChild(parent, i);
+                childContent = v as T;
+                if (childContent == null)
+                {
+                    childContent = GetVisualChild<T>(v);
+                }
+                if (childContent != null)
+                {
+                    break;
+                }
+            }
+            return childContent;
+        }
 
     }
 }
