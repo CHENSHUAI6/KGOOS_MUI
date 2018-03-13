@@ -38,7 +38,7 @@
                 <ColumnDefinition Width="50"></ColumnDefinition>
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="0" Height="25" Content="查 询" FontSize="10" Padding="1,1,1,1" Margin="12,2,2,2" />
+            <Button Grid.Column="0" Height="25" Content="查 询" FontSize="10" Padding="1,1,1,1" Margin="12,0,2,8" VerticalAlignment="Bottom" />
             <Button Grid.Column="1" Height="25" Content="新 建" FontSize="10" Padding="1,1,1,1" Margin="2,2,2,2" />
             <Button Name="BTNDelete" Grid.Column="2" Height="25" Content="删 除" FontSize="10" Padding="1,1,1,1" Margin="2,2,2,2" Click="BTNDelete_Click" />
             <Button Name="BTNSave" Grid.Column="3" Height="25" Content="保 存" FontSize="10" Padding="1,1,1,1" Margin="2,2,2,2" Click="BTNSave_Click" />

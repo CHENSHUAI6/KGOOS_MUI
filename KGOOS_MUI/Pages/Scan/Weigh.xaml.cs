@@ -25,28 +25,14 @@ namespace KGOOS_MUI.Pages.Scan
     /// Interaction logic for Weight.xaml
     /// </summary>
     public partial class Weigh : UserControl
-    {
-        /// <summary>
-        /// 无用，待删除
-        /// </summary>
-        public class Customer
-        {
-            public string FirstName { get; set; }
-            public string LastName { get; set; }
-            public string Email { get; set; }
-            public bool IsMember { get; set; }
-        }
+    {       
         private string workerId = "";
+        private bool IsOK = false;
+
         public Weigh()
         {
             InitializeComponent();
             initialize();
-            //ObservableCollection<Customer> custdata = GetData();
-
-            //Bind the DataGrid to the customer data
-            //DG1.DataContext = custdata;
-
-            //colorDG();
         }
 
         /// <summary>
@@ -54,7 +40,8 @@ namespace KGOOS_MUI.Pages.Scan
         /// </summary>
         public void initialize()
         {
-            workerId = "chy";
+            workerId = "18010001";
+
             getTableData();
             getAutoCompleteTextBox();
         }
@@ -67,6 +54,7 @@ namespace KGOOS_MUI.Pages.Scan
             try
             {
                 string sql = "";
+                string sql1 = "";
                 string Weight_Time, Id, Weight_Num, Weight_Weitgh, Weight_Note, Weight_Last, Weight_Shelf,
                     Weight_UserId, Weight_UserName, Weight_Size, Weight_Helf, Weight_ConID;
                 DataSet ds = new DataSet();
@@ -85,7 +73,19 @@ namespace KGOOS_MUI.Pages.Scan
                 Weight_Note = TBNote.Text;
                 Weight_Last = TBlastStand.Text;
                 Weight_Shelf = TBShelf.Text;
-                Weight_UserId = TBName.Tag.ToString();
+                if (TBName.Tag == null || TBName.Tag.ToString() == "")
+                {
+                    //sql1 = "select * from "
+                    MessageBox.Show(TBName.Text + "  用户不存在请重新输入");
+                    TBName.Text = null;
+                    TBName.Focus();
+                    return;
+                }
+                else
+                {
+                    Weight_UserId = TBName.Tag.ToString();
+                }
+                
                 Weight_UserName = TBName.Text;
                 Weight_Size = TBSize.Text;
                 Weight_Helf = "10";
@@ -109,12 +109,15 @@ namespace KGOOS_MUI.Pages.Scan
                 sql = string.Format(sql, Weight_Time, Weight_ConID, Weight_Num, Weight_Weitgh, Weight_Note, Weight_Last, Weight_Shelf,
                     Weight_UserId, Weight_UserName, Weight_Size, Weight_Helf, workerId, Id);
                 int n = DBClass.execUpdate(sql);
+                if (n > 0)
+                {
+                    IsOK = true;
+                }
+                
             }catch(Exception e)
             {
                 MessageBox.Show("操作失败。请重试");
             }
-            
-
         }   
 
         /// <summary>
@@ -328,6 +331,22 @@ namespace KGOOS_MUI.Pages.Scan
             {
                 inputDB();
                 getTableData();
+                if (IsOK == true)
+                {                   
+                    TBlastStand.Clear();
+                    TBName.Text = null;
+                    TBName.Tag = null;
+                    TBNote.Clear();
+                    TBShelf.Clear();
+                    TBSize.Clear();
+                    TBtranId.Clear();
+                    TBweigh.Clear();
+
+                    TBtranId.Focus();
+                    IsOK = false;
+                }
+                
+
             }
         }
 

@@ -134,7 +134,19 @@
       <DependentUpon>Appearance.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Settings\AppearanceViewModel.cs" />
+    <Page Include="Pages\Tran\Addresser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Tran\Arrive.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\Tran\ConTran.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Tran\Customs.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -146,8 +158,17 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Compile Include="Pages\Tran\Addresser.xaml.cs">
+      <DependentUpon>Addresser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Tran\Arrive.xaml.cs">
+      <DependentUpon>Arrive.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Tran\ConTran.xaml.cs">
       <DependentUpon>ConTran.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Tran\Customs.xaml.cs">
+      <DependentUpon>Customs.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Tran\TranManage.xaml.cs">
       <DependentUpon>TranManage.xaml</DependentUpon>
@@ -155,7 +176,28 @@
     <Compile Include="Pages\SettingsPage.xaml.cs">
       <DependentUpon>SettingsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Web\Entering.xaml.cs">
+      <DependentUpon>Entering.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Web\Select.xaml.cs">
+      <DependentUpon>Select.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Web\WebManage.xaml.cs">
+      <DependentUpon>WebManage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Page Include="Pages\Web\Entering.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Web\Select.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Web\WebManage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

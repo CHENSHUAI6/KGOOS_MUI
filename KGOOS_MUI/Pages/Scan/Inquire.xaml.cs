@@ -96,13 +96,41 @@ namespace KGOOS_MUI.Pages.Scan
             string[] sArrayID = Regex.Split(str, "\r\n", RegexOptions.IgnoreCase);
             string starTime = TBStartTime.Text;
             string endTime = TBEndTime.Text;
+
+            
+            int num = int.Parse(TBReturnNum.Text);
+            
+
             bool IsExist = false;
 
             str = BaseClass.getSqlValue(sArrayID);
 
-            sql = "select * from T_Weight as t1 " +
+            sql = "select top " + num + " * from T_Weight as t1 " +
+                "join T_Staff as t2 on t2.id_staff = t1.Weight_WorkderId " +
+                "join T_Region as t3 on t3.Region_Id = t2.warehouse_staff " +
                 "where t1.Weight_Type is not null ";
 
+            if (TBPlant != null && TBPlant.Text != "")
+            {
+                string plant = TBPlant.Text;
+                sql += " and t3.Region_Id = '" + plant + "' ";
+            }
+
+            if (TBName != null && TBName.Text != "")
+            {
+                string name = TBName.Text;
+                sql += " and t1.Weight_UserName = '" + name + "' ";
+            }
+
+            if (TBlastStand != null && TBlastStand.Text != "")
+            {
+                string lastStand = TBlastStand.Text;
+                sql += " and t1.Weight_Last = '" + lastStand + "' ";
+            }
+                        
+            string type = TBType.Text;
+
+            
             if (CBID.IsChecked == true)
             {
                 sql += "and t1.Weight_ConID in " + str + " ";

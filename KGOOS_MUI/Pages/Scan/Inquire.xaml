@@ -116,13 +116,13 @@
                 <TextBlock Width="50" Grid.Row="0" Grid.Column="0" Text="扫描网点" Margin="7,2,2,2" 
                            FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                            VerticalAlignment="Center"/>
-                <TextBox Width="130" Grid.Row="0" Grid.Column="0" Text="" Margin="60,2,2,2" 
+                <TextBox Name="TBPlant" Width="130" Grid.Row="0" Grid.Column="0" Text="" Margin="60,2,2,2" 
                          FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                          VerticalAlignment="Center"/>
                 <TextBlock Width="50" Grid.Row="1" Grid.Column="0" Text="旺旺名" Margin="7,2,2,2" 
                            FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                            VerticalAlignment="Center"/>
-                <TextBox Width="130" Grid.Row="1" Grid.Column="0" Text="" Margin="60,2,2,2" 
+                <TextBox Name="TBName" Width="130" Grid.Row="1" Grid.Column="0" Text="" Margin="60,2,2,2" 
                          FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                          VerticalAlignment="Center"/>
                 <TextBlock Width="50" Grid.Row="2" Grid.Column="0" Text="返回记录" Margin="7,2,2,2" 
@@ -134,13 +134,13 @@
                 <TextBlock Width="50" Grid.Row="0" Grid.Column="1" Text="上一站" Margin="2,2,2,2" 
                            FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                            VerticalAlignment="Center"/>
-                <TextBox Width="130" Grid.Row="0" Grid.Column="1" Text="" Margin="55,2,2,2" 
+                <TextBox Name="TBlastStand" Width="130" Grid.Row="0" Grid.Column="1" Text="" Margin="55,2,2,2" 
                          FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                          VerticalAlignment="Center"/>
                 <TextBlock Width="50" Grid.Row="1" Grid.Column="1" Text="物品类别" Margin="2,2,2,2" 
                            FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                            VerticalAlignment="Center"/>
-                <TextBox Width="130" Grid.Row="1" Grid.Column="1" Text="" Margin="55,2,2,2" 
+                <TextBox Name="TBType" Width="130" Grid.Row="1" Grid.Column="1" Text="" Margin="55,2,2,2" 
                          FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                          VerticalAlignment="Center"/>
                 <CheckBox Grid.Row="2" Grid.Column="1" Content="过滤重复" Margin="0,0,0,4" VerticalAlignment="Center" FontFamily="宋体" 
