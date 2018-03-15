@@ -55,6 +55,11 @@
 
             <!--左侧填写栏-->
             <Grid Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="15*"/>
+                    <ColumnDefinition Width="6*"/>
+                    <ColumnDefinition Width="254*"/>
+                </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="25"></RowDefinition>
                     <RowDefinition Height="50"></RowDefinition>
@@ -62,55 +67,56 @@
                     <RowDefinition Height="25"></RowDefinition>
                 </Grid.RowDefinitions>
                 <!--第一行-->
-                <TextBlock Width="50" Grid.Row="0" Text="扫描时间" Margin="7,2,2,2" FontSize="12" FontFamily="宋体" 
-                           HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <TextBlock Width="50" Grid.Row="0" Text="扫描时间" Margin="7,6,0,6" FontSize="12" FontFamily="宋体" 
+                           HorizontalAlignment="Left" VerticalAlignment="Center" Grid.ColumnSpan="3"/>
                 <!--<TextBox Name="TBsacnTime" Width="130" Grid.Row="0" Text="xxxx-xx-xx xx:xx:xx" IsReadOnly="True" Margin="60,2,2,2" 
                          FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center" />-->
-                <wfi:WindowsFormsHost Width="150" Grid.Row="0" FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="60,2,2,2">
-                    <wf:DateTimePicker x:Name="TBsacnTime" Width="150" Height="20" Format="Custom" CustomFormat="yyyy-MM-dd HH:mm:ss" Enabled="False"/>
+                <wfi:WindowsFormsHost Width="150" Grid.Row="0" Margin="58,2,2,2" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="12" FontFamily="宋体">
+                    <wf:DateTimePicker x:Name="TBsacnTime" Width="150" Height="20" Format="Custom" 
+                          CustomFormat="yyyy-MM-dd: HH:mm:ss" Enabled="False"/>
                 </wfi:WindowsFormsHost>
 
-                <TextBlock Width="50" Grid.Row="0" Text="上一站" Margin="220,2,2,2" FontSize="12" FontFamily="宋体" 
-                           HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                <TextBox Name="TBlastStand" Width="100" Grid.Row="0" Text="" IsReadOnly="True" Margin="280,2,2,2" FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <TextBlock Width="50" Grid.Row="0" Text="上一站" Margin="178,6,0,6" FontSize="12" FontFamily="宋体" 
+                           HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="2"/>
+                <TextBox Name="TBlastStand" Width="100" Grid.Row="0" Text="" IsReadOnly="True" Margin="238,4,0,4" FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="2"/>
 
                 <!--第二行-->
-                <TextBlock Width="50" Grid.Row="1" Text="运单编号" Margin="7,2,2,2" FontSize="12" FontFamily="宋体" 
-                         HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                <TextBox Name="TBtranId" Width="305" Grid.Row="1" Text="" Margin="60,8,0,6" FontSize="25" FontFamily="宋体" 
-                         HorizontalAlignment="Left" Height="36" VerticalAlignment="Center" KeyDown="TBtranId_KeyDown"/>
-                <RadioButton Name="RBimportWeigh" Grid.Row="1" Content="输入重量" Margin="370,7,0,0" FontSize="10" 
-                         VerticalAlignment="Top" FontFamily="宋体" />
-                <RadioButton Name="RBdefaultWeig" Grid.Row="1" Content="默认重量" Margin="370,0,0,7" FontSize="10" 
-                         VerticalAlignment="Bottom" FontFamily="宋体" IsChecked="True" />
-                <TextBox Name="TBweigh" Width="100" Grid.Row="1" Text="" Margin="435,8,0,6" FontSize="25" FontFamily="宋体" 
+                <TextBlock Width="50" Grid.Row="1" Text="运单编号" Margin="7,19,0,18" FontSize="12" FontFamily="宋体" 
+                         HorizontalAlignment="Left" VerticalAlignment="Center" Grid.ColumnSpan="3"/>
+                <TextBox Name="TBtranId" Width="305" Grid.Row="1" Text="" Margin="18,8,0,7" FontSize="25" FontFamily="宋体" 
+                         HorizontalAlignment="Left" Height="36" VerticalAlignment="Center" KeyDown="TBtranId_KeyDown" Grid.Column="2"/>
+                <RadioButton Name="RBimportWeigh" Grid.Row="1" Content="输入重量" Margin="328,7,0,0" FontSize="10" 
+                         VerticalAlignment="Top" FontFamily="宋体" Grid.Column="2" />
+                <RadioButton Name="RBdefaultWeig" Grid.Row="1" Content="默认重量" Margin="328,0,0,7" FontSize="10" 
+                         VerticalAlignment="Bottom" FontFamily="宋体" IsChecked="True" Grid.Column="2" />
+                <TextBox Name="TBweigh" Width="100" Grid.Row="1" Text="" Margin="393,8,0,7" FontSize="25" FontFamily="宋体" 
                          HorizontalAlignment="Left" Height="36" VerticalAlignment="Center" 
-                         PreviewTextInput="Num_PreviewTextInput" KeyDown="TBweigh_KeyDown" TextChanged="Num_TextChanged" />
+                         PreviewTextInput="Num_PreviewTextInput" KeyDown="TBweigh_KeyDown" TextChanged="Num_TextChanged" Grid.Column="2" />
 
                 <!--第三行-->
-                <TextBlock Width="50" Grid.Row="2" Text="旺旺名" Margin="7,2,2,2" FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <TextBlock Width="50" Grid.Row="2" Text="旺旺名" Margin="7,6,0,6" FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.ColumnSpan="3"/>
                 <!--<TextBox Name="TBName" Width="130" Grid.Row="2" Text="" Margin="60,2,2,2" FontSize="12" FontFamily="宋体" 
                          HorizontalAlignment="Left" VerticalAlignment="Center" KeyDown="TBName_KeyDown" />-->
-                <tbnew:AutoCompleteTextBox x:Name="TBName" Height="22" Width="130" Grid.Row="2" Text="" Margin="60,2,2,2" 
+                <tbnew:AutoCompleteTextBox x:Name="TBName" Height="22" Width="130" Grid.Row="2" Text="" Margin="18,2,0,2" 
                       FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center" 
-                      KeyDown="TBName_KeyDown" />
-                <TextBlock Width="50" Grid.Row="2" Text="存放货架" Margin="200,2,2,2" FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                <TextBox Name="TBShelf" Width="100" Grid.Row="2" Text="" Margin="260,0,0,3" FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
-                <TextBlock Width="30" Grid.Row="2" Text="备注" Margin="370,2,2,2" FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                <TextBox Name="TBNote" Width="140" Grid.Row="2" Text="" Margin="395,2,2,2" FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center" KeyDown="TBNote_KeyDown"/>
+                      KeyDown="TBName_KeyDown" Grid.Column="2" />
+                <TextBlock Width="50" Grid.Row="2" Text="存放货架" Margin="158,6,0,6" FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="2"/>
+                <TextBox Name="TBShelf" Width="100" Grid.Row="2" Text="" Margin="218,0,0,3" FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Bottom" Grid.Column="2"/>
+                <TextBlock Width="30" Grid.Row="2" Text="备注" Margin="328,6,0,6" FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="2"/>
+                <TextBox Name="TBNote" Width="140" Grid.Row="2" Text="" Margin="353,3,0,3" FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center" KeyDown="TBNote_KeyDown" Grid.Column="2"/>
 
                 <!--第四行-->
-                <TextBlock Width="50" Grid.Row="3" Text="长宽高cm" Margin="7,2,2,2" FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                <TextBox Width="40" Grid.Row="3" Text="" Margin="60,2,2,2" FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                <TextBlock Width="5" Grid.Row="3" Text="X" Margin="103,2,2,2" FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                <TextBox Width="40" Grid.Row="3" Text="" Margin="110,2,2,2" FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                <TextBlock Width="5" Grid.Row="3" Text="X" Margin="153,2,2,2" FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                <TextBox Width="40" Grid.Row="3" Text="" Margin="160,2,2,2" FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                <TextBlock Width="5" Grid.Row="3" Text="=" Margin="203,2,2,2" FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                <TextBox Name="TBSize" Width="80" Grid.Row="3" Text="" Margin="210,2,2,2" FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                <TextBlock Width="60" Grid.Row="3" Text="(体积重kg)" Margin="290,2,2,2" FontSize="10" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" />
-                <TextBlock Width="50" Grid.Row="3" Text="货 架" Margin="350,2,2,2" FontSize="15" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" Foreground="Red" />
-                <TextBlock Width="80" Grid.Row="3" Text="票数/容量" Margin="400,2,2,2" FontSize="10" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" Foreground="Red"/>
+                <TextBlock Width="50" Grid.Row="3" Text="长宽高cm" Margin="7,6,0,6" FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.ColumnSpan="3"/>
+                <TextBox Width="40" Grid.Row="3" Text="" Margin="18,3,0,3" FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="2"/>
+                <TextBlock Width="5" Grid.Row="3" Text="X" Margin="61,6,0,6" FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="2"/>
+                <TextBox Width="40" Grid.Row="3" Text="" Margin="68,3,0,3" FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="2"/>
+                <TextBlock Width="5" Grid.Row="3" Text="X" Margin="111,6,0,6" FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="2"/>
+                <TextBox Width="40" Grid.Row="3" Text="" Margin="118,3,0,3" FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="2"/>
+                <TextBlock Width="5" Grid.Row="3" Text="=" Margin="161,6,0,6" FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="2"/>
+                <TextBox Name="TBSize" Width="80" Grid.Row="3" Text="" Margin="168,3,0,3" FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="2"/>
+                <TextBlock Width="60" Grid.Row="3" Text="(体积重kg)" Margin="248,7,0,7" FontSize="10" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" Grid.Column="2" />
+                <TextBlock Width="50" Grid.Row="3" Text="货 架" Margin="308,4,0,4" FontSize="15" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" Foreground="Red" Grid.Column="2" />
+                <TextBlock Width="80" Grid.Row="3" Text="票数/容量" Margin="358,7,0,7" FontSize="10" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" Foreground="Red" Grid.Column="2"/>
             </Grid>
 
             <!--右侧勾选栏-->
@@ -145,7 +151,7 @@
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
-                        
+
                         <DataGridTextColumn  Header="扫描时间"  Binding="{Binding Weight_Time}" IsReadOnly="True"/>
                         <DataGridTextColumn Header="运单编号" Binding="{Binding Weight_ConID}" IsReadOnly="True"/>
                         <DataGridTextColumn Header="件数" Binding="{Binding Weight_Num}" IsReadOnly="True"/>

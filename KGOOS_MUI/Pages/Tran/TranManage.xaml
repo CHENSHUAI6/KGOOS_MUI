@@ -17,19 +17,23 @@
             <RowDefinition Height="1"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
-        <Image Name="image1" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center"
+        <!--<Image Name="image1" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center"
                Width="200" Height="200" Source="/Img/1.jpg">
             
-        </Image>
-        <TextBlock Text="到件管理" FontSize="36" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="微软雅黑" />
+        </Image>-->
+        <TextBlock Name="Arrive" Text="到件管理" FontSize="36" FontWeight="Bold" HorizontalAlignment="Center" 
+                   VerticalAlignment="Center" FontFamily="微软雅黑" MouseDown="Arrive_MouseDown" />
         <ScrollViewer Grid.Column="2" Grid.Row="0">
-            <TextBlock Text="集运订单" FontSize="36" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="微软雅黑" />
+            <TextBlock Name="ConTran" Text="集运订单" FontSize="36" FontWeight="Bold" HorizontalAlignment="Center" 
+                       VerticalAlignment="Center" FontFamily="微软雅黑" MouseDown="ConTran_MouseDown" />
         </ScrollViewer>
         <ScrollViewer Grid.Column="0" Grid.Row="2">
-            <TextBlock Text="发件管理" FontSize="36" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="微软雅黑" />
+            <TextBlock Name="Addresser" Text="发件管理" FontSize="36" FontWeight="Bold" HorizontalAlignment="Center" 
+                       VerticalAlignment="Center" FontFamily="微软雅黑" MouseDown="Addresser_MouseDown" />
         </ScrollViewer>
         <ScrollViewer Grid.Column="2" Grid.Row="2">
-            <TextBlock Text="报关明细查" FontSize="36" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="微软雅黑" />
+            <TextBlock Name="Customs" Text="报关明细查" FontSize="36" FontWeight="Bold" HorizontalAlignment="Center" 
+                       VerticalAlignment="Center" FontFamily="微软雅黑" MouseDown="Customs_MouseDown" />
         </ScrollViewer>
     </Grid>
 </UserControl>

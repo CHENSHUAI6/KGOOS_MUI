@@ -34,12 +34,14 @@ namespace KGOOS_MUI.Pages
         {
 
             DataSet ds = new DataSet();
-            string sql = "select id_warehouse, name_warehouse from T_WareHouse";
+            string sql = "";
             int id = 0;
             string name = "";
-            ds = DBClass.execQuery(sql);
             List<KeyValuePair<int, string>> WareHouseList = new List<KeyValuePair<int, string>>();
             WareHouseList.Add(new KeyValuePair<int, string>(0, "请选择仓库"));
+
+            sql = "select id_warehouse, name_warehouse from T_WareHouse";
+            ds = DBClass.execQuery(sql);            
             for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
             {
                 id = 0;

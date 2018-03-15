@@ -1,0 +1,108 @@
+﻿<UserControl x:Class="KGOOS_MUI.Pages.Up.Packer"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="700">
+    <Grid Style="{StaticResource ContentRoot}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+        </Grid.RowDefinitions>
+        
+        <!--上方输入框-->
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="80"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="80"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="80"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <!--第一行-->
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="承运商" Margin="2,2,2,2" FontSize="12" FontFamily="宋体" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <TextBox Grid.Row="0" Grid.Column="1" Text="" Margin="2,2,2,2" FontSize="12" FontFamily="宋体" VerticalAlignment="Center"/>
+            <TextBlock Grid.Row="0" Grid.Column="2" Text="目的地" Margin="2,2,2,2" FontSize="12" FontFamily="宋体" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <TextBox Grid.Row="0" Grid.Column="3" Text="" Margin="2,2,2,2" FontSize="12" FontFamily="宋体" VerticalAlignment="Center"/>
+            <TextBlock Grid.Row="0" Grid.Column="4" Text="快递类型" Margin="2,2,2,2" FontSize="12" FontFamily="宋体" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <TextBox Grid.Row="0" Grid.Column="5" Text="" Margin="2,2,2,2" FontSize="12" FontFamily="宋体" VerticalAlignment="Center"/>
+            
+            <!--第二行-->
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="旺旺名" Margin="2,2,2,2" FontSize="12" FontFamily="宋体" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <TextBox Grid.Row="1" Grid.Column="1" Text="" Margin="2,2,2,2" FontSize="12" FontFamily="宋体" VerticalAlignment="Center"/>
+            <TextBlock Grid.Row="1" Grid.Column="2" Text="收件电话" Margin="2,2,2,2" FontSize="12" FontFamily="宋体" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <TextBox Grid.Row="1" Grid.Column="3" Text="" Margin="2,2,2,2" FontSize="12" FontFamily="宋体" VerticalAlignment="Center"/>
+            <TextBlock Grid.Row="1" Grid.Column="4" Text="收件人" Margin="2,2,2,2" FontSize="12" FontFamily="宋体" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <TextBox Grid.Row="1" Grid.Column="5" Text="" Margin="2,2,2,2" FontSize="12" FontFamily="宋体" VerticalAlignment="Center"/>
+            
+            <!--第三行-->
+            <TextBlock Grid.Row="2" Grid.Column="0" Text="收件地址" Margin="2,2,2,2" FontSize="12" FontFamily="宋体" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <TextBox Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="5" Text="" Margin="2,2,2,2" FontSize="12" FontFamily="宋体" VerticalAlignment="Center"/>
+            
+            <!--第四行-->
+            <TextBlock Grid.Row="3" Grid.Column="0" Text="收件邮编" Margin="2,2,2,2" FontSize="12" FontFamily="宋体" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <TextBox Grid.Row="3" Grid.Column="1" Text="" Margin="2,2,2,2" FontSize="12" FontFamily="宋体" VerticalAlignment="Center"/>
+            <TextBlock Grid.Row="3" Grid.Column="2" Text="收件城市" Margin="2,2,2,2" FontSize="12" FontFamily="宋体" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <TextBox Grid.Row="3" Grid.Column="3" Text="" Margin="2,2,2,2" FontSize="12" FontFamily="宋体" VerticalAlignment="Center"/>
+            <TextBlock Grid.Row="3" Grid.Column="4" Text="申报金额" Margin="2,2,2,2" FontSize="12" FontFamily="宋体" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <TextBox Grid.Row="3" Grid.Column="5" Text="" Margin="2,2,2,2" FontSize="12" FontFamily="宋体" VerticalAlignment="Center"/>
+            
+            <!--第五行-->
+            <TextBlock Grid.Row="4" Grid.Column="0" Text="申报物品" Margin="2,2,2,2" FontSize="12" FontFamily="宋体" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <TextBox Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="5" Text="" Margin="2,2,2,2" FontSize="12" FontFamily="宋体" VerticalAlignment="Center"/>
+            
+            <!--第六行-->
+            <TextBlock Grid.Row="5" Grid.Column="0" Text="合计件数" Margin="2,2,2,2" FontSize="12" FontFamily="宋体" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <TextBox Grid.Row="5" Grid.Column="1" Text="" Margin="2,2,2,2" FontSize="12" FontFamily="宋体" VerticalAlignment="Center"/>
+            <TextBlock Grid.Row="5" Grid.Column="2" Text="打包前重量" Margin="2,2,2,2" FontSize="12" FontFamily="宋体" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <TextBox Grid.Row="5" Grid.Column="3" Text="" Margin="2,2,2,2" FontSize="12" FontFamily="宋体" VerticalAlignment="Center"/>
+            <TextBlock Grid.Row="5" Grid.Column="4" Text="打包前运费" Margin="2,2,2,2" FontSize="12" FontFamily="宋体" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <TextBox Grid.Row="5" Grid.Column="5" Text="" Margin="2,2,2,2" FontSize="12" FontFamily="宋体" VerticalAlignment="Center"/>
+            
+            <!--第七行-->
+            <TextBlock Grid.Row="6" Grid.Column="0" Text="备注" Margin="2,2,2,2" FontSize="12" FontFamily="宋体" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <TextBox Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="5" Text="" Margin="2,2,2,2" FontSize="12" FontFamily="宋体" VerticalAlignment="Center"/>
+            
+            <!--第八行-->
+            <TextBlock Grid.Row="7" Grid.Column="0" Text="贷款" Margin="2,2,2,2" FontSize="12" FontFamily="宋体" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <TextBox Grid.Row="7" Grid.Column="1" Text="" Margin="2,2,2,2" FontSize="12" FontFamily="宋体" VerticalAlignment="Center"/>
+            <TextBlock Grid.Row="7" Grid.Column="2" Text="店铺名称" Margin="2,2,2,2" FontSize="12" FontFamily="宋体" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <TextBox Grid.Row="7" Grid.Column="3" Text="" Margin="2,2,2,2" FontSize="12" FontFamily="宋体" VerticalAlignment="Center"/>
+            
+            <!--第九行-->
+            <TextBlock Grid.Row="8" Grid.Column="0" Text="多收件人" Margin="2,2,2,2" FontSize="12" FontFamily="宋体" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <TextBox Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="5" Text="" Margin="2,2,2,2" FontSize="12" FontFamily="宋体" VerticalAlignment="Center"/>
+
+        </Grid>
+        
+        
+        <!--下端按钮-->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="80"></ColumnDefinition>
+                <ColumnDefinition Width="80"></ColumnDefinition>
+                <ColumnDefinition Width="80"></ColumnDefinition>
+                <ColumnDefinition Width="40"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="1" Height="25" Content="计算运费" FontSize="10" Padding="1,1,1,1" Margin="5,2,5,2" VerticalAlignment="Center" />
+            <Button Grid.Column="2" Height="25" Content="确 定" FontSize="10" Padding="1,1,1,1" Margin="5,2,5,2" VerticalAlignment="Center" />
+            <Button Grid.Column="3" Height="25" Content="取 消" FontSize="10" Padding="1,1,1,1" Margin="5,2,5,2" VerticalAlignment="Center" />
+            
+        </Grid>
+    </Grid>
+</UserControl>

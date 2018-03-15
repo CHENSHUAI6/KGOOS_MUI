@@ -62,5 +62,11 @@ namespace KGOOS_MUI.Pages.Tran
         {
             TBID.Clear();
         }
+
+        private void BtnPack_Click(object sender, RoutedEventArgs e)
+        {
+            UpWindow uw = new UpWindow();
+            uw.Show();
+        }
     }
 }

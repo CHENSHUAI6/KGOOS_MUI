@@ -60,7 +60,7 @@
             <Button Grid.Column="3" Height="25" Content="保 存" FontSize="10" Padding="1,1,1,1" Margin="2,2,2,2" />
             <Button Grid.Column="4" Height="25" Content="取 消" FontSize="10" Padding="1,1,1,1" Margin="2,2,2,2" />
             <Button Grid.Column="5" Height="25" Content="导 出" FontSize="10" Padding="1,1,1,1" Margin="2,2,2,2" />
-            <Button Grid.Column="6" Height="25" Content="申请打包" FontSize="10" Padding="1,1,1,1" Margin="2,2,2,2" />
+            <Button Name="BtnPack" Grid.Column="6" Height="25" Content="申请打包" FontSize="10" Padding="1,1,1,1" Margin="2,2,2,2" Click="BtnPack_Click" />
             <Button Grid.Column="7" Height="25" Content="更新旺旺信息" FontSize="10" Padding="1,1,1,1" Margin="2,2,2,2" />
         </Grid>
         <Border Grid.Row="1" VerticalAlignment="Bottom" Background="LightGray" BorderBrush="LightGray" BorderThickness="1"/>
@@ -241,7 +241,7 @@
                         <DataGridCheckBoxColumn Header="选择"  Binding="{Binding Select}"/>
                         <DataGridCheckBoxColumn Header="已核对"  Binding="{Binding Checking}"/>
                         <DataGridTextColumn Header="运单编号" Binding="{Binding Weight_ConID}" />
-                        <DataGridTextColumn Header="到期日期" Binding="{Binding Id}"/>                      
+                        <DataGridTextColumn Header="到件日期" Binding="{Binding Id}"/>                      
                         <DataGridTextColumn Header="上一站" Binding="{Binding Weight_Last}"/>
                         <DataGridTextColumn Header="件数" Binding="{Binding Weight_Num}"/>
                         <DataGridTextColumn Header="重量" Binding="{Binding Weight_Helf}"/>

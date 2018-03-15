@@ -13,10 +13,12 @@
             <ColumnDefinition  Width="*" />
         </Grid.ColumnDefinitions>
         <ScrollViewer Grid.Column="0" Grid.Row="0">
-            <TextBlock Text="包裹登记" FontSize="36" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="微软雅黑" />
+            <TextBlock Name="Entering" Text="包裹登记" FontSize="36" FontWeight="Bold" HorizontalAlignment="Center" 
+                       VerticalAlignment="Center" FontFamily="微软雅黑" MouseDown="Entering_MouseDown" />
         </ScrollViewer>
         <ScrollViewer Grid.Column="2" Grid.Row="0">
-            <TextBlock Text="包裹查询" FontSize="36" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="微软雅黑" />
+            <TextBlock Name="Select" Text="包裹查询" FontSize="36" FontWeight="Bold" HorizontalAlignment="Center" 
+                       VerticalAlignment="Center" FontFamily="微软雅黑" MouseDown="Select_MouseDown" />
         </ScrollViewer>
     </Grid>
 </UserControl>

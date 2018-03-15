@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KGOOS_MUI.Pages.Scan;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,7 +29,35 @@ namespace KGOOS_MUI.Pages
             bi.BeginInit();
             bi.UriSource = new Uri(@"C:\1.jpg", UriKind.RelativeOrAbsolute);
             bi.EndInit();
-            image1.Source = bi;  
+            //image1.Source = bi;  
+        }
+
+        private void ConTran_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Weigh tw = new Weigh();
+            MainWindow mw = System.Windows.Window.GetWindow(this) as MainWindow;
+            mw.ContentSource = new Uri("/Pages/Tran/ConTran.xaml", UriKind.RelativeOrAbsolute);
+        }
+
+        private void Arrive_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Weigh tw = new Weigh();
+            MainWindow mw = System.Windows.Window.GetWindow(this) as MainWindow;
+            mw.ContentSource = new Uri("/Pages/Tran/Arrive.xaml", UriKind.RelativeOrAbsolute);
+        }
+
+        private void Addresser_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Weigh tw = new Weigh();
+            MainWindow mw = System.Windows.Window.GetWindow(this) as MainWindow;
+            mw.ContentSource = new Uri("/Pages/Tran/Addresser.xaml", UriKind.RelativeOrAbsolute);
+        }
+
+        private void Customs_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Weigh tw = new Weigh();
+            MainWindow mw = System.Windows.Window.GetWindow(this) as MainWindow;
+            mw.ContentSource = new Uri("/Pages/Tran/Customs.xaml", UriKind.RelativeOrAbsolute);
         }       
     }
 }

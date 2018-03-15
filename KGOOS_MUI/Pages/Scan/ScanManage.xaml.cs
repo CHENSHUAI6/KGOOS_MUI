@@ -28,10 +28,24 @@ namespace KGOOS_MUI.Pages.Scan
             bi.BeginInit();
             bi.UriSource = new Uri(@"C:\1.jpg", UriKind.RelativeOrAbsolute);
             bi.EndInit();
-            image1.Source = bi;
+            //image1.Source = bi;
         }
 
         private void Image_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Weigh tw = new Weigh();
+            MainWindow mw = System.Windows.Window.GetWindow(this) as MainWindow;
+            mw.ContentSource = new Uri("/Pages/Scan/Weigh.xaml", UriKind.RelativeOrAbsolute);
+        }
+
+        private void Inquire_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Weigh tw = new Weigh();
+            MainWindow mw = System.Windows.Window.GetWindow(this) as MainWindow;
+            mw.ContentSource = new Uri("/Pages/Scan/Inquire.xaml", UriKind.RelativeOrAbsolute);
+        }
+
+        private void Weigh_MouseDown(object sender, MouseButtonEventArgs e)
         {
             Weigh tw = new Weigh();
             MainWindow mw = System.Windows.Window.GetWindow(this) as MainWindow;

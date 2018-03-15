@@ -12,15 +12,15 @@
             <ColumnDefinition  Width="1" />
             <ColumnDefinition  Width="*" />
         </Grid.ColumnDefinitions>
-        <Image Name="image1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Top"
+        <!--<Image Name="image1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Top"
                Width="200" Height="200" Source="/Img/1.jpg" MouseDown="Image_MouseDown">
-        </Image>
-        <TextBlock Text="到件称重扫描" FontSize="30" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="微软雅黑" />
+        </Image>-->
+        <TextBlock Name="Weigh" Text="到件称重扫描" FontSize="30" FontWeight="Bold" HorizontalAlignment="Center" 
+                   VerticalAlignment="Top" FontFamily="微软雅黑" MouseDown="Weigh_MouseDown" />
 
-        <Image Name="image2" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Top"
-               Width="200" Height="200" Source="/Img/1.jpg" MouseDown="Image_MouseDown">
-        </Image>
-        <TextBlock Grid.Column="2" Text="到件扫描查询" FontSize="30" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="微软雅黑" />
+
+        <TextBlock Name="Inquire" Grid.Column="2" Text="到件扫描查询" FontSize="30" FontWeight="Bold" 
+                   HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="微软雅黑" MouseDown="Inquire_MouseDown" />
    
     </Grid>
 </UserControl>

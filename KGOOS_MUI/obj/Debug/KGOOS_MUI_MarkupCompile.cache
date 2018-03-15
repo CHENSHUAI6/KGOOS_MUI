@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\App.xaml
-19419923957
+21-422738503
 12084155889
-24-1368247735
+26180178944
 17799483538
-Control\AutoCompleteTextBox.xaml;LoginWindow.xaml;MainWindow.xaml;Pages\Login.xaml;Pages\ModernUI.Theme1.xaml;Pages\Scan\Inquire.xaml;Pages\Scan\ScanManage.xaml;Pages\Scan\Weigh.xaml;Pages\Settings\About.xaml;Pages\Settings\Appearance.xaml;Pages\Tran\Addresser.xaml;Pages\Tran\Arrive.xaml;Pages\Tran\ConTran.xaml;Pages\Tran\Customs.xaml;Pages\Tran\TranManage.xaml;Pages\SettingsPage.xaml;Pages\Web\Entering.xaml;Pages\Web\Select.xaml;Pages\Web\WebManage.xaml;
+Control\AutoCompleteTextBox.xaml;LoginWindow.xaml;MainWindow.xaml;Pages\Login.xaml;Pages\ModernUI.Theme1.xaml;Pages\Scan\Inquire.xaml;Pages\Scan\ScanManage.xaml;Pages\Scan\Weigh.xaml;Pages\Settings\About.xaml;Pages\Settings\Appearance.xaml;Pages\Tran\Addresser.xaml;Pages\Tran\Arrive.xaml;Pages\Tran\ConTran.xaml;Pages\Tran\Customs.xaml;Pages\Tran\TranManage.xaml;Pages\SettingsPage.xaml;Pages\Up\Packer.xaml;Pages\Web\Entering.xaml;Pages\Web\Select.xaml;Pages\Web\WebManage.xaml;UpWindow.xaml;
 
 False
 

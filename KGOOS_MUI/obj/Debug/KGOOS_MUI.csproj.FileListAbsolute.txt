@@ -164,3 +164,7 @@ Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Web\We
 Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Web\Entering.baml
 Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Web\Select.baml
 Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Web\Select.g.cs
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Up\Packer.baml
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\obj\Debug\UpWindow.baml
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Up\Packer.g.cs
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\obj\Debug\UpWindow.g.cs

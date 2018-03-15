@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KGOOS_MUI.Pages.Scan;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,20 @@ namespace KGOOS_MUI.Pages.Web
         public WenManage()
         {
             InitializeComponent();
+        }
+
+        private void Entering_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Weigh tw = new Weigh();
+            MainWindow mw = System.Windows.Window.GetWindow(this) as MainWindow;
+            mw.ContentSource = new Uri("/Pages/Web/Entering.xaml", UriKind.RelativeOrAbsolute);
+        }
+
+        private void Select_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Weigh tw = new Weigh();
+            MainWindow mw = System.Windows.Window.GetWindow(this) as MainWindow;
+            mw.ContentSource = new Uri("/Pages/Web/Select.xaml", UriKind.RelativeOrAbsolute);
         }
     }
 }
