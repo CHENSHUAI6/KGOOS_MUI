@@ -50,6 +50,21 @@ namespace KGOOS_MUI.Pages.Scan
                 staff_region = Application.Current.Properties["region"].ToString();
             }
 
+            //下拉框赋值
+            List<KeyValuePair<string, string>> RegionList = new List<KeyValuePair<string, string>>();
+            RegionList.Add(new KeyValuePair<string, string>("默认", "默认"));
+            RegionList.Add(new KeyValuePair<string, string>("纸箱", "纸箱"));
+            RegionList.Add(new KeyValuePair<string, string>("纸皮", "纸皮"));
+            RegionList.Add(new KeyValuePair<string, string>("木架", "木架"));
+            RegionList.Add(new KeyValuePair<string, string>("编织袋", "编织袋"));
+            RegionList.Add(new KeyValuePair<string, string>("塑料袋", "塑料袋"));
+            RegionList.Add(new KeyValuePair<string, string>("长条", "长条"));
+
+            CBType.ItemsSource = RegionList;
+            CBType.SelectedValuePath = "Key";
+            CBType.DisplayMemberPath = "Value";
+            CBType.SelectedItem = new KeyValuePair<string, string>("默认", "默认");
+
             getTableData();
             getAutoCompleteTextBox();
         }
@@ -62,7 +77,7 @@ namespace KGOOS_MUI.Pages.Scan
             try
             {
                 string sql = "";
-                string Weight_Time, Id, Weight_Num, Weight_Weitgh, Weight_Note, Weight_Last, Weight_Shelf,
+                string Weight_Time, Id, Weight_Num, Weight_Weitgh, Weight_Note, Weight_Pack, Weight_Shelf,
                     Weight_UserId, Weight_UserName, Weight_Size, Weight_Helf, Weight_ConID;
                 DataSet ds = new DataSet();
                 if (CBInputTime.IsChecked == true)
@@ -78,8 +93,9 @@ namespace KGOOS_MUI.Pages.Scan
                 Weight_Num = "0";
                 Weight_Weitgh = TBweigh.Text;
                 Weight_Note = TBNote.Text;
-                Weight_Last = TBlastStand.Text;
                 Weight_Shelf = TBShelf.Text;
+                Weight_Pack = CBType.SelectedValue.ToString();
+
                 if (TBName.Tag == null || TBName.Tag.ToString() == "")
                 {
                     //sql1 = "select * from "
@@ -101,20 +117,21 @@ namespace KGOOS_MUI.Pages.Scan
                 if (ds.Tables[0].Rows.Count > 0)
                 {
                     sql = "update T_Weight set Weight_Time = '{0}', Weight_Num = '{2}', Weight_Weitgh = '{3}', " +
-                        "Weight_Note = '{4}', Weight_Last = '{5}',Weight_Shelf = '{6}',Weight_UserId = '{7}', " +
-                        "Weight_UserName = '{8}', Weight_Size = '{9}', Weight_Helf = '{10}', Weight_WorkderId = '{11}' " +
+                        "Weight_Note = '{4}',Weight_Shelf = '{5}',Weight_UserId = '{6}', " +
+                        "Weight_UserName = '{7}', Weight_Size = '{8}', Weight_Helf = '{9}', Weight_WorkderId = '{10}', " +
+                        "Id = '{11}' , Weight_Region = '{12}', Weight_Pack = '{13}' " +
                         "where Weight_ConID = '{1}'";
                 }
                 else
                 {
                     sql = "insert into T_Weight " +
-                    "(Weight_Time,Weight_ConID,Weight_Num,Weight_Weitgh,Weight_Note,Weight_Last,Weight_Shelf,Weight_UserId, " +
-                    "Weight_UserName,Weight_Size,Weight_Helf,Weight_WorkderId, Id, Weight_Region) " +
+                    "(Weight_Time,Weight_ConID,Weight_Num,Weight_Weitgh,Weight_Note,Weight_Shelf,Weight_UserId, " +
+                    "Weight_UserName,Weight_Size,Weight_Helf,Weight_WorkderId, Id, Weight_Region, Weight_Pack) " +
                     "values ('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}','{13}')";
                 }
 
-                sql = string.Format(sql, Weight_Time, Weight_ConID, Weight_Num, Weight_Weitgh, Weight_Note, Weight_Last, Weight_Shelf,
-                    Weight_UserId, Weight_UserName, Weight_Size, Weight_Helf, staff_name, Id, staff_region);
+                sql = string.Format(sql, Weight_Time, Weight_ConID, Weight_Num, Weight_Weitgh, Weight_Note, Weight_Shelf,
+                    Weight_UserId, Weight_UserName, Weight_Size, Weight_Helf, staff_name, Id, staff_region, Weight_Pack);
                 int n = DBClass.execUpdate(sql);
                 if (n > 0)
                 {
@@ -150,6 +167,8 @@ namespace KGOOS_MUI.Pages.Scan
             dt.Columns.Add(new DataColumn("Weight_UserName", typeof(string)));
             dt.Columns.Add(new DataColumn("Weight_Size", typeof(string)));
             dt.Columns.Add(new DataColumn("Weight_Helf", typeof(string)));
+            dt.Columns.Add(new DataColumn("Weight_Pack", typeof(string)));
+            
 
             if (ds.Tables[0].Rows.Count > 0 )
             {
@@ -171,6 +190,7 @@ namespace KGOOS_MUI.Pages.Scan
                     dr["Weight_UserName"] = ds.Tables[0].Rows[i]["Weight_UserName"];
                     dr["Weight_Size"] = ds.Tables[0].Rows[i]["Weight_Size"];
                     dr["Weight_Helf"] = ds.Tables[0].Rows[i]["Weight_Helf"];
+                    dr["Weight_Pack"] = ds.Tables[0].Rows[i]["Weight_Pack"];                 
                     dt.Rows.Add(dr);
                 }
                 
@@ -339,8 +359,8 @@ namespace KGOOS_MUI.Pages.Scan
                 inputDB();
                 getTableData();
                 if (IsOK == true)
-                {                   
-                    TBlastStand.Clear();
+                {
+                    TBNumber.Text = "1";
                     TBName.Text = null;
                     TBName.Tag = null;
                     TBNote.Clear();

@@ -168,3 +168,19 @@ Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Up\Pac
 Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\obj\Debug\UpWindow.baml
 Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Up\Packer.g.cs
 Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\obj\Debug\UpWindow.g.cs
+D:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Tran\Addresser.baml
+D:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Tran\Arrive.baml
+D:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Tran\Customs.baml
+D:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Up\Packer.baml
+D:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Web\Select.baml
+D:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Web\WebManage.baml
+D:\KGOOS_MUI\KGOOS_MUI\obj\Debug\UpWindow.baml
+D:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Tran\Addresser.g.cs
+D:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Tran\Arrive.g.cs
+D:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Tran\Customs.g.cs
+D:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Up\Packer.g.cs
+D:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Web\Entering.g.cs
+D:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Web\Select.g.cs
+D:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Web\WebManage.g.cs
+D:\KGOOS_MUI\KGOOS_MUI\obj\Debug\UpWindow.g.cs
+D:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Web\Entering.baml

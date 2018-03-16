@@ -76,9 +76,17 @@
                           CustomFormat="yyyy-MM-dd: HH:mm:ss" Enabled="False"/>
                 </wfi:WindowsFormsHost>
 
-                <TextBlock Width="50" Grid.Row="0" Text="上一站" Margin="178,6,0,6" FontSize="12" FontFamily="宋体" 
+                <TextBlock Grid.Row="0" Text="件 数" Margin="178,6,0,6" FontSize="12" FontFamily="宋体" 
                            HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="2"/>
-                <TextBox Name="TBlastStand" Width="100" Grid.Row="0" Text="" IsReadOnly="True" Margin="238,4,0,4" FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="2"/>
+                <TextBox Name="TBNumber" Width="30" Grid.Row="0" Text="1" Margin="210,4,0,4" FontSize="12" 
+                         FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="2"/>
+                
+                <TextBlock Grid.Row="0" Text="包装类型" Margin="270,6,0,6" FontSize="12" FontFamily="宋体" 
+                           HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="2"/>
+                <!--<TextBox Name="TBType" />-->
+                <ComboBox  Name="CBType" Width="100" Grid.Row="0" Text="1" Margin="325,4,0,4" FontSize="10"
+                         FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="2">
+                </ComboBox>
 
                 <!--第二行-->
                 <TextBlock Width="50" Grid.Row="1" Text="运单编号" Margin="7,19,0,18" FontSize="12" FontFamily="宋体" 
@@ -162,7 +170,8 @@
                         <DataGridTextColumn Header="旺旺编号" Binding="{Binding Weight_UserId}" IsReadOnly="True"/>
                         <DataGridTextColumn Header="旺旺名" Binding="{Binding Weight_UserName}" IsReadOnly="True"/>
                         <DataGridTextColumn Header="体积重" Binding="{Binding Weight_Size}" IsReadOnly="True"/>
-                        <DataGridTextColumn Header="重量" Binding="{Binding Weight_Helf}" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="计费重量" Binding="{Binding Weight_Helf}" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="包装类型" Binding="{Binding Weight_Pack}" IsReadOnly="True"/>                     
                     </DataGrid.Columns>
                 </DataGrid>
             </StackPanel>
