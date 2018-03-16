@@ -211,7 +211,8 @@
                         <DataGridTextColumn Header="备注" Binding="{Binding Weight_Note}"/>
                         <DataGridTextColumn Header="会员编号" Binding="{Binding Weight_UserId}"/>
                         <DataGridTextColumn Header="旺旺名" Binding="{Binding Weight_UserName}"/>
-                        <DataGridTextColumn Header="秤重" Binding="{Binding Weight_Weitgh}"/>                    
+                        <DataGridTextColumn Header="秤重" Binding="{Binding Weight_Weitgh}"/>
+                        <DataGridTextColumn Header="体积重" Binding="{Binding Weight_Size}"/>
                     </DataGrid.Columns>
                 </DataGrid>
             </StackPanel>

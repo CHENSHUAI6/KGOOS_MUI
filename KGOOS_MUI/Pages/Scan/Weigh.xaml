@@ -107,11 +107,11 @@
 
                 <!--第四行-->
                 <TextBlock Width="50" Grid.Row="3" Text="长宽高cm" Margin="7,6,0,6" FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.ColumnSpan="3"/>
-                <TextBox Width="40" Grid.Row="3" Text="" Margin="18,3,0,3" FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="2"/>
+                <TextBox Name="TBLength" Width="40" Grid.Row="3" Text="" Margin="18,3,0,3" FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="2"/>
                 <TextBlock Width="5" Grid.Row="3" Text="X" Margin="61,6,0,6" FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="2"/>
-                <TextBox Width="40" Grid.Row="3" Text="" Margin="68,3,0,3" FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="2"/>
+                <TextBox Name="TBWidth" Width="40" Grid.Row="3" Text="" Margin="68,3,0,3" FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="2"/>
                 <TextBlock Width="5" Grid.Row="3" Text="X" Margin="111,6,0,6" FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="2"/>
-                <TextBox Width="40" Grid.Row="3" Text="" Margin="118,3,0,3" FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="2"/>
+                <TextBox Name="TBHeight" Width="40" Grid.Row="3" Text="" Margin="118,3,0,3" FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="2"/>
                 <TextBlock Width="5" Grid.Row="3" Text="=" Margin="161,6,0,6" FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="2"/>
                 <TextBox Name="TBSize" Width="80" Grid.Row="3" Text="" Margin="168,3,0,3" FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="2"/>
                 <TextBlock Width="60" Grid.Row="3" Text="(体积重kg)" Margin="248,7,0,7" FontSize="10" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" Grid.Column="2" />

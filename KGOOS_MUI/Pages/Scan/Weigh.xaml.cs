@@ -26,7 +26,8 @@ namespace KGOOS_MUI.Pages.Scan
     /// </summary>
     public partial class Weigh : UserControl
     {       
-        private string workerId = "";
+        private string staff_name = "";
+        private string staff_region = "";
         private bool IsOK = false;
 
         public Weigh()
@@ -40,7 +41,14 @@ namespace KGOOS_MUI.Pages.Scan
         /// </summary>
         public void initialize()
         {
-            workerId = "18010001";
+            if (Application.Current.Properties["name"] != null)
+            {
+                staff_name = Application.Current.Properties["name"].ToString();
+            }
+            if (Application.Current.Properties["region"] != null)
+            {
+                staff_region = Application.Current.Properties["region"].ToString();
+            }
 
             getTableData();
             getAutoCompleteTextBox();
@@ -54,7 +62,6 @@ namespace KGOOS_MUI.Pages.Scan
             try
             {
                 string sql = "";
-                string sql1 = "";
                 string Weight_Time, Id, Weight_Num, Weight_Weitgh, Weight_Note, Weight_Last, Weight_Shelf,
                     Weight_UserId, Weight_UserName, Weight_Size, Weight_Helf, Weight_ConID;
                 DataSet ds = new DataSet();
@@ -102,12 +109,12 @@ namespace KGOOS_MUI.Pages.Scan
                 {
                     sql = "insert into T_Weight " +
                     "(Weight_Time,Weight_ConID,Weight_Num,Weight_Weitgh,Weight_Note,Weight_Last,Weight_Shelf,Weight_UserId, " +
-                    "Weight_UserName,Weight_Size,Weight_Helf,Weight_WorkderId, Id) " +
-                    "values ('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}')";
+                    "Weight_UserName,Weight_Size,Weight_Helf,Weight_WorkderId, Id, Weight_Region) " +
+                    "values ('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}','{13}')";
                 }
 
                 sql = string.Format(sql, Weight_Time, Weight_ConID, Weight_Num, Weight_Weitgh, Weight_Note, Weight_Last, Weight_Shelf,
-                    Weight_UserId, Weight_UserName, Weight_Size, Weight_Helf, workerId, Id);
+                    Weight_UserId, Weight_UserName, Weight_Size, Weight_Helf, staff_name, Id, staff_region);
                 int n = DBClass.execUpdate(sql);
                 if (n > 0)
                 {
@@ -127,7 +134,7 @@ namespace KGOOS_MUI.Pages.Scan
         {
             string sql = "";
             DataSet ds = new DataSet();
-            sql = "select * from T_Weight as t1 where t1.Weight_WorkderId = '" + workerId + "' " +
+            sql = "select * from T_Weight as t1 where t1.Weight_WorkderId = '" + staff_name + "' " +
                 "and t1.Weight_Type is null";
             ds = DBClass.execQuery(sql);
             DataTable dt = new DataTable();
@@ -355,7 +362,7 @@ namespace KGOOS_MUI.Pages.Scan
             string sql = "";
             sql = "update T_Weight set Weight_Type = 'N' " +
                 "where Weight_Type is null " +
-                "and Weight_WorkderId = '" + workerId + "'";
+                "and Weight_WorkderId = '" + staff_name + "'";
             int n = DBClass.execUpdate(sql);
             if (n > 0)
             {
@@ -368,7 +375,7 @@ namespace KGOOS_MUI.Pages.Scan
         {
             string sql = "";
             DataSet ds = new DataSet();
-            sql = "select * from T_Weight as t1 where t1.Weight_WorkderId = '" + workerId + "' " +
+            sql = "select * from T_Weight as t1 where t1.Weight_WorkderId = '" + staff_name + "' " +
                 "and t1.Weight_Type is null";
             ds = DBClass.execQuery(sql);
             for (int i = 0; i < ds.Tables[0].Rows.Count; i++ )
