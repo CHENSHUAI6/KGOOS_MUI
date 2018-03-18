@@ -205,7 +205,8 @@
                         <DataGridTextColumn Header="上一站" Binding="{Binding Weight_Last}"/>
                         <DataGridTextColumn Header="扫描人" Binding="{Binding Weight_WorkderId}"/>
                         <DataGridTextColumn Header="扫描时间" Binding="{Binding Weight_Time}"/>
-                        <DataGridTextColumn Header="重量" Binding="{Binding Weight_Helf}"/>
+                        <DataGridTextColumn Header="重量" Binding="{Binding Weight_Helf}" Foreground="{Binding WeightColor}"/>
+                        <!--<DataGridTextColumn Header="重量" Binding="{Binding Weight_Helf}" Foreground="Red"/>-->
                         <DataGridTextColumn Header="件数" Binding="{Binding Weight_Num}"/>
                         <DataGridTextColumn Header="存货货架" Binding="{Binding Weight_Shelf}"/>
                         <DataGridTextColumn Header="备注" Binding="{Binding Weight_Note}"/>
@@ -213,6 +214,9 @@
                         <DataGridTextColumn Header="旺旺名" Binding="{Binding Weight_UserName}"/>
                         <DataGridTextColumn Header="秤重" Binding="{Binding Weight_Weitgh}"/>
                         <DataGridTextColumn Header="体积重" Binding="{Binding Weight_Size}"/>
+                        <DataGridTextColumn Header="包装类型" Binding="{Binding Weight_Pack}"/>
+                        <DataGridTextColumn Header="所在仓库" Binding="{Binding Weight_Region}"/>
+                        <DataGridTextColumn Header="内部备注" Binding="{Binding Weight_NoteStaff}"/>
                     </DataGrid.Columns>
                 </DataGrid>
             </StackPanel>

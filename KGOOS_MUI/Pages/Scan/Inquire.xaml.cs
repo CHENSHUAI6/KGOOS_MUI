@@ -24,65 +24,57 @@ namespace KGOOS_MUI.Pages.Scan
     /// </summary>
     public partial class Inquire : UserControl
     {
+        public class Contrasts
+        {
+            private SolidColorBrush _WeightColor;
+            public SolidColorBrush WeightColor
+            {
+                get { return _WeightColor; }
+                set { _WeightColor = value; }
+            }
+
+            private string _Weight_Helf;
+            public string Weight_Helf
+            {
+                get { return _Weight_Helf; }
+                set { _Weight_Helf = value; }
+            }
+
+        }
+
+        
+
+        private List<Contrasts> _ContrastList;
+        public List<Contrasts> ContrastList
+        {
+            get { return _ContrastList; }
+            set
+            {
+                _ContrastList = value;
+            }
+        }
+
         public Inquire()
         {
             InitializeComponent();
             TBStartTime.Text = DateTime.Now.AddDays(-31).ToString("yyyy-MM-dd HH:mm:ss");
         }
-        public void colorDG()
-        {
-
-            for (int i = 0; i < this.DG1.Items.Count; i++)
-            {
-                DataRowView drv = DG1.Items[i] as DataRowView;
-                DataGridRow row = (DataGridRow)this.DG1.ItemContainerGenerator.ContainerFromIndex(i);
-                if (i == 2)
-                {
-                    row.Background = new SolidColorBrush(Colors.Blue);
-                }
-            }
-        }
-        public void getData()
-        {
-            DataTable dt = new DataTable();
-            dt.Columns.Add(new DataColumn("FirstName", typeof(int)));
-            dt.Columns.Add(new DataColumn("LastName", typeof(string)));
-
-            for (int i = 0; i < 6; i++)
-            {
-                DataRow dr = dt.NewRow();
-                if (i == 3)
-                {
-                    dr["FirstName"] = DBNull.Value;
-                    dr["LastName"] = DBNull.Value;
-                    dt.Rows.Add(dr);
-                }
-                else
-                {
-                    dr["FirstName"] = i;
-                    dr["LastName"] = "tom" + i.ToString();
-                    dt.Rows.Add(dr);
-                }
-            }
-
-            this.DG1.CanUserAddRows = false;
-            this.DG1.ItemsSource = dt.DefaultView;
-        }
         
         private void DG1_LoadingRow(object sender, DataGridRowEventArgs e)
         {
-            //var drv = e.Row.Item as DataRowView;
-            //switch (drv["FirstName"].ToString())
+            var drv = e.Row.Item as DataRowView;
+            //switch (drv["Weight_Type"].ToString())
             //{
-            //    case "1": e.Row.Background = new SolidColorBrush(Colors.Green);
+            //    case "已发件": e.Row.Background = new SolidColorBrush(Colors.Lime);
             //        break;
-            //    case "2": e.Row.Background = new SolidColorBrush(Colors.Yellow);
+            //    case "Y": e.Row.Background = new SolidColorBrush(Colors.Yellow);
             //        break;
             //    case "3": e.Row.Background = new SolidColorBrush(Colors.CadetBlue);
             //        break;
-
-
             //}
+            //float Weight_Helf = float.Parse(drv["Weight_Helf"].ToString());
+            //float Weight_Weitgh = float.Parse(drv["Weight_Weitgh"].ToString());
+           
         }      
 
         /// <summary>
@@ -108,7 +100,7 @@ namespace KGOOS_MUI.Pages.Scan
 
             sql = "select top " + num + " * from T_Weight as t1 " +
                 "join T_Staff as t2 on t2.id_staff = t1.Weight_WorkderId " +
-                "join T_Region as t3 on t3.Region_Id = t2.warehouse_staff " +
+                "join T_Region as t3 on t3.Region_Id = t2.Region_staff " +
                 "where t1.Weight_Type is not null ";
 
             if (TBPlant != null && TBPlant.Text != "")
@@ -157,7 +149,9 @@ namespace KGOOS_MUI.Pages.Scan
             dt.Columns.Add(new DataColumn("Weight_UserId", typeof(string)));
             dt.Columns.Add(new DataColumn("Weight_UserName", typeof(string)));
             dt.Columns.Add(new DataColumn("Weight_Weitgh", typeof(string)));
-
+            dt.Columns.Add(new DataColumn("Weight_Pack", typeof(string)));
+            dt.Columns.Add(new DataColumn("Weight_Region", typeof(string)));
+            dt.Columns.Add(new DataColumn("Weight_NoteStaff", typeof(string)));
             if (ds.Tables[0].Rows.Count > 0)
             {
 
@@ -167,7 +161,11 @@ namespace KGOOS_MUI.Pages.Scan
                     dr["Checking"] = false;
                     dr["Id"] = ds.Tables[0].Rows[i]["Id"];
                     dr["Weight_ConID"] = ds.Tables[0].Rows[i]["Weight_ConID"];
-                    dr["Weight_Type"] = ds.Tables[0].Rows[i]["Weight_Type"];
+                    if (ds.Tables[0].Rows[i]["Weight_Type"].ToString() == "N")
+                    {
+                        dr["Weight_Type"] = "已到件";
+                    }
+                    
                     dr["Weight_Last"] = ds.Tables[0].Rows[i]["Weight_Last"];
                     dr["Weight_WorkderId"] = ds.Tables[0].Rows[i]["Weight_WorkderId"];
                     dr["Weight_Time"] = ds.Tables[0].Rows[i]["Weight_Time"];
@@ -178,6 +176,9 @@ namespace KGOOS_MUI.Pages.Scan
                     dr["Weight_UserId"] = ds.Tables[0].Rows[i]["Weight_UserId"];
                     dr["Weight_UserName"] = ds.Tables[0].Rows[i]["Weight_UserName"];
                     dr["Weight_Weitgh"] = ds.Tables[0].Rows[i]["Weight_Weitgh"];
+                    dr["Weight_Pack"] = ds.Tables[0].Rows[i]["Weight_Pack"];
+                    dr["Weight_Region"] = ds.Tables[0].Rows[i]["Weight_Region"];
+                    dr["Weight_NoteStaff"] = ds.Tables[0].Rows[i]["Weight_NoteStaff"];
                     dt.Rows.Add(dr);
                 }
 
@@ -201,10 +202,18 @@ namespace KGOOS_MUI.Pages.Scan
             }
 
             this.NoID.Text = str;
+         
             this.DG1.CanUserAddRows = false;
 
             this.DG1.ItemsSource = dt.DefaultView;
 
+            ContrastList = new List<Contrasts>();
+            ContrastList.Add(new Contrasts()
+            {
+                Weight_Helf = "1",
+                WeightColor = Brushes.Red
+            });
+            this.DG1.ItemsSource = ContrastList;
         }
 
         private void BtnSelect_Click(object sender, RoutedEventArgs e)
@@ -228,5 +237,7 @@ namespace KGOOS_MUI.Pages.Scan
         {
             TBID.Clear();
         }
+
+        
     }
 }

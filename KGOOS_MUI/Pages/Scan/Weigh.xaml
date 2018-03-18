@@ -13,7 +13,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="40"></RowDefinition>
             <RowDefinition Height="40"></RowDefinition>
-            <RowDefinition Height="130"></RowDefinition>
+            <RowDefinition Height="155"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
 
@@ -65,6 +65,7 @@
                     <RowDefinition Height="50"></RowDefinition>
                     <RowDefinition Height="25"></RowDefinition>
                     <RowDefinition Height="25"></RowDefinition>
+                    <RowDefinition Height="25"></RowDefinition>
                 </Grid.RowDefinitions>
                 <!--第一行-->
                 <TextBlock Width="50" Grid.Row="0" Text="扫描时间" Margin="7,6,0,6" FontSize="12" FontFamily="宋体" 
@@ -80,7 +81,7 @@
                            HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="2"/>
                 <TextBox Name="TBNumber" Width="30" Grid.Row="0" Text="1" Margin="210,4,0,4" FontSize="12" 
                          FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="2"/>
-                
+
                 <TextBlock Grid.Row="0" Text="包装类型" Margin="270,6,0,6" FontSize="12" FontFamily="宋体" 
                            HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="2"/>
                 <!--<TextBox Name="TBType" />-->
@@ -109,22 +110,39 @@
                       FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center" 
                       KeyDown="TBName_KeyDown" Grid.Column="2" />
                 <TextBlock Width="50" Grid.Row="2" Text="存放货架" Margin="158,6,0,6" FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="2"/>
-                <TextBox Name="TBShelf" Width="100" Grid.Row="2" Text="" Margin="218,0,0,3" FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Bottom" Grid.Column="2"/>
+                <TextBox Name="TBShelf" Width="100" Grid.Row="2" Text="" Margin="218,0,0,3" FontSize="12" FontFamily="宋体" 
+                         HorizontalAlignment="Left" VerticalAlignment="Bottom" Grid.Column="2"/>
                 <TextBlock Width="30" Grid.Row="2" Text="备注" Margin="328,6,0,6" FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="2"/>
                 <TextBox Name="TBNote" Width="140" Grid.Row="2" Text="" Margin="353,3,0,3" FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center" KeyDown="TBNote_KeyDown" Grid.Column="2"/>
 
                 <!--第四行-->
                 <TextBlock Width="50" Grid.Row="3" Text="长宽高cm" Margin="7,6,0,6" FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.ColumnSpan="3"/>
-                <TextBox Name="TBLength" Width="40" Grid.Row="3" Text="" Margin="18,3,0,3" FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="2"/>
+                <TextBox Name="TBLength" Width="40" Grid.Row="3" Text="" Margin="18,3,0,3" FontSize="12" FontFamily="宋体" HorizontalAlignment="Left"
+                         VerticalAlignment="Center" Grid.Column="2" KeyDown="TBLength_KeyDown"
+                         PreviewTextInput="Num_PreviewTextInput" TextChanged="Num_TextChanged"/>
                 <TextBlock Width="5" Grid.Row="3" Text="X" Margin="61,6,0,6" FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="2"/>
-                <TextBox Name="TBWidth" Width="40" Grid.Row="3" Text="" Margin="68,3,0,3" FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="2"/>
+                <TextBox Name="TBWidth" Width="40" Grid.Row="3" Text="" Margin="68,3,0,3" FontSize="12" FontFamily="宋体" 
+                         HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="2" KeyDown="TBWidth_KeyDown"
+                         PreviewTextInput="Num_PreviewTextInput" TextChanged="Num_TextChanged"/>
                 <TextBlock Width="5" Grid.Row="3" Text="X" Margin="111,6,0,6" FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="2"/>
-                <TextBox Name="TBHeight" Width="40" Grid.Row="3" Text="" Margin="118,3,0,3" FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="2"/>
+                <TextBox Name="TBHeight" Width="40" Grid.Row="3" Text="" Margin="118,3,0,3" FontSize="12" FontFamily="宋体" 
+                         HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="2" KeyDown="TBHeight_KeyDown"
+                         PreviewTextInput="Num_PreviewTextInput" TextChanged="Num_TextChanged"/>
                 <TextBlock Width="5" Grid.Row="3" Text="=" Margin="161,6,0,6" FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="2"/>
-                <TextBox Name="TBSize" Width="80" Grid.Row="3" Text="" Margin="168,3,0,3" FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="2"/>
+                <TextBox Name="TBSize" Width="80" Grid.Row="3" Text="0.0" Margin="168,3,0,3" FontSize="12" FontFamily="宋体" 
+                         HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="2" IsReadOnly="True"/>
                 <TextBlock Width="60" Grid.Row="3" Text="(体积重kg)" Margin="248,7,0,7" FontSize="10" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" Grid.Column="2" />
-                <TextBlock Width="50" Grid.Row="3" Text="货 架" Margin="308,4,0,4" FontSize="15" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" Foreground="Red" Grid.Column="2" />
-                <TextBlock Width="80" Grid.Row="3" Text="票数/容量" Margin="358,7,0,7" FontSize="10" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" Foreground="Red" Grid.Column="2"/>
+
+                <CheckBox Name="CBLength" Grid.Row="3" Grid.Column="2" Content="超长" Margin="308,0,0,4" VerticalAlignment="Center" FontFamily="宋体" FontSize="11" HorizontalAlignment="Left" />
+                <CheckBox Name="CBWeight" Grid.Row="4" Grid.Column="2" Content="超重" Margin="308,0,0,4" VerticalAlignment="Center" FontFamily="宋体" FontSize="11" HorizontalAlignment="Left" />
+
+                <TextBlock Width="50" Grid.Row="3" Text="货 架" Margin="388,4,0,4" FontSize="15" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" Foreground="Red" Grid.Column="2" />
+                <TextBlock Width="80" Grid.Row="4" Text="票数/容量" Margin="388,7,0,7" FontSize="10" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" Foreground="Red" Grid.Column="2"/>
+
+                <!--第五行-->
+                <TextBlock Grid.Row="4" Text="内部备注" Margin="7,6,0,0" FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.ColumnSpan="3"/>
+                <TextBox Name="TBNoteStaff" Grid.Column="2"  Width="200" Grid.Row="4" Text="" Margin="18,3,0,3" FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center" KeyDown="TBNoteStaff_KeyDown"/>
+
             </Grid>
 
             <!--右侧勾选栏-->
@@ -134,7 +152,11 @@
                 <CheckBox Name="CBAutoShelf" Content="自动分配货架" Margin="0,32,0,4" VerticalAlignment="Top" FontFamily="宋体" FontSize="11" />
                 <CheckBox Name="CBInputTime" Content="手动扫描时间" Margin="0,48,0,4" VerticalAlignment="Top" FontFamily="宋体" FontSize="11" Checked="CBInputTime_Checked" Unchecked="CBInputTime_Unchecked" />
                 <CheckBox Name="CBEnterPrint" Content="备注栏回车打印" Margin="0,64,0,4" VerticalAlignment="Top" FontFamily="宋体" FontSize="11" />
-                <CheckBox Name="CBNoZero" Content="重量大于0" Margin="0,80,0,4" VerticalAlignment="Top" FontFamily="宋体" FontSize="11" Checked="CBNoZero_Checked" Unchecked="CBNoZero_Unchecked"/>
+                <CheckBox Name="CBNoZero" Content="重量大于0" Margin="0,80,0,4" VerticalAlignment="Top" FontFamily="宋体" FontSize="11" 
+                          Checked="CBNoZero_Checked" Unchecked="CBNoZero_Unchecked"/>
+                <CheckBox Name="CBBeginTwo" Content="重量大于0.2" Margin="0,96,0,4" VerticalAlignment="Top" FontFamily="宋体" FontSize="11" />
+                <CheckBox Name="CBLook" Content="客人可见" Margin="0,112,0,4" VerticalAlignment="Top" FontFamily="宋体" FontSize="11" />
+
                 <TextBlock Width="55" Text="记录数：" Margin="150,2,2,2" FontSize="15" FontFamily="宋体" 
                            HorizontalAlignment="Left" VerticalAlignment="Top"/>
                 <TextBlock Name="TBNum" Width="55" Text="0" Margin="210,2,2,2" FontSize="36" 
@@ -171,7 +193,11 @@
                         <DataGridTextColumn Header="旺旺名" Binding="{Binding Weight_UserName}" IsReadOnly="True"/>
                         <DataGridTextColumn Header="体积重" Binding="{Binding Weight_Size}" IsReadOnly="True"/>
                         <DataGridTextColumn Header="计费重量" Binding="{Binding Weight_Helf}" IsReadOnly="True"/>
-                        <DataGridTextColumn Header="包装类型" Binding="{Binding Weight_Pack}" IsReadOnly="True"/>                     
+                        <DataGridTextColumn Header="包装类型" Binding="{Binding Weight_Pack}" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="所在仓库" Binding="{Binding Weight_Region}" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="内部备注" Binding="{Binding Weight_NoteStaff}" IsReadOnly="True"/>
+                        
+
                     </DataGrid.Columns>
                 </DataGrid>
             </StackPanel>

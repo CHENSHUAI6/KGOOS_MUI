@@ -4,6 +4,9 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
+using System.Windows.Media;
 
 namespace KGOOS_MUI.Common
 {
@@ -64,6 +67,62 @@ namespace KGOOS_MUI.Common
             }
             str += ")";
             return str;
+        }
+
+        /// <summary>
+        /// 得到CheckBox里的值
+        /// </summary>
+        /// <param name="rowIndex">行索引</param>
+        /// <param name="cellIndex">列索引</param>
+        /// <returns>CheckBox里的值</returns>
+        public static string GetCheckBoxValue(int rowIndex, int cellIndex, DataGrid DG1)
+        {
+            var obj = VisualTreeHelper.GetChild((ContentPresenter)GetDataGridCell(rowIndex, cellIndex, DG1).Content, 0);
+            CheckBox chk = null;
+            if (obj != null && obj.DependencyObjectType.Name == "CheckBox")
+            {
+                chk = (CheckBox)obj;
+            }
+            return chk.IsChecked.ToString();
+        }
+
+        /// <summary>
+        /// 得到DataGrid的一个单元格
+        /// </summary>
+        /// <param name="rowIndex">行索引</param>
+        /// <param name="cellIndex">列索引</param>
+        /// <returns></returns>
+        public static DataGridCell GetDataGridCell(int rowIndex, int cellIndex, DataGrid DG1)
+        {
+            DataGridRow row = (DataGridRow)DG1.ItemContainerGenerator.ContainerFromIndex(rowIndex);
+            DG1.UpdateLayout();
+            row = (DataGridRow)DG1.ItemContainerGenerator.ContainerFromIndex(rowIndex);
+            DataGridCellsPresenter presenter = GetVisualChild<DataGridCellsPresenter>(row);
+            DataGridCell cell = (DataGridCell)presenter.ItemContainerGenerator.ContainerFromIndex(cellIndex);
+            DG1.ScrollIntoView(row, DG1.Columns[cellIndex]);
+            cell = (DataGridCell)presenter.ItemContainerGenerator.ContainerFromIndex(cellIndex);
+
+            return cell;
+        }
+
+        public static T GetVisualChild<T>(Visual parent) where T : Visual
+        {
+            T childContent = default(T);
+            int numVisuals = VisualTreeHelper.GetChildrenCount(parent);
+            for (int i = 0; i < numVisuals; i++)
+            {
+                Visual v = (Visual)VisualTreeHelper.GetChild(parent, i);
+                childContent = v as T;
+                if (childContent == null)
+                {
+                    childContent = GetVisualChild<T>(v);
+                }
+                if (childContent != null)
+                {
+                    break;
+                }
+            }
+            return childContent;
         }
     }
 
