@@ -65,6 +65,9 @@
     <Compile Include="Pages\Up\Packer.xaml.cs">
       <DependentUpon>Packer.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Up\UserAddress.xaml.cs">
+      <DependentUpon>UserAddress.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UpWindow.xaml.cs">
       <DependentUpon>UpWindow.xaml</DependentUpon>
     </Compile>
@@ -193,6 +196,10 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Page Include="Pages\Up\Packer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Up\UserAddress.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

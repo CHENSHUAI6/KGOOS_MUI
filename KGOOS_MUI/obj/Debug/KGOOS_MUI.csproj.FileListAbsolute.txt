@@ -184,3 +184,5 @@ D:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Web\Select.g.cs
 D:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Web\WebManage.g.cs
 D:\KGOOS_MUI\KGOOS_MUI\obj\Debug\UpWindow.g.cs
 D:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Web\Entering.baml
+D:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Up\UserAddress.baml
+D:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Up\UserAddress.g.cs

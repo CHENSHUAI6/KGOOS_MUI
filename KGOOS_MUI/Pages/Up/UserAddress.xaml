@@ -1,0 +1,121 @@
+﻿<UserControl x:Class="KGOOS_MUI.Pages.Up.UserAddress"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="700">
+    <Grid Style="{StaticResource ContentRoot}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" VerticalAlignment="Bottom" Background="LightGray" BorderBrush="LightGray" BorderThickness="1"/>
+        <Border Grid.Row="2" VerticalAlignment="Bottom" Background="LightGray" BorderBrush="LightGray" BorderThickness="1"/>
+        <Border Grid.Row="1" Grid.RowSpan="3" HorizontalAlignment="Left" Background="LightGray" BorderBrush="LightGray" BorderThickness="1"/>
+        <Border Grid.Row="1" Grid.RowSpan="3" HorizontalAlignment="Right" Background="LightGray" BorderBrush="LightGray" BorderThickness="1"/>
+        <TextBlock Grid.Row="0" Text="选择客户地址" Margin="2,2,2,2" FontSize="25" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold"/>
+        <!--上方输入信息-->
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="130"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <!--顶端按钮-->
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="55"></ColumnDefinition>
+                    <ColumnDefinition Width="50"></ColumnDefinition>
+                    <ColumnDefinition Width="50"></ColumnDefinition>
+                    <ColumnDefinition Width="50"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Height="25" Content="新 建" FontSize="10" Padding="1,1,1,1" Margin="7,2,2,2"/>
+                <Button Grid.Column="1" Height="25" Content="删 除" FontSize="10" Padding="1,1,1,1" Margin="2,2,2,2"/>
+                <Button Grid.Column="2" Height="25" Content="保 存" FontSize="10" Padding="1,1,1,1" Margin="2,2,2,2"/>
+                <Button Grid.Column="3" Height="25" Content="取 消" FontSize="10" Padding="1,1,1,1" Margin="2,2,2,2"/>
+            </Grid>
+            <Border Grid.Row="0" VerticalAlignment="Bottom" Background="LightGray" BorderBrush="LightGray" BorderThickness="1"/>
+            <!--中间输入信息-->
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="8*"></ColumnDefinition>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="60"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="60"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="60"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <!--第一行-->
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="联系电话" Margin="2,2,2,2" FontSize="12" FontFamily="宋体" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                    <TextBox Grid.Row="0" Grid.Column="1" Text="" Margin="2,2,2,2" FontSize="12" FontFamily="宋体" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Row="0" Grid.Column="2" Text="联系人" Margin="2,2,2,2" FontSize="12" FontFamily="宋体" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                    <TextBox Grid.Row="0" Grid.Column="3" Text="" Margin="2,2,2,2" FontSize="12" FontFamily="宋体" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Row="0" Grid.Column="4" Text="邮政编号" Margin="2,2,2,2" FontSize="12" FontFamily="宋体" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                    <TextBox Grid.Row="0" Grid.Column="5" Text="" Margin="2,2,2,2" FontSize="12" FontFamily="宋体" VerticalAlignment="Center"/>
+
+                    <!--第二行-->
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="地址" Margin="2,2,2,2" FontSize="12" FontFamily="宋体" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                    <TextBox Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="5" Text="" Margin="2,2,2,2" FontSize="12" FontFamily="宋体" VerticalAlignment="Center"/>
+
+                    <!--第三行-->
+                    <TextBlock Grid.Row="2" Grid.Column="0" Text="国家" Margin="2,2,2,2" FontSize="12" FontFamily="宋体" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                    <TextBox Grid.Row="2" Grid.Column="1" Text="" Margin="2,2,2,2" FontSize="12" FontFamily="宋体" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Row="2" Grid.Column="2" Text="城市" Margin="2,2,2,2" FontSize="12" FontFamily="宋体" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                    <TextBox Grid.Row="2" Grid.Column="3" Text="" Margin="2,2,2,2" FontSize="12" FontFamily="宋体" VerticalAlignment="Center"/>
+                </Grid>
+
+
+
+
+            </Grid>
+
+            <!--表格信息-->
+            <ScrollViewer Grid.Row="2">
+                <StackPanel MinWidth="200">
+                    <DataGrid Name="DG1" ItemsSource="{Binding}" AutoGenerateColumns="False" FontSize="18" FontFamily="宋体" 
+                              IsReadOnly="True" >
+                        <DataGrid.Columns>
+                            <DataGridCheckBoxColumn Header="电话"  Binding="{Binding Select}"/>
+                            <DataGridCheckBoxColumn Header="联系人"  Binding="{Binding Select}"/>
+                            <DataGridCheckBoxColumn Header="地址"  Binding="{Binding Select}"/>
+                            <DataGridCheckBoxColumn Header="邮编"  Binding="{Binding Select}"/>
+                            <DataGridCheckBoxColumn Header="国家"  Binding="{Binding Select}"/>
+                            <DataGridCheckBoxColumn Header="城市"  Binding="{Binding Select}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </StackPanel>
+            </ScrollViewer>
+
+        </Grid>
+
+        <Border Grid.Row="1" VerticalAlignment="Bottom" Background="LightGray" BorderBrush="LightGray" BorderThickness="1"/>
+        <!--下端按钮-->
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="80"></ColumnDefinition>
+                <ColumnDefinition Width="80"></ColumnDefinition>
+                <ColumnDefinition Width="40"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="1" Height="25" Content="确 定" FontSize="10" Padding="1,1,1,1" Margin="5,2,5,2" VerticalAlignment="Center" />
+            <Button Grid.Column="2" Height="25" Content="取 消" FontSize="10" Padding="1,1,1,1" Margin="5,2,5,2" VerticalAlignment="Center" />
+        </Grid>
+    </Grid>
+</UserControl>

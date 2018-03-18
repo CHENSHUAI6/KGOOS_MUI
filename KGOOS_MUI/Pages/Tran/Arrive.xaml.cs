@@ -66,6 +66,7 @@ namespace KGOOS_MUI.Pages.Tran
         private void BtnPack_Click(object sender, RoutedEventArgs e)
         {
             UpWindow uw = new UpWindow();
+            uw.ContentSource = new Uri("/Pages/Up/Packer.xaml", UriKind.Relative);
             uw.Show();
         }
     }
