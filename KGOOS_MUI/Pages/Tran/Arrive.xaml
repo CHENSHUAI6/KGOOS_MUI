@@ -7,7 +7,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:mui="http://firstfloorsoftware.com/ModernUI"
              mc:Ignorable="d" 
-             d:DesignHeight="800" d:DesignWidth="1200">
+             d:DesignHeight="800" d:DesignWidth="1400">
     <Grid Style="{StaticResource ContentRoot}">
         <Grid.RowDefinitions>
             <RowDefinition Height="40"></RowDefinition>
@@ -71,7 +71,7 @@
                 <ColumnDefinition Width="200"></ColumnDefinition>
                 <ColumnDefinition Width="230"></ColumnDefinition>
                 <ColumnDefinition Width="400"></ColumnDefinition>
-                <ColumnDefinition Width="180"></ColumnDefinition>
+                <ColumnDefinition Width="200"></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
             <!--左侧填写栏-->
@@ -130,13 +130,16 @@
                 <TextBlock Width="50" Grid.Row="0" Grid.Column="0" Text="扫描网点" Margin="7,2,2,2" 
                            FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                            VerticalAlignment="Center"/>
-                <TextBox Width="130" Grid.Row="0" Grid.Column="0" Text="" Margin="60,2,2,2" 
+                <TextBlock Width="50" Grid.Row="0" Grid.Column="0" Text="扫描网点" Margin="7,2,2,2" 
+                           FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
+                           VerticalAlignment="Center"/>
+                <TextBox Name="TBPlant" Width="130" Grid.Row="0" Grid.Column="0" Text="" Margin="60,2,2,2" 
                          FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                          VerticalAlignment="Center"/>
                 <TextBlock Width="50" Grid.Row="1" Grid.Column="0" Text="旺旺名" Margin="7,2,2,2" 
                            FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                            VerticalAlignment="Center"/>
-                <TextBox Width="130" Grid.Row="1" Grid.Column="0" Text="" Margin="60,2,2,2" 
+                <TextBox Name="TBName" Width="130" Grid.Row="1" Grid.Column="0" Text="" Margin="60,2,2,2" 
                          FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                          VerticalAlignment="Center"/>
                 <TextBlock Width="50" Grid.Row="2" Grid.Column="0" Text="返回记录" Margin="7,2,2,2" 
@@ -148,13 +151,13 @@
                 <TextBlock Width="50" Grid.Row="0" Grid.Column="1" Text="上一站" Margin="2,2,2,2" 
                            FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                            VerticalAlignment="Center"/>
-                <TextBox Width="130" Grid.Row="0" Grid.Column="1" Text="" Margin="55,2,2,2" 
+                <TextBox Name="TBlastStand" Width="130" Grid.Row="0" Grid.Column="1" Text="" Margin="55,2,2,2" 
                          FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                          VerticalAlignment="Center"/>
                 <TextBlock Width="50" Grid.Row="1" Grid.Column="1" Text="物品类别" Margin="2,2,2,2" 
                            FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                            VerticalAlignment="Center"/>
-                <TextBox Width="130" Grid.Row="1" Grid.Column="1" Text="" Margin="55,2,2,2" 
+                <TextBox Name="TBType" Width="130" Grid.Row="1" Grid.Column="1" Text="" Margin="55,2,2,2" 
                          FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                          VerticalAlignment="Center"/>
                 <CheckBox Grid.Row="2" Grid.Column="1" Content="旺旺查询启用时间" Margin="0,0,0,4" VerticalAlignment="Center" FontFamily="宋体" 
@@ -236,28 +239,67 @@
         <ScrollViewer Grid.Row="4">
             <StackPanel MinWidth="200">
                 <DataGrid Name="DG1" ItemsSource="{Binding}" AutoGenerateColumns="False" FontSize="18" FontFamily="宋体" 
-                          LoadingRow="DG1_LoadingRow" IsReadOnly="True" >
+                          IsReadOnly="True" >
                     <DataGrid.Columns>
-                        <DataGridCheckBoxColumn Header="选择"  Binding="{Binding Select}"/>
-                        <DataGridCheckBoxColumn Header="已核对"  Binding="{Binding Checking}"/>
-                        <DataGridTextColumn Header="运单编号" Binding="{Binding Weight_ConID}" />
-                        <DataGridTextColumn Header="到件日期" Binding="{Binding Id}"/>                      
-                        <DataGridTextColumn Header="上一站" Binding="{Binding Weight_Last}"/>
-                        <DataGridTextColumn Header="件数" Binding="{Binding Weight_Num}"/>
-                        <DataGridTextColumn Header="重量" Binding="{Binding Weight_Helf}"/>
-                        <DataGridTextColumn Header="客户编号" Binding="{Binding Weight_Helf}"/>
-                        <DataGridTextColumn Header="客户名称" Binding="{Binding Weight_Helf}"/>
-                        <DataGridTextColumn Header="认领客户" Binding="{Binding Weight_Helf}"/>
-                        <DataGridTextColumn Header="货架" Binding="{Binding Weight_Helf}"/>
-                        <DataGridTextColumn Header="秤重" Binding="{Binding Weight_Helf}"/>
-                        <DataGridTextColumn Header="体积重" Binding="{Binding Weight_Helf}"/>
-                        <DataGridTextColumn Header="备注" Binding="{Binding Weight_Helf}"/>
-                        <DataGridTextColumn Header="物品类型" Binding="{Binding Weight_Helf}"/>
-                        <DataGridTextColumn Header="集运单号" Binding="{Binding Weight_Helf}"/>
-                        <DataGridTextColumn Header="集运时间" Binding="{Binding Weight_Helf}"/>
-                        <DataGridTextColumn Header="集运状态" Binding="{Binding Weight_Helf}"/>
-                        <DataGridTextColumn Header="扫描序号" Binding="{Binding Weight_Helf}"/>
-                        <DataGridTextColumn Header="认领方式" Binding="{Binding Weight_Helf}"/>
+                        <DataGridTemplateColumn>
+                            <DataGridTemplateColumn.HeaderTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="选择" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.HeaderTemplate>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <CheckBox IsChecked="{Binding Select}" VerticalAlignment="Center" 
+                                              HorizontalAlignment="Center"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn> <!--选择-->
+                        <DataGridTemplateColumn>
+                            <DataGridTemplateColumn.HeaderTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="已核对" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.HeaderTemplate>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <CheckBox IsChecked="{Binding Checking}" VerticalAlignment="Center" 
+                                              HorizontalAlignment="Center"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn> <!--已核对-->
+                        <DataGridTextColumn Header="运单编号" Binding="{Binding Weight_ConID}" ElementStyle="{StaticResource contentCenterStyle}"/>
+                        <DataGridTextColumn Header="到件日期" Binding="{Binding ?}" ElementStyle="{StaticResource contentCenterStyle}"/>
+                        <DataGridTextColumn Header="上一站" Binding="{Binding Weight_Last}" ElementStyle="{StaticResource contentCenterStyle}"/>
+                        <DataGridTextColumn Header="件数" Binding="{Binding Weight_Num}" ElementStyle="{StaticResource contentCenterStyle}"/>
+                        <DataGridTemplateColumn>
+                            <DataGridTemplateColumn.HeaderTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="重量" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.HeaderTemplate>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Weight_Helf}" VerticalAlignment="Center" HorizontalAlignment="Center"
+                                               Foreground="{Binding WeightColor}"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn> <!--重量-->
+                        <DataGridTextColumn Header="客户编号" Binding="{Binding Weight_UserId}" ElementStyle="{StaticResource contentCenterStyle}"/>
+                        <DataGridTextColumn Header="客户名称" Binding="{Binding Weight_UserName}" ElementStyle="{StaticResource contentCenterStyle}"/>
+                        <DataGridTextColumn Header="认领客户" Binding="{Binding ?}" ElementStyle="{StaticResource contentCenterStyle}"/>
+                        <DataGridTextColumn Header="货架" Binding="{Binding Weight_Shelf}" ElementStyle="{StaticResource contentCenterStyle}"/>
+                        <DataGridTextColumn Header="秤重" Binding="{Binding Weight_Weitgh}" ElementStyle="{StaticResource contentCenterStyle}"/>
+                        <DataGridTextColumn Header="体积重" Binding="{Binding Weight_Size}" ElementStyle="{StaticResource contentCenterStyle}"/>
+                        <DataGridTextColumn Header="备注" Binding="{Binding Weight_Note}" ElementStyle="{StaticResource contentCenterStyle}"/>
+                        <DataGridTextColumn Header="物品类型" Binding="{Binding ?}" ElementStyle="{StaticResource contentCenterStyle}"/>
+                        <DataGridTextColumn Header="集运单号" Binding="{Binding Id}" ElementStyle="{StaticResource contentCenterStyle}"/>
+                        <DataGridTextColumn Header="集运时间" Binding="{Binding ?}" ElementStyle="{StaticResource contentCenterStyle}"/>
+                        <DataGridTextColumn Header="集运状态" Binding="{Binding Weight_Type}" ElementStyle="{StaticResource contentCenterStyle}"/>
+                        <DataGridTextColumn Header="扫描序号" Binding="{Binding ?}" ElementStyle="{StaticResource contentCenterStyle}"/>
+                        <DataGridTextColumn Header="认领方式" Binding="{Binding ?}" ElementStyle="{StaticResource contentCenterStyle}"/>
+                        <DataGridTextColumn Header="包装类型" Binding="{Binding Weight_Pack}" ElementStyle="{StaticResource contentCenterStyle}"/>
+                        <DataGridTextColumn Header="所在仓库" Binding="{Binding Weight_Region}" ElementStyle="{StaticResource contentCenterStyle}"/>
+                        <DataGridTextColumn Header="内部备注" Binding="{Binding Weight_NoteStaff}" ElementStyle="{StaticResource contentCenterStyle}"/>
                     </DataGrid.Columns>
                 </DataGrid>
             </StackPanel>

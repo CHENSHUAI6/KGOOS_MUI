@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\KGOOS_MUI\KGOOS_MUI\obj\Debug\
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\obj\Debug\
 KGOOS_MUI
 none
 false
 DEBUG;TRACE
-D:\KGOOS_MUI\KGOOS_MUI\App.xaml
-22295704668
-12084155889
-31-1214296192
-171922282033
-Control\AutoCompleteTextBox.xaml;LoginWindow.xaml;MainWindow.xaml;Pages\Login.xaml;Pages\ModernUI.Theme1.xaml;Pages\Scan\Inquire.xaml;Pages\Scan\ScanManage.xaml;Pages\Scan\Weigh.xaml;Pages\Settings\About.xaml;Pages\Settings\Appearance.xaml;Pages\Tran\Addresser.xaml;Pages\Tran\Arrive.xaml;Pages\Tran\ConTran.xaml;Pages\Tran\Customs.xaml;Pages\Tran\TranManage.xaml;Pages\SettingsPage.xaml;Pages\Up\Packer.xaml;Pages\Up\UserAddress.xaml;Pages\Web\Entering.xaml;Pages\Web\Select.xaml;Pages\Web\WebManage.xaml;UpWindow.xaml;
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\App.xaml
+25-1889683422
+2-650941957
+35-1469750519
+18-414225687
+Control\AutoCompleteTextBox.xaml;LoginWindow.xaml;MainWindow.xaml;Pages\BaseData\BaseDataManage.xaml;Pages\BaseData\FreightCount.xaml;Pages\Login.xaml;Pages\ModernUI.Theme1.xaml;Pages\Scan\Inquire.xaml;Pages\Scan\ScanManage.xaml;Pages\Scan\Weigh.xaml;Pages\Settings\About.xaml;Pages\Settings\Appearance.xaml;Pages\Settings\SettingManage.xaml;Pages\Tran\Addresser.xaml;Pages\Tran\Arrive.xaml;Pages\Tran\ConTran.xaml;Pages\Tran\Customs.xaml;Pages\Tran\TranManage.xaml;Pages\SettingsPage.xaml;Pages\Up\Packer.xaml;Pages\Up\UserAddress.xaml;Pages\Web\Entering.xaml;Pages\Web\Select.xaml;Pages\Web\WebManage.xaml;UpWindow.xaml;
 
 False
 

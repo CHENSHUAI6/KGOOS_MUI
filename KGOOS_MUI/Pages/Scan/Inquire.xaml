@@ -8,6 +8,7 @@
              xmlns:mui="http://firstfloorsoftware.com/ModernUI"
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="1200">
+    
     <Grid Style="{StaticResource ContentRoot}">
         <Grid.RowDefinitions>
             <RowDefinition Height="40"></RowDefinition>
@@ -154,7 +155,7 @@
         <Grid Grid.Row="3">
             <TextBlock Text="网格背景颜色：" Margin="7,2,2,2" FontSize="12" 
                        FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Path Stroke="Black" Fill="Lime" StrokeThickness="1" Margin="87,10,10,10" 
+            <Path Stroke="Black" Fill="#FF9FF59F" StrokeThickness="1" Margin="87,10,10,10" 
                   VerticalAlignment="Center" HorizontalAlignment="Left">
                 <Path.Data>
                     <RectangleGeometry Rect="0,0,15,15"></RectangleGeometry>
@@ -196,27 +197,50 @@
         <ScrollViewer Grid.Row="4">
             <StackPanel MinWidth="200">
                 <DataGrid Name="DG1" ItemsSource="{Binding}" AutoGenerateColumns="False" FontSize="18" FontFamily="宋体" 
-                          LoadingRow="DG1_LoadingRow" IsReadOnly="True" >
+                          IsReadOnly="True" >                
                     <DataGrid.Columns>
-                        <DataGridCheckBoxColumn Header="已核对"  Binding="{Binding Checking}"/>
-                        <DataGridTextColumn Header="运单编号" Binding="{Binding Weight_ConID}" />
-                        <DataGridTextColumn Header="集运编号" Binding="{Binding Id}"/>
-                        <DataGridTextColumn Header="集运状态" Binding="{Binding Weight_Type}"/>
-                        <DataGridTextColumn Header="上一站" Binding="{Binding Weight_Last}"/>
-                        <DataGridTextColumn Header="扫描人" Binding="{Binding Weight_WorkderId}"/>
-                        <DataGridTextColumn Header="扫描时间" Binding="{Binding Weight_Time}"/>
-                        <DataGridTextColumn Header="重量" Binding="{Binding Weight_Helf}" Foreground="{Binding WeightColor}"/>
-                        <!--<DataGridTextColumn Header="重量" Binding="{Binding Weight_Helf}" Foreground="Red"/>-->
-                        <DataGridTextColumn Header="件数" Binding="{Binding Weight_Num}"/>
-                        <DataGridTextColumn Header="存货货架" Binding="{Binding Weight_Shelf}"/>
-                        <DataGridTextColumn Header="备注" Binding="{Binding Weight_Note}"/>
-                        <DataGridTextColumn Header="会员编号" Binding="{Binding Weight_UserId}"/>
-                        <DataGridTextColumn Header="旺旺名" Binding="{Binding Weight_UserName}"/>
-                        <DataGridTextColumn Header="秤重" Binding="{Binding Weight_Weitgh}"/>
-                        <DataGridTextColumn Header="体积重" Binding="{Binding Weight_Size}"/>
-                        <DataGridTextColumn Header="包装类型" Binding="{Binding Weight_Pack}"/>
-                        <DataGridTextColumn Header="所在仓库" Binding="{Binding Weight_Region}"/>
-                        <DataGridTextColumn Header="内部备注" Binding="{Binding Weight_NoteStaff}"/>
+                        <DataGridTemplateColumn>
+                            <DataGridTemplateColumn.HeaderTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="已核对" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.HeaderTemplate>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <CheckBox IsChecked="{Binding Checking}" VerticalAlignment="Center" 
+                                              HorizontalAlignment="Center"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn> <!--已核对-->
+                        <DataGridTextColumn Header="运单编号" Binding="{Binding Weight_ConID}" ElementStyle="{StaticResource contentCenterStyle}"/>
+                        <DataGridTextColumn Header="集运编号" Binding="{Binding Id}" ElementStyle="{StaticResource contentCenterStyle}"/>
+                        <DataGridTextColumn Header="集运状态" Binding="{Binding Weight_Type}" ElementStyle="{StaticResource contentCenterStyle}"/>
+                        <DataGridTextColumn Header="上一站" Binding="{Binding Weight_Last}" ElementStyle="{StaticResource contentCenterStyle}"/>
+                        <DataGridTextColumn Header="扫描人" Binding="{Binding Weight_WorkderId}" ElementStyle="{StaticResource contentCenterStyle}"/>
+                        <DataGridTextColumn Header="扫描时间" Binding="{Binding Weight_Time}" ElementStyle="{StaticResource contentCenterStyle}"/>                      
+                        <DataGridTemplateColumn>
+                            <DataGridTemplateColumn.HeaderTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="重量" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.HeaderTemplate>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Weight_Helf}" VerticalAlignment="Center" HorizontalAlignment="Center"
+                                               Foreground="{Binding WeightColor}"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn> <!--重量-->
+                        <DataGridTextColumn Header="件数" Binding="{Binding Weight_Num}" ElementStyle="{StaticResource contentCenterStyle}"/>
+                        <DataGridTextColumn Header="存货货架" Binding="{Binding Weight_Shelf}" ElementStyle="{StaticResource contentCenterStyle}"/>
+                        <DataGridTextColumn Header="备注" Binding="{Binding Weight_Note}" ElementStyle="{StaticResource contentCenterStyle}"/>
+                        <DataGridTextColumn Header="会员编号" Binding="{Binding Weight_UserId}" ElementStyle="{StaticResource contentCenterStyle}"/>
+                        <DataGridTextColumn Header="旺旺名" Binding="{Binding Weight_UserName}" ElementStyle="{StaticResource contentCenterStyle}"/>
+                        <DataGridTextColumn Header="秤重" Binding="{Binding Weight_Weitgh}" ElementStyle="{StaticResource contentCenterStyle}"/>
+                        <DataGridTextColumn Header="体积重" Binding="{Binding Weight_Size}" ElementStyle="{StaticResource contentCenterStyle}"/>
+                        <DataGridTextColumn Header="包装类型" Binding="{Binding Weight_Pack}" ElementStyle="{StaticResource contentCenterStyle}"/>
+                        <DataGridTextColumn Header="所在仓库" Binding="{Binding Weight_Region}" ElementStyle="{StaticResource contentCenterStyle}"/>
+                        <DataGridTextColumn Header="内部备注" Binding="{Binding Weight_NoteStaff}" ElementStyle="{StaticResource contentCenterStyle}"/>
                     </DataGrid.Columns>
                 </DataGrid>
             </StackPanel>

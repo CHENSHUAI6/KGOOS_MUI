@@ -9,6 +9,12 @@
                 <ResourceDictionary Source="/Pages/ModernUI.Theme1.xaml"/>                
             </ResourceDictionary.MergedDictionaries>
             
+            <Style x:Key="contentCenterStyle"
+               TargetType="{x:Type TextBlock}">
+                <Setter Property="HorizontalAlignment" Value="Center" />
+                <Setter Property="VerticalAlignment" Value="Center" />
+            </Style>
+            
             <!--DataGrid样式-->
             <Style TargetType="DataGrid">
                 <Setter Property="RowHeaderWidth" Value="0"></Setter>

@@ -41,7 +41,7 @@ namespace KGOOS_MUI.Common
             {
                 return yyyyMM;
             }
-        }
+        }        
 
         /// <summary>
         /// 把字符串数组转为SQL中in的查询条件

@@ -35,6 +35,11 @@
       <HintPath>..\packages\ModernUI.WPF.1.0.9\lib\net45\FirstFloor.ModernUI.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Freight, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dll\Freight.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -61,6 +66,16 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\WeightModel.cs" />
+    <Compile Include="Pages\BaseData\BaseDataManage.xaml.cs">
+      <DependentUpon>BaseDataManage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\BaseData\FreightCount.xaml.cs">
+      <DependentUpon>FreightCount.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Settings\SettingManage.xaml.cs">
+      <DependentUpon>SettingManage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Up\Packer.xaml.cs">
       <DependentUpon>Packer.xaml</DependentUpon>
@@ -95,6 +110,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\BaseData\BaseDataManage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\BaseData\FreightCount.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\Login.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -143,6 +166,10 @@
       <DependentUpon>Appearance.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Settings\AppearanceViewModel.cs" />
+    <Page Include="Pages\Settings\SettingManage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\Tran\Addresser.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -227,6 +254,7 @@
     <EmbeddedResource Include="Img\1.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Dll\Freight.dll" />
     <Content Include="Img\1.jpg" />
   </ItemGroup>
   <ItemGroup />

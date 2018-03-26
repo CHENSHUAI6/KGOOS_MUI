@@ -1,4 +1,5 @@
 ﻿using KGOOS_MUI.Common;
+using KGOOS_MUI.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -9,6 +10,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -24,33 +26,14 @@ namespace KGOOS_MUI.Pages.Scan
     /// </summary>
     public partial class Inquire : UserControl
     {
-        public class Contrasts
+
+        private List<WeightModel> _WeightList;
+        public List<WeightModel> WeightList
         {
-            private SolidColorBrush _WeightColor;
-            public SolidColorBrush WeightColor
-            {
-                get { return _WeightColor; }
-                set { _WeightColor = value; }
-            }
-
-            private string _Weight_Helf;
-            public string Weight_Helf
-            {
-                get { return _Weight_Helf; }
-                set { _Weight_Helf = value; }
-            }
-
-        }
-
-        
-
-        private List<Contrasts> _ContrastList;
-        public List<Contrasts> ContrastList
-        {
-            get { return _ContrastList; }
+            get { return _WeightList; }
             set
             {
-                _ContrastList = value;
+                _WeightList = value;
             }
         }
 
@@ -59,23 +42,6 @@ namespace KGOOS_MUI.Pages.Scan
             InitializeComponent();
             TBStartTime.Text = DateTime.Now.AddDays(-31).ToString("yyyy-MM-dd HH:mm:ss");
         }
-        
-        private void DG1_LoadingRow(object sender, DataGridRowEventArgs e)
-        {
-            var drv = e.Row.Item as DataRowView;
-            //switch (drv["Weight_Type"].ToString())
-            //{
-            //    case "已发件": e.Row.Background = new SolidColorBrush(Colors.Lime);
-            //        break;
-            //    case "Y": e.Row.Background = new SolidColorBrush(Colors.Yellow);
-            //        break;
-            //    case "3": e.Row.Background = new SolidColorBrush(Colors.CadetBlue);
-            //        break;
-            //}
-            //float Weight_Helf = float.Parse(drv["Weight_Helf"].ToString());
-            //float Weight_Weitgh = float.Parse(drv["Weight_Weitgh"].ToString());
-           
-        }      
 
         /// <summary>
         /// 表格获取值
@@ -134,54 +100,49 @@ namespace KGOOS_MUI.Pages.Scan
             }
          
             ds = DBClass.execQuery(sql);
-            DataTable dt = new DataTable();
-            dt.Columns.Add(new DataColumn("Checking", typeof(object)));
-            dt.Columns.Add(new DataColumn("Id", typeof(string)));
-            dt.Columns.Add(new DataColumn("Weight_ConID", typeof(string)));
-            dt.Columns.Add(new DataColumn("Weight_Type", typeof(string)));
-            dt.Columns.Add(new DataColumn("Weight_Last", typeof(string)));
-            dt.Columns.Add(new DataColumn("Weight_WorkderId", typeof(string)));
-            dt.Columns.Add(new DataColumn("Weight_Time", typeof(string)));
-            dt.Columns.Add(new DataColumn("Weight_Helf", typeof(string)));
-            dt.Columns.Add(new DataColumn("Weight_Num", typeof(string)));
-            dt.Columns.Add(new DataColumn("Weight_Shelf", typeof(string)));
-            dt.Columns.Add(new DataColumn("Weight_Note", typeof(string)));
-            dt.Columns.Add(new DataColumn("Weight_UserId", typeof(string)));
-            dt.Columns.Add(new DataColumn("Weight_UserName", typeof(string)));
-            dt.Columns.Add(new DataColumn("Weight_Weitgh", typeof(string)));
-            dt.Columns.Add(new DataColumn("Weight_Pack", typeof(string)));
-            dt.Columns.Add(new DataColumn("Weight_Region", typeof(string)));
-            dt.Columns.Add(new DataColumn("Weight_NoteStaff", typeof(string)));
+
+            WeightList = new List<WeightModel>();
+            
             if (ds.Tables[0].Rows.Count > 0)
             {
 
                 for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
                 {
-                    DataRow dr = dt.NewRow();
-                    dr["Checking"] = false;
-                    dr["Id"] = ds.Tables[0].Rows[i]["Id"];
-                    dr["Weight_ConID"] = ds.Tables[0].Rows[i]["Weight_ConID"];
-                    if (ds.Tables[0].Rows[i]["Weight_Type"].ToString() == "N")
-                    {
-                        dr["Weight_Type"] = "已到件";
-                    }
-                    
-                    dr["Weight_Last"] = ds.Tables[0].Rows[i]["Weight_Last"];
-                    dr["Weight_WorkderId"] = ds.Tables[0].Rows[i]["Weight_WorkderId"];
-                    dr["Weight_Time"] = ds.Tables[0].Rows[i]["Weight_Time"];
-                    dr["Weight_Helf"] = ds.Tables[0].Rows[i]["Weight_Helf"];
-                    dr["Weight_Num"] = ds.Tables[0].Rows[i]["Weight_Num"];
-                    dr["Weight_Shelf"] = ds.Tables[0].Rows[i]["Weight_Shelf"];
-                    dr["Weight_Note"] = ds.Tables[0].Rows[i]["Weight_Note"];
-                    dr["Weight_UserId"] = ds.Tables[0].Rows[i]["Weight_UserId"];
-                    dr["Weight_UserName"] = ds.Tables[0].Rows[i]["Weight_UserName"];
-                    dr["Weight_Weitgh"] = ds.Tables[0].Rows[i]["Weight_Weitgh"];
-                    dr["Weight_Pack"] = ds.Tables[0].Rows[i]["Weight_Pack"];
-                    dr["Weight_Region"] = ds.Tables[0].Rows[i]["Weight_Region"];
-                    dr["Weight_NoteStaff"] = ds.Tables[0].Rows[i]["Weight_NoteStaff"];
-                    dt.Rows.Add(dr);
-                }
+                    string Weight_Type = "";
+                    SolidColorBrush WeightColor = Brushes.Black;
 
+                    if (ds.Tables[0].Rows[i]["Weight_Type"].ToString() == "N")
+                        {
+                            Weight_Type = "已到件";
+                        }
+                    if (double.Parse(ds.Tables[0].Rows[i]["Weight_Helf"].ToString()) > double.Parse(ds.Tables[0].Rows[i]["Weight_Weitgh"].ToString()))
+                    {
+                        WeightColor = Brushes.Red;
+                    }
+
+                    WeightList.Add(new WeightModel()
+                    {
+                        Checking = false,
+                        Id = ds.Tables[0].Rows[i]["Id"].ToString(),
+                        Weight_ConID = ds.Tables[0].Rows[i]["Weight_ConID"].ToString(),
+                        Weight_Type = Weight_Type,
+                        Weight_Last = ds.Tables[0].Rows[i]["Weight_Last"].ToString(),
+                        Weight_WorkderId = ds.Tables[0].Rows[i]["Weight_WorkderId"].ToString(),
+                        Weight_Time = ds.Tables[0].Rows[i]["Weight_Time"].ToString(),
+                        Weight_Helf = ds.Tables[0].Rows[i]["Weight_Helf"].ToString(),
+                        Weight_Num = ds.Tables[0].Rows[i]["Weight_Num"].ToString(),
+                        Weight_Shelf = ds.Tables[0].Rows[i]["Weight_Shelf"].ToString(),
+                        Weight_Note = ds.Tables[0].Rows[i]["Weight_Note"].ToString(),
+                        Weight_UserId = ds.Tables[0].Rows[i]["Weight_UserId"].ToString(),
+                        Weight_UserName = ds.Tables[0].Rows[i]["Weight_UserName"].ToString(),
+                        Weight_Weitgh = ds.Tables[0].Rows[i]["Weight_Weitgh"].ToString(),
+                        Weight_Pack = ds.Tables[0].Rows[i]["Weight_Pack"].ToString(),
+                        Weight_Region = ds.Tables[0].Rows[i]["Weight_Region"].ToString(),
+                        Weight_NoteStaff = ds.Tables[0].Rows[i]["Weight_NoteStaff"].ToString(),
+
+                        WeightColor = WeightColor
+                    });
+                }
             }
 
             str = "";
@@ -202,20 +163,35 @@ namespace KGOOS_MUI.Pages.Scan
             }
 
             this.NoID.Text = str;
-         
             this.DG1.CanUserAddRows = false;
+            this.DG1.ItemsSource = WeightList;
 
-            this.DG1.ItemsSource = dt.DefaultView;
+            //创建数据源、绑定数据源
 
-            ContrastList = new List<Contrasts>();
-            ContrastList.Add(new Contrasts()
+            if (!Window.GetWindow(DG1).IsVisible)
             {
-                Weight_Helf = "1",
-                WeightColor = Brushes.Red
-            });
-            this.DG1.ItemsSource = ContrastList;
-        }
+                Window.GetWindow(DG1).Show();
+            }
+            DG1.UpdateLayout();
 
+            for (int i = 0; i < this.DG1.Items.Count; i++)
+            {
+                DataGridRow row = (DataGridRow)this.DG1.ItemContainerGenerator.ContainerFromIndex(i);
+
+                DataGridCellsPresenter presenter = BaseClass.GetVisualChild<DataGridCellsPresenter>(row);
+                DataGridCell cell = (DataGridCell)presenter.ItemContainerGenerator.ContainerFromIndex(3);
+
+                string strCell = "";
+                TextBlock tbStr = (TextBlock)cell.Content;
+                strCell = tbStr.Text.ToString();
+                switch (strCell)
+                {
+                    case "已到件": row.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF9FF59F"));                       
+                        break;
+                }
+            }
+        }
+        
         private void BtnSelect_Click(object sender, RoutedEventArgs e)
         {
             getTableData();

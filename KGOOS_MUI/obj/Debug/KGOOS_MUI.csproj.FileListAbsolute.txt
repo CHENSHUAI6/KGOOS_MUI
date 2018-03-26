@@ -186,3 +186,69 @@ D:\KGOOS_MUI\KGOOS_MUI\obj\Debug\UpWindow.g.cs
 D:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Web\Entering.baml
 D:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Up\UserAddress.baml
 D:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Up\UserAddress.g.cs
+F:\KGOOS_MUI\KGOOS_MUI\obj\Debug\KGOOS_MUI.exe
+F:\KGOOS_MUI\KGOOS_MUI\obj\Debug\KGOOS_MUI.pdb
+F:\KGOOS_MUI\KGOOS_MUI\bin\Debug\KGOOS_MUI.exe
+F:\KGOOS_MUI\KGOOS_MUI\bin\Debug\KGOOS_MUI.pdb
+F:\KGOOS_MUI\KGOOS_MUI\bin\Debug\FirstFloor.ModernUI.dll
+F:\KGOOS_MUI\KGOOS_MUI\bin\Debug\FirstFloor.ModernUI.xml
+F:\KGOOS_MUI\KGOOS_MUI\obj\Debug\KGOOS_MUI.csprojResolveAssemblyReference.cache
+F:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Control\AutoCompleteTextBox.baml
+F:\KGOOS_MUI\KGOOS_MUI\obj\Debug\LoginWindow.baml
+F:\KGOOS_MUI\KGOOS_MUI\obj\Debug\MainWindow.baml
+F:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Login.baml
+F:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\ModernUI.Theme1.baml
+F:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Scan\Inquire.baml
+F:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Scan\ScanManage.baml
+F:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Settings\About.baml
+F:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Settings\Appearance.baml
+F:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Tran\Addresser.baml
+F:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Tran\Arrive.baml
+F:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Tran\ConTran.baml
+F:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Tran\Customs.baml
+F:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Tran\TranManage.baml
+F:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\SettingsPage.baml
+F:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Up\Packer.baml
+F:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Up\UserAddress.baml
+F:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Web\Select.baml
+F:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Web\WebManage.baml
+F:\KGOOS_MUI\KGOOS_MUI\obj\Debug\UpWindow.baml
+F:\KGOOS_MUI\KGOOS_MUI\obj\Debug\App.baml
+F:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Control\AutoCompleteTextBox.g.cs
+F:\KGOOS_MUI\KGOOS_MUI\obj\Debug\LoginWindow.g.cs
+F:\KGOOS_MUI\KGOOS_MUI\obj\Debug\MainWindow.g.cs
+F:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Login.g.cs
+F:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Scan\Inquire.g.cs
+F:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Scan\ScanManage.g.cs
+F:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Scan\Weigh.g.cs
+F:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Settings\About.g.cs
+F:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Settings\Appearance.g.cs
+F:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Tran\Addresser.g.cs
+F:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Tran\Arrive.g.cs
+F:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Tran\ConTran.g.cs
+F:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Tran\Customs.g.cs
+F:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Tran\TranManage.g.cs
+F:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\SettingsPage.g.cs
+F:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Up\Packer.g.cs
+F:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Up\UserAddress.g.cs
+F:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Web\Entering.g.cs
+F:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Web\Select.g.cs
+F:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Web\WebManage.g.cs
+F:\KGOOS_MUI\KGOOS_MUI\obj\Debug\UpWindow.g.cs
+F:\KGOOS_MUI\KGOOS_MUI\obj\Debug\App.g.cs
+F:\KGOOS_MUI\KGOOS_MUI\obj\Debug\KGOOS_MUI_Content.g.cs
+F:\KGOOS_MUI\KGOOS_MUI\obj\Debug\GeneratedInternalTypeHelper.g.cs
+F:\KGOOS_MUI\KGOOS_MUI\obj\Debug\KGOOS_MUI_MarkupCompile.cache
+F:\KGOOS_MUI\KGOOS_MUI\obj\Debug\KGOOS_MUI_MarkupCompile.lref
+F:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Scan\Weigh.baml
+F:\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Web\Entering.baml
+F:\KGOOS_MUI\KGOOS_MUI\obj\Debug\KGOOS_MUI.g.resources
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Up\UserAddress.baml
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Up\UserAddress.g.cs
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\bin\Debug\Freight.dll
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\BaseData\BaseDataManage.baml
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Settings\SettingManage.baml
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\BaseData\BaseDataManage.g.cs
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\Settings\SettingManage.g.cs
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\BaseData\FreightCount.baml
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\obj\Debug\Pages\BaseData\FreightCount.g.cs

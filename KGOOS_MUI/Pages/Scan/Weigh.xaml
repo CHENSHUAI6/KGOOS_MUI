@@ -181,23 +181,20 @@
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
-
-                        <DataGridTextColumn  Header="扫描时间"  Binding="{Binding Weight_Time}" IsReadOnly="True"/>
-                        <DataGridTextColumn Header="运单编号" Binding="{Binding Weight_ConID}" IsReadOnly="True"/>
-                        <DataGridTextColumn Header="件数" Binding="{Binding Weight_Num}" IsReadOnly="True"/>
-                        <DataGridTextColumn Header="秤重" Binding="{Binding Weight_Weitgh}" IsReadOnly="True"/>
-                        <DataGridTextColumn Header="备注" Binding="{Binding Weight_Note}" IsReadOnly="True"/>
-                        <DataGridTextColumn Header="上一站" Binding="{Binding Weight_Last}" IsReadOnly="True"/>
-                        <DataGridTextColumn Header="存放货架" Binding="{Binding Weight_Shelf}" IsReadOnly="True"/>
-                        <DataGridTextColumn Header="旺旺编号" Binding="{Binding Weight_UserId}" IsReadOnly="True"/>
-                        <DataGridTextColumn Header="旺旺名" Binding="{Binding Weight_UserName}" IsReadOnly="True"/>
-                        <DataGridTextColumn Header="体积重" Binding="{Binding Weight_Size}" IsReadOnly="True"/>
-                        <DataGridTextColumn Header="计费重量" Binding="{Binding Weight_Helf}" IsReadOnly="True"/>
-                        <DataGridTextColumn Header="包装类型" Binding="{Binding Weight_Pack}" IsReadOnly="True"/>
-                        <DataGridTextColumn Header="所在仓库" Binding="{Binding Weight_Region}" IsReadOnly="True"/>
-                        <DataGridTextColumn Header="内部备注" Binding="{Binding Weight_NoteStaff}" IsReadOnly="True"/>
-                        
-
+                        <DataGridTextColumn  Header="扫描时间"  Binding="{Binding Weight_Time}" IsReadOnly="True" ElementStyle="{StaticResource contentCenterStyle}"/>
+                        <DataGridTextColumn Header="运单编号" Binding="{Binding Weight_ConID}" IsReadOnly="True" ElementStyle="{StaticResource contentCenterStyle}"/>
+                        <DataGridTextColumn Header="件数" Binding="{Binding Weight_Num}" IsReadOnly="True" ElementStyle="{StaticResource contentCenterStyle}"/>
+                        <DataGridTextColumn Header="秤重" Binding="{Binding Weight_Weitgh}" IsReadOnly="True" ElementStyle="{StaticResource contentCenterStyle}"/>
+                        <DataGridTextColumn Header="备注" Binding="{Binding Weight_Note}" IsReadOnly="True" ElementStyle="{StaticResource contentCenterStyle}"/>
+                        <DataGridTextColumn Header="上一站" Binding="{Binding Weight_Last}" IsReadOnly="True" ElementStyle="{StaticResource contentCenterStyle}"/>
+                        <DataGridTextColumn Header="存放货架" Binding="{Binding Weight_Shelf}" IsReadOnly="True" ElementStyle="{StaticResource contentCenterStyle}"/>
+                        <DataGridTextColumn Header="旺旺编号" Binding="{Binding Weight_UserId}" IsReadOnly="True" ElementStyle="{StaticResource contentCenterStyle}"/>
+                        <DataGridTextColumn Header="旺旺名" Binding="{Binding Weight_UserName}" IsReadOnly="True" ElementStyle="{StaticResource contentCenterStyle}"/>
+                        <DataGridTextColumn Header="体积重" Binding="{Binding Weight_Size}" IsReadOnly="True" ElementStyle="{StaticResource contentCenterStyle}"/>
+                        <DataGridTextColumn Header="计费重量" Binding="{Binding Weight_Helf}" IsReadOnly="True" ElementStyle="{StaticResource contentCenterStyle}"/>
+                        <DataGridTextColumn Header="包装类型" Binding="{Binding Weight_Pack}" IsReadOnly="True" ElementStyle="{StaticResource contentCenterStyle}"/>
+                        <DataGridTextColumn Header="所在仓库" Binding="{Binding Weight_Region}" IsReadOnly="True" ElementStyle="{StaticResource contentCenterStyle}"/>
+                        <DataGridTextColumn Header="内部备注" Binding="{Binding Weight_NoteStaff}" IsReadOnly="True" ElementStyle="{StaticResource contentCenterStyle}"/>                       
                     </DataGrid.Columns>
                 </DataGrid>
             </StackPanel>
