@@ -34,10 +34,10 @@
                 <ColumnDefinition Width="50"></ColumnDefinition>
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Button Name="BtnSelect" Grid.Column="0" Height="25" Content="查 询" FontSize="10" Padding="1,1,1,1" Margin="7,2,2,2"/>
+            <Button Name="BtnSelect" Grid.Column="0" Height="25" Content="查 询" FontSize="10" Padding="1,1,1,1" Margin="7,2,2,2" Click="BtnSelect_Click"/>
             <Button Grid.Column="1" Height="25" Content="新 建" FontSize="10" Padding="1,1,1,1" Margin="2,2,2,2" />
             <Button Grid.Column="2" Height="25" Content="删 除" FontSize="10" Padding="1,1,1,1" Margin="2,2,2,2" />
-            <Button Grid.Column="3" Height="25" Content="保 存" FontSize="10" Padding="1,1,1,1" Margin="2,2,2,2" />
+            <Button Name="BtnSave" Grid.Column="3" Height="25" Content="保 存" FontSize="10" Padding="1,1,1,1" Margin="2,2,2,2" Click="BtnSave_Click" />
             <Button Grid.Column="4" Height="25" Content="取 消" FontSize="10" Padding="1,1,1,1" Margin="2,2,2,2" />
         </Grid>
         <Border Grid.Row="1" VerticalAlignment="Bottom" Background="LightGray" BorderBrush="LightGray" BorderThickness="1"/>
@@ -53,19 +53,29 @@
             <TextBlock Width="50" Grid.Column="0" Text="承运商" Margin="17,2,2,2" 
                            FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                            VerticalAlignment="Center"/>
-            <TextBox Width="130" Grid.Column="0" Text="" Margin="70,2,2,2" 
+            <!--<TextBox Width="130" Grid.Column="0" Text="" Margin="70,2,2,2" 
+                         FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
+                         VerticalAlignment="Center"/>-->
+            <ComboBox Name="CBCom" Width="120" Grid.Column="0" Text="" Margin="70,2,2,2" 
                          FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                          VerticalAlignment="Center"/>
+
             <TextBlock Width="50" Grid.Column="1" Text="客户" Margin="7,2,2,2" 
                            FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                            VerticalAlignment="Center"/>
-            <TextBox Width="130" Grid.Column="1" Text="" Margin="60,2,2,2" 
+            <!--<TextBox Width="130" Grid.Column="1" Text="" Margin="60,2,2,2" 
+                         FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
+                         VerticalAlignment="Center"/>-->
+            <ComboBox Name="CBCustomer" Width="130" Grid.Column="1" Text="" Margin="60,2,2,2" 
                          FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                          VerticalAlignment="Center"/>
             <TextBlock Width="50" Grid.Column="2" Text="目的地" Margin="7,2,2,2" 
                            FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                            VerticalAlignment="Center"/>
-            <TextBox Width="130" Grid.Column="2" Text="" Margin="60,2,2,2" 
+            <!--<TextBox Width="130" Grid.Column="2" Text="" Margin="60,2,2,2" 
+                         FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
+                         VerticalAlignment="Center"/>-->
+            <ComboBox Name="CBDestination" Width="130" Grid.Column="2" Text="" Margin="60,2,2,2" 
                          FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                          VerticalAlignment="Center"/>
         </Grid>
@@ -74,8 +84,9 @@
         <!--中间信息填写区-->
         <Grid Grid.Row="3">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="200"></ColumnDefinition>
-                <ColumnDefinition Width="200"></ColumnDefinition>
+                <ColumnDefinition Width="210"></ColumnDefinition>
+                <ColumnDefinition Width="100"></ColumnDefinition>
+                <ColumnDefinition Width="100"/>
                 <ColumnDefinition Width="200"></ColumnDefinition>
                 <ColumnDefinition Width="260"></ColumnDefinition>
                 <ColumnDefinition Width="*"></ColumnDefinition>
@@ -86,66 +97,76 @@
                 <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
             <!--第一行-->
-            <TextBlock Width="50" Grid.Row="0" Grid.Column="0" Text="承运商" Margin="17,2,2,2" 
+            <TextBlock Width="50" Grid.Row="0" Grid.Column="0" Text="费用类别" Margin="17,13,0,13" 
                            FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                            VerticalAlignment="Center"/>
-            <TextBox Width="130" Grid.Row="0" Grid.Column="0" Text="" Margin="70,2,2,2" 
+            <!--<TextBox Name="TBPriceType" Width="130" Grid.Row="0" Grid.Column="0" Text="" Margin="70,10,0,10" 
+                         FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
+                         VerticalAlignment="Center"/>-->
+            <ComboBox Name="CBPriceType" Width="130" Grid.Row="0" Grid.Column="0" Text="" Margin="70,10,0,10" 
                          FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                          VerticalAlignment="Center"/>
-            <TextBlock Width="50" Grid.Row="0" Grid.Column="1" Text="客户" Margin="7,2,2,2" 
+            <TextBlock Width="50" Grid.Row="0" Grid.Column="1" Text="物品类型" Margin="7,13,0,13" 
                            FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                            VerticalAlignment="Center"/>
-            <TextBox Width="130" Grid.Row="0" Grid.Column="1" Text="" Margin="60,2,2,2" 
+            <TextBox Name="TBThingType" Width="130" Grid.Row="0" Grid.Column="1" Text="" Margin="60,10,0,10" 
                          FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
-                         VerticalAlignment="Center"/>
-            <TextBlock Width="50" Grid.Row="0" Grid.Column="2" Text="目的地" Margin="7,2,2,2" 
+                         VerticalAlignment="Center" Grid.ColumnSpan="2"/>
+            <TextBlock Width="50" Grid.Row="0" Grid.Column="3" Text="快件类型" Margin="7,13,0,13" 
                            FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                            VerticalAlignment="Center"/>
-            <TextBox Width="130" Grid.Row="0" Grid.Column="2" Text="" Margin="60,2,2,2" 
+            <TextBox Name="TBAddressType" Width="130" Grid.Row="0" Grid.Column="3" Text="" Margin="60,10,0,10" 
                          FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                          VerticalAlignment="Center"/>
-            <TextBlock Grid.Row="0" Grid.Column="3" Text="有效起始时间" Margin="7,2,2,2" 
+            <TextBlock Grid.Row="0" Grid.Column="4" Text="有效起始时间" Margin="7,13,0,13" 
                            FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                            VerticalAlignment="Center"/>
-            <TextBox Width="150" Grid.Row="0" Grid.Column="3" Text="" Margin="90,2,2,2" 
+            <!--<TextBox Width="150" Grid.Row="0" Grid.Column="3" Text="" Margin="90,2,2,2" 
                          FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
-                         VerticalAlignment="Center"/>
+                         VerticalAlignment="Center"/>-->
+            <wfi:WindowsFormsHost Width="100" Grid.Row="0" Grid.Column="4" Margin="90,2,2,2" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="12" FontFamily="宋体">
+                <wf:DateTimePicker x:Name="TBStartTime" Width="100" Height="20" Format="Custom" CustomFormat="yyyy-MM-dd" ValueChanged="TBStartTime_ValueChanged" />
+            </wfi:WindowsFormsHost>
+
             <!--第二行-->
-            <TextBlock Width="50" Grid.Row="1" Grid.Column="0" Text="财务中心" Margin="17,2,2,2" 
+            <TextBlock Width="50" Grid.Row="1" Grid.Column="0" Text="财务中心" Margin="17,13,0,13" 
                            FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                            VerticalAlignment="Center"/>
-            <TextBox Width="130" Grid.Row="1" Grid.Column="0" Text="" Margin="70,2,2,2" 
+            <TextBox Name="TBFin" Width="130" Grid.Row="1" Grid.Column="0" Text="" Margin="70,10,0,10" 
                          FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                          VerticalAlignment="Center"/>
-            <TextBlock Width="50" Grid.Row="1" Grid.Column="1" Text="运输方式" Margin="7,2,2,2" 
+            <TextBlock Width="50" Grid.Row="1" Grid.Column="1" Text="运输方式" Margin="7,13,0,13" 
                            FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                            VerticalAlignment="Center"/>
-            <TextBox Width="130" Grid.Row="1" Grid.Column="1" Text="" Margin="60,2,2,2" 
+            <TextBox Name="TBTransport" Width="130" Grid.Row="1" Grid.Column="1" Text="" Margin="60,10,0,10" 
                          FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
-                         VerticalAlignment="Center"/>
-            <TextBlock Width="50" Grid.Row="1" Grid.Column="2" Text="报价序号" Margin="7,2,2,2" 
+                         VerticalAlignment="Center" Grid.ColumnSpan="2"/>
+            <TextBlock Width="50" Grid.Row="1" Grid.Column="3" Text="报价序号" Margin="7,13,0,13" 
                            FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                            VerticalAlignment="Center"/>
-            <TextBox Width="130" Grid.Row="1" Grid.Column="2" Text="" Margin="60,2,2,2" 
+            <TextBox Name="TBQuote_num" Width="130" Grid.Row="1" Grid.Column="3" Text="" Margin="60,10,0,10" 
                          FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                          VerticalAlignment="Center"/>
-            <TextBlock Grid.Row="1" Grid.Column="3" Text="有效终止时间" Margin="7,2,2,2" 
+            <TextBlock Grid.Row="1" Grid.Column="4" Text="有效终止时间" Margin="7,13,0,13" 
                            FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                            VerticalAlignment="Center"/>
-            <TextBox Width="150" Grid.Row="1" Grid.Column="3" Text="" Margin="90,2,2,2" 
+            <!--<TextBox Width="150" Grid.Row="1" Grid.Column="3" Text="" Margin="90,2,2,2" 
                          FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
-                         VerticalAlignment="Center"/>
+                         VerticalAlignment="Center"/>-->
+            <wfi:WindowsFormsHost Width="100" Grid.Row="1" Grid.Column="4" Margin="90,2,2,2" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="12" FontFamily="宋体">
+                <wf:DateTimePicker x:Name="TBEndTime" Width="100" Height="20" Format="Custom" CustomFormat="yyyy-MM-dd"/>
+            </wfi:WindowsFormsHost>
             <!--第三行-->
-            <TextBlock Width="50" Grid.Row="2" Grid.Column="0" Text="报价名称" Margin="17,2,2,2" 
+            <TextBlock Width="50" Grid.Row="2" Grid.Column="0" Text="报价名称" Margin="17,13,0,13" 
                            FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                            VerticalAlignment="Center"/>
-            <TextBox Width="330" Grid.ColumnSpan="2" Grid.Row="2" Grid.Column="0" Text="" Margin="70,2,2,2" 
+            <TextBox Name="TBQuote_name" Width="330" Grid.ColumnSpan="3" Grid.Row="2" Grid.Column="0" Text="" Margin="70,10,0,10" 
                          FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                          VerticalAlignment="Center"/>
-            <TextBlock Width="50" Grid.Row="2" Grid.Column="2" Text="报价备注" Margin="7,2,2,2" 
+            <TextBlock Width="50" Grid.Row="2" Grid.Column="3" Text="报价备注" Margin="7,13,0,13" 
                            FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                            VerticalAlignment="Center"/>
-            <TextBox Width="330" Grid.ColumnSpan="2" Grid.Row="2" Grid.Column="2" Text="" Margin="70,2,2,2" 
+            <TextBox Name="TBQuote_note" Width="330" Grid.ColumnSpan="2" Grid.Row="2" Grid.Column="3" Text="" Margin="70,10,0,10" 
                          FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                          VerticalAlignment="Center"/>
 
@@ -157,7 +178,7 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="400"></ColumnDefinition>
                 <ColumnDefinition Width="400"></ColumnDefinition>
-                <ColumnDefinition Width="400"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <!--左边-->
             <Grid Grid.Column="0">
@@ -202,44 +223,44 @@
                         <RowDefinition Height="*"></RowDefinition>
                     </Grid.RowDefinitions>
                     <TextBlock Grid.Row="0" Grid.Column="0" Text="计算公式函数" Margin="0,6,2,5" FontSize="16" FontFamily="宋体" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-                    <Button Grid.Row="0" Grid.Column="1" Height="20" Width="50" Content="ceil" FontSize="12" Padding="1,1,1,1" Margin="2,5,0,5" HorizontalAlignment="Left" Background="LightCyan"/>
-                    <Button Grid.Row="0" Grid.Column="1" Height="20" Width="50" Content="floor" FontSize="12" Padding="1,1,1,1" Margin="62,5,0,5" HorizontalAlignment="Left" Background="LightCyan"/>
-                    <Button Grid.Row="0" Grid.Column="1" Height="20" Width="50" Content="round" FontSize="12" Padding="1,1,1,1" Margin="122,5,0,5" HorizontalAlignment="Left" Background="LightCyan"/>
-                    
-                    <TextBlock Grid.Row="1" Grid.Column="0" Text="重量范围符号" Margin="0,6,2,5" FontSize="16" FontFamily="宋体" HorizontalAlignment="Right" VerticalAlignment="Center"/>                   
-                    <Button Grid.Row="1" Grid.Column="1" Height="20" Width="20" Content="＜" FontSize="12" Padding="1,1,1,1" Margin="2,5,0,5" HorizontalAlignment="Left" Background="LightCyan"/>
-                    <Button Grid.Row="1" Grid.Column="1" Height="20" Width="20" Content="≤" FontSize="12" Padding="1,1,1,1" Margin="32,5,0,5" HorizontalAlignment="Left" Background="LightCyan"/>
-                    <Button Grid.Row="1" Grid.Column="1" Height="20" Width="50" Content="＜W≤" FontSize="12" Padding="1,1,1,1" Margin="62,5,0,5" HorizontalAlignment="Left" Background="LightCyan"/>
-                    
+                    <Button Name="BtnCeil" Grid.Row="0" Grid.Column="1" Height="20" Width="50" Content="ceil" FontSize="12" Padding="1,1,1,1" Margin="2,5,0,5" HorizontalAlignment="Left" Background="LightCyan" Click="BtnCeil_Click"/>
+                    <Button Name="BtnFloor" Grid.Row="0" Grid.Column="1" Height="20" Width="50" Content="floor" FontSize="12" Padding="1,1,1,1" Margin="62,5,0,5" HorizontalAlignment="Left" Background="LightCyan" Click="BtnFloor_Click"/>
+                    <Button Name="BtnRound" Grid.Row="0" Grid.Column="1" Height="20" Width="50" Content="round" FontSize="12" Padding="1,1,1,1" Margin="122,5,0,5" HorizontalAlignment="Left" Background="LightCyan" Click="BtnRound_Click"/>
+
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="重量范围符号" Margin="0,6,2,5" FontSize="16" FontFamily="宋体" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                    <Button Grid.Row="1" Grid.Column="1" Height="20" Width="20" Content="＜" FontSize="12" Padding="1,1,1,1" Margin="2,5,0,5" HorizontalAlignment="Left" Background="LightCyan" Click="Button_Click"/>
+                    <Button Grid.Row="1" Grid.Column="1" Height="20" Width="20" Content="≤" FontSize="12" Padding="1,1,1,1" Margin="32,5,0,5" HorizontalAlignment="Left" Background="LightCyan" Click="Button_Click_1"/>
+                    <Button Grid.Row="1" Grid.Column="1" Height="20" Width="50" Content="＜W≤" FontSize="12" Padding="1,1,1,1" Margin="0,5,88,5" HorizontalAlignment="Right" Background="LightCyan" Click="Button_Click_2"/>
+
                     <TextBlock Grid.Row="2" Grid.Column="0" Text="计算公式符号" Margin="0,6,2,5" FontSize="16" FontFamily="宋体" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-                    <Button Grid.Row="2" Grid.Column="1" Height="20" Width="20" Content="+" FontSize="12" Padding="1,1,1,1" Margin="2,5,0,5" HorizontalAlignment="Left" Background="LightCyan"/>
-                    <Button Grid.Row="2" Grid.Column="1" Height="20" Width="20" Content="-" FontSize="12" Padding="1,1,1,1" Margin="32,5,0,5" HorizontalAlignment="Left" Background="LightCyan"/>
-                    <Button Grid.Row="2" Grid.Column="1" Height="20" Width="20" Content="×" FontSize="12" Padding="1,1,1,1" Margin="62,5,0,5" HorizontalAlignment="Left" Background="LightCyan"/>
-                    <Button Grid.Row="2" Grid.Column="1" Height="20" Width="20" Content="÷" FontSize="12" Padding="1,1,1,1" Margin="92,5,0,5" HorizontalAlignment="Left" Background="LightCyan"/>
-                    <Button Grid.Row="2" Grid.Column="1" Height="20" Width="20" Content="(" FontSize="12" Padding="1,1,1,1" Margin="122,5,0,5" HorizontalAlignment="Left" Background="LightCyan"/>
-                    <Button Grid.Row="2" Grid.Column="1" Height="20" Width="20" Content=")" FontSize="12" Padding="1,1,1,1" Margin="152,5,0,5" HorizontalAlignment="Left" Background="LightCyan"/>
+                    <Button Grid.Row="2" Grid.Column="1" Height="20" Width="20" Content="+" FontSize="12" Padding="1,1,1,1" Margin="2,5,0,5" HorizontalAlignment="Left" Background="LightCyan" Click="Button_Click_3"/>
+                    <Button Grid.Row="2" Grid.Column="1" Height="20" Width="20" Content="-" FontSize="12" Padding="1,1,1,1" Margin="32,5,0,5" HorizontalAlignment="Left" Background="LightCyan" Click="Button_Click_4"/>
+                    <Button Grid.Row="2" Grid.Column="1" Height="20" Width="20" Content="×" FontSize="12" Padding="1,1,1,1" Margin="62,5,0,5" HorizontalAlignment="Left" Background="LightCyan" Click="Button_Click_5"/>
+                    <Button Grid.Row="2" Grid.Column="1" Height="20" Width="20" Content="÷" FontSize="12" Padding="1,1,1,1" Margin="92,5,0,5" HorizontalAlignment="Left" Background="LightCyan" Click="Button_Click_6"/>
+                    <Button Grid.Row="2" Grid.Column="1" Height="20" Width="20" Content="( )" FontSize="12" Padding="1,1,1,1" Margin="122,5,0,5" HorizontalAlignment="Left" Background="LightCyan" Click="Button_Click_7"/>
 
                     <TextBlock Grid.Row="3" Grid.Column="0" Text="重量范围" Margin="0,6,2,5" FontSize="16" FontFamily="宋体" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-                    <TextBox Grid.Row="3" Grid.Column="1" Text="" Margin="2,2,2,2" FontSize="16" FontFamily="宋体" VerticalAlignment="Center"/>
+                    <TextBox Name="TBHelf" Grid.Row="3" Grid.Column="1" Text="" Margin="2,2,2,2" FontSize="16" FontFamily="宋体" VerticalAlignment="Center"/>
 
                     <TextBlock Grid.Row="4" Grid.Column="0" Text="计算公式" Margin="0,6,2,5" FontSize="16" FontFamily="宋体" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-                    <TextBox Grid.Row="4" Grid.Column="1" Text="" Margin="2,2,2,2" FontSize="16" FontFamily="宋体" VerticalAlignment="Center"/>
+                    <TextBox Name="TBFormula" Grid.Row="4" Grid.Column="1" Text="" Margin="2,2,2,2" FontSize="16" FontFamily="宋体" VerticalAlignment="Center"/>
 
-                    <Button Grid.Row="5" Grid.Column="1" Height="20" Width="40" Content="新增" FontSize="12" Padding="1,1,1,1" Margin="2,5,0,5" HorizontalAlignment="Left" Background="LightCyan"/>
-                    <Button Grid.Row="5" Grid.Column="1" Height="20" Width="40" Content="删除" FontSize="12" Padding="1,1,1,1" Margin="52,5,0,5" HorizontalAlignment="Left" Background="LightCyan"/>
-                    <Button Grid.Row="5" Grid.Column="1" Height="20" Width="40" Content="取消" FontSize="12" Padding="1,1,1,1" Margin="102,5,0,5" HorizontalAlignment="Left" Background="LightCyan"/>
-                    <Button Grid.Row="5" Grid.Column="1" Height="20" Width="40" Content="还原" FontSize="12" Padding="1,1,1,1" Margin="152,5,0,5" HorizontalAlignment="Left" Background="LightCyan"/>
+                    <Button Grid.Row="5" Grid.Column="1" Height="20" Width="40" Content="新增" FontSize="12" Padding="1,1,1,1" Margin="2,5,0,5" HorizontalAlignment="Left" Background="LightCyan" Click="Button_Click_8"/>
+                    <Button Grid.Row="5" Grid.Column="1" Height="20" Width="40" Content="删除" FontSize="12" Padding="1,1,1,1" Margin="52,5,0,5" HorizontalAlignment="Left" Background="LightCyan" Click="Button_Click_11"/>
+                    <Button Grid.Row="5" Grid.Column="1" Height="20" Width="40" Content="保存" FontSize="12" Padding="1,1,1,1" Margin="102,5,0,5" HorizontalAlignment="Left" Background="LightCyan" Click="Button_Click_10"/>
+                    <Button Grid.Row="5" Grid.Column="1" Height="20" Width="40" Content="还原" FontSize="12" Padding="1,1,1,1" Margin="152,5,0,5" HorizontalAlignment="Left" Background="LightCyan" Click="Button_Click_9"/>
 
                 </Grid>
             </Grid>
             <!--右边-->
             <Grid Grid.Column="2">
-                <DataGrid ItemsSource="{Binding}" AutoGenerateColumns="False" FontSize="16" FontFamily="宋体" 
-                          IsReadOnly="True" >
+                <DataGrid Name="DG2" ItemsSource="{Binding}" AutoGenerateColumns="False" FontSize="16" FontFamily="宋体" 
+                          IsReadOnly="True" MouseDown="DG2_MouseDown" >
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="重量范围" Binding="{Binding Weight_ConID}" ElementStyle="{StaticResource contentCenterStyle}"/>
-                        <DataGridTextColumn Header="计算表达式" Binding="{Binding Id}" ElementStyle="{StaticResource contentCenterStyle}"/>
-                        <DataGridTextColumn Header="付款链接" Binding="{Binding Id}" ElementStyle="{StaticResource contentCenterStyle}"/>
+                        <DataGridTextColumn Header="序号" Binding="{Binding id}" ElementStyle="{StaticResource contentCenterStyle}"/>
+                        <DataGridTextColumn Header="重量范围" Binding="{Binding weight}" ElementStyle="{StaticResource contentCenterStyle}"/>
+                        <DataGridTextColumn Header="计算表达式" Binding="{Binding formula}" ElementStyle="{StaticResource contentCenterStyle}"/>
+                        <DataGridTextColumn Header="付款链接" Binding="{Binding href}" ElementStyle="{StaticResource contentCenterStyle}"/>
                     </DataGrid.Columns>
                 </DataGrid>
             </Grid>
@@ -250,19 +271,20 @@
         <ScrollViewer Grid.Row="5">
             <StackPanel MinWidth="200">
                 <DataGrid Name="DG1" ItemsSource="{Binding}" AutoGenerateColumns="False" FontSize="18" FontFamily="宋体" 
-                          IsReadOnly="True" >
-                    <DataGrid.Columns>                 
-                        <DataGridTextColumn Header="费用类型" ElementStyle="{StaticResource contentCenterStyle}"/>
-                        <DataGridTextColumn Header="快件类型" ElementStyle="{StaticResource contentCenterStyle}"/>
-                        <DataGridTextColumn Header="运输方式" ElementStyle="{StaticResource contentCenterStyle}"/>
-                        <DataGridTextColumn Header="物品类别" ElementStyle="{StaticResource contentCenterStyle}"/>
-                        <DataGridTextColumn Header="单号类型" ElementStyle="{StaticResource contentCenterStyle}"/>
-                        <DataGridTextColumn Header="开始时间" ElementStyle="{StaticResource contentCenterStyle}"/>
-                        <DataGridTextColumn Header="结束时间" ElementStyle="{StaticResource contentCenterStyle}"/>
-                        <DataGridTextColumn Header="名称" ElementStyle="{StaticResource contentCenterStyle}"/>
-                        <DataGridTextColumn Header="备注" ElementStyle="{StaticResource contentCenterStyle}"/>
-                        <DataGridTextColumn Header="财务中心" ElementStyle="{StaticResource contentCenterStyle}"/>
-                        <DataGridTextColumn Header="序号" ElementStyle="{StaticResource contentCenterStyle}"/>
+                          IsReadOnly="True" MouseDown="DG1_MouseDown" >
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="序号" Binding="{Binding id}" ElementStyle="{StaticResource contentCenterStyle}"/>
+                        <DataGridTextColumn Header="费用类型" Binding="{Binding PriceType}" ElementStyle="{StaticResource contentCenterStyle}"/>
+                        <DataGridTextColumn Header="快件类型" Binding="{Binding AddressType}"  ElementStyle="{StaticResource contentCenterStyle}"/>
+                        <DataGridTextColumn Header="运输方式" Binding="{Binding transport}" ElementStyle="{StaticResource contentCenterStyle}"/>
+                        <DataGridTextColumn Header="物品类别" Binding="{Binding ThingType}" ElementStyle="{StaticResource contentCenterStyle}"/>
+                        <DataGridTextColumn Header="单号类型" Binding="{Binding OddType}" ElementStyle="{StaticResource contentCenterStyle}"/>
+                        <DataGridTextColumn Header="开始时间" Binding="{Binding start_time}" ElementStyle="{StaticResource contentCenterStyle}"/>
+                        <DataGridTextColumn Header="结束时间" Binding="{Binding end_time}" ElementStyle="{StaticResource contentCenterStyle}"/>
+                        <DataGridTextColumn Header="名称" Binding="{Binding quote_name}" ElementStyle="{StaticResource contentCenterStyle}"/>
+                        <DataGridTextColumn Header="备注" Binding="{Binding quote_note}" ElementStyle="{StaticResource contentCenterStyle}"/>
+                        <DataGridTextColumn Header="财务中心" Binding="{Binding fin}" ElementStyle="{StaticResource contentCenterStyle}"/>
+                        <DataGridTextColumn Header="财务序号" Binding="{Binding quote_num}" ElementStyle="{StaticResource contentCenterStyle}"/>
                     </DataGrid.Columns>
                 </DataGrid>
             </StackPanel>

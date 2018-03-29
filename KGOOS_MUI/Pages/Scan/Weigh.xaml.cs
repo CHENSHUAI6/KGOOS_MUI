@@ -312,8 +312,6 @@ namespace KGOOS_MUI.Pages.Scan
             this.TBName.AddItemSource(tlist);
         }
 
-
-
         /// <summary>
         /// 表格默认加载
         /// </summary>
