@@ -67,6 +67,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Model\PackModel.cs" />
     <Compile Include="Model\WeightModel.cs" />
     <Compile Include="Pages\BaseData\BaseDataManage.xaml.cs">
       <DependentUpon>BaseDataManage.xaml</DependentUpon>

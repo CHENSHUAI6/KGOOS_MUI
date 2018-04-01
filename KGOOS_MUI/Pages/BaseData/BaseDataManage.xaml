@@ -42,8 +42,8 @@
                        VerticalAlignment="Center" FontFamily="微软雅黑"/>
         </ScrollViewer>
         <ScrollViewer Grid.Column="4" Grid.Row="2">
-            <TextBlock Text="运费报价管理" FontSize="36" FontWeight="Bold" HorizontalAlignment="Center" 
-                       VerticalAlignment="Center" FontFamily="微软雅黑"/>
+            <TextBlock Name="TBFreight" Text="运费报价管理" FontSize="36" FontWeight="Bold" HorizontalAlignment="Center" 
+                       VerticalAlignment="Center" FontFamily="微软雅黑" MouseDown="TBFreight_MouseDown"/>
         </ScrollViewer>
     </Grid>
 </UserControl>

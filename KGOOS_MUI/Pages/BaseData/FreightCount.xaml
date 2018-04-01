@@ -36,7 +36,7 @@
             </Grid.ColumnDefinitions>
             <Button Name="BtnSelect" Grid.Column="0" Height="25" Content="查 询" FontSize="10" Padding="1,1,1,1" Margin="7,2,2,2" Click="BtnSelect_Click"/>
             <Button Grid.Column="1" Height="25" Content="新 建" FontSize="10" Padding="1,1,1,1" Margin="2,2,2,2" />
-            <Button Grid.Column="2" Height="25" Content="删 除" FontSize="10" Padding="1,1,1,1" Margin="2,2,2,2" />
+            <Button Name="BtnDelete" Grid.Column="2" Height="25" Content="删 除" FontSize="10" Padding="1,1,1,1" Margin="2,2,2,2" Click="BtnDelete_Click" />
             <Button Name="BtnSave" Grid.Column="3" Height="25" Content="保 存" FontSize="10" Padding="1,1,1,1" Margin="2,2,2,2" Click="BtnSave_Click" />
             <Button Grid.Column="4" Height="25" Content="取 消" FontSize="10" Padding="1,1,1,1" Margin="2,2,2,2" />
         </Grid>
@@ -48,34 +48,48 @@
                 <ColumnDefinition Width="200"></ColumnDefinition>
                 <ColumnDefinition Width="200"></ColumnDefinition>
                 <ColumnDefinition Width="200"></ColumnDefinition>
+                <ColumnDefinition Width="200"></ColumnDefinition>
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <TextBlock Width="50" Grid.Column="0" Text="承运商" Margin="17,2,2,2" 
                            FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                            VerticalAlignment="Center"/>
-            <!--<TextBox Width="130" Grid.Column="0" Text="" Margin="70,2,2,2" 
-                         FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
-                         VerticalAlignment="Center"/>-->
-            <ComboBox Name="CBCom" Width="120" Grid.Column="0" Text="" Margin="70,2,2,2" 
+            <TextBox Name="TBName" Width="130" Grid.Column="0" Text="" Margin="70,2,2,2" 
                          FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                          VerticalAlignment="Center"/>
+            <!--<ComboBox Name="CBCom" Width="120" Grid.Column="0" Text="" Margin="70,2,2,2" 
+                         FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
+                         VerticalAlignment="Center"/>-->
 
-            <TextBlock Width="50" Grid.Column="1" Text="客户" Margin="7,2,2,2" 
+            <TextBlock Width="50" Grid.Column="1" Text="区域" Margin="7,2,2,2" 
                            FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                            VerticalAlignment="Center"/>
             <!--<TextBox Width="130" Grid.Column="1" Text="" Margin="60,2,2,2" 
                          FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                          VerticalAlignment="Center"/>-->
-            <ComboBox Name="CBCustomer" Width="130" Grid.Column="1" Text="" Margin="60,2,2,2" 
+            <ComboBox Name="CBRegion" Width="130" Grid.Column="1" Text="" Margin="60,2,2,2" 
                          FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                          VerticalAlignment="Center"/>
             <TextBlock Width="50" Grid.Column="2" Text="目的地" Margin="7,2,2,2" 
                            FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                            VerticalAlignment="Center"/>
-            <!--<TextBox Width="130" Grid.Column="2" Text="" Margin="60,2,2,2" 
+            <TextBox Name="TBDestination" Width="130" Grid.Column="2" Text="" Margin="60,2,2,2" 
+                         FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
+                         VerticalAlignment="Center"/>
+            <!--<ComboBox Name="CBDestination" Width="130" Grid.Column="2" Text="" Margin="60,2,2,2" 
                          FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                          VerticalAlignment="Center"/>-->
-            <ComboBox Name="CBDestination" Width="130" Grid.Column="2" Text="" Margin="60,2,2,2" 
+            <TextBlock Grid.Column="3" Text="实际运输公司" Margin="7,2,2,2" 
+                           FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
+                           VerticalAlignment="Center"/>
+            <TextBox Name="TBRealCon" Width="130" Grid.Column="3" Text="" Margin="82,2,2,2" 
+                         FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
+                         VerticalAlignment="Center"/>
+
+            <TextBlock Grid.Column="4" Text="付款链接" Margin="7,2,2,2" 
+                           FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
+                           VerticalAlignment="Center"/>
+            <TextBox Name="TBPayAdd" Width="200" Grid.Column="4" Text="" Margin="82,2,2,2" 
                          FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                          VerticalAlignment="Center"/>
         </Grid>
@@ -181,7 +195,7 @@
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <!--左边-->
-            <Grid Grid.Column="0">
+            <!--<Grid Grid.Column="0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
@@ -194,9 +208,9 @@
                     <StackPanel MinWidth="200">
                     </StackPanel>
                 </ScrollViewer>
-            </Grid>
+            </Grid>-->
             <!--中间-->
-            <Grid Grid.Column="1">
+            <Grid Grid.Column="0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
@@ -237,7 +251,8 @@
                     <Button Grid.Row="2" Grid.Column="1" Height="20" Width="20" Content="-" FontSize="12" Padding="1,1,1,1" Margin="32,5,0,5" HorizontalAlignment="Left" Background="LightCyan" Click="Button_Click_4"/>
                     <Button Grid.Row="2" Grid.Column="1" Height="20" Width="20" Content="×" FontSize="12" Padding="1,1,1,1" Margin="62,5,0,5" HorizontalAlignment="Left" Background="LightCyan" Click="Button_Click_5"/>
                     <Button Grid.Row="2" Grid.Column="1" Height="20" Width="20" Content="÷" FontSize="12" Padding="1,1,1,1" Margin="92,5,0,5" HorizontalAlignment="Left" Background="LightCyan" Click="Button_Click_6"/>
-                    <Button Grid.Row="2" Grid.Column="1" Height="20" Width="20" Content="( )" FontSize="12" Padding="1,1,1,1" Margin="122,5,0,5" HorizontalAlignment="Left" Background="LightCyan" Click="Button_Click_7"/>
+                    <Button Grid.Row="2" Grid.Column="1" Height="20" Width="20" Content="(" FontSize="12" Padding="1,1,1,1" Margin="122,5,0,5" HorizontalAlignment="Left" Background="LightCyan" Click="Button_Click_7"/>
+                    <Button Grid.Row="2" Grid.Column="1" Height="20" Width="20" Content=")" FontSize="12" Padding="1,1,1,1" Margin="152,5,0,5" HorizontalAlignment="Left" Background="LightCyan" Click="Button_Click_71" />
 
                     <TextBlock Grid.Row="3" Grid.Column="0" Text="重量范围" Margin="0,6,2,5" FontSize="16" FontFamily="宋体" HorizontalAlignment="Right" VerticalAlignment="Center"/>
                     <TextBox Name="TBHelf" Grid.Row="3" Grid.Column="1" Text="" Margin="2,2,2,2" FontSize="16" FontFamily="宋体" VerticalAlignment="Center"/>
@@ -253,7 +268,7 @@
                 </Grid>
             </Grid>
             <!--右边-->
-            <Grid Grid.Column="2">
+            <Grid Grid.Column="1">
                 <DataGrid Name="DG2" ItemsSource="{Binding}" AutoGenerateColumns="False" FontSize="16" FontFamily="宋体" 
                           IsReadOnly="True" MouseDown="DG2_MouseDown" >
                     <DataGrid.Columns>
@@ -273,8 +288,15 @@
                 <DataGrid Name="DG1" ItemsSource="{Binding}" AutoGenerateColumns="False" FontSize="18" FontFamily="宋体" 
                           IsReadOnly="True" MouseDown="DG1_MouseDown" >
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="序号" Binding="{Binding id}" ElementStyle="{StaticResource contentCenterStyle}"/>
+                        <DataGridTextColumn Header="序号" Binding="{Binding id}" ElementStyle="{StaticResource contentCenterStyle}"/>                      
                         <DataGridTextColumn Header="费用类型" Binding="{Binding PriceType}" ElementStyle="{StaticResource contentCenterStyle}"/>
+
+                        <DataGridTextColumn Header="区域" Binding="{Binding region_id}"  ElementStyle="{StaticResource contentCenterStyle}"/>
+                        <DataGridTextColumn Header="目的地" Binding="{Binding destination}"  ElementStyle="{StaticResource contentCenterStyle}"/>
+                        <DataGridTextColumn Header="承运商" Binding="{Binding name}"  ElementStyle="{StaticResource contentCenterStyle}"/>
+                        <DataGridTextColumn Header="实际运输公司" Binding="{Binding con_name}"  ElementStyle="{StaticResource contentCenterStyle}"/>
+
+
                         <DataGridTextColumn Header="快件类型" Binding="{Binding AddressType}"  ElementStyle="{StaticResource contentCenterStyle}"/>
                         <DataGridTextColumn Header="运输方式" Binding="{Binding transport}" ElementStyle="{StaticResource contentCenterStyle}"/>
                         <DataGridTextColumn Header="物品类别" Binding="{Binding ThingType}" ElementStyle="{StaticResource contentCenterStyle}"/>
@@ -285,6 +307,7 @@
                         <DataGridTextColumn Header="备注" Binding="{Binding quote_note}" ElementStyle="{StaticResource contentCenterStyle}"/>
                         <DataGridTextColumn Header="财务中心" Binding="{Binding fin}" ElementStyle="{StaticResource contentCenterStyle}"/>
                         <DataGridTextColumn Header="财务序号" Binding="{Binding quote_num}" ElementStyle="{StaticResource contentCenterStyle}"/>
+                        <DataGridTextColumn Header="付款链接" Binding="{Binding payAdd}" ElementStyle="{StaticResource contentCenterStyle}"/>
                     </DataGrid.Columns>
                 </DataGrid>
             </StackPanel>

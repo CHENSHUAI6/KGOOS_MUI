@@ -1,8 +1,11 @@
-﻿using System;
+﻿using KGOOS_MUI.Common;
+using KGOOS_MUI.Model;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -21,48 +24,65 @@ namespace KGOOS_MUI.Pages.Tran
     /// </summary>
     public partial class ConTran : UserControl
     {
+        private List<PackModel> _PackList;
+        public List<PackModel> PackList
+        {
+            get { return _PackList; }
+            set
+            {
+                _PackList = value;
+            }
+        }
+
         public ConTran()
         {
             InitializeComponent();
+            TBStartTime.Text = DateTime.Now.AddDays(-5).ToString("yyyy-MM-dd HH:mm:ss");
         }
-        public void colorDG()
-        {
 
-            //for (int i = 0; i < this.DG1.Items.Count; i++)
-            //{
-            //    DataRowView drv = DG1.Items[i] as DataRowView;
-            //    DataGridRow row = (DataGridRow)this.DG1.ItemContainerGenerator.ContainerFromIndex(i);
-            //    if (i == 2)
-            //    {
-            //        row.Background = new SolidColorBrush(Colors.Blue);
-            //    }
-            //}
-        }
-        public void getData()
+        public void getTableData()
         {
-            DataTable dt = new DataTable();
-            dt.Columns.Add(new DataColumn("FirstName", typeof(int)));
-            dt.Columns.Add(new DataColumn("LastName", typeof(string)));
+            string sql = "";
+            DataSet ds = new DataSet();
 
-            for (int i = 0; i < 6; i++)
+            string str = TBID.Text;
+            string[] sArrayID = Regex.Split(str, "\r\n", RegexOptions.IgnoreCase);
+            string starTime = TBStartTime.Text;
+            string endTime = TBEndTime.Text;
+
+            str = BaseClass.getSqlValue(sArrayID);
+
+            str = BaseClass.getSqlValue(sArrayID);
+
+            sql = "select top 300 * from T_Pack as t1 ";
+            ds = DBClass.execQuery(sql);
+
+            PackList = new List<PackModel>();
+
+            if (ds.Tables[0].Rows.Count > 0)
             {
-                DataRow dr = dt.NewRow();
-                if (i == 3)
+
+                for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
                 {
-                    dr["FirstName"] = DBNull.Value;
-                    dr["LastName"] = DBNull.Value;
-                    dt.Rows.Add(dr);
-                }
-                else
-                {
-                    dr["FirstName"] = i;
-                    dr["LastName"] = "tom" + i.ToString();
-                    dt.Rows.Add(dr);
+                    
+
+                    PackList.Add(new PackModel()
+                    {
+                        paid = false,
+                        informPay = false,
+                        processed = false,
+                        read = false,
+                        pack_state = ds.Tables[0].Rows[i]["pack_state"].ToString(),
+                        pack_user_id = ds.Tables[0].Rows[i]["pack_user_id"].ToString(),
+                        pack_user_name = ds.Tables[0].Rows[i]["pack_user_name"].ToString(),
+                    });
                 }
             }
 
-            //this.DG1.CanUserAddRows = false;
-            //this.DG1.ItemsSource = dt.DefaultView;
+            this.DGBasic.CanUserAddRows = false;
+            this.DGBasic.ItemsSource = PackList;
+
+
         }
 
         //datagrid赋值
@@ -81,6 +101,11 @@ namespace KGOOS_MUI.Pages.Tran
 
 
             }
+        }
+
+        private void BtnSelect_Click(object sender, RoutedEventArgs e)
+        {
+            getTableData();
         }
     }
 }

@@ -35,8 +35,9 @@ namespace KGOOS_MUI.Pages.BaseData
         public void initialize()
         {
             TBEndTime.Text = DateTime.Now.AddYears(2).ToString("yyyy-MM-dd");
-            getCon();
-            getDestination();
+            getRegion();
+            //getCon();
+            //getDestination();
             getPriceType();
         }
 
@@ -45,25 +46,25 @@ namespace KGOOS_MUI.Pages.BaseData
         /// </summary>
         public void getCon()
         {
-            DataSet ds = new DataSet();
-            string sql = "";
-            string name = "";
-            List<KeyValuePair<string, string>> RegionList = new List<KeyValuePair<string, string>>();
-            RegionList.Add(new KeyValuePair<string, string>("0", "请选择承运商"));
+            //DataSet ds = new DataSet();
+            //string sql = "";
+            //string name = "";
+            //List<KeyValuePair<string, string>> RegionList = new List<KeyValuePair<string, string>>();
+            //RegionList.Add(new KeyValuePair<string, string>("0", "请选择承运商"));
 
-            sql = "select t1.name from T_con_carrier as t1 group by t1.name ";
+            //sql = "select t1.name from T_con_carrier as t1 group by t1.name ";
 
-            ds = DBClass.execQuery(sql);
-            for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
-            {
-                name = "";
-                name = ds.Tables[0].Rows[i][0].ToString();
-                RegionList.Add(new KeyValuePair<string, string>(name, name));
-            }
-            CBCom.ItemsSource = RegionList;
-            CBCom.SelectedValuePath = "Key";
-            CBCom.DisplayMemberPath = "Value";
-            CBCom.SelectedItem = new KeyValuePair<string, string>("0", "请选择承运商");
+            //ds = DBClass.execQuery(sql);
+            //for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+            //{
+            //    name = "";
+            //    name = ds.Tables[0].Rows[i][0].ToString();
+            //    RegionList.Add(new KeyValuePair<string, string>(name, name));
+            //}
+            //CBCom.ItemsSource = RegionList;
+            //CBCom.SelectedValuePath = "Key";
+            //CBCom.DisplayMemberPath = "Value";
+            //CBCom.SelectedItem = new KeyValuePair<string, string>("0", "请选择承运商");
         }
 
         /// <summary>
@@ -71,25 +72,51 @@ namespace KGOOS_MUI.Pages.BaseData
         /// </summary>
         public void getDestination()
         {
+            //DataSet ds = new DataSet();
+            //string sql = "";
+            //string destination = "";
+            //List<KeyValuePair<string, string>> RegionList = new List<KeyValuePair<string, string>>();
+            //RegionList.Add(new KeyValuePair<string, string>("0", "请选择目的地"));
+
+            //sql = "select destination from T_con_carrier as t1 group by t1.destination ";
+
+            //ds = DBClass.execQuery(sql);
+            //for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+            //{
+            //    destination = "";
+            //    destination = ds.Tables[0].Rows[i][0].ToString();
+            //    RegionList.Add(new KeyValuePair<string, string>(destination, destination));
+            //}
+            //CBCom.ItemsSource = RegionList;
+            //CBCom.SelectedValuePath = "Key";
+            //CBCom.DisplayMemberPath = "Value";
+            //CBCom.SelectedItem = new KeyValuePair<string, string>("0", "请选择目的地");
+        }
+
+        /// <summary>
+        /// 获取区域
+        /// </summary>
+        public void getRegion()
+        {
             DataSet ds = new DataSet();
             string sql = "";
-            string destination = "";
+            string Region_Name = "";
             List<KeyValuePair<string, string>> RegionList = new List<KeyValuePair<string, string>>();
             RegionList.Add(new KeyValuePair<string, string>("0", "请选择目的地"));
 
-            sql = "select destination from T_con_carrier as t1 group by t1.destination ";
+            sql = "select Region_Name from t_region";
 
             ds = DBClass.execQuery(sql);
             for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
             {
-                destination = "";
-                destination = ds.Tables[0].Rows[i][0].ToString();
-                RegionList.Add(new KeyValuePair<string, string>(destination, destination));
+                Region_Name = "";
+                Region_Name = ds.Tables[0].Rows[i][0].ToString();
+                RegionList.Add(new KeyValuePair<string, string>(Region_Name, Region_Name));
             }
-            CBCom.ItemsSource = RegionList;
-            CBCom.SelectedValuePath = "Key";
-            CBCom.DisplayMemberPath = "Value";
-            CBCom.SelectedItem = new KeyValuePair<string, string>("0", "请选择目的地");
+            CBRegion.ItemsSource = RegionList;
+            CBRegion.SelectedValuePath = "Key";
+            CBRegion.DisplayMemberPath = "Value";
+            CBRegion.SelectedItem = new KeyValuePair<string, string>("0", "请选择目的地");
         }
 
         /// <summary>
@@ -118,17 +145,60 @@ namespace KGOOS_MUI.Pages.BaseData
                 string sql = "";
                 string id, region_id, destination, name, con_name, start_time, end_time, fin,
                     transport, quote_name, quote_num, quote_note, PriceType, ThingType,
-                    AddressType;
+                    AddressType, payAdd;
 
                 id = BaseClass.getInsertMaxId("T_con_carrier", "id", "001");
 
-                region_id = "1";
-                destination = "destination";
-                name = "name";
-                con_name = "con_name";
-
                 #region 获取前台数据
                 PriceType = CBPriceType.SelectedIndex.ToString();
+                region_id = CBRegion.SelectedIndex.ToString();
+
+
+                if (TBPayAdd.Text != "")
+                {
+                    payAdd = TBPayAdd.Text;
+                }
+                else
+                {
+                    payAdd = "";
+                }
+
+                if (TBRealCon.Text != "")
+                {
+                    con_name = TBRealCon.Text;
+                }
+                else
+                {
+                    con_name = "";
+                }
+
+                if (TBRealCon.Text != "")
+                {
+                    con_name = TBRealCon.Text;
+                }
+                else
+                {
+                    con_name = "";
+                }
+
+
+                if (TBName.Text != "")
+                {
+                    name = TBName.Text;
+                }
+                else
+                {
+                    name = "";
+                }
+
+                if (TBDestination.Text != "")
+                {
+                    destination = TBDestination.Text;
+                }
+                else
+                {
+                    destination = "";
+                }
 
                 if (TBThingType.Text != "")
                 {
@@ -215,12 +285,12 @@ namespace KGOOS_MUI.Pages.BaseData
                 sql = "insert into T_con_carrier " +
                 "(id, region_id, destination, name, con_name, start_time, end_time, fin, " +
                 "transport, quote_name, quote_num, quote_note, PriceType, ThingType, " +
-                "AddressType) " +
+                "AddressType, payAdd ) " +
                 "values ('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}', " +
-                "'{11}','{12}','{13}', '{14}')";
+                "'{11}','{12}','{13}', '{14}', '{15}')";
 
                 sql = string.Format(sql, id, region_id, destination, name, con_name, start_time, end_time, fin,
-                    transport, quote_name, quote_num, quote_note, PriceType, ThingType, AddressType);
+                    transport, quote_name, quote_num, quote_note, PriceType, ThingType, AddressType, payAdd);
 
                 int n = DBClass.execUpdate(conn, tran, sql);
 
@@ -228,6 +298,7 @@ namespace KGOOS_MUI.Pages.BaseData
                 if (n > 0)
                 {
                     MessageBox.Show("保存成功！");
+                    getCarrier();
                 }
 
 
@@ -236,6 +307,31 @@ namespace KGOOS_MUI.Pages.BaseData
             {
                 MessageBox.Show("操作失败。请重试" + e.Message);
             }
+        }
+
+        /// <summary>
+        /// 删除T_con_carrier表
+        /// </summary>
+        /// <param name="freight_id"></param>
+        public void deleteCarrier(string con_id)
+        {
+            try
+            {
+                string sql = "";
+                sql = "delete T_con_carrier where id = '" + con_id + "'";
+                int n = DBClass.execUpdate(sql);
+
+                if (n > 0)
+                {
+                    MessageBox.Show("删除成功！");
+                    getCarrier();
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("操作失败。请重试" + e.Message);
+            }
+
         }
 
         /// <summary>
@@ -430,22 +526,17 @@ namespace KGOOS_MUI.Pages.BaseData
         public void getCarrier()
         {
             string sql = "";
-            sql = "select * from T_con_carrier as t1 where 1=1 ";
-            if (CBCom.SelectedIndex.ToString() != "0")
-            {
-                //sql += " and t1.name = '" + CBCom.SelectedIndex.ToString() + "'";
-            }
-
-            if (CBDestination.SelectedIndex.ToString() != "0")
-            {
-                //sql += " and t1.destination = '" + CBDestination.SelectedIndex.ToString() + "'";
-            }
+            sql = "select * from T_con_carrier as t1 where 1=1 ";        
 
             DataSet ds = new DataSet();
             ds = DBClass.execQuery(sql);
 
             DataTable dt = new DataTable();
             dt.Columns.Add(new DataColumn("id", typeof(string)));
+            dt.Columns.Add(new DataColumn("region_id", typeof(string)));
+            dt.Columns.Add(new DataColumn("destination", typeof(string)));
+            dt.Columns.Add(new DataColumn("name", typeof(string)));
+            dt.Columns.Add(new DataColumn("con_name", typeof(string)));
             dt.Columns.Add(new DataColumn("PriceType", typeof(string)));
             dt.Columns.Add(new DataColumn("AddressType", typeof(string)));
             dt.Columns.Add(new DataColumn("transport", typeof(string)));
@@ -457,6 +548,7 @@ namespace KGOOS_MUI.Pages.BaseData
             dt.Columns.Add(new DataColumn("quote_note", typeof(string)));
             dt.Columns.Add(new DataColumn("fin", typeof(string)));
             dt.Columns.Add(new DataColumn("quote_num", typeof(string)));
+            dt.Columns.Add(new DataColumn("payAdd", typeof(string)));
 
             if (ds.Tables[0].Rows.Count > 0)
             {
@@ -464,6 +556,10 @@ namespace KGOOS_MUI.Pages.BaseData
                 {
                     DataRow dr = dt.NewRow();
                     dr["id"] = ds.Tables[0].Rows[i]["id"];
+                    dr["region_id"] = ds.Tables[0].Rows[i]["region_id"];
+                    dr["destination"] = ds.Tables[0].Rows[i]["destination"];
+                    dr["name"] = ds.Tables[0].Rows[i]["name"];
+                    dr["con_name"] = ds.Tables[0].Rows[i]["con_name"];
                     dr["PriceType"] = ds.Tables[0].Rows[i]["PriceType"];
                     dr["AddressType"] = ds.Tables[0].Rows[i]["AddressType"];
                     dr["transport"] = ds.Tables[0].Rows[i]["transport"];
@@ -475,6 +571,7 @@ namespace KGOOS_MUI.Pages.BaseData
                     dr["quote_note"] = ds.Tables[0].Rows[i]["quote_note"];
                     dr["fin"] = ds.Tables[0].Rows[i]["fin"];
                     dr["quote_num"] = ds.Tables[0].Rows[i]["quote_num"];
+                    dr["payAdd"] = ds.Tables[0].Rows[i]["payAdd"];
                     dt.Rows.Add(dr);
                 }
 
@@ -527,21 +624,21 @@ namespace KGOOS_MUI.Pages.BaseData
         #region 录入操作按钮
         private void BtnCeil_Click(object sender, RoutedEventArgs e)
         {
-            TBFormula.Text += "ceil()";
+            TBFormula.Text += "ceil(";
             TBFormula.Focus();
-            TBFormula.SelectionStart = TBFormula.Text.Length - 1;
+            TBFormula.SelectionStart = TBFormula.Text.Length;
         }
 
         private void BtnFloor_Click(object sender, RoutedEventArgs e)
         {
-            TBFormula.Text += "floor()";
+            TBFormula.Text += "floor(";
             TBFormula.Focus();
             TBFormula.SelectionStart = TBFormula.Text.Length;
         }
 
         private void BtnRound_Click(object sender, RoutedEventArgs e)
         {
-            TBFormula.Text += "round()";
+            TBFormula.Text += "round(";
             TBFormula.Focus();
             TBFormula.SelectionStart = TBFormula.Text.Length;
         }
@@ -597,9 +694,16 @@ namespace KGOOS_MUI.Pages.BaseData
 
         private void Button_Click_7(object sender, RoutedEventArgs e)
         {
-            TBFormula.Text += "()";
+            TBFormula.Text += "(";
             TBFormula.Focus();
-            TBFormula.SelectionStart = TBFormula.Text.Length - 1;
+            TBFormula.SelectionStart = TBFormula.Text.Length;
+        }
+
+        private void Button_Click_71(object sender, RoutedEventArgs e)
+        {
+            TBFormula.Text += ")";
+            TBFormula.Focus();
+            TBFormula.SelectionStart = TBFormula.Text.Length;
         }
         #endregion
 
@@ -662,8 +766,16 @@ namespace KGOOS_MUI.Pages.BaseData
             var a = this.DG2.SelectedItem;
             var b = a as DataRowView;
             string freight_id = "";
-            freight_id = b.Row[0].ToString();
-            updateFreight(freight_id);
+            try
+            {
+                freight_id = b.Row[0].ToString();
+                updateFreight(freight_id);
+            }
+            catch (Exception e1)
+            {
+                MessageBox.Show("删除失败" + e1.Message);
+            }
+
         }
 
         /// <summary>
@@ -676,8 +788,38 @@ namespace KGOOS_MUI.Pages.BaseData
             var a = this.DG2.SelectedItem;
             var b = a as DataRowView;
             string freight_id = "";
-            freight_id = b.Row[0].ToString();
-            deleteFreight(freight_id);
+            try
+            {
+                freight_id = b.Row[0].ToString();
+                deleteFreight(freight_id);
+            }
+            catch (Exception e1)
+            {
+                MessageBox.Show("删除失败" + e1.Message);
+            }
+
+
+        }
+
+        /// <summary>
+        /// 删除承运商按钮
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BtnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            var a = this.DG1.SelectedItem;
+            var b = a as DataRowView;
+            string con_id = "";
+            try
+            {
+                con_id = b.Row[0].ToString();
+                deleteCarrier(con_id);
+            }
+            catch (Exception e1)
+            {
+                MessageBox.Show("删除失败" + e1.Message);
+            }
         }
 
 

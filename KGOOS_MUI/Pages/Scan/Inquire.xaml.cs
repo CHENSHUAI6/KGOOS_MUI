@@ -40,7 +40,7 @@ namespace KGOOS_MUI.Pages.Scan
         public Inquire()
         {
             InitializeComponent();
-            TBStartTime.Text = DateTime.Now.AddDays(-31).ToString("yyyy-MM-dd HH:mm:ss");
+            TBStartTime.Text = DateTime.Now.AddDays(-5).ToString("yyyy-MM-dd HH:mm:ss");
         }
 
         /// <summary>

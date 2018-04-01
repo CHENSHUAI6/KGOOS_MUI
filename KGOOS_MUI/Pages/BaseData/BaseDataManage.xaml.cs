@@ -24,5 +24,11 @@ namespace KGOOS_MUI.Pages.BaseData
         {
             InitializeComponent();
         }
+
+        private void TBFreight_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            MainWindow mw = System.Windows.Window.GetWindow(this) as MainWindow;
+            mw.ContentSource = new Uri("/Pages/BaseData/FreightCount.xaml", UriKind.RelativeOrAbsolute);
+        }
     }
 }

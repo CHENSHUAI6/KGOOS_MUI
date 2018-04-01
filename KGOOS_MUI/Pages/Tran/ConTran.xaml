@@ -40,7 +40,7 @@
                 <ColumnDefinition Width="70"></ColumnDefinition>
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="0" Height="25" Content="查 询" FontSize="10" Padding="1,1,1,1" Margin="7,2,2,2" />
+            <Button Name="BtnSelect" Grid.Column="0" Height="25" Content="查 询" FontSize="10" Padding="1,1,1,1" Margin="7,2,2,2" Click="BtnSelect_Click" />
             <Button Grid.Column="1" Height="25" Content="删 除" FontSize="10" Padding="1,1,1,1" Margin="2,2,2,2" />
             <Button Grid.Column="2" Height="25" Content="保 存" FontSize="10" Padding="1,1,1,1" Margin="2,2,2,2" />
             <Button Grid.Column="3" Height="25" Content="取 消" FontSize="10" Padding="1,1,1,1" Margin="2,2,2,2" />
@@ -97,7 +97,7 @@
                 <wfi:WindowsFormsHost Width="150" Grid.Row="2" Margin="60,2,2,2" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="12" FontFamily="宋体">
                     <wf:DateTimePicker x:Name="TBStartTime" Width="150" Height="20" Format="Custom" CustomFormat="yyyy-MM-dd: HH:mm:ss"/>
                 </wfi:WindowsFormsHost>
-                <TextBlock Grid.Row="3" Width="55" Text="结束" Margin="20,5,2,2" FontSize="15" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <TextBlock Grid.Row="3" Width="55" Text="结束" Margin="20,9.667,0,5" FontSize="15" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                 <!--<DatePicker  Grid.Row="3" Margin="60,2,2,2" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="12" FontFamily="宋体" />-->
                 <wfi:WindowsFormsHost Width="150" Grid.Row="3" Margin="60,2,2,2" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="12" FontFamily="宋体">
                     <wf:DateTimePicker x:Name="TBEndTime" Width="150" Height="20" Format="Custom" CustomFormat="yyyy-MM-dd: HH:mm:ss"/>
@@ -237,16 +237,16 @@
                 
                 <Grid Grid.Row="1">
                     <TextBlock Width="{Binding DGBasic.width}" Text="基本信息" HorizontalAlignment="Center" Margin="2,2,2,2" FontSize="12" FontFamily="宋体"/>
-                    <DataGrid Name="DGBasic" ItemsSource="{Binding}" AutoGenerateColumns="False" FontSize="10" 
+                    <DataGrid Name="DGBasic" ItemsSource="{Binding}" AutoGenerateColumns="False" FontSize="12" 
                           FontFamily="宋体" MinWidth="200" CanUserSortColumns="False" CanUserResizeColumns="True" >
                         <DataGrid.Columns>
-                            <DataGridCheckBoxColumn Header="已付款"/>
-                            <DataGridCheckBoxColumn Header="通知付款"  Binding="{Binding FirstName}"/>
-                            <DataGridCheckBoxColumn Header="已处理" Binding="{Binding LastName}" />
-                            <DataGridCheckBoxColumn Header="消息已读"/>
-                            <DataGridTextColumn Header="状态"/>
-                            <DataGridTextColumn Header="客户编号"/>
-                            <DataGridTextColumn Header="客户名称"/>
+                            <DataGridCheckBoxColumn Header="已付款" Binding="{Binding paid}"/>
+                            <DataGridCheckBoxColumn Header="通知付款"  Binding="{Binding informPay}"/>
+                            <DataGridCheckBoxColumn Header="已处理" Binding="{Binding processed}" />
+                            <DataGridCheckBoxColumn Header="消息已读" Binding="{Binding read}"/>
+                            <DataGridTextColumn Header="状态" Binding="{Binding pack_state}"/>
+                            <DataGridTextColumn Header="客户编号" Binding="{Binding pack_user_id}"/>
+                            <DataGridTextColumn Header="客户名称" Binding="{Binding pack_user_name}"/>
                         </DataGrid.Columns>
                     </DataGrid>
                 </Grid>

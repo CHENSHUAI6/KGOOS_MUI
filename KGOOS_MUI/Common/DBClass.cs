@@ -13,17 +13,17 @@ namespace KGOOS_MUI.Common
     /// </summary>
     internal  class dbConn
     {
-        //public static string Database = "Db_Kgoos";
-        //public static string Server = "115.159.68.236";
-        //public static string Uid = "chy";
-        //public static string Pwd = "Aa123456";
-        //public static string Timeout = "600000";
-
         public static string Database = "Db_Kgoos";
-        public static string Server = ".";
-        public static string Uid = "sa";
+        public static string Server = "115.159.68.236";
+        public static string Uid = "chy";
         public static string Pwd = "Aa123456";
         public static string Timeout = "600000";
+
+        //public static string Database = "Db_Kgoos";
+        //public static string Server = ".";
+        //public static string Uid = "sa";
+        //public static string Pwd = "Aa123456";
+        //public static string Timeout = "600000";
     }
    
     
