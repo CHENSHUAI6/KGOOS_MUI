@@ -95,13 +95,15 @@ namespace KGOOS_MUI.Pages.Scan
 
                 Id = BaseClass.getInsertMaxId("T_Weight", "Id", "000001");
 
-                if (TBtranId.Text != "")
+                if (TBtranId.Text.Length >= 5)
                 {
                     Weight_ConID = TBtranId.Text;
                 }
                 else
                 {
                     Weight_ConID = "";
+                    MessageBox.Show("运单编号不能为空且5位以上。");
+                    return;
                 }
 
                 if (TBNumber.Text != "")
@@ -341,19 +343,28 @@ namespace KGOOS_MUI.Pages.Scan
         {
             if (e.Key == Key.Enter)
             {
-                if (CBInputTime.IsChecked == false)
+                if (TBtranId.Text.Length >= 5)
                 {
-                    TBsacnTime.Value = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-                }
+                    if (CBInputTime.IsChecked == false)
+                    {
+                        TBsacnTime.Value = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                    }
 
-                if (RBimportWeigh.IsChecked == true)
-                {
-                    this.TBweigh.Focus();
+                    if (RBimportWeigh.IsChecked == true)
+                    {
+                        this.TBweigh.Focus();
+                    }
+                    else
+                    {
+                        this.TBName.Focus();
+                    }
                 }
                 else
                 {
-                    this.TBName.Focus();
+                    MessageBox.Show("运单编号不能为空且5位以上。");
                 }
+
+                
             }
         }
 
