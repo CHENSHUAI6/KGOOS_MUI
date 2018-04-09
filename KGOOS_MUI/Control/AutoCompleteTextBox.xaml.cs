@@ -189,8 +189,14 @@ namespace KGOOS_MUI.Control
                     {
                         foreach (string word in entry.KeywordStrings)
                         {
-                            //n 为显示的个数
-                            if (word.Contains(textBox.Text) && n < nSize)
+                            //去除大小写
+                            string workUP = "";
+                            string textUP = "";
+                            workUP = word.ToUpper();
+                            textUP = textBox.Text.ToUpper();
+                            //n 为显示的个数                           
+                            //if (word.Contains(textBox.Text) && n < nSize)
+                            if (workUP.Contains(textUP) && n < nSize)
                             {
                                 n++;
                                 ComboBoxItem cbItem = new ComboBoxItem();
@@ -261,6 +267,28 @@ namespace KGOOS_MUI.Control
 
         public void textBox_KeyDown(object sender, KeyEventArgs e)
         {
+            ///输入不完整的会员名后回车默认选取弹出的第一个会员名作为结果
+
+            if (e.Key == Key.Enter)
+            {
+                if (comboBox.SelectedIndex == -1)
+                {
+                    try
+                    {
+                        comboBox.SelectedIndex = 0;
+                        ComboBoxItem cbItem = (ComboBoxItem)comboBox.SelectedItem;
+                        string Id_Name = cbItem.Content.ToString();
+                        string[] s = Id_Name.Split(new char[] { ' ' });
+                        textBox.Text = s[s.Length - 1];
+                        textBox.Tag = s[0];
+                    }catch(Exception e1)
+                    {
+
+                    }
+                    
+                }
+            }
+
             if (textBox.IsInputMethodEnabled == true)
             {
                 comboBox.IsDropDownOpen = false;

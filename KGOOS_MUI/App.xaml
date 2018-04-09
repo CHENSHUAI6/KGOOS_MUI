@@ -1,7 +1,7 @@
 ﻿<Application x:Class="KGOOS_MUI.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             StartupUri="LoginWindow.xaml">
+             StartupUri="MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -87,7 +87,7 @@
             <!--DataGrid单元格选中样式-->
             <Style TargetType="DataGridCell">
                 <Style.Triggers>
-                    <Trigger Property="IsSelected" Value="True">
+                    <Trigger Property="IsSelected" Value="true">
                         <Setter Property="Background" Value="#FFC7CBCA"/>
                         <Setter Property="BorderThickness" Value="0"></Setter>
                     </Trigger>

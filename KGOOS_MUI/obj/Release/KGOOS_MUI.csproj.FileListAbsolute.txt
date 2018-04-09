@@ -61,3 +61,4 @@ Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\obj\Release\Pages\Web\
 Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\obj\Release\KGOOS_MUI.g.resources
 Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\obj\Release\KGOOS_MUI.exe
 Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\obj\Release\KGOOS_MUI.pdb
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\obj\Release\KGOOS_MUI.csprojResolveAssemblyReference.cache

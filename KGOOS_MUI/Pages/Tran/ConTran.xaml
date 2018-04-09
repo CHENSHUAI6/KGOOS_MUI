@@ -7,13 +7,13 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:mui="http://firstfloorsoftware.com/ModernUI"
              mc:Ignorable="d" 
-             d:DesignHeight="800" d:DesignWidth="1200">
+             d:DesignHeight="800" d:DesignWidth="1400">
 
     <Grid Style="{StaticResource ContentRoot}">
         <Grid.RowDefinitions>
             <RowDefinition Height="40"></RowDefinition>
             <RowDefinition Height="40"></RowDefinition>
-            <RowDefinition Height="130"></RowDefinition>
+            <RowDefinition Height="180"></RowDefinition>
             <RowDefinition Height="50"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="230"></RowDefinition>
@@ -27,30 +27,30 @@
         <!--顶端按钮栏-->
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="55"></ColumnDefinition>
-                <ColumnDefinition Width="50"></ColumnDefinition>
-                <ColumnDefinition Width="50"></ColumnDefinition>
-                <ColumnDefinition Width="50"></ColumnDefinition>
-                <ColumnDefinition Width="50"></ColumnDefinition>
-                <ColumnDefinition Width="50"></ColumnDefinition>
                 <ColumnDefinition Width="65"></ColumnDefinition>
-                <ColumnDefinition Width="55"></ColumnDefinition>
-                <ColumnDefinition Width="55"></ColumnDefinition>
-                <ColumnDefinition Width="55"></ColumnDefinition>
-                <ColumnDefinition Width="70"></ColumnDefinition>
+                <ColumnDefinition Width="60"></ColumnDefinition>
+                <ColumnDefinition Width="60"></ColumnDefinition>
+                <ColumnDefinition Width="60"></ColumnDefinition>
+                <ColumnDefinition Width="60"></ColumnDefinition>
+                <ColumnDefinition Width="60"></ColumnDefinition>
+                <ColumnDefinition Width="80"></ColumnDefinition>
+                <ColumnDefinition Width="80"></ColumnDefinition>
+                <ColumnDefinition Width="80"></ColumnDefinition>
+                <ColumnDefinition Width="80"></ColumnDefinition>
+                <ColumnDefinition Width="80"></ColumnDefinition>
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Button Name="BtnSelect" Grid.Column="0" Height="25" Content="查 询" FontSize="10" Padding="1,1,1,1" Margin="7,2,2,2" Click="BtnSelect_Click" />
-            <Button Grid.Column="1" Height="25" Content="删 除" FontSize="10" Padding="1,1,1,1" Margin="2,2,2,2" />
-            <Button Grid.Column="2" Height="25" Content="保 存" FontSize="10" Padding="1,1,1,1" Margin="2,2,2,2" />
-            <Button Grid.Column="3" Height="25" Content="取 消" FontSize="10" Padding="1,1,1,1" Margin="2,2,2,2" />
-            <Button Grid.Column="4" Height="25" Content="打 印" FontSize="10" Padding="1,1,1,1" Margin="2,2,2,2" />
-            <Button Grid.Column="5" Height="25" Content="导 出" FontSize="10" Padding="1,1,1,1" Margin="2,2,2,2" />
-            <Button Grid.Column="6" Height="25" Content="生成打包单" FontSize="10" Padding="1,1,1,1" Margin="2,2,2,2" />
-            <Button Grid.Column="7" Height="25" Content="打印面单" FontSize="10" Padding="1,1,1,1" Margin="2,2,2,2" />
-            <Button Grid.Column="8" Height="25" Content="其他操作" FontSize="10" Padding="1,1,1,1" Margin="2,2,2,2" />
-            <Button Grid.Column="9" Height="25" Content="计算运费" FontSize="10" Padding="1,1,1,1" Margin="2,2,2,2" />
-            <Button Grid.Column="10" Height="25" Content="复制物品名称" FontSize="10" Padding="1,1,1,1" Margin="2,2,2,2" />
+            <Button Name="BtnSelect" Grid.Column="0" Height="30" Content="查 询" FontSize="18" Padding="1,1,1,1" Margin="7,2,2,2" Click="BtnSelect_Click" />
+            <Button Grid.Column="1" Height="30" Content="删 除" FontSize="18" Padding="1,1,1,1" Margin="2,2,2,2" />
+            <Button Grid.Column="2" Height="30" Content="保 存" FontSize="18" Padding="1,1,1,1" Margin="2,2,2,2" />
+            <Button Grid.Column="3" Height="30" Content="取 消" FontSize="18" Padding="1,1,1,1" Margin="2,2,2,2" />
+            <Button Grid.Column="4" Height="30" Content="打 印" FontSize="18" Padding="1,1,1,1" Margin="2,2,2,2" />
+            <Button Grid.Column="5" Height="30" Content="导 出" FontSize="18" Padding="1,1,1,1" Margin="2,2,2,2" />
+            <Button Grid.Column="6" Height="30" Content="生成打包单" FontSize="18" Padding="1,1,1,1" Margin="2,2,2,2" />
+            <Button Grid.Column="7" Height="30" Content="打印面单" FontSize="18" Padding="1,1,1,1" Margin="2,2,2,2" />
+            <Button Grid.Column="8" Height="30" Content="其他操作" FontSize="18" Padding="1,1,1,1" Margin="2,2,2,2" />
+            <Button Grid.Column="9" Height="30" Content="计算运费" FontSize="18" Padding="1,1,1,1" Margin="2,2,2,2" />
+            <Button Grid.Column="10" Height="30" Content="复制物品名称" FontSize="18" Padding="1,1,1,1" Margin="2,2,2,2" />
         </Grid>
         <Border Grid.Row="1" VerticalAlignment="Bottom" Background="LightGray" BorderBrush="LightGray" BorderThickness="1"/>
         <!--中间信息填写区-->
@@ -58,21 +58,21 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="200"></ColumnDefinition>
                 <ColumnDefinition Width="220"></ColumnDefinition>
-                <ColumnDefinition Width="400"></ColumnDefinition>
+                <ColumnDefinition Width="500"></ColumnDefinition>
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
             <!--左侧填写栏-->
             <Grid Grid.Column="0">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="25"></RowDefinition>
+                    <RowDefinition Height="35"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
                 </Grid.RowDefinitions>
                 <!--第一行-->
-                <CheckBox Grid.Row="0" Content="按单号查询" Margin="5,0,0,4" VerticalAlignment="Center" FontFamily="宋体" FontSize="11" HorizontalAlignment="Left" />
-                <Button Grid.Row="0" Height="20" Content="清 空" FontSize="10" Padding="1,1,1,1" Margin="2,2,20,2" HorizontalAlignment="Right" VerticalAlignment="Center" />
+                <CheckBox Grid.Row="0" Content="按单号查询" Margin="5,0,0,4" VerticalAlignment="Center" FontFamily="宋体" FontSize="18" HorizontalAlignment="Left" />
+                <Button Grid.Row="0" Height="30" Content="清 空" FontSize="16" Padding="1,1,1,1" Margin="2,2,20,2" HorizontalAlignment="Right" VerticalAlignment="Center" />
                 <!--第二行-->
-                <TextBox Name="TBID" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" Height="100" Width="190" Grid.Row="1" Text="" Margin="2,2,2,2" FontSize="12" FontFamily="宋体"/>
+                <TextBox Name="TBID" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" Height="135" Width="190" Grid.Row="1" Text="" Margin="2,2,2,2" FontSize="12" FontFamily="宋体"/>
 
             </Grid>
             <Border Grid.Column="0" Background="LightGray" BorderBrush="LightGray" BorderThickness="1" HorizontalAlignment="Right"/>
@@ -87,11 +87,11 @@
                     <RowDefinition Height="10"></RowDefinition>
                 </Grid.RowDefinitions>
                 <!--title-->
-                <TextBlock Grid.Row="0" Width="200" Text="扫描日期范围(31天以内)：" Margin="7,2,2,2" FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <TextBlock Grid.Row="0" Width="200" Text="扫描日期范围(31天以内)：" Margin="7,2,2,2" FontSize="18" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                 <GridSplitter Grid.Row="0" Height="2" HorizontalAlignment="Stretch" VerticalAlignment="Bottom"/>
                 <!--内容-->
-                <RadioButton Name="RBApply" Grid.Row="1" Content="申请日期" Margin="7,2,2,2" FontSize="10" VerticalAlignment="Center" FontFamily="宋体" HorizontalAlignment="Left"/>
-                <RadioButton Name="RBPayment" Grid.Row="1" Content="付款日期" Margin="100,2,2,2" FontSize="10" VerticalAlignment="Center" FontFamily="宋体" HorizontalAlignment="Left" />
+                <RadioButton Name="RBApply" Grid.Row="1" Content="申请日期" Margin="7,2,2,2" FontSize="18" VerticalAlignment="Center" FontFamily="宋体" HorizontalAlignment="Left"/>
+                <RadioButton Name="RBPayment" Grid.Row="1" Content="付款日期" Margin="110,2,2,2" FontSize="18" VerticalAlignment="Center" FontFamily="宋体" HorizontalAlignment="Left" />
                 <TextBlock Grid.Row="2" Width="55" Text="开始" Margin="20,5,2,2" FontSize="15" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                 <!--<DatePicker Grid.Row="2" Margin="60,2,2,2" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="12" FontFamily="宋体" />-->
                 <wfi:WindowsFormsHost Width="150" Grid.Row="2" Margin="60,2,2,2" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="12" FontFamily="宋体">
@@ -110,7 +110,7 @@
             <!--中间信息栏-->
             <Grid Grid.Column="2">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="200"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
                     <ColumnDefinition Width="*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
@@ -118,35 +118,35 @@
                     <RowDefinition Height="*"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
                 </Grid.RowDefinitions>
-                <TextBlock Width="50" Grid.Row="0" Grid.Column="0" Text="承运商" Margin="7,2,2,2" 
-                           FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="承运商" Margin="7,2,2,2" 
+                           FontSize="18" FontFamily="宋体" HorizontalAlignment="Left" 
                            VerticalAlignment="Center"/>
-                <TextBox Width="130" Grid.Row="0" Grid.Column="0" Text="" Margin="60,2,2,2" 
-                         FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
+                <TextBox Width="160" Grid.Row="0" Grid.Column="0" Text="" Margin="85,2,2,2" 
+                         FontSize="18" FontFamily="宋体" HorizontalAlignment="Left" 
                          VerticalAlignment="Center" IsReadOnly="True"/>
-                <TextBlock Width="50" Grid.Row="1" Grid.Column="0" Text="目的地" Margin="7,2,2,2" 
-                           FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="目的地" Margin="7,2,2,2" 
+                           FontSize="18" FontFamily="宋体" HorizontalAlignment="Left" 
                            VerticalAlignment="Center"/>
-                <TextBox Width="130" Grid.Row="1" Grid.Column="0" Text="" Margin="60,2,2,2" 
-                         FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
+                <TextBox Width="160" Grid.Row="1" Grid.Column="0" Text="" Margin="85,2,2,2" 
+                         FontSize="18" FontFamily="宋体" HorizontalAlignment="Left" 
                          VerticalAlignment="Center"/>
-                <TextBlock Width="50" Grid.Row="2" Grid.Column="0" Text="打包师傅" Margin="7,2,2,2" 
-                           FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="打包师傅" Margin="7,2,2,2" 
+                           FontSize="18" FontFamily="宋体" HorizontalAlignment="Left" 
                            VerticalAlignment="Center"/>
-                <TextBox Width="130" Grid.Row="2" Grid.Column="0" Text="" Margin="60,2,2,2" 
-                         FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
+                <TextBox Width="160" Grid.Row="2" Grid.Column="0" Text="" Margin="85,2,2,2" 
+                         FontSize="18" FontFamily="宋体" HorizontalAlignment="Left" 
                          VerticalAlignment="Center"/>
-                <TextBlock Width="50" Grid.Row="0" Grid.Column="1" Text="旺旺名" Margin="2,2,2,2" 
-                           FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
+                <TextBlock Grid.Row="0" Grid.Column="1" Text="旺旺名" Margin="2,2,2,2" 
+                           FontSize="18" FontFamily="宋体" HorizontalAlignment="Left" 
                            VerticalAlignment="Center"/>
-                <TextBox Width="130" Grid.Row="0" Grid.Column="1" Text="" Margin="55,2,2,2" 
-                         FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
+                <TextBox Width="160" Grid.Row="0" Grid.Column="1" Text="" Margin="80,2,2,2" 
+                         FontSize="18" FontFamily="宋体" HorizontalAlignment="Left" 
                          VerticalAlignment="Center" IsReadOnly="True"/>
-                <TextBlock Width="50" Grid.Row="1" Grid.Column="1" Text="默认客服" Margin="2,2,2,2" 
-                           FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
+                <TextBlock Grid.Row="1" Grid.Column="1" Text="默认客服" Margin="2,2,2,2" 
+                           FontSize="18" FontFamily="宋体" HorizontalAlignment="Left" 
                            VerticalAlignment="Center"/>
-                <TextBox Width="130" Grid.Row="1" Grid.Column="1" Text="" Margin="55,2,2,2" 
-                         FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
+                <TextBox Width="160" Grid.Row="1" Grid.Column="1" Text="" Margin="80,2,2,2" 
+                         FontSize="18" FontFamily="宋体" HorizontalAlignment="Left" 
                          VerticalAlignment="Center"/>
             </Grid>
             <Border Grid.Column="2" Background="LightGray" BorderBrush="LightGray" BorderThickness="1" HorizontalAlignment="Right"
@@ -159,31 +159,31 @@
                     <RowDefinition Height="60"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
                 </Grid.RowDefinitions>
-                <TextBlock Grid.Row="0" Text="业务勾选：" Margin="2,2,2,2" FontSize="12" 
+                <TextBlock Grid.Row="0" Text="业务勾选：" Margin="2,2,2,2" FontSize="18" 
                        FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                 <Grid Grid.Row="1">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="25"></RowDefinition>
-                        <RowDefinition Height="25"></RowDefinition>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition Height="30"></RowDefinition>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="80"></ColumnDefinition>
-                        <ColumnDefinition Width="80"></ColumnDefinition>
-                        <ColumnDefinition Width="80"></ColumnDefinition>
+                        <ColumnDefinition Width="120"></ColumnDefinition>
+                        <ColumnDefinition Width="120"></ColumnDefinition>
+                        <ColumnDefinition Width="120"></ColumnDefinition>
                         <ColumnDefinition Width="*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <CheckBox Grid.Row="0" Grid.Column="0" Content="只查已申请" Margin="2" 
-                              VerticalAlignment="Center" FontFamily="宋体" FontSize="11" HorizontalAlignment="Left" />
+                              VerticalAlignment="Center" FontFamily="宋体" FontSize="18" HorizontalAlignment="Left" />
                     <CheckBox Grid.Row="1" Grid.Column="0" Content="只查已发货" Margin="2" 
-                              VerticalAlignment="Center" FontFamily="宋体" FontSize="11" HorizontalAlignment="Left" />
+                              VerticalAlignment="Center" FontFamily="宋体" FontSize="18" HorizontalAlignment="Left" />
                     <CheckBox Grid.Row="0" Grid.Column="1" Content="只查已处理" Margin="2" 
-                              VerticalAlignment="Center" FontFamily="宋体" FontSize="11" HorizontalAlignment="Left" />
+                              VerticalAlignment="Center" FontFamily="宋体" FontSize="18" HorizontalAlignment="Left" />
                     <CheckBox Grid.Row="1" Grid.Column="1" Content="只查未处理" Margin="2" 
-                              VerticalAlignment="Center" FontFamily="宋体" FontSize="11" HorizontalAlignment="Left" />
+                              VerticalAlignment="Center" FontFamily="宋体" FontSize="18" HorizontalAlignment="Left" />
                     <CheckBox Grid.Row="0" Grid.Column="2" Content="只查已付款" Margin="2" 
-                              VerticalAlignment="Center" FontFamily="宋体" FontSize="11" HorizontalAlignment="Left" />
+                              VerticalAlignment="Center" FontFamily="宋体" FontSize="18" HorizontalAlignment="Left" />
                     <CheckBox Grid.Row="1" Grid.Column="2" Content="只查未付款" Margin="2" 
-                              VerticalAlignment="Center" FontFamily="宋体" FontSize="11" HorizontalAlignment="Left" />
+                              VerticalAlignment="Center" FontFamily="宋体" FontSize="18" HorizontalAlignment="Left" />
 
                 </Grid>
             </Grid>

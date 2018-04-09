@@ -28,6 +28,8 @@ namespace KGOOS_MUI.Pages.Scan
     {
 
         private List<WeightModel> _WeightList;
+        private string staff_name = "";
+        private string staff_region = "";
         public List<WeightModel> WeightList
         {
             get { return _WeightList; }
@@ -40,6 +42,22 @@ namespace KGOOS_MUI.Pages.Scan
         public Inquire()
         {
             InitializeComponent();
+            if (Application.Current.Properties["name"] != null)
+            {
+                staff_name = Application.Current.Properties["name"].ToString();
+            }
+            else
+            {
+                staff_name = "chy";
+            }
+            if (Application.Current.Properties["region"] != null)
+            {
+                staff_region = Application.Current.Properties["region"].ToString();
+            }
+            else
+            {
+                staff_region = "1";
+            }
             TBStartTime.Text = DateTime.Now.AddDays(-5).ToString("yyyy-MM-dd HH:mm:ss");
         }
 
@@ -65,9 +83,10 @@ namespace KGOOS_MUI.Pages.Scan
             str = BaseClass.getSqlValue(sArrayID);
 
             sql = "select top " + num + " * from T_Weight as t1 " +
-                "join T_Staff as t2 on t2.id_staff = t1.Weight_WorkderId " +
+                "join T_Staff as t2 on t2.name_staff = t1.Weight_WorkderId " +
                 "join T_Region as t3 on t3.Region_Id = t2.Region_staff " +
-                "where t1.Weight_Type is not null ";
+                "where t1.Weight_Type is not null " +
+                "and t1.Weight_WorkderId = '"+staff_name+"'";
 
             if (TBPlant != null && TBPlant.Text != "")
             {

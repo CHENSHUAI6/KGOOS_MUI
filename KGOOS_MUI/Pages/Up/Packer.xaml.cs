@@ -45,7 +45,7 @@ namespace KGOOS_MUI.Pages.Up
             }
             else
             {
-                staff_name = "测试人员";
+                staff_name = "chy";
             }
             if (Application.Current.Properties["region"] != null)
             {

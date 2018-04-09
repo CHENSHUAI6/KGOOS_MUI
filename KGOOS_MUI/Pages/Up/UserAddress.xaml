@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:mui="http://firstfloorsoftware.com/ModernUI"
              mc:Ignorable="d" 
-             d:DesignHeight="500" d:DesignWidth="700">
+             d:DesignHeight="500" d:DesignWidth="800">
     <Grid Style="{StaticResource ContentRoot}">
         <Grid.RowDefinitions>
             <RowDefinition Height="40"></RowDefinition>
@@ -29,16 +29,16 @@
             <!--顶端按钮-->
             <Grid Grid.Row="0">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="55"></ColumnDefinition>
-                    <ColumnDefinition Width="50"></ColumnDefinition>
-                    <ColumnDefinition Width="50"></ColumnDefinition>
-                    <ColumnDefinition Width="50"></ColumnDefinition>
+                    <ColumnDefinition Width="65"></ColumnDefinition>
+                    <ColumnDefinition Width="60"></ColumnDefinition>
+                    <ColumnDefinition Width="60"></ColumnDefinition>
+                    <ColumnDefinition Width="60"></ColumnDefinition>
                     <ColumnDefinition Width="*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <Button Grid.Column="0" Height="25" Content="新 建" FontSize="10" Padding="1,1,1,1" Margin="7,2,2,2"/>
-                <Button Grid.Column="1" Height="25" Content="删 除" FontSize="10" Padding="1,1,1,1" Margin="2,2,2,2"/>
-                <Button Grid.Column="2" Height="25" Content="保 存" FontSize="10" Padding="1,1,1,1" Margin="2,2,2,2"/>
-                <Button Grid.Column="3" Height="25" Content="取 消" FontSize="10" Padding="1,1,1,1" Margin="2,2,2,2"/>
+                <Button Grid.Column="0" Height="30" Content="新 建" FontSize="18" Padding="1,1,1,1" Margin="7,2,2,2"/>
+                <Button Grid.Column="1" Height="30" Content="删 除" FontSize="18" Padding="1,1,1,1" Margin="2,2,2,2"/>
+                <Button Grid.Column="2" Height="30" Content="保 存" FontSize="18" Padding="1,1,1,1" Margin="2,2,2,2"/>
+                <Button Grid.Column="3" Height="30" Content="取 消" FontSize="18" Padding="1,1,1,1" Margin="2,2,2,2"/>
             </Grid>
             <Border Grid.Row="0" VerticalAlignment="Bottom" Background="LightGray" BorderBrush="LightGray" BorderThickness="1"/>
             <!--中间输入信息-->
@@ -54,30 +54,30 @@
                         <RowDefinition Height="*"></RowDefinition>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="60"></ColumnDefinition>
+                        <ColumnDefinition Width="80"></ColumnDefinition>
                         <ColumnDefinition Width="*"></ColumnDefinition>
-                        <ColumnDefinition Width="60"></ColumnDefinition>
+                        <ColumnDefinition Width="80"></ColumnDefinition>
                         <ColumnDefinition Width="*"></ColumnDefinition>
-                        <ColumnDefinition Width="60"></ColumnDefinition>
+                        <ColumnDefinition Width="80"></ColumnDefinition>
                         <ColumnDefinition Width="*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <!--第一行-->
-                    <TextBlock Grid.Row="0" Grid.Column="0" Text="联系电话" Margin="2,2,2,2" FontSize="12" FontFamily="宋体" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-                    <TextBox Grid.Row="0" Grid.Column="1" Text="" Margin="2,2,2,2" FontSize="12" FontFamily="宋体" VerticalAlignment="Center"/>
-                    <TextBlock Grid.Row="0" Grid.Column="2" Text="联系人" Margin="2,2,2,2" FontSize="12" FontFamily="宋体" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-                    <TextBox Grid.Row="0" Grid.Column="3" Text="" Margin="2,2,2,2" FontSize="12" FontFamily="宋体" VerticalAlignment="Center"/>
-                    <TextBlock Grid.Row="0" Grid.Column="4" Text="邮政编号" Margin="2,2,2,2" FontSize="12" FontFamily="宋体" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-                    <TextBox Grid.Row="0" Grid.Column="5" Text="" Margin="2,2,2,2" FontSize="12" FontFamily="宋体" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="联系电话" Margin="2,2,2,2" FontSize="18" FontFamily="宋体" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                    <TextBox Grid.Row="0" Grid.Column="1" Text="" Margin="2,2,2,2" FontSize="18" FontFamily="宋体" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Row="0" Grid.Column="2" Text="联系人" Margin="2,2,2,2" FontSize="18" FontFamily="宋体" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                    <TextBox Grid.Row="0" Grid.Column="3" Text="" Margin="2,2,2,2" FontSize="18" FontFamily="宋体" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Row="0" Grid.Column="4" Text="邮政编号" Margin="2,2,2,2" FontSize="18" FontFamily="宋体" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                    <TextBox Grid.Row="0" Grid.Column="5" Text="" Margin="2,2,2,2" FontSize="18" FontFamily="宋体" VerticalAlignment="Center"/>
 
                     <!--第二行-->
-                    <TextBlock Grid.Row="1" Grid.Column="0" Text="地址" Margin="2,2,2,2" FontSize="12" FontFamily="宋体" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-                    <TextBox Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="5" Text="" Margin="2,2,2,2" FontSize="12" FontFamily="宋体" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="地址" Margin="2,2,2,2" FontSize="18" FontFamily="宋体" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                    <TextBox Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="5" Text="" Margin="2,2,2,2" FontSize="18" FontFamily="宋体" VerticalAlignment="Center"/>
 
                     <!--第三行-->
-                    <TextBlock Grid.Row="2" Grid.Column="0" Text="国家" Margin="2,2,2,2" FontSize="12" FontFamily="宋体" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-                    <TextBox Grid.Row="2" Grid.Column="1" Text="" Margin="2,2,2,2" FontSize="12" FontFamily="宋体" VerticalAlignment="Center"/>
-                    <TextBlock Grid.Row="2" Grid.Column="2" Text="城市" Margin="2,2,2,2" FontSize="12" FontFamily="宋体" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-                    <TextBox Grid.Row="2" Grid.Column="3" Text="" Margin="2,2,2,2" FontSize="12" FontFamily="宋体" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Row="2" Grid.Column="0" Text="国家" Margin="2,2,2,2" FontSize="18" FontFamily="宋体" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                    <TextBox Grid.Row="2" Grid.Column="1" Text="" Margin="2,2,2,2" FontSize="18" FontFamily="宋体" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Row="2" Grid.Column="2" Text="城市" Margin="2,2,2,2" FontSize="18" FontFamily="宋体" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                    <TextBox Grid.Row="2" Grid.Column="3" Text="" Margin="2,2,2,2" FontSize="18" FontFamily="宋体" VerticalAlignment="Center"/>
                 </Grid>
 
 

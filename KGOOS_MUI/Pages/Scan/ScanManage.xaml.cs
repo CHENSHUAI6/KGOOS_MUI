@@ -23,11 +23,11 @@ namespace KGOOS_MUI.Pages.Scan
         public ScanManage()
         {
             InitializeComponent();
-            BitmapImage bi = new BitmapImage();
-            // BitmapImage.UriSource must be in a BeginInit/EndInit block.  
-            bi.BeginInit();
-            bi.UriSource = new Uri(@"C:\1.jpg", UriKind.RelativeOrAbsolute);
-            bi.EndInit();
+            //BitmapImage bi = new BitmapImage();
+            //// BitmapImage.UriSource must be in a BeginInit/EndInit block.  
+            //bi.BeginInit();
+            //bi.UriSource = new Uri(@"C:\1.jpg", UriKind.RelativeOrAbsolute);
+            //bi.EndInit();
             //image1.Source = bi;
         }
 

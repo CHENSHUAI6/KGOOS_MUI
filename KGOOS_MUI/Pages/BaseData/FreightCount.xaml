@@ -7,7 +7,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:mui="http://firstfloorsoftware.com/ModernUI"
              mc:Ignorable="d" 
-             d:DesignHeight="800" d:DesignWidth="1200">
+             d:DesignHeight="800" d:DesignWidth="1400">
 
     <Grid Style="{StaticResource ContentRoot}">
         <Grid.RowDefinitions>
@@ -27,70 +27,70 @@
         <!--顶端按钮栏-->
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="55"></ColumnDefinition>
-                <ColumnDefinition Width="50"></ColumnDefinition>
-                <ColumnDefinition Width="50"></ColumnDefinition>
-                <ColumnDefinition Width="50"></ColumnDefinition>
-                <ColumnDefinition Width="50"></ColumnDefinition>
+                <ColumnDefinition Width="65"></ColumnDefinition>
+                <ColumnDefinition Width="60"></ColumnDefinition>
+                <ColumnDefinition Width="60"></ColumnDefinition>
+                <ColumnDefinition Width="60"></ColumnDefinition>
+                <ColumnDefinition Width="60"></ColumnDefinition>
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Button Name="BtnSelect" Grid.Column="0" Height="25" Content="查 询" FontSize="10" Padding="1,1,1,1" Margin="7,2,2,2" Click="BtnSelect_Click"/>
-            <Button Grid.Column="1" Height="25" Content="新 建" FontSize="10" Padding="1,1,1,1" Margin="2,2,2,2" />
-            <Button Name="BtnDelete" Grid.Column="2" Height="25" Content="删 除" FontSize="10" Padding="1,1,1,1" Margin="2,2,2,2" Click="BtnDelete_Click" />
-            <Button Name="BtnSave" Grid.Column="3" Height="25" Content="保 存" FontSize="10" Padding="1,1,1,1" Margin="2,2,2,2" Click="BtnSave_Click" />
-            <Button Grid.Column="4" Height="25" Content="取 消" FontSize="10" Padding="1,1,1,1" Margin="2,2,2,2" />
+            <Button Name="BtnSelect" Grid.Column="0" Height="30" Content="查 询" FontSize="18" Padding="1,1,1,1" Margin="7,2,2,2" Click="BtnSelect_Click"/>
+            <Button Grid.Column="1" Height="30" Content="新 建" FontSize="18" Padding="1,1,1,1" Margin="2,2,2,2" />
+            <Button Name="BtnDelete" Grid.Column="2" Height="30" Content="删 除" FontSize="18" Padding="1,1,1,1" Margin="2,2,2,2" Click="BtnDelete_Click" />
+            <Button Name="BtnSave" Grid.Column="3" Height="30" Content="保 存" FontSize="18" Padding="1,1,1,1" Margin="2,2,2,2" Click="BtnSave_Click" />
+            <Button Grid.Column="4" Height="30" Content="取 消" FontSize="18" Padding="1,1,1,1" Margin="2,2,2,2" />
         </Grid>
         <Border Grid.Row="1" VerticalAlignment="Bottom" Background="LightGray" BorderBrush="LightGray" BorderThickness="1"/>
 
         <!--中间选框-->
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="200"></ColumnDefinition>
-                <ColumnDefinition Width="200"></ColumnDefinition>
-                <ColumnDefinition Width="200"></ColumnDefinition>
-                <ColumnDefinition Width="200"></ColumnDefinition>
+                <ColumnDefinition Width="260"></ColumnDefinition>
+                <ColumnDefinition Width="260"></ColumnDefinition>
+                <ColumnDefinition Width="260"></ColumnDefinition>
+                <ColumnDefinition Width="260"></ColumnDefinition>
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <TextBlock Width="50" Grid.Column="0" Text="承运商" Margin="17,2,2,2" 
-                           FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
+            <TextBlock Grid.Column="0" Text="承运商" Margin="17,2,2,2" 
+                           FontSize="18" FontFamily="宋体" HorizontalAlignment="Left" 
                            VerticalAlignment="Center"/>
-            <TextBox Name="TBName" Width="130" Grid.Column="0" Text="" Margin="70,2,2,2" 
-                         FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
+            <TextBox Name="TBName" Width="160" Grid.Column="0" Text="" Margin="90,2,2,2" 
+                         FontSize="18" FontFamily="宋体" HorizontalAlignment="Left" 
                          VerticalAlignment="Center"/>
             <!--<ComboBox Name="CBCom" Width="120" Grid.Column="0" Text="" Margin="70,2,2,2" 
                          FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                          VerticalAlignment="Center"/>-->
 
-            <TextBlock Width="50" Grid.Column="1" Text="区域" Margin="7,2,2,2" 
-                           FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
+            <TextBlock Grid.Column="1" Text="区域" Margin="7,2,2,2" 
+                           FontSize="18" FontFamily="宋体" HorizontalAlignment="Left" 
                            VerticalAlignment="Center"/>
             <!--<TextBox Width="130" Grid.Column="1" Text="" Margin="60,2,2,2" 
                          FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                          VerticalAlignment="Center"/>-->
-            <ComboBox Name="CBRegion" Width="130" Grid.Column="1" Text="" Margin="60,2,2,2" 
-                         FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
+            <ComboBox Name="CBRegion" Width="160" Grid.Column="1" Text="" Margin="80,2,2,2" 
+                         FontSize="18" FontFamily="宋体" HorizontalAlignment="Left" 
                          VerticalAlignment="Center"/>
-            <TextBlock Width="50" Grid.Column="2" Text="目的地" Margin="7,2,2,2" 
-                           FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
+            <TextBlock Grid.Column="2" Text="目的地" Margin="7,2,2,2" 
+                           FontSize="18" FontFamily="宋体" HorizontalAlignment="Left" 
                            VerticalAlignment="Center"/>
-            <TextBox Name="TBDestination" Width="130" Grid.Column="2" Text="" Margin="60,2,2,2" 
-                         FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
+            <TextBox Name="TBDestination" Width="160" Grid.Column="2" Text="" Margin="80,2,2,2" 
+                         FontSize="18" FontFamily="宋体" HorizontalAlignment="Left" 
                          VerticalAlignment="Center"/>
             <!--<ComboBox Name="CBDestination" Width="130" Grid.Column="2" Text="" Margin="60,2,2,2" 
                          FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                          VerticalAlignment="Center"/>-->
             <TextBlock Grid.Column="3" Text="实际运输公司" Margin="7,2,2,2" 
-                           FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
+                           FontSize="18" FontFamily="宋体" HorizontalAlignment="Left" 
                            VerticalAlignment="Center"/>
-            <TextBox Name="TBRealCon" Width="130" Grid.Column="3" Text="" Margin="82,2,2,2" 
+            <TextBox Name="TBRealCon" Width="160" Grid.Column="3" Text="" Margin="82,2,2,2" 
                          FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                          VerticalAlignment="Center"/>
 
             <TextBlock Grid.Column="4" Text="付款链接" Margin="7,2,2,2" 
-                           FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
+                           FontSize="18" FontFamily="宋体" HorizontalAlignment="Left" 
                            VerticalAlignment="Center"/>
-            <TextBox Name="TBPayAdd" Width="200" Grid.Column="4" Text="" Margin="82,2,2,2" 
-                         FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
+            <TextBox Name="TBPayAdd" Width="200" Grid.Column="4" Text="" Margin="92,2,2,2" 
+                         FontSize="18" FontFamily="宋体" HorizontalAlignment="Left" 
                          VerticalAlignment="Center"/>
         </Grid>
         <Border Grid.Row="2" VerticalAlignment="Bottom" Background="LightGray" BorderBrush="LightGray" BorderThickness="1"/>
@@ -98,11 +98,11 @@
         <!--中间信息填写区-->
         <Grid Grid.Row="3">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="210"></ColumnDefinition>
-                <ColumnDefinition Width="100"></ColumnDefinition>
-                <ColumnDefinition Width="100"/>
-                <ColumnDefinition Width="200"></ColumnDefinition>
+                <ColumnDefinition Width="280"></ColumnDefinition>
+                <ColumnDefinition Width="130"></ColumnDefinition>
+                <ColumnDefinition Width="130"/>
                 <ColumnDefinition Width="260"></ColumnDefinition>
+                <ColumnDefinition Width="300"></ColumnDefinition>
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
@@ -111,77 +111,77 @@
                 <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
             <!--第一行-->
-            <TextBlock Width="50" Grid.Row="0" Grid.Column="0" Text="费用类别" Margin="17,13,0,13" 
-                           FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="费用类别" Margin="17,3,0,3" 
+                           FontSize="18" FontFamily="宋体" HorizontalAlignment="Left" 
                            VerticalAlignment="Center"/>
             <!--<TextBox Name="TBPriceType" Width="130" Grid.Row="0" Grid.Column="0" Text="" Margin="70,10,0,10" 
                          FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                          VerticalAlignment="Center"/>-->
-            <ComboBox Name="CBPriceType" Width="130" Grid.Row="0" Grid.Column="0" Text="" Margin="70,10,0,10" 
-                         FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
+            <ComboBox Name="CBPriceType" Width="160" Grid.Row="0" Grid.Column="0" Text="" Margin="100,3,0,3" 
+                         FontSize="18" FontFamily="宋体" HorizontalAlignment="Left" 
                          VerticalAlignment="Center"/>
-            <TextBlock Width="50" Grid.Row="0" Grid.Column="1" Text="物品类型" Margin="7,13,0,13" 
-                           FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
+            <TextBlock Grid.Row="0" Grid.Column="1" Text="物品类型" Margin="7,3,0,3" 
+                           FontSize="18" FontFamily="宋体" HorizontalAlignment="Left" 
                            VerticalAlignment="Center"/>
-            <TextBox Name="TBThingType" Width="130" Grid.Row="0" Grid.Column="1" Text="" Margin="60,10,0,10" 
-                         FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
+            <TextBox Name="TBThingType" Width="160" Grid.Row="0" Grid.Column="1" Text="" Margin="90,3,0,3" 
+                         FontSize="18" FontFamily="宋体" HorizontalAlignment="Left" 
                          VerticalAlignment="Center" Grid.ColumnSpan="2"/>
-            <TextBlock Width="50" Grid.Row="0" Grid.Column="3" Text="快件类型" Margin="7,13,0,13" 
-                           FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
+            <TextBlock Grid.Row="0" Grid.Column="3" Text="快件类型" Margin="7,3,0,3" 
+                           FontSize="18" FontFamily="宋体" HorizontalAlignment="Left" 
                            VerticalAlignment="Center"/>
-            <TextBox Name="TBAddressType" Width="130" Grid.Row="0" Grid.Column="3" Text="" Margin="60,10,0,10" 
-                         FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
+            <TextBox Name="TBAddressType" Width="160" Grid.Row="0" Grid.Column="3" Text="" Margin="90,10,0,10" 
+                         FontSize="18" FontFamily="宋体" HorizontalAlignment="Left" 
                          VerticalAlignment="Center"/>
             <TextBlock Grid.Row="0" Grid.Column="4" Text="有效起始时间" Margin="7,13,0,13" 
-                           FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
+                           FontSize="18" FontFamily="宋体" HorizontalAlignment="Left" 
                            VerticalAlignment="Center"/>
             <!--<TextBox Width="150" Grid.Row="0" Grid.Column="3" Text="" Margin="90,2,2,2" 
                          FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                          VerticalAlignment="Center"/>-->
-            <wfi:WindowsFormsHost Width="100" Grid.Row="0" Grid.Column="4" Margin="90,2,2,2" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="12" FontFamily="宋体">
+            <wfi:WindowsFormsHost Width="100" Grid.Row="0" Grid.Column="4" Margin="130,2,2,2" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="12" FontFamily="宋体">
                 <wf:DateTimePicker x:Name="TBStartTime" Width="100" Height="20" Format="Custom" CustomFormat="yyyy-MM-dd" ValueChanged="TBStartTime_ValueChanged" />
             </wfi:WindowsFormsHost>
 
             <!--第二行-->
-            <TextBlock Width="50" Grid.Row="1" Grid.Column="0" Text="财务中心" Margin="17,13,0,13" 
-                           FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="财务中心" Margin="17,3,0,3" 
+                           FontSize="18" FontFamily="宋体" HorizontalAlignment="Left" 
                            VerticalAlignment="Center"/>
-            <TextBox Name="TBFin" Width="130" Grid.Row="1" Grid.Column="0" Text="" Margin="70,10,0,10" 
-                         FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
+            <TextBox Name="TBFin" Width="160" Grid.Row="1" Grid.Column="0" Text="" Margin="100,3,0,3" 
+                         FontSize="18" FontFamily="宋体" HorizontalAlignment="Left" 
                          VerticalAlignment="Center"/>
-            <TextBlock Width="50" Grid.Row="1" Grid.Column="1" Text="运输方式" Margin="7,13,0,13" 
-                           FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
+            <TextBlock Grid.Row="1" Grid.Column="1" Text="运输方式" Margin="7,3,0,3" 
+                           FontSize="18" FontFamily="宋体" HorizontalAlignment="Left" 
                            VerticalAlignment="Center"/>
-            <TextBox Name="TBTransport" Width="130" Grid.Row="1" Grid.Column="1" Text="" Margin="60,10,0,10" 
-                         FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
+            <TextBox Name="TBTransport" Width="160" Grid.Row="1" Grid.Column="1" Text="" Margin="90,3,0,3" 
+                         FontSize="18" FontFamily="宋体" HorizontalAlignment="Left" 
                          VerticalAlignment="Center" Grid.ColumnSpan="2"/>
-            <TextBlock Width="50" Grid.Row="1" Grid.Column="3" Text="报价序号" Margin="7,13,0,13" 
-                           FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
+            <TextBlock Grid.Row="1" Grid.Column="3" Text="报价序号" Margin="7,3,0,3" 
+                           FontSize="18" FontFamily="宋体" HorizontalAlignment="Left" 
                            VerticalAlignment="Center"/>
-            <TextBox Name="TBQuote_num" Width="130" Grid.Row="1" Grid.Column="3" Text="" Margin="60,10,0,10" 
-                         FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
+            <TextBox Name="TBQuote_num" Width="160" Grid.Row="1" Grid.Column="3" Text="" Margin="90,3,0,3" 
+                         FontSize="18" FontFamily="宋体" HorizontalAlignment="Left" 
                          VerticalAlignment="Center"/>
-            <TextBlock Grid.Row="1" Grid.Column="4" Text="有效终止时间" Margin="7,13,0,13" 
-                           FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
+            <TextBlock Grid.Row="1" Grid.Column="4" Text="有效终止时间" Margin="7,3,0,3" 
+                           FontSize="18" FontFamily="宋体" HorizontalAlignment="Left" 
                            VerticalAlignment="Center"/>
             <!--<TextBox Width="150" Grid.Row="1" Grid.Column="3" Text="" Margin="90,2,2,2" 
                          FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                          VerticalAlignment="Center"/>-->
-            <wfi:WindowsFormsHost Width="100" Grid.Row="1" Grid.Column="4" Margin="90,2,2,2" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="12" FontFamily="宋体">
+            <wfi:WindowsFormsHost Width="100" Grid.Row="1" Grid.Column="4" Margin="130,2,2,2" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="12" FontFamily="宋体">
                 <wf:DateTimePicker x:Name="TBEndTime" Width="100" Height="20" Format="Custom" CustomFormat="yyyy-MM-dd"/>
             </wfi:WindowsFormsHost>
             <!--第三行-->
-            <TextBlock Width="50" Grid.Row="2" Grid.Column="0" Text="报价名称" Margin="17,13,0,13" 
-                           FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
+            <TextBlock Grid.Row="2" Grid.Column="0" Text="报价名称" Margin="17,3,0,3" 
+                           FontSize="18" FontFamily="宋体" HorizontalAlignment="Left" 
                            VerticalAlignment="Center"/>
-            <TextBox Name="TBQuote_name" Width="330" Grid.ColumnSpan="3" Grid.Row="2" Grid.Column="0" Text="" Margin="70,10,0,10" 
-                         FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
+            <TextBox Name="TBQuote_name" Width="330" Grid.ColumnSpan="3" Grid.Row="2" Grid.Column="0" Text="" Margin="100,3,0,3" 
+                         FontSize="18" FontFamily="宋体" HorizontalAlignment="Left" 
                          VerticalAlignment="Center"/>
-            <TextBlock Width="50" Grid.Row="2" Grid.Column="3" Text="报价备注" Margin="7,13,0,13" 
-                           FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
+            <TextBlock Grid.Row="2" Grid.Column="3" Text="报价备注" Margin="7,3,0,3" 
+                           FontSize="18" FontFamily="宋体" HorizontalAlignment="Left" 
                            VerticalAlignment="Center"/>
-            <TextBox Name="TBQuote_note" Width="330" Grid.ColumnSpan="2" Grid.Row="2" Grid.Column="3" Text="" Margin="70,10,0,10" 
-                         FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
+            <TextBox Name="TBQuote_note" Width="330" Grid.ColumnSpan="2" Grid.Row="2" Grid.Column="3" Text="" Margin="100,3,0,3" 
+                         FontSize="18" FontFamily="宋体" HorizontalAlignment="Left" 
                          VerticalAlignment="Center"/>
 
         </Grid>

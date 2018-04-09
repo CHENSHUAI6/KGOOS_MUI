@@ -86,7 +86,8 @@ namespace KGOOS_MUI.Pages.Scan
             {
                 string sql = "";
                 string Weight_Time, Id, Weight_Num, Weight_Note, Weight_Pack, Weight_Shelf,
-                    Weight_UserId, Weight_UserName, Weight_Helf, Weight_ConID, Weight_NoteStaff;
+                    Weight_UserId, Weight_UserName, Weight_Helf, Weight_ConID, Weight_NoteStaff,
+                    Weight_OverLong, Weight_OverHelf;
                 float Weight_Weitgh = 0, Weight_Size = 0;
                 
                 DataSet ds = new DataSet();
@@ -94,6 +95,24 @@ namespace KGOOS_MUI.Pages.Scan
                 Weight_Time = TBsacnTime.Value.ToString("yyyy-MM-dd: HH:mm:ss");               
 
                 Id = BaseClass.getInsertMaxId("T_Weight", "Id", "000001");
+
+                if (CBLong.IsChecked == true)
+                {
+                    Weight_OverLong = "是";
+                }
+                else
+                {
+                    Weight_OverLong = "";
+                }
+
+                if (CBHelf.IsChecked == true)
+                {
+                    Weight_OverHelf = "是";
+                }
+                else
+                {
+                    Weight_OverHelf = "";
+                }
 
                 if (TBtranId.Text.Length >= 5)
                 {
@@ -184,11 +203,11 @@ namespace KGOOS_MUI.Pages.Scan
 
                 if (TBName.Tag == null || TBName.Tag.ToString() == "")
                 {
-                    //sql1 = "select * from "
-                    MessageBox.Show(TBName.Text + "  用户不存在请重新输入");
-                    TBName.Text = null;
-                    TBName.Focus();
-                    return;
+                    //MessageBox.Show(TBName.Text + "  用户不存在请重新输入");
+                    //TBName.Text = null;
+                    //TBName.Focus();
+                    //return;
+                    Weight_UserId = "";
                 }
                 else
                 {
@@ -203,20 +222,22 @@ namespace KGOOS_MUI.Pages.Scan
                     sql = "update T_Weight set Weight_Time = '{0}', Weight_Num = '{2}', Weight_Weitgh = '{3}', " +
                         "Weight_Note = '{4}',Weight_Shelf = '{5}',Weight_UserId = '{6}', " +
                         "Weight_UserName = '{7}', Weight_Size = '{8}', Weight_Helf = '{9}', Weight_WorkderId = '{10}', " +
-                        "Id = '{11}' , Weight_Region = '{12}', Weight_Pack = '{13}', Weight_NoteStaff = '{14}' " +
+                        "Id = '{11}' , Weight_Region = '{12}', Weight_Pack = '{13}', Weight_NoteStaff = '{14}', " +
+                        "Weight_OverLong = '{15}', Weight_OverHelf = '{16}' " +
                         "where Weight_ConID = '{1}'";
                 }
                 else
                 {
                     sql = "insert into T_Weight " +
                     "(Weight_Time,Weight_ConID,Weight_Num,Weight_Weitgh,Weight_Note,Weight_Shelf,Weight_UserId, " +
-                    "Weight_UserName,Weight_Size,Weight_Helf,Weight_WorkderId, Id, Weight_Region, Weight_Pack, Weight_NoteStaff) " +
-                    "values ('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}','{13}', '{14}')";
+                    "Weight_UserName,Weight_Size,Weight_Helf,Weight_WorkderId, Id, Weight_Region, Weight_Pack, Weight_NoteStaff, " + 
+                    "Weight_OverLong, Weight_OverHelf ) " +
+                    "values ('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}','{13}', '{14}', '{15}', '{16}')";
                 }
 
                 sql = string.Format(sql, Weight_Time, Weight_ConID, Weight_Num, Weight_Weitgh, Weight_Note, Weight_Shelf,
-                    Weight_UserId, Weight_UserName, Weight_Size, Weight_Helf, staff_name, Id, staff_region, Weight_Pack, 
-                    Weight_NoteStaff);
+                    Weight_UserId, Weight_UserName, Weight_Size, Weight_Helf, staff_name, Id, staff_region, Weight_Pack,
+                    Weight_NoteStaff, Weight_OverLong, Weight_OverHelf);
                 int n = DBClass.execUpdate(sql);
                 if (n > 0)
                 {
@@ -255,6 +276,8 @@ namespace KGOOS_MUI.Pages.Scan
             dt.Columns.Add(new DataColumn("Weight_Pack", typeof(string)));
             dt.Columns.Add(new DataColumn("Weight_Region", typeof(string)));
             dt.Columns.Add(new DataColumn("Weight_NoteStaff", typeof(string)));
+            dt.Columns.Add(new DataColumn("Weight_OverLong", typeof(string)));
+            dt.Columns.Add(new DataColumn("Weight_OverHelf", typeof(string)));
             
 
             if (ds.Tables[0].Rows.Count > 0 )
@@ -280,6 +303,8 @@ namespace KGOOS_MUI.Pages.Scan
                     dr["Weight_Pack"] = ds.Tables[0].Rows[i]["Weight_Pack"];
                     dr["Weight_Region"] = ds.Tables[0].Rows[i]["Weight_Region"];
                     dr["Weight_NoteStaff"] = ds.Tables[0].Rows[i]["Weight_NoteStaff"];
+                    dr["Weight_OverLong"] = ds.Tables[0].Rows[i]["Weight_OverLong"];
+                    dr["Weight_OverHelf"] = ds.Tables[0].Rows[i]["Weight_OverHelf"];
                     
                     
                     dt.Rows.Add(dr);
@@ -312,26 +337,6 @@ namespace KGOOS_MUI.Pages.Scan
                 }
             }
             this.TBName.AddItemSource(tlist);
-        }
-
-        /// <summary>
-        /// 表格默认加载
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void DG1_LoadingRow(object sender, DataGridRowEventArgs e)
-        {
-            //e.Row.Header = e.Row.GetIndex() + 1;
-            //var drv = e.Row.Item as DataRowView;
-            //switch (drv["Id"].ToString())
-            //{
-            //    case "1": e.Row.Background = new SolidColorBrush(Colors.Green);
-            //        break;
-            //    case "2": e.Row.Background = new SolidColorBrush(Colors.Yellow);
-            //        break;
-            //    case "3": e.Row.Background = new SolidColorBrush(Colors.CadetBlue);
-            //        break;
-            //}
         }
 
         /// <summary>
@@ -424,7 +429,15 @@ namespace KGOOS_MUI.Pages.Scan
         {
             if (e.Key == Key.Enter)
             {
-                this.TBNote.Focus();
+                if (TBShelf.Text == "")
+                {
+                    this.TBShelf.Focus();
+                }
+                else
+                {
+                    this.TBNote.Focus();
+                }
+                
 
             }
         }
@@ -476,7 +489,8 @@ namespace KGOOS_MUI.Pages.Scan
                     TBSize.Clear();
                     TBtranId.Clear();
                     TBweigh.Clear();
-
+                    CBHelf.IsChecked = false;
+                    CBLong.IsChecked = false;
                     TBtranId.Focus();
                     IsOK = false;
                 }
@@ -495,6 +509,7 @@ namespace KGOOS_MUI.Pages.Scan
             if (n > 0)
             {
                 MessageBox.Show("保存成功！");
+                TBNum.Text = "0";
                 getTableData();
             }
         }
@@ -578,8 +593,16 @@ namespace KGOOS_MUI.Pages.Scan
                 }
 
                 TBSize.Text = Size.ToString();
-                TBNote.Text += " 【" + TBLength.Text + "*" + TBWidth.Text + "*" + TBHeight.Text + "】 ";
+                TBNote.Text += " 【" + TBLength.Text + "*" + TBWidth.Text + "*" + TBHeight.Text + "=" + Size + "】 ";
+                
+                
                 TBNote.Focus();
+
+                //清空数据
+                TBWidth.Clear();
+                TBLength.Clear();
+                TBHeight.Clear();
+                TBSize.Clear();
             }
         }
 
@@ -590,6 +613,20 @@ namespace KGOOS_MUI.Pages.Scan
                 TBNote.Focus();
             }
         }
+
+        private void TBShelf_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                TBNote.Focus();
+            }
+        }
+
+        private void DG1_KeyDown(object sender, KeyEventArgs e)
+        {
+            e.Handled = true;
+        }
+
 
         
 

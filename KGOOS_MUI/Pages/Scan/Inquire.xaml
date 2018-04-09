@@ -12,8 +12,8 @@
     <Grid Style="{StaticResource ContentRoot}">
         <Grid.RowDefinitions>
             <RowDefinition Height="40"></RowDefinition>
-            <RowDefinition Height="40"></RowDefinition>
-            <RowDefinition Height="130"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="180"></RowDefinition>
             <RowDefinition Height="50"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
@@ -33,24 +33,24 @@
                 <RowDefinition Height="30"></RowDefinition>
                 <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
-            <TextBlock Grid.Row="0" Text="未查询到的单号" Margin="2,2,2,2" FontSize="15" 
+            <TextBlock Grid.Row="0" Text="未查询到的单号" Margin="2,2,2,2" FontSize="18" 
                        FontFamily="宋体" HorizontalAlignment="Center" VerticalAlignment="Center" 
                        Foreground="Red"/>
             <TextBox Grid.Row="1" Name="NoID" TextWrapping="Wrap" AcceptsReturn="True" 
                      VerticalScrollBarVisibility="Visible" HorizontalAlignment="Stretch" 
-                     Width="190" Text="" Margin="2,2,2,2" FontSize="12" FontFamily="宋体"
+                     Width="190" Text="" Margin="2,2,2,2" FontSize="18" FontFamily="宋体"
                      Foreground="Red" IsReadOnly="True"/>
         </Grid>
         
         <!--顶端按钮栏-->
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="55"></ColumnDefinition>
-                <ColumnDefinition Width="50"></ColumnDefinition>
+                <ColumnDefinition Width="75"></ColumnDefinition>
+                <ColumnDefinition Width="70"></ColumnDefinition>
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Button Name="BtnSelect" Grid.Column="0" Height="25" Content="查 询" FontSize="10" Padding="1,1,1,1" Margin="7,2,2,2" Click="BtnSelect_Click" />
-            <Button Name="BtnOutput" Grid.Column="1" Height="25" Content="导 出" FontSize="10" Padding="1,1,1,1" Margin="2,2,2,2" />
+            <Button Name="BtnSelect" Grid.Column="0" Height="45" Content="查 询" FontSize="18" Padding="1,1,1,1" Margin="7,2,2,2" Click="BtnSelect_Click" />
+            <Button Name="BtnOutput" Grid.Column="1" Height="45" Content="导 出" FontSize="18" Padding="1,1,1,1" Margin="2,2,2,2" />
         </Grid>
         <Border Grid.Row="1" VerticalAlignment="Bottom" Background="LightGray" BorderBrush="LightGray" BorderThickness="1"/>
 
@@ -65,14 +65,14 @@
             <!--左侧填写栏-->
             <Grid Grid.Column="0">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="25"></RowDefinition>
+                    <RowDefinition Height="35"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
                 </Grid.RowDefinitions>
                 <!--第一行-->
-                <CheckBox Name="CBID" Grid.Row="0" Content="按单号查询" Margin="5,2,2,2" VerticalAlignment="Center" FontFamily="宋体" FontSize="11" HorizontalAlignment="Left" Checked="CBID_Checked" Unchecked="CBID_Unchecked" />
-                <Button Name="BtnClear" Grid.Row="0" Height="20" Content="清 空" FontSize="10" Padding="1,1,1,1" Margin="2,2,20,2" HorizontalAlignment="Right" VerticalAlignment="Center" Click="BtnClear_Click" />
+                <CheckBox Name="CBID" Grid.Row="0" Content="按单号查询" Margin="5,2,2,2" VerticalAlignment="Center" FontFamily="宋体" FontSize="18" HorizontalAlignment="Left" Checked="CBID_Checked" Unchecked="CBID_Unchecked" />
+                <Button Name="BtnClear" Grid.Row="0" Height="30" Content="清 空" FontSize="16" Padding="1,1,1,1" Margin="2,2,20,2" HorizontalAlignment="Right" VerticalAlignment="Center" Click="BtnClear_Click" />
                 <!--第二行-->
-                <TextBox Name="TBID" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" Height="100" Width="190" Grid.Row="1" Text="" Margin="5,5,5,5" FontSize="12" FontFamily="宋体"/>
+                <TextBox Name="TBID" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" Height="130" Width="190" Grid.Row="1" Text="" Margin="5,5,5,5" FontSize="12" FontFamily="宋体"/>
 
             </Grid>
             
@@ -89,14 +89,14 @@
                 <Border Grid.Row="2" VerticalAlignment="Bottom" Background="LightGray" BorderBrush="LightGray" BorderThickness="1"/>
                 <Border Grid.Row="0" Grid.RowSpan="3" HorizontalAlignment="Left" Background="LightGray" BorderBrush="LightGray" BorderThickness="1"/>
                 <Border Grid.Row="0" Grid.RowSpan="3" HorizontalAlignment="Right" Background="LightGray" BorderBrush="LightGray" BorderThickness="1"/>
-                <TextBlock Grid.Row="0" Width="200" Text="扫描日期范围(31天以内)：" Margin="7,2,2,2" FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <TextBlock Grid.Row="0" Width="200" Text="扫描日期范围(31天以内)：" Margin="7,2,2,2" FontSize="18" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                 <!--内容-->
-                <TextBlock Grid.Row="1" Width="55" Text="开始" Margin="20,5,2,2" FontSize="15" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <TextBlock Grid.Row="1" Width="55" Text="开始" Margin="20,5,2,2" FontSize="18" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                     <!--<DatePicker Grid.Row="1" Margin="60,2,2,2" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="12" FontFamily="宋体" />-->
                 <wfi:WindowsFormsHost Width="150" Grid.Row="1" Margin="60,2,2,2" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="12" FontFamily="宋体">
                     <wf:DateTimePicker x:Name="TBStartTime" Width="150" Height="20" Format="Custom" CustomFormat="yyyy-MM-dd: HH:mm:ss"/>
                 </wfi:WindowsFormsHost>
-                <TextBlock Grid.Row="2" Width="55" Text="结束" Margin="20,5,2,2" FontSize="15" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <TextBlock Grid.Row="2" Width="55" Text="结束" Margin="20,5,2,2" FontSize="18" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                     <!--<DatePicker  Grid.Row="2" Margin="60,2,2,2" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="12" FontFamily="宋体" />-->
                 <wfi:WindowsFormsHost Width="150" Grid.Row="2" Margin="60,2,2,2" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="12" FontFamily="宋体">
                     <wf:DateTimePicker x:Name="TBEndTime" Width="150" Height="20" Format="Custom" CustomFormat="yyyy-MM-dd: HH:mm:ss"/>
@@ -106,7 +106,7 @@
             <!--右侧信息栏-->
             <Grid Grid.Column="2">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="200"></ColumnDefinition>
+                    <ColumnDefinition Width="260"></ColumnDefinition>
                     <ColumnDefinition Width="*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
@@ -114,38 +114,38 @@
                     <RowDefinition Height="*"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
                 </Grid.RowDefinitions>
-                <TextBlock Width="50" Grid.Row="0" Grid.Column="0" Text="扫描网点" Margin="7,2,2,2" 
-                           FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="扫描网点" Margin="7,2,2,2" 
+                           FontSize="18" FontFamily="宋体" HorizontalAlignment="Left" 
                            VerticalAlignment="Center"/>
-                <TextBox Name="TBPlant" Width="130" Grid.Row="0" Grid.Column="0" Text="" Margin="60,2,2,2" 
-                         FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
+                <TextBox Name="TBPlant" Width="160" Grid.Row="0" Grid.Column="0" Text="" Margin="85,2,2,2" 
+                         FontSize="18" FontFamily="宋体" HorizontalAlignment="Left" 
                          VerticalAlignment="Center"/>
-                <TextBlock Width="50" Grid.Row="1" Grid.Column="0" Text="旺旺名" Margin="7,2,2,2" 
-                           FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="旺旺名" Margin="7,2,2,2" 
+                           FontSize="18" FontFamily="宋体" HorizontalAlignment="Left" 
                            VerticalAlignment="Center"/>
-                <TextBox Name="TBName" Width="130" Grid.Row="1" Grid.Column="0" Text="" Margin="60,2,2,2" 
-                         FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
+                <TextBox Name="TBName" Width="160" Grid.Row="1" Grid.Column="0" Text="" Margin="85,2,2,2" 
+                         FontSize="18" FontFamily="宋体" HorizontalAlignment="Left" 
                          VerticalAlignment="Center"/>
-                <TextBlock Width="50" Grid.Row="2" Grid.Column="0" Text="返回记录" Margin="7,2,2,2" 
-                           FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="返回记录" Margin="7,2,2,2" 
+                           FontSize="18" FontFamily="宋体" HorizontalAlignment="Left" 
                            VerticalAlignment="Center"/>
-                <TextBox Name="TBReturnNum" Width="130" Grid.Row="2" Grid.Column="0" Text="300" Margin="60,2,2,2" 
-                         FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
+                <TextBox Name="TBReturnNum" Width="160" Grid.Row="2" Grid.Column="0" Text="300" Margin="85,2,2,2" 
+                         FontSize="18" FontFamily="宋体" HorizontalAlignment="Left" 
                          VerticalAlignment="Center"/>
-                <TextBlock Width="50" Grid.Row="0" Grid.Column="1" Text="上一站" Margin="2,2,2,2" 
-                           FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
+                <TextBlock Grid.Row="0" Grid.Column="1" Text="上一站" Margin="2,2,2,2" 
+                           FontSize="18" FontFamily="宋体" HorizontalAlignment="Left" 
                            VerticalAlignment="Center"/>
-                <TextBox Name="TBlastStand" Width="130" Grid.Row="0" Grid.Column="1" Text="" Margin="55,2,2,2" 
-                         FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
+                <TextBox Name="TBlastStand" Width="160" Grid.Row="0" Grid.Column="1" Text="" Margin="85,2,2,2" 
+                         FontSize="18" FontFamily="宋体" HorizontalAlignment="Left" 
                          VerticalAlignment="Center"/>
-                <TextBlock Width="50" Grid.Row="1" Grid.Column="1" Text="物品类别" Margin="2,2,2,2" 
-                           FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
+                <TextBlock Grid.Row="1" Grid.Column="1" Text="物品类别" Margin="2,2,2,2" 
+                           FontSize="18" FontFamily="宋体" HorizontalAlignment="Left" 
                            VerticalAlignment="Center"/>
-                <TextBox Name="TBType" Width="130" Grid.Row="1" Grid.Column="1" Text="" Margin="55,2,2,2" 
-                         FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
+                <TextBox Name="TBType" Width="160" Grid.Row="1" Grid.Column="1" Text="" Margin="85,2,2,2" 
+                         FontSize="18" FontFamily="宋体" HorizontalAlignment="Left" 
                          VerticalAlignment="Center"/>
                 <CheckBox Grid.Row="2" Grid.Column="1" Content="过滤重复" Margin="0,0,0,4" VerticalAlignment="Center" FontFamily="宋体" 
-                          FontSize="11" HorizontalAlignment="Left" IsChecked="True"/>
+                          FontSize="18" HorizontalAlignment="Left" IsChecked="True"/>
 
             </Grid>
         </Grid>
