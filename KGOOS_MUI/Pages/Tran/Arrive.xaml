@@ -289,7 +289,7 @@
                         <DataGridTextColumn Header="体积重" Binding="{Binding Weight_Size}" ElementStyle="{StaticResource contentCenterStyle}"/>
                         <DataGridTextColumn Header="备注" Binding="{Binding Weight_Note}" ElementStyle="{StaticResource contentCenterStyle}"/>
                         <DataGridTextColumn Header="物品类型" Binding="{Binding ?}" ElementStyle="{StaticResource contentCenterStyle}"/>
-                        <DataGridTextColumn Header="集运单号" Binding="{Binding Id}" ElementStyle="{StaticResource contentCenterStyle}"/>
+                        <DataGridTextColumn Header="集运单号" Binding="{Binding Weight_ConTranId}" ElementStyle="{StaticResource contentCenterStyle}"/>
                         <DataGridTextColumn Header="集运时间" Binding="{Binding ?}" ElementStyle="{StaticResource contentCenterStyle}"/>
                         <DataGridTextColumn Header="集运状态" Binding="{Binding Weight_Type}" ElementStyle="{StaticResource contentCenterStyle}"/>
                         <DataGridTextColumn Header="扫描序号" Binding="{Binding ?}" ElementStyle="{StaticResource contentCenterStyle}"/>

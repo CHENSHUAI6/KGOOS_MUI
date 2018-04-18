@@ -141,7 +141,7 @@ namespace KGOOS_MUI.Pages.Tran
                         Weight_Pack = ds.Tables[0].Rows[i]["Weight_Pack"].ToString(),
                         Weight_Region = ds.Tables[0].Rows[i]["Weight_Region"].ToString(),
                         Weight_NoteStaff = ds.Tables[0].Rows[i]["Weight_NoteStaff"].ToString(),
-
+                        Weight_ConTranId = ds.Tables[0].Rows[i]["Weight_ConTranId"].ToString(),
                         WeightColor = WeightColor
                     });
                 }
@@ -154,14 +154,14 @@ namespace KGOOS_MUI.Pages.Tran
                 IsExist = false;
                 for (int j = 0; j < ds.Tables[0].Rows.Count; j++)
                 {
-                    if (sArrayID[i].Equals(ds.Tables[0].Rows[j]["Weight_ConID"]))
+                    if (sArrayID[i].Trim().Equals(ds.Tables[0].Rows[j]["Weight_ConID"]))
                     {
                         IsExist = true;
                     }
                 }
                 if (IsExist == false)
                 {
-                    str += sArrayID[i] + "\r\n";
+                    str += sArrayID[i].Trim() + "\r\n";
                 }
             }
 

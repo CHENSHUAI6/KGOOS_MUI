@@ -6,6 +6,7 @@
              xmlns:wf ="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+             xmlns:tbnew="clr-namespace:KGOOS_MUI.Control"
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="1200">
     
@@ -49,7 +50,7 @@
                 <ColumnDefinition Width="70"></ColumnDefinition>
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Button Name="BtnSelect" Grid.Column="0" Height="45" Content="查 询" FontSize="18" Padding="1,1,1,1" Margin="7,2,2,2" Click="BtnSelect_Click" />
+            <Button Name="BtnSelect" Grid.Column="0" Height="45" Content="查 询" FontSize="18" Padding="1,1,1,1" Margin="7,2,2,2" Click="BtnSelect_Click" RenderTransformOrigin="0.503,0.5" />
             <Button Name="BtnOutput" Grid.Column="1" Height="45" Content="导 出" FontSize="18" Padding="1,1,1,1" Margin="2,2,2,2" />
         </Grid>
         <Border Grid.Row="1" VerticalAlignment="Bottom" Background="LightGray" BorderBrush="LightGray" BorderThickness="1"/>
@@ -123,19 +124,22 @@
                 <TextBlock Grid.Row="1" Grid.Column="0" Text="旺旺名" Margin="7,2,2,2" 
                            FontSize="18" FontFamily="宋体" HorizontalAlignment="Left" 
                            VerticalAlignment="Center"/>
-                <TextBox Name="TBName" Width="160" Grid.Row="1" Grid.Column="0" Text="" Margin="85,2,2,2" 
+                <!--<TextBox Name="TBName" Width="160" Grid.Row="1" Grid.Column="0" Text="" Margin="85,2,2,2" 
                          FontSize="18" FontFamily="宋体" HorizontalAlignment="Left" 
-                         VerticalAlignment="Center"/>
+                         VerticalAlignment="Center"/>-->
+                <tbnew:AutoCompleteTextBox x:Name="TBName" Height="30" Width="160" Grid.Row="1" Grid.Column="0" 
+                      Text="" Margin="85,2,0,0" 
+                      FontSize="18" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center" />
                 <TextBlock Grid.Row="2" Grid.Column="0" Text="返回记录" Margin="7,2,2,2" 
                            FontSize="18" FontFamily="宋体" HorizontalAlignment="Left" 
                            VerticalAlignment="Center"/>
                 <TextBox Name="TBReturnNum" Width="160" Grid.Row="2" Grid.Column="0" Text="300" Margin="85,2,2,2" 
                          FontSize="18" FontFamily="宋体" HorizontalAlignment="Left" 
                          VerticalAlignment="Center"/>
-                <TextBlock Grid.Row="0" Grid.Column="1" Text="上一站" Margin="2,2,2,2" 
+                <TextBlock Grid.Row="0" Grid.Column="1" Text="扫描人" Margin="2,2,2,2" 
                            FontSize="18" FontFamily="宋体" HorizontalAlignment="Left" 
                            VerticalAlignment="Center"/>
-                <TextBox Name="TBlastStand" Width="160" Grid.Row="0" Grid.Column="1" Text="" Margin="85,2,2,2" 
+                <TextBox Name="TBScan" Width="160" Grid.Row="0" Grid.Column="1" Text="" Margin="85,2,2,2" 
                          FontSize="18" FontFamily="宋体" HorizontalAlignment="Left" 
                          VerticalAlignment="Center"/>
                 <TextBlock Grid.Row="1" Grid.Column="1" Text="物品类别" Margin="2,2,2,2" 
@@ -194,7 +198,7 @@
         <!--<Border Grid.Row="3" VerticalAlignment="Bottom" Background="LightGray" BorderBrush="LightGray" BorderThickness="1"/>-->
 
         <!--下端表格-->
-        <ScrollViewer Grid.Row="4">
+        <ScrollViewer Grid.Row="4" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
             <StackPanel MinWidth="200">
                 <DataGrid Name="DG1" ItemsSource="{Binding}" AutoGenerateColumns="False" FontSize="18" FontFamily="宋体" 
                           IsReadOnly="True" >                
@@ -213,7 +217,7 @@
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn> <!--已核对-->
                         <DataGridTextColumn Header="运单编号" Binding="{Binding Weight_ConID}" ElementStyle="{StaticResource contentCenterStyle}"/>
-                        <DataGridTextColumn Header="集运编号" Binding="{Binding Id}" ElementStyle="{StaticResource contentCenterStyle}"/>
+                        <DataGridTextColumn Header="集运编号" Binding="{Binding Weight_ConTranId}" ElementStyle="{StaticResource contentCenterStyle}"/>
                         <DataGridTextColumn Header="集运状态" Binding="{Binding Weight_Type}" ElementStyle="{StaticResource contentCenterStyle}"/>
                         <DataGridTextColumn Header="上一站" Binding="{Binding Weight_Last}" ElementStyle="{StaticResource contentCenterStyle}"/>
                         <DataGridTextColumn Header="扫描人" Binding="{Binding Weight_WorkderId}" ElementStyle="{StaticResource contentCenterStyle}"/>
@@ -241,6 +245,8 @@
                         <DataGridTextColumn Header="包装类型" Binding="{Binding Weight_Pack}" ElementStyle="{StaticResource contentCenterStyle}"/>
                         <DataGridTextColumn Header="所在仓库" Binding="{Binding Weight_Region}" ElementStyle="{StaticResource contentCenterStyle}"/>
                         <DataGridTextColumn Header="内部备注" Binding="{Binding Weight_NoteStaff}" ElementStyle="{StaticResource contentCenterStyle}"/>
+                        <DataGridTextColumn Header="超长" Binding="{Binding Weight_OverLong}" ElementStyle="{StaticResource contentCenterStyle}"/>
+                        <DataGridTextColumn Header="超重" Binding="{Binding Weight_OverHelf}" ElementStyle="{StaticResource contentCenterStyle}"/>
                     </DataGrid.Columns>
                 </DataGrid>
             </StackPanel>

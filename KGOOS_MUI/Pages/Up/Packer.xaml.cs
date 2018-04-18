@@ -480,8 +480,16 @@ namespace KGOOS_MUI.Pages.Up
             }
             else
             {
-                freight = Freight.Freight.Count_Freight(W, weight);
-                TBFreight.Text = freight.ToString();
+                try 
+                {
+                    freight = Freight.Freight.Count_Freight(W, weight);
+                    TBFreight.Text = freight.ToString();
+                }
+                catch(Exception e1)
+                {
+                    MessageBox.Show("该区间公式有误，请联系管理员重新配置。");
+                }
+                
             }
 
 

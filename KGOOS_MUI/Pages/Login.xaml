@@ -30,7 +30,7 @@
                     <PasswordBox Name="PassWord" Grid.Column="2" HorizontalAlignment="Left" Height="40" Margin="5,5,5,5" Grid.Row="2" Password=""  VerticalAlignment="Top" Width="200" FontSize="20"/>
                     <ComboBox  Name="WareHouse" Grid.Column="2" HorizontalAlignment="Left" Margin="5,5,5,5" Grid.Row="3" VerticalAlignment="Center" Height="40" Width="200" FontSize="20">
                     </ComboBox>
-                    <Button Content="登 录" Grid.Column="2" HorizontalAlignment="Left" Margin="20,20,5,5" Grid.Row="4" VerticalAlignment="Top" Height="40" Width="75" FontSize="20" Click="Button_Click"/>
+                    <Button Content="登 录" Grid.Column="2" HorizontalAlignment="Left" Margin="20,20,5,5" Grid.Row="4" VerticalAlignment="Top" Height="40" Width="90" FontSize="20" Click="Button_Click"/>
                 </Grid>
             </StackPanel>
         </ScrollViewer>

@@ -17,11 +17,32 @@ namespace KGOOS_MUI.Model
             set { _Checking = value; }
         }
 
+        private string _Weight_OverHelf;
+        public string Weight_OverHelf
+        {
+            get { return _Weight_OverHelf; }
+            set { _Weight_OverHelf = value; }
+        }
+
+        private string _Weight_OverLong;
+        public string Weight_OverLong
+        {
+            get { return _Weight_OverLong; }
+            set { _Weight_OverLong = value; }
+        }
+
         private string _Weight_ConID;
         public string Weight_ConID
         {
             get { return _Weight_ConID; }
             set { _Weight_ConID = value; }
+        }
+
+        private string _Weight_ConTranId;
+        public string Weight_ConTranId
+        {
+            get { return _Weight_ConTranId; }
+            set { _Weight_ConTranId = value; }
         }
 
         private string _Id;

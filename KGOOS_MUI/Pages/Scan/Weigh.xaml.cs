@@ -29,6 +29,7 @@ namespace KGOOS_MUI.Pages.Scan
         private string staff_name = "";
         private string staff_region = "";
         private bool IsOK = false;
+        private float Weight_Size = 0;
 
         public Weigh()
         {
@@ -72,6 +73,7 @@ namespace KGOOS_MUI.Pages.Scan
             CBType.SelectedValuePath = "Key";
             CBType.DisplayMemberPath = "Value";
             CBType.SelectedItem = new KeyValuePair<string, string>("默认", "默认");
+            Weight_Size = 0;
 
             getTableData();
             getAutoCompleteTextBox();
@@ -88,7 +90,7 @@ namespace KGOOS_MUI.Pages.Scan
                 string Weight_Time, Id, Weight_Num, Weight_Note, Weight_Pack, Weight_Shelf,
                     Weight_UserId, Weight_UserName, Weight_Helf, Weight_ConID, Weight_NoteStaff,
                     Weight_OverLong, Weight_OverHelf;
-                float Weight_Weitgh = 0, Weight_Size = 0;
+                float Weight_Weitgh = 0;
                 
                 DataSet ds = new DataSet();
 
@@ -163,14 +165,14 @@ namespace KGOOS_MUI.Pages.Scan
                     Weight_Shelf = "";
                 }
 
-                if (TBSize.Text != "")
-                {
-                    Weight_Size = float.Parse(TBSize.Text);
-                }
-                else
-                {
-                    Weight_Size = 0;
-                }
+                //if (TBSize.Text != "")
+                //{
+                //    Weight_Size = float.Parse(TBSize.Text);
+                //}
+                //else
+                //{
+                //    Weight_Size = 0;
+                //}
 
                 if (TBNoteStaff.Text != "")
                 {
@@ -305,8 +307,7 @@ namespace KGOOS_MUI.Pages.Scan
                     dr["Weight_NoteStaff"] = ds.Tables[0].Rows[i]["Weight_NoteStaff"];
                     dr["Weight_OverLong"] = ds.Tables[0].Rows[i]["Weight_OverLong"];
                     dr["Weight_OverHelf"] = ds.Tables[0].Rows[i]["Weight_OverHelf"];
-                    
-                    
+                                        
                     dt.Rows.Add(dr);
                 }
                 
@@ -485,6 +486,7 @@ namespace KGOOS_MUI.Pages.Scan
                         TBName.Tag = null;
                     }                  
                     TBNote.Clear();
+                    TBNoteStaff.Clear();
                     TBShelf.Clear();
                     TBSize.Clear();
                     TBtranId.Clear();
@@ -493,6 +495,7 @@ namespace KGOOS_MUI.Pages.Scan
                     CBLong.IsChecked = false;
                     TBtranId.Focus();
                     IsOK = false;
+                    Weight_Size = 0;
                 }
                 
 
@@ -594,8 +597,8 @@ namespace KGOOS_MUI.Pages.Scan
 
                 TBSize.Text = Size.ToString();
                 TBNote.Text += " 【" + TBLength.Text + "*" + TBWidth.Text + "*" + TBHeight.Text + "=" + Size + "】 ";
-                
-                
+
+                Weight_Size += Size;
                 TBNote.Focus();
 
                 //清空数据

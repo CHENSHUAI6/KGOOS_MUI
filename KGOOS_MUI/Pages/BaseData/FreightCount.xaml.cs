@@ -337,8 +337,10 @@ namespace KGOOS_MUI.Pages.BaseData
         /// <summary>
         /// 写入T_Freight表
         /// </summary>
-        public void inputFreight()
+        public int inputFreight()
         {
+            int isError = 0;
+
             SqlConnection conn = DBClass.getConnection();
             SqlTransaction tran = conn.BeginTransaction();
             try
@@ -404,13 +406,17 @@ namespace KGOOS_MUI.Pages.BaseData
                     MessageBox.Show("保存成功！");
                     getFreight(con_id);
                 }
+                isError = 1;
 
 
             }
             catch (Exception e)
             {
                 MessageBox.Show("操作失败。请重试" + e.Message);
+                isError = 0;
             }
+
+            return isError;
         }
 
         /// <summary>
@@ -526,7 +532,7 @@ namespace KGOOS_MUI.Pages.BaseData
         public void getCarrier()
         {
             string sql = "";
-            sql = "select * from T_con_carrier as t1 where 1=1 ";        
+            sql = "select * from T_con_carrier as t1 where 1=1 ";
 
             DataSet ds = new DataSet();
             ds = DBClass.execQuery(sql);
@@ -709,7 +715,13 @@ namespace KGOOS_MUI.Pages.BaseData
 
         private void Button_Click_8(object sender, RoutedEventArgs e)
         {
-            inputFreight();
+            int n = 0;
+            n = inputFreight();
+            if (n == 1)
+            {
+                TBHelf.Clear();
+                TBFormula.Clear();
+            }         
         }
 
         private void TBStartTime_ValueChanged(object sender, EventArgs e)
@@ -729,18 +741,34 @@ namespace KGOOS_MUI.Pages.BaseData
 
         private void DG1_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            var a = this.DG1.SelectedItem;
-            var b = a as DataRowView;
-            string con_id = b.Row[0].ToString();
-            getFreight(con_id);
+            try
+            {
+                var a = this.DG1.SelectedItem;
+                var b = a as DataRowView;
+                string con_id = b.Row[0].ToString();
+                getFreight(con_id);
+            }
+            catch (Exception e1)
+            {
+
+            }
+
         }
 
         private void DG2_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            var a = this.DG2.SelectedItem;
-            var b = a as DataRowView;
-            TBHelf.Text = b.Row[1].ToString();
-            TBFormula.Text = b.Row[2].ToString();
+            try
+            {
+                var a = this.DG2.SelectedItem;
+                var b = a as DataRowView;
+                TBHelf.Text = b.Row[1].ToString();
+                TBFormula.Text = b.Row[2].ToString();
+            }
+            catch (Exception e1)
+            {
+
+            }
+
         }
 
         /// <summary>
@@ -770,11 +798,14 @@ namespace KGOOS_MUI.Pages.BaseData
             {
                 freight_id = b.Row[0].ToString();
                 updateFreight(freight_id);
+                TBHelf.Clear();
+                TBFormula.Clear();
             }
             catch (Exception e1)
             {
                 MessageBox.Show("删除失败" + e1.Message);
             }
+
 
         }
 

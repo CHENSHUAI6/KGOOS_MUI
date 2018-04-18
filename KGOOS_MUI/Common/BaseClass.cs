@@ -59,7 +59,7 @@ namespace KGOOS_MUI.Common
                 {
                     if (sArray[i] != "")
                     {
-                        str += ",'" + sArray[i] + "'";
+                        str += ",'" + sArray[i].Trim() + "'";
                     }
 
                 }

@@ -59,6 +59,31 @@ namespace KGOOS_MUI.Pages.Scan
                 staff_region = "1";
             }
             TBStartTime.Text = DateTime.Now.AddDays(-5).ToString("yyyy-MM-dd HH:mm:ss");
+            getAutoCompleteTextBox();
+        }
+
+        /// <summary>
+        /// 下拉联系框赋值
+        /// </summary>
+        public void getAutoCompleteTextBox()
+        {
+            string sql = "";
+            string strIdName = "";
+            DataSet ds = new DataSet();
+            List<AutoCompleteEntry> tlist = new List<AutoCompleteEntry>();
+
+            sql = "select t1.tb_user, t1.id_name from T_User as t1";
+            ds = DBClass.execQuery(sql);
+
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+                {
+                    strIdName = ds.Tables[0].Rows[i][0] + "   " + ds.Tables[0].Rows[i][1];
+                    tlist.Add(new AutoCompleteEntry(strIdName, null));
+                }
+            }
+            this.TBName.AddItemSource(tlist);
         }
 
         /// <summary>
@@ -100,10 +125,10 @@ namespace KGOOS_MUI.Pages.Scan
                 sql += " and t1.Weight_UserName = '" + name + "' ";
             }
 
-            if (TBlastStand != null && TBlastStand.Text != "")
+            if (TBScan != null && TBScan.Text != "")
             {
-                string lastStand = TBlastStand.Text;
-                sql += " and t1.Weight_Last = '" + lastStand + "' ";
+                string scan = TBScan.Text;
+                sql += " and t1.Weight_WorkderId = '" + scan + "' ";
             }
                         
             string type = TBType.Text;
@@ -158,7 +183,9 @@ namespace KGOOS_MUI.Pages.Scan
                         Weight_Pack = ds.Tables[0].Rows[i]["Weight_Pack"].ToString(),
                         Weight_Region = ds.Tables[0].Rows[i]["Weight_Region"].ToString(),
                         Weight_NoteStaff = ds.Tables[0].Rows[i]["Weight_NoteStaff"].ToString(),
-
+                        Weight_ConTranId = ds.Tables[0].Rows[i]["Weight_ConTranId"].ToString(),
+                        Weight_OverLong = ds.Tables[0].Rows[i]["Weight_OverLong"].ToString(),
+                        Weight_OverHelf = ds.Tables[0].Rows[i]["Weight_OverHelf"].ToString(),
                         WeightColor = WeightColor
                     });
                 }
@@ -170,14 +197,14 @@ namespace KGOOS_MUI.Pages.Scan
                 IsExist = false;
                 for (int j =0; j < ds.Tables[0].Rows.Count; j++)
                 {
-                    if (sArrayID[i].Equals(ds.Tables[0].Rows[j]["Weight_ConID"]))
+                    if (sArrayID[i].Trim().Equals(ds.Tables[0].Rows[j]["Weight_ConID"]))
                     {
                         IsExist = true;
                     }
                 }
                 if (IsExist == false)
                 {
-                    str += sArrayID[i] + "\r\n";
+                    str += sArrayID[i].Trim() + "\r\n";
                 }
             }
 
@@ -213,6 +240,7 @@ namespace KGOOS_MUI.Pages.Scan
         
         private void BtnSelect_Click(object sender, RoutedEventArgs e)
         {
+            NoID.Clear();
             getTableData();
         }
 

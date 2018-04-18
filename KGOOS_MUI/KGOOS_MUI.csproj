@@ -75,6 +75,9 @@
     <Compile Include="Pages\BaseData\FreightCount.xaml.cs">
       <DependentUpon>FreightCount.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\BaseData\Straff.xaml.cs">
+      <DependentUpon>Straff.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Settings\SettingManage.xaml.cs">
       <DependentUpon>SettingManage.xaml</DependentUpon>
     </Compile>
@@ -116,6 +119,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\BaseData\FreightCount.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\BaseData\Straff.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
