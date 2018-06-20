@@ -68,6 +68,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Model\PackModel.cs" />
+    <Compile Include="Model\UserAdressModel.cs" />
     <Compile Include="Model\WeightModel.cs" />
     <Compile Include="Pages\BaseData\BaseDataManage.xaml.cs">
       <DependentUpon>BaseDataManage.xaml</DependentUpon>
@@ -84,8 +85,8 @@
     <Compile Include="Pages\Up\Packer.xaml.cs">
       <DependentUpon>Packer.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Up\UserAddress.xaml.cs">
-      <DependentUpon>UserAddress.xaml</DependentUpon>
+    <Compile Include="UserAdressWindow.xaml.cs">
+      <DependentUpon>UserAdressWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="UpWindow.xaml.cs">
       <DependentUpon>UpWindow.xaml</DependentUpon>
@@ -234,10 +235,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\Up\UserAddress.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Pages\Web\Entering.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -247,6 +244,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\Web\WebManage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserAdressWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

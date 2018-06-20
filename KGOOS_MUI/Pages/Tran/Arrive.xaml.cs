@@ -42,32 +42,24 @@ namespace KGOOS_MUI.Pages.Tran
 
         }
 
-
-
-
         /// <summary>
-        /// 表格获取值
+        /// 表格获取值SQL
         /// </summary>
-        public void getTableData()
+        public string getTableSql()
         {
             string sql = "";
-            DataSet ds = new DataSet();
 
             string str = TBID.Text;
             string[] sArrayID = Regex.Split(str, "\r\n", RegexOptions.IgnoreCase);
             string starTime = TBStartTime.Text;
             string endTime = TBEndTime.Text;
 
-
             int num = int.Parse(TBReturnNum.Text);
-
-
-            bool IsExist = false;
 
             str = BaseClass.getSqlValue(sArrayID);
 
             sql = "select top " + num + " * from T_Weight as t1 " +
-                "join T_Staff as t2 on t2.id_staff = t1.Weight_WorkderId " +
+                "join T_Staff as t2 on t2.name_staff = t1.Weight_WorkderId " +
                 "join T_Region as t3 on t3.Region_Id = t2.Region_staff " +
                 "where t1.Weight_Type is not null ";
 
@@ -100,7 +92,21 @@ namespace KGOOS_MUI.Pages.Tran
             {
                 sql += "and t1.Weight_Time between '" + starTime + "' and '" + endTime + "'";
             }
+            return sql;
+        }
 
+        /// <summary>
+        /// 表格获取值
+        /// </summary>
+        public void getTableData()
+        {
+            string sql = "";
+            DataSet ds = new DataSet();
+            bool IsExist = false;
+            string str = TBID.Text;
+            string[] sArrayID = Regex.Split(str, "\r\n", RegexOptions.IgnoreCase);
+
+            sql = getTableSql();
             ds = DBClass.execQuery(sql);
 
             WeightList = new List<WeightModel>();
@@ -117,6 +123,19 @@ namespace KGOOS_MUI.Pages.Tran
                     {
                         Weight_Type = "已到件";
                     }
+                    else if (ds.Tables[0].Rows[i]["Weight_Type"].ToString() == "D")
+                    {
+                        Weight_Type = "已打包";
+                    }
+                    else if (ds.Tables[0].Rows[i]["Weight_Type"].ToString() == "F")
+                    {
+                        Weight_Type = "已发件";
+                    }
+                    else
+                    {
+                        Weight_Type = "已申请";
+                    }
+
                     if (double.Parse(ds.Tables[0].Rows[i]["Weight_Helf"].ToString()) > double.Parse(ds.Tables[0].Rows[i]["Weight_Weitgh"].ToString()))
                     {
                         WeightColor = Brushes.Red;
@@ -217,9 +236,58 @@ namespace KGOOS_MUI.Pages.Tran
 
         private void BtnPack_Click(object sender, RoutedEventArgs e)
         {
-            UpWindow uw = new UpWindow();
-            uw.ContentSource = new Uri("/Pages/Up/Packer.xaml", UriKind.Relative);
-            uw.Show();
+            string sql = "";
+            DataSet ds = new DataSet();
+            bool isCheck = false;
+            string str = "";
+
+            try
+            {
+                sql = getTableSql();
+                ds = DBClass.execQuery(sql);
+
+                str = "(''";
+
+                if (this.DG1.ItemsSource == null)
+                {
+                    MessageBox.Show("请先获取清单再申请打包");
+                }
+                else
+                {
+                    int n = 0;
+                    for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+                    {
+                        isCheck = false;
+                        isCheck = bool.Parse(BaseClass.GetCheckBoxValue(i, 0, this.DG1));
+                        if (isCheck == true)
+                        {
+                            n++;
+                            str += ",'" + ds.Tables[0].Rows[i]["Weight_ConID"].ToString() + "'";
+                        }
+                    }
+                    str += ")";
+
+                    if (n > 0)
+                    {
+                        Application.Current.Properties["weightIdList"] = str;
+
+
+                        UpWindow uw = new UpWindow();
+                        uw.ContentSource = new Uri("/Pages/Up/Packer.xaml", UriKind.Relative);
+                        uw.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("请勾选要打包的包裹");
+                    }
+                    
+                }
+                
+            }catch (Exception e1)
+            {
+                MessageBox.Show("系统错误: " + e1.Message);
+            }
+            
         }
     }
 }

@@ -72,7 +72,7 @@ namespace KGOOS_MUI.Pages.Scan
             DataSet ds = new DataSet();
             List<AutoCompleteEntry> tlist = new List<AutoCompleteEntry>();
 
-            sql = "select t1.tb_user, t1.id_name from T_User as t1";
+            sql = "select t1.id_user, t1.tb_user from T_User as t1";
             ds = DBClass.execQuery(sql);
 
             if (ds.Tables[0].Rows.Count > 0)

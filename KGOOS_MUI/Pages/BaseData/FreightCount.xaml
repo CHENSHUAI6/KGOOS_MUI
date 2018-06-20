@@ -48,7 +48,7 @@
                 <ColumnDefinition Width="260"></ColumnDefinition>
                 <ColumnDefinition Width="260"></ColumnDefinition>
                 <ColumnDefinition Width="260"></ColumnDefinition>
-                <ColumnDefinition Width="260"></ColumnDefinition>
+                <ColumnDefinition Width="300"></ColumnDefinition>
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Column="0" Text="承运商" Margin="17,2,2,2" 
@@ -82,7 +82,7 @@
             <TextBlock Grid.Column="3" Text="实际运输公司" Margin="7,2,2,2" 
                            FontSize="18" FontFamily="宋体" HorizontalAlignment="Left" 
                            VerticalAlignment="Center"/>
-            <TextBox Name="TBRealCon" Width="160" Grid.Column="3" Text="" Margin="82,2,2,2" 
+            <TextBox Name="TBRealCon" Width="160" Grid.Column="3" Text="" Margin="122,2,2,2" 
                          FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                          VerticalAlignment="Center"/>
 

@@ -56,8 +56,9 @@
             
             <!--第三行-->
             <TextBlock Grid.Row="2" Grid.Column="0" Text="收件地址" Margin="2,2,2,2" FontSize="18" FontFamily="宋体" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-            <TextBox Name="TBAddress" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="5" Text="" Margin="2,2,2,2" FontSize="18" FontFamily="宋体" VerticalAlignment="Center"/>
-            
+            <TextBox Name="TBAddress" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="5" Text="" Margin="2,10,28,10" FontSize="18" FontFamily="宋体" VerticalAlignment="Center"/>
+            <Button Name="Btn_UserAdress" Grid.Row="2" Grid.Column="5" Height="30" Content="..." Width="20" FontSize="18" Padding="1,1,1,1" Margin="5,2,5,2"  VerticalAlignment="Center" Click="Btn_UserAdress_Click" HorizontalAlignment="Right" />
+
             <!--第四行-->
             <TextBlock Grid.Row="3" Grid.Column="0" Text="收件邮编" Margin="2,2,2,2" FontSize="18" FontFamily="宋体" HorizontalAlignment="Right" VerticalAlignment="Center"/>
             <TextBox Name="TBpostcode" Grid.Row="3" Grid.Column="1" Text="" Margin="2,2,2,2" FontSize="18" FontFamily="宋体" VerticalAlignment="Center"/>

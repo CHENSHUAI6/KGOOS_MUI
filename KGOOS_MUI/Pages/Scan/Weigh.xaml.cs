@@ -217,16 +217,20 @@ namespace KGOOS_MUI.Pages.Scan
                 }
                 
                 Weight_UserName = TBName.Text;
+
                 sql = "select * from T_Weight as t1 where t1.Weight_ConID = '" + Weight_ConID + "'";
                 ds = DBClass.execQuery(sql);
                 if (ds.Tables[0].Rows.Count > 0)
-                {
+                {   
                     sql = "update T_Weight set Weight_Time = '{0}', Weight_Num = '{2}', Weight_Weitgh = '{3}', " +
                         "Weight_Note = '{4}',Weight_Shelf = '{5}',Weight_UserId = '{6}', " +
                         "Weight_UserName = '{7}', Weight_Size = '{8}', Weight_Helf = '{9}', Weight_WorkderId = '{10}', " +
-                        "Id = '{11}' , Weight_Region = '{12}', Weight_Pack = '{13}', Weight_NoteStaff = '{14}', " +
-                        "Weight_OverLong = '{15}', Weight_OverHelf = '{16}' " +
+                        "Weight_Region = '{11}', Weight_Pack = '{12}', Weight_NoteStaff = '{13}', " +
+                        "Weight_OverLong = '{14}', Weight_OverHelf = '{15}' " +
                         "where Weight_ConID = '{1}'";
+                    sql = string.Format(sql, Weight_Time, Weight_ConID, Weight_Num, Weight_Weitgh, Weight_Note, Weight_Shelf,
+                    Weight_UserId, Weight_UserName, Weight_Size, Weight_Helf, staff_name, staff_region, Weight_Pack,
+                    Weight_NoteStaff, Weight_OverLong, Weight_OverHelf);
                 }
                 else
                 {
@@ -235,11 +239,12 @@ namespace KGOOS_MUI.Pages.Scan
                     "Weight_UserName,Weight_Size,Weight_Helf,Weight_WorkderId, Id, Weight_Region, Weight_Pack, Weight_NoteStaff, " + 
                     "Weight_OverLong, Weight_OverHelf ) " +
                     "values ('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}','{13}', '{14}', '{15}', '{16}')";
-                }
-
-                sql = string.Format(sql, Weight_Time, Weight_ConID, Weight_Num, Weight_Weitgh, Weight_Note, Weight_Shelf,
+                    sql = string.Format(sql, Weight_Time, Weight_ConID, Weight_Num, Weight_Weitgh, Weight_Note, Weight_Shelf,
                     Weight_UserId, Weight_UserName, Weight_Size, Weight_Helf, staff_name, Id, staff_region, Weight_Pack,
                     Weight_NoteStaff, Weight_OverLong, Weight_OverHelf);
+                }
+
+                
                 int n = DBClass.execUpdate(sql);
                 if (n > 0)
                 {
@@ -326,7 +331,7 @@ namespace KGOOS_MUI.Pages.Scan
             DataSet ds = new DataSet();
             List<AutoCompleteEntry> tlist = new List<AutoCompleteEntry>();
 
-            sql = "select t1.tb_user, t1.id_name from T_User as t1";
+            sql = "select t1.id_user, t1.tb_user from T_User as t1";
             ds = DBClass.execQuery(sql);
             
             if (ds.Tables[0].Rows.Count > 0)
@@ -505,9 +510,45 @@ namespace KGOOS_MUI.Pages.Scan
         private void BTNSave_Click(object sender, RoutedEventArgs e)
         {
             string sql = "";
+            sql = "select t1.id, t1.Weight_UserName, t1.Web_TBId " + 
+                " from t_weight as t1 " + 
+                " where t1.Weight_WorkderId = '" + staff_name + "' " +
+                " and t1.Weight_Type is null order by t1.Weight_Time ";
+
+            DataSet ds = new DataSet();
+            ds = DBClass.execQuery(sql);
+            DataTable dt = new DataTable();
+            dt = ds.Tables[0];
+
+            string N_ID = "(''";
+            string Y_ID = "(''";
+
+            if (dt.Rows.Count > 0)
+            {
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    string Weight_tb = dt.Rows[i][1].ToString();
+                    string Web_tb = dt.Rows[i][2].ToString();
+
+                    if (Weight_tb.Equals(Web_tb))
+                    {
+                        Y_ID += ",'" + dt.Rows[i][0].ToString() + "'";
+                    }
+                    else
+                    {
+                        N_ID += ",'" + dt.Rows[i][0].ToString() + "'";
+                    }
+                }
+            }
+
+            Y_ID += ")";
+            N_ID += ")";
+            
             sql = "update T_Weight set Weight_Type = 'N' " +
-                "where Weight_Type is null " +
-                "and Weight_WorkderId = '" + staff_name + "'";
+                "where id in " + N_ID;
+
+            sql += " ; update T_Weight set Weight_Type = 'Y' " +
+                "where id in " + Y_ID;
             int n = DBClass.execUpdate(sql);
             if (n > 0)
             {

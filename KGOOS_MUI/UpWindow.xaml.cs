@@ -19,6 +19,7 @@ namespace KGOOS_MUI
     /// <summary>
     /// Interaction logic for UpWindow.xaml
     /// </summary>
+    
     public partial class UpWindow : ModernWindow
     {
         public UpWindow()
@@ -26,4 +27,6 @@ namespace KGOOS_MUI
             InitializeComponent();
         }
     }
+
+
 }

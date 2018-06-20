@@ -16,6 +16,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Freight;
+using System.Data.SqlClient;
 
 namespace KGOOS_MUI.Pages.Up
 {
@@ -59,6 +60,7 @@ namespace KGOOS_MUI.Pages.Up
             getType();
             getCon();
             getAutoCompleteTextBox();
+            getInitial();
         }
 
         /// <summary>
@@ -143,10 +145,12 @@ namespace KGOOS_MUI.Pages.Up
         }
 
         /// <summary>
-        /// 写入数据库
+        /// 写入数据库--废掉
         /// </summary>
         public void inputDB()
         {
+            SqlConnection conn = DBClass.getConnection();
+            SqlTransaction tran = conn.BeginTransaction();
             try
             {
                 string sql = "";
@@ -159,7 +163,7 @@ namespace KGOOS_MUI.Pages.Up
                 DataSet ds = new DataSet();
 
                 pack_id = BaseClass.getInsertMaxId("T_Pack", "pack_id", "000001");
-                pack_con_id = pack_id;
+                pack_con_id = pack_id.Substring(2);
 
                 #region 获取前台数据
                 pack_com_carrier = CBCom.SelectedValue.ToString();
@@ -309,6 +313,7 @@ namespace KGOOS_MUI.Pages.Up
                 }
                 #endregion
 
+
                 sql = "insert into T_Pack " +
                 "(pack_id, pack_com_carrier, pack_destination, pack_type, pack_user_id, pack_user_name, pack_phone, " +
                 " pack_name, pack_address, pack_postcode, pack_city, pack_thing, pack_note,pack_shop, " +
@@ -322,19 +327,277 @@ namespace KGOOS_MUI.Pages.Up
                     pack_note, pack_shop, pack_more_name, pack_con_id, pack_declare, pack_front_helf, pack_freight,
                     pack_loans, pack_num);
 
-                int n = DBClass.execUpdate(sql);
+                int n = DBClass.execUpdate(conn, tran, sql);
 
                 if (n > 0)
                 {
-                    MessageBox.Show("保存成功！");
+                    n = 0;
+                    inputPackStr(conn, tran);
+                    if (n > 0)
+                    {
+                        tran.Commit();
+                        MessageBox.Show("打包成功！");                     
+                    }
                 }
-
-
             }
             catch (Exception e)
             {
                 MessageBox.Show("操作失败。请重试" + e.Message);
             }
+        }
+
+        /// <summary>
+        /// 获取初始值
+        /// </summary>
+        public void getInitial()
+        {
+            string weightIdList = "";
+            string sql = "";
+            DataSet ds = new DataSet();
+            float helf = 0;
+
+            try
+            {
+                weightIdList = Application.Current.Properties["weightIdList"].ToString();
+                sql = "select Weight_UserId, Weight_UserName, Weight_Helf from t_weight as t2 where t2.Weight_ConId in " + weightIdList;
+                ds = DBClass.execQuery(sql);
+
+                DataTable dt = ds.Tables[0];
+                if (dt.Rows.Count > 0)
+                {
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        helf += float.Parse(dt.Rows[i][2].ToString());
+                    }
+                }
+
+                TBNum.Text = dt.Rows.Count.ToString();
+                TBFront_helf.Text = helf.ToString();
+                TBUser_Name.Text = dt.Rows[0][1].ToString();
+                TBUser_Name.Tag = dt.Rows[0][0].ToString();
+
+                
+            }catch(Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            
+
+        }
+
+        /// <summary>
+        /// 写入信息
+        /// </summary>
+        /// <param name="conn"></param>
+        /// <param name="tran"></param>
+        /// <returns></returns>
+        public void inputPackStr(SqlConnection conn, SqlTransaction tran)
+        {
+            string weightIdList = "";
+            string sql = "";
+            string orderId = "", time = "", Con_Express_Id = "";
+
+            string pack_com_carrier, pack_destination, pack_type, pack_user_id, pack_user_name, pack_phone,
+                    pack_name, pack_address, pack_postcode, pack_city, pack_thing, pack_note,
+                    pack_shop, pack_more_name, pack_con_id;
+
+            float pack_declare = 0, pack_front_helf = 0, pack_freight = 0, pack_loans = 0;
+            int pack_num = 0;
+
+            try
+            {
+                if (Application.Current.Properties["weightIdList"] != null)
+                {
+                    weightIdList = Application.Current.Properties["weightIdList"].ToString();
+                }
+                sql = "update t_weight set Weight_Type = 'D', Order_id = '" + orderId + "' " +
+                    " where Weight_ConID in " + weightIdList;
+                int n = 0; int n1 = 0;
+
+                n = DBClass.execUpdate(conn, tran, sql);
+
+                #region 获取前台数据
+                pack_com_carrier = CBCom.SelectedValue.ToString();
+                pack_destination = CBDestination.SelectedValue.ToString();
+                pack_type = CBType.SelectedIndex.ToString();
+
+                if (TBUser_Name.Tag == null || TBUser_Name.Tag.ToString() == "")
+                {
+                    //sql1 = "select * from "
+                    MessageBox.Show(TBUser_Name.Text + "  用户不存在请重新输入");
+                    TBUser_Name.Text = null;
+                    TBUser_Name.Focus();
+                    return;
+                }
+                else
+                {
+                    pack_user_id = TBUser_Name.Tag.ToString();
+                    pack_user_name = TBUser_Name.Text;
+                }
+
+                if (TBPhone.Text != "")
+                {
+                    pack_phone = TBPhone.Text;
+                }
+                else
+                {
+                    pack_phone = "";
+                }
+
+                if (TBName.Text != "")
+                {
+                    pack_name = TBName.Text;
+                }
+                else
+                {
+                    pack_name = "";
+                }
+
+
+                if (TBAddress.Text != "")
+                {
+                    pack_address = TBAddress.Text;
+                }
+                else
+                {
+                    pack_address = "";
+                }
+
+
+                if (TBpostcode.Text != "")
+                {
+                    pack_postcode = TBpostcode.Text;
+                }
+                else
+                {
+                    pack_postcode = "";
+                }
+
+                if (TBCity.Text != "")
+                {
+                    pack_city = TBCity.Text;
+                }
+                else
+                {
+                    pack_city = "";
+                }
+
+                if (TBThing.Text != "")
+                {
+                    pack_thing = TBThing.Text;
+                }
+                else
+                {
+                    pack_thing = "";
+                }
+
+                if (TBNote.Text != "")
+                {
+                    pack_note = TBNote.Text;
+                }
+                else
+                {
+                    pack_note = "";
+                }
+
+                if (TBShop.Text != "")
+                {
+                    pack_shop = TBShop.Text;
+                }
+                else
+                {
+                    pack_shop = "";
+                }
+
+                if (TBmore_Name.Text != "")
+                {
+                    pack_more_name = TBmore_Name.Text;
+                }
+                else
+                {
+                    pack_more_name = "";
+                }
+
+                if (TBDeclare.Text != "")
+                {
+                    pack_declare = float.Parse(TBDeclare.Text);
+                }
+                else
+                {
+                    pack_declare = 0;
+                }
+
+                if (TBFront_helf.Text != "")
+                {
+                    pack_front_helf = float.Parse(TBFront_helf.Text);
+                }
+                else
+                {
+                    pack_front_helf = 0;
+                }
+
+                if (TBFreight.Text != "")
+                {
+                    pack_freight = float.Parse(TBFreight.Text);
+                }
+                else
+                {
+                    pack_freight = 0;
+                }
+
+                if (TBLoans.Text != "")
+                {
+                    pack_loans = float.Parse(TBLoans.Text);
+                }
+                else
+                {
+                    pack_loans = 0;
+                }
+
+                if (TBNum.Text != "")
+                {
+                    pack_num = int.Parse(TBNum.Text);
+                }
+                else
+                {
+                    pack_num = 0;
+                }
+                #endregion
+
+
+                orderId = BaseClass.getInsertMaxId("T_Order", "id", "000001");
+                time = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                Con_Express_Id = orderId.Substring(2);
+
+                sql = "insert into T_Order " +
+                "(id, Con_Express_Id, order_con, order_destination, fast_type, user_id, " +
+                "user_tb, order_phone,  order_name, order_adress, order_code, order_city, order_money, order_goods, " +
+                "order_num, order_helf, Freight, order_comment, order_loans, order_shop_name, order_many_name, " +
+                "order_staff_name, order_region, order_time) " +
+                "values ('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}','{13}', " +
+                "'{14}', '{15}', '{16}', '{17}', '{18}', '{19}', '{20}', '{21}', '{22}', '{23}')";
+
+                sql = string.Format(sql, orderId, Con_Express_Id, pack_com_carrier, pack_destination, pack_type, pack_user_id,
+                    pack_user_name, pack_phone, pack_name, pack_address, pack_postcode, pack_city, pack_declare, pack_thing,
+                    pack_num, pack_front_helf, pack_freight, pack_note, pack_loans, pack_shop, pack_more_name,
+                    staff_name, staff_region, time);
+
+                n1 = DBClass.execUpdate(conn, tran, sql);
+
+                if (n > 0 && n1 > 0)
+                {
+                    tran.Commit();
+                    MessageBox.Show("打包成功！");
+
+                    UpWindow upw = System.Windows.Window.GetWindow(this) as UpWindow;
+                    upw.Close();
+                }
+
+            }catch(Exception e)
+            {
+
+            }
+           
         }
 
         /// <summary>
@@ -347,7 +610,7 @@ namespace KGOOS_MUI.Pages.Up
             DataSet ds = new DataSet();
             List<AutoCompleteEntry> tlist = new List<AutoCompleteEntry>();
 
-            sql = "select t1.tb_user, t1.id_name from T_User as t1";
+            sql = "select t1.id_user, t1.tb_user from T_User as t1";
             ds = DBClass.execQuery(sql);
 
             if (ds.Tables[0].Rows.Count > 0)
@@ -504,6 +767,48 @@ namespace KGOOS_MUI.Pages.Up
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void Btn_UserAdress_Click(object sender, RoutedEventArgs e)
+        {
+            string userId = "";
+            try
+            {
+                if (TBUser_Name.Text != "")
+                {
+                    try
+                    {
+                        userId = TBUser_Name.Tag.ToString();
+
+                        Application.Current.Properties["userId"] = userId;
+                        UserAdressWindow uaw = new UserAdressWindow();
+            
+                        //订阅事件
+                        uaw.ChangeTextEvent += new ChangeTextHandler(frm_ChangeTextEvent);
+                        uaw.ShowDialog();
+
+                    }
+                    catch (Exception e1)
+                    {
+                        MessageBox.Show("该旺旺号未在网页端注册，无法获取收货地址");
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("请先输入旺旺号");
+                }
+            }catch(Exception e2)
+            {
+                MessageBox.Show("系统错误：" + e2.Message);
+            }           
+        }
+
+        void frm_ChangeTextEvent(string phone, string name, string adress)
+        {
+            this.TBPhone.Text = phone;
+            this.TBName.Text = name;
+            this.TBAddress.Text = adress;
         }
     }
 }
