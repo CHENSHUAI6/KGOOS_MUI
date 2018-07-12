@@ -18,6 +18,7 @@ Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\obj\Release\Pages\Sett
 Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\obj\Release\Pages\Tran\Addresser.baml
 Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\obj\Release\Pages\Tran\Arrive.baml
 Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\obj\Release\Pages\Tran\ConTran.baml
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\obj\Release\Pages\Tran\ConTranOld.baml
 Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\obj\Release\Pages\Tran\Customs.baml
 Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\obj\Release\Pages\Tran\TranManage.baml
 Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\obj\Release\Pages\SettingsPage.baml
@@ -42,6 +43,7 @@ Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\obj\Release\Pages\Sett
 Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\obj\Release\Pages\Tran\Addresser.g.cs
 Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\obj\Release\Pages\Tran\Arrive.g.cs
 Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\obj\Release\Pages\Tran\ConTran.g.cs
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\obj\Release\Pages\Tran\ConTranOld.g.cs
 Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\obj\Release\Pages\Tran\Customs.g.cs
 Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\obj\Release\Pages\Tran\TranManage.g.cs
 Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\obj\Release\Pages\SettingsPage.g.cs
@@ -64,3 +66,5 @@ Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\obj\Release\KGOOS_MUI.
 Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\obj\Release\KGOOS_MUI.exe
 Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\obj\Release\KGOOS_MUI.pdb
 Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\obj\Release\KGOOS_MUI.csprojResolveAssemblyReference.cache
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\obj\Release\Pages\BaseData\Shelf.g.cs
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\obj\Release\Pages\BaseData\Shelf.baml

@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="KGOOS_MUI.Pages.Tran.ConTran"
+﻿<UserControl x:Class="KGOOS_MUI.Pages.Tran.ConTranOld"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -46,7 +46,7 @@
             <Button Grid.Column="3" Height="30" Content="取 消" FontSize="18" Padding="1,1,1,1" Margin="2,2,2,2" />
             <Button Grid.Column="4" Height="30" Content="打 印" FontSize="18" Padding="1,1,1,1" Margin="2,2,2,2" />
             <Button Grid.Column="5" Height="30" Content="导 出" FontSize="18" Padding="1,1,1,1" Margin="2,2,2,2" />
-            <Button Grid.Column="6" Height="30" Content="生成打包单" FontSize="18" Padding="1,1,1,1" Margin="2,2,2,2" Click="Button_Click" />
+            <Button Grid.Column="6" Height="30" Content="生成打包单" FontSize="18" Padding="1,1,1,1" Margin="2,2,2,2" />
             <Button Grid.Column="7" Height="30" Content="打印面单" FontSize="18" Padding="1,1,1,1" Margin="2,2,2,2" />
             <Button Grid.Column="8" Height="30" Content="其他操作" FontSize="18" Padding="1,1,1,1" Margin="2,2,2,2" />
             <Button Grid.Column="9" Height="30" Content="计算运费" FontSize="18" Padding="1,1,1,1" Margin="2,2,2,2" />
@@ -216,72 +216,198 @@
             </Path>
             <TextBlock Text="已打包" Margin="250,2,2,2" FontSize="12" 
                        FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            
+
         </Grid>
         <Border Grid.Row="3" VerticalAlignment="Bottom" Background="LightGray" BorderBrush="LightGray" BorderThickness="1"/>
         <GridSplitter Grid.Row="3" Height="1" HorizontalAlignment="Stretch" VerticalAlignment="Bottom"></GridSplitter>
 
         <!--中间表格-->
-        <Grid Grid.Row="4">                      
-            <DataGrid Name="DG1" ItemsSource="{Binding}" AutoGenerateColumns="False" FontSize="12" 
+        <Grid Grid.Row="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="20"></RowDefinition>
+                </Grid.RowDefinitions>
+                <!--<Border Grid.Row="0" Grid.RowSpan="2" BorderThickness="1" Background="LightGray" BorderBrush="LightGray" 
+                        HorizontalAlignment="Right"></Border>-->
+                <Grid Grid.Row="1">
+                    <TextBlock Width="{Binding DGBasic.width}" Text="基本信息" HorizontalAlignment="Center" Margin="2,2,2,2" FontSize="12" FontFamily="宋体"/>
+                    <DataGrid Name="DGBasic" ItemsSource="{Binding}" AutoGenerateColumns="False" FontSize="12" 
                           FontFamily="宋体" MinWidth="200" CanUserSortColumns="False" CanUserResizeColumns="True" 
-                          IsReadOnly="True" LoadingRow="DG1_LoadingRow" MouseDown="DG1_MouseDown">
-                <DataGrid.Columns>
-                    <!--表一：基本信息-->
-                    <DataGridCheckBoxColumn Header="已付款" Binding="{Binding paid}"/>
-                    <DataGridCheckBoxColumn Header="通知付款"  Binding="{Binding informPay}"/>
-                    <DataGridCheckBoxColumn Header="已处理" Binding="{Binding processed}" />
-                    <DataGridCheckBoxColumn Header="消息已读" Binding="{Binding read}"/>
-                    <DataGridTextColumn Header="状态" Binding="{Binding pack_state}"/>
-                    <DataGridTextColumn Header="客户编号" Binding="{Binding pack_user_id}"/>
-                    <DataGridTextColumn Header="客户名称" Binding="{Binding pack_user_name}"/>
-                    <!--表二：订单信息-->
-                    <DataGridTextColumn Header="运单编号" Binding="{Binding order_con_id}"/>
-                    <DataGridTextColumn Header="申请日期"  Binding="{Binding order_date}"/>
-                    <DataGridTextColumn Header="订单号" Binding="{Binding order_id}" />
-                    <DataGridTextColumn Header="承运商" Binding="{Binding order_con}"/>
-                    <DataGridTextColumn Header="目的地" Binding="{Binding order_destrination}"/>
-                    <DataGridTextColumn Header="快件类型" Binding="{Binding pack_type}"/>
-                    <DataGridTextColumn Header="备注" Binding="{Binding order_note}"/>
-                    <DataGridTextColumn Header="提交方式" Binding="{Binding order_put_type}"/>
-                    <!--表三：收件信息-->
-                    <DataGridTextColumn Header="收件人" Binding="{Binding order_person}"/>
-                    <DataGridTextColumn Header="收件人电话"  Binding="{Binding order_phone}"/>
-                    <DataGridTextColumn Header="收件人地址" Binding="{Binding order_adress}" />
-                    <DataGridTextColumn Header="收件公司" Binding="{Binding order_company}"/>
-                    <DataGridTextColumn Header="州/周" Binding="{Binding order_zhou}"/>
-                    <!--表四：申报信息-->                  
-                    <DataGridTextColumn Header="申报品名" Binding="{Binding order_thing}"/>
-                    <DataGridTextColumn Header="申报金额"  Binding="{Binding order_money}"/>
-                    <DataGridTextColumn Header="物品中文" Binding="{Binding order_china}" />
-                    <DataGridTextColumn Header="身份证号" Binding="{Binding order_idcard}"/>
-                    <DataGridTextColumn Header="数量" Binding="{Binding order_num}"/>
-                    <DataGridTextColumn Header="单位" Binding="{Binding order_unit}"/>
-                    <!--表五：打包信息-->
-                    <DataGridTextColumn Header="打包师傅" Binding="{Binding pack_staff}"/>
-                    <DataGridTextColumn Header="打包后重量"  Binding="{Binding pack_now_helf}"/>
-                    <DataGridTextColumn Header="打包备注" Binding="{Binding pack_note}" />
-                    <DataGridTextColumn Header="打包扫描" Binding="{Binding pack_scan}"/>
-                    <DataGridTextColumn Header="发件日期" Binding="{Binding pack_time}"/>
-                    <DataGridTextColumn Header="件数" Binding="{Binding pack_num}"/>
-                    <DataGridTextColumn Header="打包前重量" Binding="{Binding pack_font_helf}"/>
-                    <DataGridTextColumn Header="打包前运费" Binding="{Binding pack_font_freight}"/>
-                    <DataGridTextColumn Header="实际转运公司" Binding="{Binding pack_real_company}"/>
-                    <!--表六：费用信息-->
-                    <DataGridTextColumn Header="打包后运费"  Binding="{Binding FirstName}"/>
-                    <DataGridTextColumn Header="优惠券号" Binding="{Binding LastName}" />
-                    <DataGridTextColumn Header="预付款"/>
-                    <DataGridTextColumn Header="付款时间"/>
-                    <DataGridTextColumn Header="到付款"/>
-                    <DataGridTextColumn Header="货款"/>
-                    <!--表七：其他信息-->
-                    <DataGridTextColumn Header="客服人员"  Binding="{Binding FirstName}"/>
-                    <DataGridTextColumn Header="积分" Binding="{Binding LastName}" />
-                    <DataGridTextColumn Header="业务员"/>
-                </DataGrid.Columns>
-            </DataGrid>
+                              MouseDown="DGBasic_MouseDown" IsReadOnly="True">
+                        <DataGrid.Columns>
+                            <DataGridCheckBoxColumn Header="已付款" Binding="{Binding paid}"/>
+                            <DataGridCheckBoxColumn Header="通知付款"  Binding="{Binding informPay}"/>
+                            <DataGridCheckBoxColumn Header="已处理" Binding="{Binding processed}" />
+                            <DataGridCheckBoxColumn Header="消息已读" Binding="{Binding read}"/>
+                            <DataGridTextColumn Header="状态" Binding="{Binding pack_state}"/>
+                            <DataGridTextColumn Header="客户编号" Binding="{Binding pack_user_id}"/>
+                            <DataGridTextColumn Header="客户名称" Binding="{Binding pack_user_name}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+                <GridSplitter Width="1" HorizontalAlignment="Right"></GridSplitter>
+
+
+            </Grid>
+
+            <!--<GridSplitter Width="2" HorizontalAlignment="Right" VerticalAlignment="Stretch"/>-->
+            <ScrollViewer Grid.Column="1" Name="sv2" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                <StackPanel Orientation="Horizontal">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                    </Grid>
+                    <!--订单信息-->
+                    <Grid Grid.Column="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="20"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <TextBlock Width="{Binding DGBasic.width}" Text="订单信息" HorizontalAlignment="Center" Margin="2,2,2,2" FontSize="12" FontFamily="宋体"/>
+                        <Border Grid.Row="0" Grid.RowSpan="2" BorderThickness="1" Background="LightGray" BorderBrush="LightGray" 
+                        HorizontalAlignment="Right"></Border>
+
+                        <DataGrid Grid.Row="1" Name="DGOrder" ItemsSource="{Binding}" AutoGenerateColumns="False" FontSize="10" 
+                          FontFamily="宋体" MinWidth="200" CanUserSortColumns="False" CanUserResizeColumns="True" >
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="运单编号" Binding="{Binding order_con_id}"/>
+                                <DataGridTextColumn Header="申请日期"  Binding="{Binding order_date}"/>
+                                <DataGridTextColumn Header="订单号" Binding="{Binding order_id}" />
+                                <DataGridTextColumn Header="承运商" Binding="{Binding order_con}"/>
+                                <DataGridTextColumn Header="目的地" Binding="{Binding order_destrination}"/>
+                                <DataGridTextColumn Header="快件类型" Binding="{Binding pack_type}"/>
+                                <DataGridTextColumn Header="备注" Binding="{Binding order_note}"/>
+                                <DataGridTextColumn Header="提交方式" Binding="{Binding order_put_type}"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
+
+                    <!--收件信息-->
+                    <Grid Grid.Column="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="20"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <TextBlock Width="{Binding DGBasic.width}" Text="收件信息" HorizontalAlignment="Center" Margin="2,2,2,2" FontSize="12" FontFamily="宋体"/>
+                        <Border Grid.Row="0" Grid.RowSpan="2" BorderThickness="1" Background="LightGray" BorderBrush="LightGray" 
+                        HorizontalAlignment="Right"></Border>
+                        <DataGrid Grid.Row="1" Name="DGRecipient" ItemsSource="{Binding}" AutoGenerateColumns="False" FontSize="10" 
+                          FontFamily="宋体" MinWidth="200" CanUserSortColumns="False" CanUserResizeColumns="True" >
+                            <DataGrid.Columns>
+                                <DataGridCheckBoxColumn Header="收件人"/>
+                                <DataGridCheckBoxColumn Header="收件人电话"  Binding="{Binding FirstName}"/>
+                                <DataGridCheckBoxColumn Header="收件人地址" Binding="{Binding LastName}" />
+                                <DataGridCheckBoxColumn Header="收件公司"/>
+                                <DataGridTextColumn Header="州/周"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
+
+                    <!--申报信息-->
+                    <Grid Grid.Column="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="20"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <TextBlock Width="{Binding DGBasic.width}" Text="申报信息" HorizontalAlignment="Center" Margin="2,2,2,2" FontSize="12" FontFamily="宋体"/>
+                        <Border Grid.Row="0" Grid.RowSpan="2" BorderThickness="1" Background="LightGray" BorderBrush="LightGray" 
+                        HorizontalAlignment="Right"></Border>
+                        <DataGrid Grid.Row="1" Name="DGDeclare" ItemsSource="{Binding}" AutoGenerateColumns="False" FontSize="10" 
+                          FontFamily="宋体" MinWidth="200" CanUserSortColumns="False" CanUserResizeColumns="True" >
+                            <DataGrid.Columns>
+                                <DataGridCheckBoxColumn Header="申报品名"/>
+                                <DataGridCheckBoxColumn Header="申报金额"  Binding="{Binding FirstName}"/>
+                                <DataGridCheckBoxColumn Header="物品中文" Binding="{Binding LastName}" />
+                                <DataGridCheckBoxColumn Header="身份证号"/>
+                                <DataGridTextColumn Header="数量"/>
+                                <DataGridTextColumn Header="单位"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
+
+                    <!--打包信息-->
+                    <Grid Grid.Column="3">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="20"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <TextBlock Width="{Binding DGBasic.width}" Text="打包信息" HorizontalAlignment="Center" Margin="2,2,2,2" FontSize="12" FontFamily="宋体"/>
+                        <Border Grid.Row="0" Grid.RowSpan="2" BorderThickness="1" Background="LightGray" BorderBrush="LightGray" 
+                        HorizontalAlignment="Right"></Border>
+                        <DataGrid Grid.Row="1" Name="DGBag" ItemsSource="{Binding}" AutoGenerateColumns="False" FontSize="10" 
+                          FontFamily="宋体" MinWidth="200" CanUserSortColumns="False" CanUserResizeColumns="True" >
+                            <DataGrid.Columns>
+                                <DataGridCheckBoxColumn Header="打包师傅"/>
+                                <DataGridCheckBoxColumn Header="打包后重量"  Binding="{Binding FirstName}"/>
+                                <DataGridCheckBoxColumn Header="打包备注" Binding="{Binding LastName}" />
+                                <DataGridCheckBoxColumn Header="打包扫描"/>
+                                <DataGridTextColumn Header="发件日期"/>
+                                <DataGridTextColumn Header="件数"/>
+                                <DataGridTextColumn Header="打包前重量"/>
+                                <DataGridTextColumn Header="打包前运费"/>
+                                <DataGridTextColumn Header="实际转运公司"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
+
+                    <!--费用信息-->
+                    <Grid Grid.Column="4">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="20"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <TextBlock Width="{Binding DGBasic.width}" Text="费用信息" HorizontalAlignment="Center" Margin="2,2,2,2" FontSize="12" FontFamily="宋体"/>
+                        <Border Grid.Row="0" Grid.RowSpan="2" BorderThickness="1" Background="LightGray" BorderBrush="LightGray" 
+                        HorizontalAlignment="Right"></Border>
+                        <DataGrid Grid.Row="1" Name="DGCost" ItemsSource="{Binding}" AutoGenerateColumns="False" FontSize="10" 
+                          FontFamily="宋体" MinWidth="200" CanUserSortColumns="False" CanUserResizeColumns="True" >
+                            <DataGrid.Columns>
+                                <DataGridCheckBoxColumn Header="打包后运费"  Binding="{Binding FirstName}"/>
+                                <DataGridCheckBoxColumn Header="优惠券号" Binding="{Binding LastName}" />
+                                <DataGridCheckBoxColumn Header="预付款"/>
+                                <DataGridTextColumn Header="付款时间"/>
+                                <DataGridTextColumn Header="到付款"/>
+                                <DataGridTextColumn Header="货款"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
+
+                    <!--其他-->
+                    <Grid Grid.Column="5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="20"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <TextBlock Width="{Binding DGBasic.width}" Text="其他" HorizontalAlignment="Center" Margin="2,2,2,2" FontSize="12" FontFamily="宋体"/>
+                        <Border Grid.Row="0" Grid.RowSpan="2" BorderThickness="1" Background="LightGray" BorderBrush="LightGray" 
+                        HorizontalAlignment="Right"></Border>
+                        <DataGrid Grid.Row="1" Name="DGElse" ItemsSource="{Binding}" AutoGenerateColumns="False" FontSize="10" 
+                          FontFamily="宋体" MinWidth="100" CanUserSortColumns="False" CanUserResizeColumns="True" >
+                            <DataGrid.Columns>
+                                <DataGridCheckBoxColumn Header="客服人员"  Binding="{Binding FirstName}"/>
+                                <DataGridCheckBoxColumn Header="积分" Binding="{Binding LastName}" />
+                                <DataGridCheckBoxColumn Header="业务员"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
+                </StackPanel>
+            </ScrollViewer>
         </Grid>
-        
+
+        <GridSplitter Grid.Row="4" Height="1" HorizontalAlignment="Stretch" VerticalAlignment="Bottom"></GridSplitter>
+
         <!--下端其他-->
         <Grid Grid.Row="5">
             <Grid.ColumnDefinitions>
@@ -289,7 +415,7 @@
                 <ColumnDefinition Width="*"></ColumnDefinition>
                 <ColumnDefinition Width="230"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            
+
             <!--下左边-->
             <Grid Grid.Column="0">
                 <Grid.RowDefinitions>
@@ -311,39 +437,39 @@
                     <TextBlock Width="50" Grid.Row="0" Grid.Column="0" Text="运单编号" Margin="7,2,2,2" 
                            FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                            VerticalAlignment="Center"/>
-                    <TextBox Name="TB_Order_Con_ID"  Width="130" Grid.Row="0" Grid.Column="0" Text="" Margin="60,2,2,2" 
+                    <TextBox Width="130" Grid.Row="0" Grid.Column="0" Text="" Margin="60,2,2,2" 
                          FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
-                         VerticalAlignment="Center"/>
+                         VerticalAlignment="Center" IsReadOnly="True"/>
                     <TextBlock Width="50" Grid.Row="1" Grid.Column="0" Text="件数" Margin="7,2,2,2" 
                            FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                            VerticalAlignment="Center"/>
-                    <TextBox Name="TB_Num" Width="130" Grid.Row="1" Grid.Column="0" Text="" Margin="60,2,2,2" 
+                    <TextBox Width="130" Grid.Row="1" Grid.Column="0" Text="" Margin="60,2,2,2" 
                          FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                          VerticalAlignment="Center"/>
                     <TextBlock Width="50" Grid.Row="0" Grid.Column="1" Text="目的地" Margin="7,2,2,2" 
                            FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                            VerticalAlignment="Center"/>
-                    <TextBox Name="TB_Destrination" Width="130" Grid.Row="0" Grid.Column="1" Text="" Margin="65,2,2,2" 
+                    <TextBox Width="130" Grid.Row="0" Grid.Column="1" Text="" Margin="65,2,2,2" 
                          FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
-                         VerticalAlignment="Center" IsReadOnly="True"/>
+                         VerticalAlignment="Center"/>
                     <TextBlock Grid.Row="1" Grid.Column="1" Text="打包前重量" Margin="2,2,2,2" 
                            FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                            VerticalAlignment="Center"/>
-                    <TextBox Name="TB_Font_Helf" Width="130" Grid.Row="1" Grid.Column="1" Text="" Margin="65,2,2,2" 
+                    <TextBox Width="130" Grid.Row="1" Grid.Column="1" Text="" Margin="65,2,2,2" 
                          FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                          VerticalAlignment="Center" IsReadOnly="True"/>
                     <TextBlock Width="50" Grid.Row="0" Grid.Column="2" Text="快件类型" Margin="2,2,2,2" 
                            FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                            VerticalAlignment="Center"/>
-                    <TextBox Name="TB_Pack_Type" Width="130" Grid.Row="0" Grid.Column="2" Text="" Margin="65,2,2,2" 
+                    <TextBox Width="130" Grid.Row="0" Grid.Column="2" Text="" Margin="65,2,2,2" 
                          FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                          VerticalAlignment="Center"/>
                     <TextBlock Grid.Row="1" Grid.Column="2" Text="打包前运费" Margin="2,2,2,2" 
                            FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                            VerticalAlignment="Center"/>
-                    <TextBox Name="TB_Font_Freight" Width="130" Grid.Row="1" Grid.Column="2" Text="" Margin="65,2,2,2" 
+                    <TextBox Width="130" Grid.Row="1" Grid.Column="2" Text="" Margin="65,2,2,2" 
                          FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
-                         VerticalAlignment="Center" IsReadOnly="True"/>
+                         VerticalAlignment="Center"/>
                 </Grid>
                 <Border Grid.Row="0" VerticalAlignment="Bottom" Background="LightGray" BorderBrush="LightGray" BorderThickness="1"/>
 
@@ -359,33 +485,33 @@
                     <TextBlock Grid.Row="0" Text="收件电话" Margin="7,2,2,2" 
                            FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                            VerticalAlignment="Center"/>
-                    <TextBox Name="TB_Phone" Width="130" Text="" Margin="60,2,2,2" 
+                    <TextBox Width="130" Text="" Margin="60,2,2,2" 
                          FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
-                         VerticalAlignment="Center"/>
+                         VerticalAlignment="Center" IsReadOnly="True"/>
                     <TextBlock Grid.Row="0" Text="收件人" Margin="207,2,2,2" 
                            FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                            VerticalAlignment="Center"/>
-                    <TextBox Name="TB_Person" Width="130"  Text="" Margin="260,2,2,2" 
+                    <TextBox Width="130"  Text="" Margin="260,2,2,2" 
                          FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                          VerticalAlignment="Center"/>
-                    
+
                     <TextBlock Grid.Row="1" Text="收货地址" Margin="7,2,2,2" 
                            FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                            VerticalAlignment="Center"/>
-                    <TextBox Name="TB_Adress" Grid.Row="1" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" 
+                    <TextBox Grid.Row="1" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" 
                              Text="" Margin="60,2,2,2" FontSize="12" FontFamily="宋体"/>
-                    
+
                     <TextBlock Grid.Row="2" Text="备注" Margin="7,2,2,2" 
                            FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                            VerticalAlignment="Center"/>
-                    <TextBox Name="TB_Oder_Note" Grid.Row="2" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" 
+                    <TextBox Grid.Row="2" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" 
                              Text="" Margin="60,2,2,2" FontSize="12" FontFamily="宋体"/>
 
                 </Grid>
 
             </Grid>
             <GridSplitter Grid.Column="0" Width="1" HorizontalAlignment="Right" VerticalContentAlignment="Stretch"/>
-            
+
             <!--下中间-->
             <ScrollViewer Grid.Column="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
                 <StackPanel Orientation="Horizontal">
@@ -404,41 +530,40 @@
                             </Grid.ColumnDefinitions>
                             <TextBlock Grid.Column="0" Text="单号扫描确认" Margin="7,2,2,2" FontSize="12" Foreground="Red" 
                                      FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                            <TextBox Grid.Column="1" Name="tb_con_affirm" Width="130" Text="" Margin="2,2,2,2" FontSize="12" 
-                                    FontFamily="宋体" HorizontalAlignment="Center" VerticalAlignment="Center" KeyDown="tb_con_affirm_KeyDown"/>
+                            <TextBox Grid.Column="1" Width="130" Text="" Margin="2,2,2,2" FontSize="12" 
+                                    FontFamily="宋体" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             <TextBlock Grid.Column="2" Text="确认件数：" Margin="2,2,2,2" FontSize="12" Foreground="Red" 
                                     FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                            <TextBlock Grid.Column="3" Name="text_num_affirm" Text="0" Margin="2,2,2,2" FontSize="20" Foreground="Red" 
+                            <TextBlock Grid.Column="3" Text="4/4" Margin="2,2,2,2" FontSize="20" Foreground="Red" 
                                     FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold"/>
                         </Grid>
-                        <DataGrid Grid.Row="1" Name="DGDown" AutoGenerateColumns="False" FontSize="12" 
-                          FontFamily="宋体" MinWidth="200" CanUserSortColumns="False" CanUserResizeColumns="True" 
-                          IsReadOnly="True" LoadingRow="DGDown_LoadingRow"  >
+                        <DataGrid Grid.Row="1" Name="DGDown" ItemsSource="{Binding}" AutoGenerateColumns="False" FontSize="10" 
+                          FontFamily="宋体" MinWidth="200" CanUserSortColumns="False" CanUserResizeColumns="True" >
                             <DataGrid.Columns>
-                                <DataGridCheckBoxColumn Header="已核对" Binding="{Binding is_Affirm}"/>
-                                <DataGridTextColumn Header="承运商"  Binding="{Binding con_name}"/>
-                                <DataGridTextColumn Header="运单编号" Binding="{Binding weight_con}" />
-                                <DataGridTextColumn Header="件数" Binding="{Binding num}"/>
-                                <DataGridTextColumn Header="重量" Binding="{Binding helf}"/>
-                                <DataGridTextColumn Header="物品类型" Binding="{Binding type}"/>
-                                <DataGridTextColumn Header="货架" Binding="{Binding shelf}"/>
-                                <DataGridTextColumn Header="运费" Binding="{Binding freight}"/>
-                                <DataGridTextColumn Header="备注" Binding="{Binding comment}"/>
-                                <DataGridTextColumn Header="认领方式" Binding="{Binding pack_type}"/>
-                                <DataGridTextColumn Header="仓库录入" Binding="{Binding weight_person}"/>
-                                <DataGridTextColumn Header="集运单号" Binding="{Binding con_id}"/>                               
+                                <DataGridCheckBoxColumn Header="已核对"/>
+                                <DataGridCheckBoxColumn Header="承运商"  Binding="{Binding FirstName}"/>
+                                <DataGridCheckBoxColumn Header="运单编号" Binding="{Binding LastName}" />
+                                <DataGridCheckBoxColumn Header="件数"/>
+                                <DataGridTextColumn Header="重量"/>
+                                <DataGridTextColumn Header="物品类型"/>
+                                <DataGridTextColumn Header="货架"/>
+                                <DataGridTextColumn Header="运费"/>
+                                <DataGridTextColumn Header="备注"/>
+                                <DataGridTextColumn Header="认领方式"/>
+                                <DataGridTextColumn Header="仓库录入"/>
+                                <DataGridTextColumn Header="集运单号"/>
                             </DataGrid.Columns>
                         </DataGrid>
 
                     </Grid>
-                   
-                    
-                    
-                    
+
+
+
+
                 </StackPanel>
             </ScrollViewer>
             <GridSplitter Grid.Column="1" Width="1" HorizontalAlignment="Right" VerticalContentAlignment="Stretch"/>
-            
+
             <!--下右边-->
             <Grid Grid.Column="2">
                 <Grid.RowDefinitions>
@@ -456,29 +581,29 @@
                 <TextBlock Grid.Row="0" Grid.Column="0" Text="打包师傅" Margin="2,2,7,2" 
                            FontSize="12" FontFamily="宋体" HorizontalAlignment="Right" 
                            VerticalAlignment="Center"/>
-                <TextBox Name="TB_PackPerson" Grid.Row="0" Grid.Column="1" Text="" Margin="2,2,7,2" 
-                         FontSize="12" FontFamily="宋体" VerticalAlignment="Center"/>
+                <TextBox Grid.Row="0" Grid.Column="1" Text="" Margin="2,2,7,2" 
+                         FontSize="12" FontFamily="宋体" IsReadOnly="True" VerticalAlignment="Center"/>
                 <TextBlock Grid.Row="1" Grid.Column="0" Text="打包后重量" Margin="2,2,7,2" 
                            FontSize="12" FontFamily="宋体" HorizontalAlignment="Right" 
                            VerticalAlignment="Center"/>
-                <TextBox Name="TB_PackLaterHelf" Grid.Row="1" Grid.Column="1" Text="" Margin="2,2,7,2" 
-                         FontSize="12" FontFamily="宋体" VerticalAlignment="Center"/>
+                <TextBox Grid.Row="1" Grid.Column="1" Text="" Margin="2,2,7,2" 
+                         FontSize="12" FontFamily="宋体" IsReadOnly="True" VerticalAlignment="Center"/>
                 <TextBlock Grid.Row="2" Grid.Column="0" Text="打包后运费" Margin="2,2,7,2" 
                            FontSize="12" FontFamily="宋体" HorizontalAlignment="Right" 
                            VerticalAlignment="Center"/>
-                <TextBox Name="TB_PackLaterFeright" Grid.Row="2" Grid.Column="1" Text="" Margin="2,2,7,2" 
-                         FontSize="12" FontFamily="宋体" VerticalAlignment="Center"/>
+                <TextBox Grid.Row="2" Grid.Column="1" Text="" Margin="2,2,7,2" 
+                         FontSize="12" FontFamily="宋体" IsReadOnly="True" VerticalAlignment="Center"/>
                 <TextBlock Grid.Row="3" Grid.Column="0" Text="打包备注" Margin="7,2,2,2" 
                            FontSize="12" FontFamily="宋体" HorizontalAlignment="Right" 
                            VerticalAlignment="Center"/>
-                <TextBox Name="TB_PackComment" Grid.Row="3"  Grid.Column="1" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" 
+                <TextBox Grid.Row="3"  Grid.Column="1" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" 
                              Text="" Margin="2,2,7,2" FontSize="12" FontFamily="宋体"/>
-                <CheckBox Name="CB_IsPay" Grid.Row="4" Grid.Column="0" Content="已付款" Margin="2,2,12,2" FontFamily="宋体" FontSize="12" 
+                <CheckBox Grid.Row="4" Grid.Column="0" Content="已付款" Margin="2,2,12,2" FontFamily="宋体" FontSize="12" 
                           HorizontalAlignment="Right" VerticalAlignment="Center" />
                 <TextBox Grid.Row="4" Grid.Column="1" Text="" Margin="2,2,7,2" 
                          FontSize="12" FontFamily="宋体" IsReadOnly="True" VerticalAlignment="Center"/>
             </Grid>
         </Grid>
-        
+
     </Grid>
 </UserControl>

@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -321,6 +322,130 @@ namespace KGOOS_MUI.Pages.Scan
             this.DG1.ItemsSource = dt.DefaultView;     
         }
 
+        public void getShelf()
+        {
+            string sql = "";
+            string tb_name = "";
+            int type = 1; //1：小货区，2：大货区
+            string shelf = "";
+            DataSet ds = new DataSet();
+            try
+            {
+                if (CBBigShelf.IsChecked == true)
+                {
+                    type = 2;
+                }
+
+                tb_name = TBName.Text;
+
+                sql = "SELECT t1.user_shelf_big, t1.user_shelf_small from T_User as t1 " +
+                    "where t1.tb_user = '" + tb_name + "' ";
+                ds = DBClass.execQuery(sql);
+
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    if (type == 1)
+                    {
+                        shelf = ds.Tables[0].Rows[0][1].ToString();
+                    }
+                    else
+                    {
+                        shelf = ds.Tables[0].Rows[0][0].ToString();
+                    }
+                }
+
+                if (shelf.Length > 0)
+                {
+                    TBShelf.Text = shelf;
+                }
+                else
+                {
+                    MessageBoxResult MBR = MessageBox.Show("该用户为新用户，是否为其自动分配一个货架？", "提示", MessageBoxButton.YesNo, MessageBoxImage.Information);
+
+                    if (MBR == MessageBoxResult.Yes)
+                    {
+                        shelf = AutoShelf(type, tb_name);
+                        TBShelf.Text = shelf;
+                    }
+                    else
+                    {
+                        //执行Cancel的代码
+                    }
+
+                }
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+        }
+
+        public string AutoShelf(int type, string tb_name)
+        {
+            string shelf = "";
+            string sql = "", sql1 = "";
+            DataSet ds = new DataSet();
+            SqlConnection conn = DBClass.getConnection();
+            SqlTransaction tran = conn.BeginTransaction();
+
+            try
+            {
+                sql = "select t1.shelf_name from T_Shelf as t1 " +
+                    "where t1.shelf_status != 'Y' ";
+
+                if (type == 1)
+                {
+                    sql += " and t1.shelf_type = '小货区' ";
+                }
+                else
+                {
+                    sql += " and t1.shelf_type = '大货区' ";
+                }
+                ds = DBClass.execQuery(sql);
+
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    shelf = ds.Tables[0].Rows[0][0].ToString();
+                    if (type == 1)
+                    {
+                        sql1 = "update T_User set user_shelf_small = '" + shelf + "' " +
+                            "where tb_user = '" + tb_name + "' ";
+                    }
+                    else
+                    {
+                        sql1 = "update T_User set user_shelf_big = '" + shelf + "' " +
+                            "where tb_user = '" + tb_name + "' ";
+                    }
+                    int n = DBClass.execUpdate(conn, tran, sql1);
+                    sql1 = "";
+                    sql1 = "update T_Shelf set shelf_status = 'Y' " +
+                        "where shelf_name = '" + shelf + "'";
+                    n = DBClass.execUpdate(conn, tran, sql1);
+                    tran.Commit();
+                }
+                else
+                {
+                    shelf = "";
+                    if (type == 1)
+                    {
+                        MessageBox.Show("小货区-没有未分配的空货架，请创建后再进行操作");
+                    }
+                    else
+                    {
+                        MessageBox.Show("大货区-没有未分配的空货架，请创建后再进行操作");
+                    }
+                    
+                }
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show(e.Message);
+
+            }
+
+            return shelf;
+        }
+
         /// <summary>
         /// 下拉联系框赋值
         /// </summary>
@@ -435,16 +560,9 @@ namespace KGOOS_MUI.Pages.Scan
         {
             if (e.Key == Key.Enter)
             {
-                if (TBShelf.Text == "")
-                {
-                    this.TBShelf.Focus();
-                }
-                else
-                {
-                    this.TBNote.Focus();
-                }
-                
-
+                getShelf();
+                TBShelf.SelectionStart = TBShelf.Text.Length;
+                this.TBShelf.Focus();                
             }
         }
 
@@ -669,6 +787,36 @@ namespace KGOOS_MUI.Pages.Scan
         private void DG1_KeyDown(object sender, KeyEventArgs e)
         {
             e.Handled = true;
+        }
+
+        private void CBBigShelf_Checked(object sender, RoutedEventArgs e)
+        {
+            if (CBBigShelf.IsChecked == true)
+            {
+                CBSmallShelf.IsChecked = false;
+            }
+        }
+
+        private void CBSmallShelf_Checked(object sender, RoutedEventArgs e)
+        {
+            if (CBSmallShelf.IsChecked == true)
+            {
+                CBBigShelf.IsChecked = false;
+            }
+        }
+
+        private void BTNAutoShelf_Click(object sender, RoutedEventArgs e)
+        {
+            string shelf = "", tb_name = "";
+            int type = 1;
+            if (CBBigShelf.IsChecked == true)
+            {
+                type = 2;
+            }
+
+            tb_name = TBName.Text;
+            shelf = AutoShelf(type, tb_name);
+            TBShelf.Text = shelf;
         }
 
 

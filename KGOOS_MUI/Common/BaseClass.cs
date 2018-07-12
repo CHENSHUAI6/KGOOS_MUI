@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Media;
+using System.Runtime.InteropServices;
 
 namespace KGOOS_MUI.Common
 {
@@ -124,6 +125,25 @@ namespace KGOOS_MUI.Common
             }
             return childContent;
         }
+
+
+        [DllImport("user32.dll")]
+        public static extern int MessageBeep(uint uType);
+
+
+        public static void playOKSound()
+        {
+            uint beep = 0x00000000;
+            MessageBeep(beep);
+        }
+
+        public static void playErrorSound()
+        {
+            uint beep = 0x00000010;
+            MessageBeep(beep);
+        }
+
+
     }
 
 

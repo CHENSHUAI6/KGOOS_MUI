@@ -750,7 +750,7 @@ namespace KGOOS_MUI.Pages.BaseData
             }
             catch (Exception e1)
             {
-
+                MessageBox.Show(e1.Message);
             }
 
         }

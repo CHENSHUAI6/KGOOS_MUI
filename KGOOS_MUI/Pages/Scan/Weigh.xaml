@@ -30,7 +30,7 @@
                 <ColumnDefinition Width="70"></ColumnDefinition>
                 <ColumnDefinition Width="70"></ColumnDefinition>
                 <ColumnDefinition Width="70"></ColumnDefinition>
-                <ColumnDefinition Width="70"></ColumnDefinition>
+                <ColumnDefinition Width="140"></ColumnDefinition>
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Button Grid.Column="0" Height="40" Content="查 询" FontSize="18" Padding="1,1,1,1" Margin="12,10,2,10" VerticalAlignment="Bottom" />
@@ -38,6 +38,7 @@
             <Button Name="BTNDelete" Grid.Column="2" Height="40" Content="删 除" FontSize="18" Padding="1,1,1,1" Margin="2,10,2,10" Click="BTNDelete_Click" />
             <Button Name="BTNSave" Grid.Column="3" Height="40" Content="保 存" FontSize="18" Padding="1,1,1,1" Margin="2,10,2,10" Click="BTNSave_Click" />
             <Button Grid.Column="4" Height="40" Content="取 消" FontSize="18" Padding="1,1,1,1" Margin="2,10,2,10" />
+            <Button Name="BTNAutoShelf" Grid.Column="5" Height="40" Content="自动分配货架" FontSize="18" Padding="1,1,1,1" Margin="2,10,2,10" Click="BTNAutoShelf_Click" />
         </Grid>
         <Border Grid.Row="1" VerticalAlignment="Bottom" Background="LightGray" BorderBrush="LightGray" BorderThickness="1"/>
 
@@ -151,6 +152,9 @@
                           Checked="CBNoZero_Checked" Unchecked="CBNoZero_Unchecked"/>
                 <CheckBox Name="CBBeginTwo" Content="重量大于0.2" Margin="0,120,0,4" VerticalAlignment="Top" FontFamily="宋体" FontSize="18" />
                 <CheckBox Name="CBLook" Content="客人可见" Margin="0,140,0,4" VerticalAlignment="Top" FontFamily="宋体" FontSize="18" />
+                <CheckBox Name="CBBigShelf" Content="大货区" Margin="0,160,0,4" VerticalAlignment="Top" FontFamily="宋体" FontSize="18" Checked="CBBigShelf_Checked" />
+                <CheckBox Name="CBSmallShelf" Content="小货区" Margin="0,180,0,4" VerticalAlignment="Top" FontFamily="宋体" FontSize="18" IsChecked="True" Checked="CBSmallShelf_Checked" />
+
 
                 <TextBlock Text="记录数：" Margin="200,2,2,2" FontSize="25" FontFamily="宋体" 
                            HorizontalAlignment="Left" VerticalAlignment="Top"/>

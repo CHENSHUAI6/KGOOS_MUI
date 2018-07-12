@@ -36,5 +36,11 @@ namespace KGOOS_MUI.Pages.BaseData
             MainWindow mw = System.Windows.Window.GetWindow(this) as MainWindow;
             mw.ContentSource = new Uri("/Pages/BaseData/Straff.xaml", UriKind.RelativeOrAbsolute);
         }
+
+        private void Customs_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            MainWindow mw = System.Windows.Window.GetWindow(this) as MainWindow;
+            mw.ContentSource = new Uri("/Pages/BaseData/Shelf.xaml", UriKind.RelativeOrAbsolute);
+        }
     }
 }
