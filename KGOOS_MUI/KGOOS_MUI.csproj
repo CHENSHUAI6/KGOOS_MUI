@@ -73,8 +73,14 @@
     <Compile Include="Pages\BaseData\BaseDataManage.xaml.cs">
       <DependentUpon>BaseDataManage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\BaseData\Coupon.xaml.cs">
+      <DependentUpon>Coupon.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\BaseData\FreightCount.xaml.cs">
       <DependentUpon>FreightCount.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\BaseData\IssueCoupon.xaml.cs">
+      <DependentUpon>IssueCoupon.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\BaseData\Shelf.xaml.cs">
       <DependentUpon>Shelf.xaml</DependentUpon>
@@ -125,7 +131,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\BaseData\Coupon.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\BaseData\FreightCount.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\BaseData\IssueCoupon.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -68,3 +68,7 @@ Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\obj\Release\KGOOS_MUI.
 Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\obj\Release\KGOOS_MUI.csprojResolveAssemblyReference.cache
 Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\obj\Release\Pages\BaseData\Shelf.g.cs
 Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\obj\Release\Pages\BaseData\Shelf.baml
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\obj\Release\Pages\BaseData\Coupon.g.cs
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\obj\Release\Pages\BaseData\Coupon.baml
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\obj\Release\Pages\BaseData\IssueCoupon.baml
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\obj\Release\Pages\BaseData\IssueCoupon.g.cs

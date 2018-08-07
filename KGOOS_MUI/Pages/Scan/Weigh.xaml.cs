@@ -619,9 +619,7 @@ namespace KGOOS_MUI.Pages.Scan
                     TBtranId.Focus();
                     IsOK = false;
                     Weight_Size = 0;
-                }
-                
-
+                }               
             }
         }
 

@@ -10,11 +10,11 @@ none
 false
 TRACE
 Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\App.xaml
-281014749034
+30-1736438542
 2-650941957
-40-913628097
+42-1272946965
 18-414225687
-Control\AutoCompleteTextBox.xaml;LoginWindow.xaml;MainWindow.xaml;Pages\BaseData\BaseDataManage.xaml;Pages\BaseData\FreightCount.xaml;Pages\BaseData\Shelf.xaml;Pages\BaseData\Straff.xaml;Pages\Login.xaml;Pages\ModernUI.Theme1.xaml;Pages\Scan\Inquire.xaml;Pages\Scan\ScanManage.xaml;Pages\Scan\Weigh.xaml;Pages\Settings\About.xaml;Pages\Settings\Appearance.xaml;Pages\Settings\SettingManage.xaml;Pages\Tran\Addresser.xaml;Pages\Tran\Arrive.xaml;Pages\Tran\ConTran.xaml;Pages\Tran\ConTranOld.xaml;Pages\Tran\Customs.xaml;Pages\Tran\TranManage.xaml;Pages\SettingsPage.xaml;Pages\Up\Packer.xaml;Pages\Web\Entering.xaml;Pages\Web\Select.xaml;Pages\Web\WebManage.xaml;UserAdressWindow.xaml;UpWindow.xaml;
+Control\AutoCompleteTextBox.xaml;LoginWindow.xaml;MainWindow.xaml;Pages\BaseData\BaseDataManage.xaml;Pages\BaseData\Coupon.xaml;Pages\BaseData\FreightCount.xaml;Pages\BaseData\IssueCoupon.xaml;Pages\BaseData\Shelf.xaml;Pages\BaseData\Straff.xaml;Pages\Login.xaml;Pages\ModernUI.Theme1.xaml;Pages\Scan\Inquire.xaml;Pages\Scan\ScanManage.xaml;Pages\Scan\Weigh.xaml;Pages\Settings\About.xaml;Pages\Settings\Appearance.xaml;Pages\Settings\SettingManage.xaml;Pages\Tran\Addresser.xaml;Pages\Tran\Arrive.xaml;Pages\Tran\ConTran.xaml;Pages\Tran\ConTranOld.xaml;Pages\Tran\Customs.xaml;Pages\Tran\TranManage.xaml;Pages\SettingsPage.xaml;Pages\Up\Packer.xaml;Pages\Web\Entering.xaml;Pages\Web\Select.xaml;Pages\Web\WebManage.xaml;UserAdressWindow.xaml;UpWindow.xaml;
 
-True
+False
 

@@ -42,5 +42,17 @@ namespace KGOOS_MUI.Pages.BaseData
             MainWindow mw = System.Windows.Window.GetWindow(this) as MainWindow;
             mw.ContentSource = new Uri("/Pages/BaseData/Shelf.xaml", UriKind.RelativeOrAbsolute);
         }
+
+        private void TBCoupon_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            MainWindow mw = System.Windows.Window.GetWindow(this) as MainWindow;
+            mw.ContentSource = new Uri("/Pages/BaseData/Coupon.xaml", UriKind.RelativeOrAbsolute);
+        }
+
+        private void TBIssueCoupon_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            MainWindow mw = System.Windows.Window.GetWindow(this) as MainWindow;
+            mw.ContentSource = new Uri("/Pages/BaseData/IssueCoupon.xaml", UriKind.RelativeOrAbsolute);     
+        }
     }
 }

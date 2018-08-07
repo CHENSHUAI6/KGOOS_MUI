@@ -30,12 +30,12 @@
                        VerticalAlignment="Center" FontFamily="微软雅黑" MouseDown="TBStaff_MouseDown"/>
         </ScrollViewer>
         <ScrollViewer Grid.Column="4" Grid.Row="0">
-            <TextBlock Text="自取点维护" FontSize="36" FontWeight="Bold" HorizontalAlignment="Center" 
-                       VerticalAlignment="Center" FontFamily="微软雅黑" />
+            <TextBlock Name="TBCoupon" Text="优惠券维护" FontSize="36" FontWeight="Bold" HorizontalAlignment="Center" 
+                       VerticalAlignment="Center" FontFamily="微软雅黑" MouseDown="TBCoupon_MouseDown" />
         </ScrollViewer>
         <ScrollViewer Grid.Column="0" Grid.Row="2">
-            <TextBlock Name="Addresser" Text="客户管理" FontSize="36" FontWeight="Bold" HorizontalAlignment="Center" 
-                       VerticalAlignment="Center" FontFamily="微软雅黑" />
+            <TextBlock Name="TBIssueCoupon" Text="发放优惠券" FontSize="36" FontWeight="Bold" HorizontalAlignment="Center" 
+                       VerticalAlignment="Center" FontFamily="微软雅黑" MouseDown="TBIssueCoupon_MouseDown" />
         </ScrollViewer>
         <ScrollViewer Grid.Column="2" Grid.Row="2">
             <TextBlock Name="Customs" Text="货架维护" FontSize="36" FontWeight="Bold" HorizontalAlignment="Center" 
