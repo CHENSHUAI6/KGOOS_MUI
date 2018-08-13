@@ -1,0 +1,309 @@
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Aztec.AztecResultMetadata 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Aztec.AztecWriter 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Aztec.Internal.Decoder 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Aztec.Internal.Detector 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Aztec.Internal.AztecCode 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Aztec.Internal.BinaryShiftToken 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Aztec.Internal.Encoder 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Aztec.Internal.HighLevelEncoder 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Aztec.Internal.SimpleToken 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Aztec.Internal.State 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.BarcodeFormat 生成存根: 类型是一个值类型。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.BinaryBitmap 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Client.Result.AbstractDoCoMoResultParser 生成存根: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Client.Result.AddressBookAUResultParser 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Client.Result.AddressBookDoCoMoResultParser 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Client.Result.AddressBookParsedResult 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Client.Result.BizcardResultParser 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Client.Result.BookmarkDoCoMoResultParser 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Client.Result.CalendarParsedResult 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Client.Result.EmailAddressParsedResult 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Client.Result.EmailAddressResultParser 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Client.Result.EmailDoCoMoResultParser 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Client.Result.GeoParsedResult 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Client.Result.GeoResultParser 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Client.Result.ISBNParsedResult 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Client.Result.ParsedResultType 生成存根: 类型是一个值类型。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Client.Result.ProductParsedResult 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Client.Result.ProductResultParser 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Client.Result.SMSMMSResultParser 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Client.Result.SMSParsedResult 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Client.Result.TelParsedResult 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Client.Result.TelResultParser 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Client.Result.TextParsedResult 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Client.Result.URIParsedResult 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Client.Result.URIResultParser 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Client.Result.URLTOResultParser 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Client.Result.VCardResultParser 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Client.Result.VEventResultParser 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Common.BitArray 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Common.BitMatrix 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Common.BitSource 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Common.ECI 生成存根: 类型没有系列可见的构造函数。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Common.CharacterSetECI 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Common.DecoderResult 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Common.DefaultGridSampler 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Common.Detector.MathUtils 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Common.Detector.MonochromeRectangleDetector 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Common.Detector.WhiteRectangleDetector 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Common.HybridBinarizer 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Common.PerspectiveTransform 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Common.ReedSolomon.GenericGF 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Common.ReedSolomon.GenericGFPoly 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Common.ReedSolomon.ReedSolomonDecoder 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Common.ReedSolomon.ReedSolomonEncoder 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Common.StringUtils 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Datamatrix.DataMatrixReader 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Datamatrix.DataMatrixWriter 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Datamatrix.Internal.BitMatrixParser 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Datamatrix.Internal.DataBlock 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Datamatrix.Internal.DecodedBitStreamParser 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Datamatrix.Internal.Decoder 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Datamatrix.Internal.Version 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Datamatrix.Internal.Detector 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Datamatrix.Encoder.Encoder 生成存根: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Datamatrix.Encoder.ASCIIEncoder 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Datamatrix.Encoder.Base256Encoder 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Datamatrix.Encoder.C40Encoder 生成存根: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Datamatrix.Encoder.DataMatrixSymbolInfo144 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Datamatrix.Encoder.EdifactEncoder 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Datamatrix.Encoder.Encodation 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Datamatrix.Encoder.EncoderContext 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Datamatrix.Encoder.ErrorCorrection 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Datamatrix.Encoder.HighLevelEncoder 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Datamatrix.Encoder.SymbolShapeHint 生成存根: 类型是一个值类型。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Datamatrix.Encoder.TextEncoder 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Datamatrix.Encoder.X12Encoder 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.DecodeHintType 生成存根: 类型是一个值类型。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Dimension 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.EncodeHintType 生成存根: 类型是一个值类型。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.FormatException 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.IMB.IMBReader 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.InvertedLuminanceSource 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Maxicode.Internal.BitMatrixParser 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Maxicode.Internal.DecodedBitStreamParser 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Maxicode.Internal.Decoder 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Maxicode.MaxiCodeReader 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.MultiFormatReader 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.MultiFormatWriter 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Multi.ByQuadrantReader 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Multi.GenericMultipleBarcodeReader 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Multi.QrCode.Internal.MultiDetector 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Multi.QrCode.Internal.MultiFinderPatternFinder 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Multi.QrCode.QRCodeMultiReader 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.OneD.CodaBarReader 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.OneD.CodaBarWriter 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.OneD.Code128Reader 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.OneD.Code128Writer 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.OneD.Code39Reader 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.OneD.Code39Writer 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.OneD.Code93Reader 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.OneD.UPCEANReader 生成存根: method ZXing.BarcodeFormat ZXing.OneD.UPCEANReader.get_BarcodeFormat() unstubbable: 方法是抽象的，因此无法用作存根，方法签名类型对于 exported or assembly(zxing.0.15.0.0.Fakes) or subtype(UPCEANReader in assembly zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.OneD.EAN13Reader 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.OneD.EAN13Writer 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.OneD.EAN8Reader 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.OneD.EAN8Writer 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.OneD.EANManufacturerOrgSupport 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.OneD.ITFReader 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.OneD.ITFWriter 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.OneD.MSIReader 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.OneD.MSIWriter 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.OneD.PlesseyWriter 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.OneD.MultiFormatOneDReader 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.OneD.MultiFormatUPCEANReader 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.OneD.RSS.Expanded.BitArrayBuilder 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.OneD.RSS.Expanded.Decoders.AbstractExpandedDecoder 生成存根: 类型没有系列可见的构造函数。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.OneD.RSS.Expanded.Decoders.AI01decoder 生成存根: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.OneD.RSS.Expanded.Decoders.AI01weightDecoder 生成存根: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.OneD.RSS.Expanded.Decoders.AI013x0xDecoder 生成存根: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.OneD.RSS.Expanded.Decoders.AI013103decoder 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.OneD.RSS.Expanded.Decoders.AI01320xDecoder 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.OneD.RSS.Expanded.Decoders.AI01392xDecoder 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.OneD.RSS.Expanded.Decoders.AI01393xDecoder 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.OneD.RSS.Expanded.Decoders.AI013x0x1xDecoder 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.OneD.RSS.Expanded.Decoders.AI01AndOtherAIs 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.OneD.RSS.Expanded.Decoders.AnyAIDecoder 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.OneD.RSS.Expanded.Decoders.BlockParsedResult 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.OneD.RSS.Expanded.Decoders.CurrentParsingState 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.OneD.RSS.Expanded.Decoders.DecodedObject 生成存根: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.OneD.RSS.Expanded.Decoders.DecodedChar 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.OneD.RSS.Expanded.Decoders.DecodedInformation 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.OneD.RSS.Expanded.Decoders.DecodedNumeric 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.OneD.RSS.Expanded.Decoders.FieldParser 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.OneD.RSS.Expanded.Decoders.GeneralAppIdDecoder 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.OneD.RSS.Expanded.ExpandedPair 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.OneD.RSS.Expanded.ExpandedRow 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.OneD.RSS.Expanded.RSSExpandedReader 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.OneD.RSS.FinderPattern 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.OneD.RSS.Pair 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.OneD.RSS.RSS14Reader 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.OneD.RSS.RSSUtils 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.OneD.UPCAReader 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.OneD.UPCEANExtension2Support 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.OneD.UPCEANExtension5Support 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.OneD.UPCEANExtensionSupport 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.OneD.UPCEReader 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.PDF417.Internal.BarcodeMetadata 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.PDF417.Internal.BarcodeValue 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.PDF417.Internal.BoundingBox 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.PDF417.Internal.Codeword 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.PDF417.Internal.DecodedBitStreamParser 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.PDF417.Internal.DetectionResultRowIndicatorColumn 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.PDF417.Internal.EC.ErrorCorrection 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.PDF417.Internal.EC.ModulusGF 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.PDF417.Internal.EC.ModulusPoly 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.PDF417.Internal.PDF417CodewordDecoder 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.PDF417.Internal.PDF417ScanningDecoder 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.PDF417.Internal.Detector 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.PDF417.Internal.PDF417DetectorResult 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.PDF417.Internal.BarcodeMatrix 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.PDF417.Internal.BarcodeRow 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.PDF417.Internal.Compaction 生成存根: 类型是一个值类型。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.PDF417.Internal.Dimensions 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.PDF417.Internal.PDF417 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.PDF417.Internal.PDF417ErrorCorrection 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.PDF417.Internal.PDF417ErrorCorrectionLevel 生成存根: 类型是一个值类型。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.PDF417.Internal.PDF417HighLevelEncoder 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.PDF417.PDF417Common 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.PDF417.PDF417Reader 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.PDF417.PDF417ResultMetadata 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.PDF417.PDF417Writer 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.PlanarYUVLuminanceSource 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.QrCode.Internal.BitMatrixParser 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.QrCode.Internal.DataBlock 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.QrCode.Internal.DataMask 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.QrCode.Internal.DecodedBitStreamParser 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.QrCode.Internal.Decoder 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.QrCode.Internal.ErrorCorrectionLevel 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.QrCode.Internal.FormatInformation 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.QrCode.Internal.Mode 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.QrCode.Internal.QRCodeDecoderMetaData 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.QrCode.Internal.Version 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.QrCode.Internal.AlignmentPattern 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.QrCode.Internal.AlignmentPatternFinder 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.QrCode.Internal.FinderPattern 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.QrCode.Internal.FinderPatternInfo 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.QrCode.Internal.BlockPair 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.QrCode.Internal.ByteMatrix 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.QrCode.Internal.Encoder 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.QrCode.Internal.MaskUtil 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.QrCode.Internal.MatrixUtil 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.QrCode.Internal.QRCode 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.QrCode.QRCodeWriter 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Rendering.PixelData 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Rendering.PixelDataRenderer 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Result 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.ResultMetadataType 生成存根: 类型是一个值类型。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.ResultPointCallback 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.RGB565LuminanceSource 生成存根: 类型已过时。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.SupportClass 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.WriterException 生成存根: 类型已密封。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 <PrivateImplementationDetails>{C16FD063-2F88-4DB6-8A8B-9A20A1AAE9E4} 生成存根: 类型不受支持，因为存在内部限制。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Reader 生成填充码: 类型是一个接口。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Writer 生成填充码: 类型是一个接口。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Aztec.Internal.Decoder+Table 生成填充码: 类型是一个枚举。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Aztec.Internal.Detector+Point 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Aztec.Internal.State 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.BarcodeFormat 生成填充码: 类型是一个枚举。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.IBarcodeReaderGeneric`1 生成填充码: 类型是一个接口。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.IMultipleBarcodeReaderGeneric`1 生成填充码: 类型是一个接口。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.IBarcodeReader 生成填充码: 类型是一个接口。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.IMultipleBarcodeReader 生成填充码: 类型是一个接口。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.IBarcodeWriterGeneric`1 生成填充码: 类型是一个接口。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.IBarcodeWriter 生成填充码: 类型是一个接口。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Client.Result.AbstractDoCoMoResultParser 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Client.Result.AddressBookAUResultParser 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Client.Result.AddressBookDoCoMoResultParser 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Client.Result.BizcardResultParser 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Client.Result.BookmarkDoCoMoResultParser 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Client.Result.EmailAddressResultParser 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Client.Result.EmailDoCoMoResultParser 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Client.Result.GeoResultParser 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Client.Result.ParsedResultType 生成填充码: 类型是一个枚举。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Client.Result.ProductResultParser 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Client.Result.SMSMMSResultParser 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Client.Result.TelResultParser 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Client.Result.URIResultParser 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Client.Result.URLTOResultParser 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Client.Result.VCardResultParser 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Client.Result.VEventResultParser 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Common.DecodingOptions+ChangeNotifyDictionary`2 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Common.Detector.MonochromeRectangleDetector 生成填充码: 类型已过时。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Common.ReedSolomon.GenericGFPoly 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Datamatrix.Internal.BitMatrixParser 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Datamatrix.Internal.DataBlock 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Datamatrix.Internal.DecodedBitStreamParser 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Datamatrix.Internal.Version+ECB 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Datamatrix.Internal.Version+ECBlocks 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Datamatrix.Internal.Detector+ResultPointsAndTransitions 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Datamatrix.Internal.Detector+ResultPointsAndTransitionsComparator 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Datamatrix.Encoder.Encoder 生成填充码: 类型是一个接口。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Datamatrix.Encoder.ASCIIEncoder 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Datamatrix.Encoder.Base256Encoder 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Datamatrix.Encoder.C40Encoder 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Datamatrix.Encoder.DataMatrixSymbolInfo144 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Datamatrix.Encoder.EdifactEncoder 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Datamatrix.Encoder.EncoderContext 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Datamatrix.Encoder.HighLevelEncoder 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Datamatrix.Encoder.SymbolShapeHint 生成填充码: 类型是一个枚举。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Datamatrix.Encoder.TextEncoder 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Datamatrix.Encoder.X12Encoder 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.DecodeHintType 生成填充码: 类型是一个枚举。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.EncodeHintType 生成填充码: 类型是一个枚举。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Maxicode.Internal.BitMatrixParser 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Maxicode.Internal.DecodedBitStreamParser 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Multi.MultipleBarcodeReader 生成填充码: 类型是一个接口。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.QrCode.Internal.FinderPatternFinder+CenterComparator 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.QrCode.Internal.FinderPatternFinder+FurthestFromAverageComparator 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Multi.QrCode.Internal.MultiFinderPatternFinder 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.OneD.Code128Writer+CType 生成填充码: 类型是一个枚举。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.OneD.EANManufacturerOrgSupport 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.OneD.RSS.Expanded.BitArrayBuilder 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.OneD.RSS.Expanded.Decoders.AI01decoder 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.OneD.RSS.Expanded.Decoders.AI01weightDecoder 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.OneD.RSS.Expanded.Decoders.AI013x0xDecoder 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.OneD.RSS.Expanded.Decoders.AI013103decoder 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.OneD.RSS.Expanded.Decoders.AI01320xDecoder 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.OneD.RSS.Expanded.Decoders.AI01392xDecoder 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.OneD.RSS.Expanded.Decoders.AI01393xDecoder 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.OneD.RSS.Expanded.Decoders.AI013x0x1xDecoder 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.OneD.RSS.Expanded.Decoders.AI01AndOtherAIs 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.OneD.RSS.Expanded.Decoders.AnyAIDecoder 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.OneD.RSS.Expanded.Decoders.BlockParsedResult 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.OneD.RSS.Expanded.Decoders.CurrentParsingState 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.OneD.RSS.Expanded.Decoders.DecodedObject 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.OneD.RSS.Expanded.Decoders.DecodedChar 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.OneD.RSS.Expanded.Decoders.DecodedInformation 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.OneD.RSS.Expanded.Decoders.DecodedNumeric 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.OneD.RSS.Expanded.Decoders.FieldParser 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.OneD.RSS.Expanded.Decoders.GeneralAppIdDecoder 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.OneD.RSS.Expanded.ExpandedPair 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.OneD.RSS.Expanded.ExpandedRow 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.OneD.RSS.Pair 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.OneD.UPCEANExtension2Support 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.OneD.UPCEANExtension5Support 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.OneD.UPCEANExtensionSupport 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.PDF417.Internal.DecodedBitStreamParser 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.PDF417.Internal.EC.ModulusGF 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.PDF417.Internal.EC.ModulusPoly 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.PDF417.Internal.BarcodeMatrix 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.PDF417.Internal.BarcodeRow 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.PDF417.Internal.Compaction 生成填充码: 类型是一个枚举。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.PDF417.Internal.PDF417 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.PDF417.Internal.PDF417ErrorCorrection 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.PDF417.Internal.PDF417ErrorCorrectionLevel 生成填充码: 类型是一个枚举。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.PDF417.Internal.PDF417HighLevelEncoder 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.PDF417.PDF417Common 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.QrCode.Internal.BitMatrixParser 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.QrCode.Internal.DataBlock 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.QrCode.Internal.DataMask 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.QrCode.Internal.DecodedBitStreamParser 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.QrCode.Internal.FormatInformation 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.QrCode.Internal.AlignmentPatternFinder 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.QrCode.Internal.BlockPair 生成填充码: 类型对 exported or assembly(zxing.0.15.0.0.Fakes) 不可见。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.Rendering.IBarcodeRenderer`1 生成填充码: 类型是一个接口。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.ResultMetadataType 生成填充码: 类型是一个枚举。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.ResultPointCallback 生成填充码: 类型是一个委托。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.RGBLuminanceSource+BitmapFormat 生成填充码: 类型是一个枚举。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 ZXing.RGB565LuminanceSource 生成填充码: 类型已过时。
+Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\Fakes\zxing.fakes : warning : 无法为 <PrivateImplementationDetails>{C16FD063-2F88-4DB6-8A8B-9A20A1AAE9E4} 生成填充码: 类型不受支持，因为存在内部限制。
