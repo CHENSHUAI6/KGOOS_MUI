@@ -27,32 +27,67 @@ namespace KGOOS_MUI.Pages.BaseData
 
         private void TBFreight_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            MainWindow mw = System.Windows.Window.GetWindow(this) as MainWindow;
-            mw.ContentSource = new Uri("/Pages/BaseData/FreightCount.xaml", UriKind.RelativeOrAbsolute);
+            try
+            {
+                MainWindow mw = System.Windows.Window.GetWindow(this) as MainWindow;
+                mw.ContentSource = new Uri("/Pages/BaseData/FreightCount.xaml", UriKind.RelativeOrAbsolute);
+            }
+            catch(Exception e1)
+            {
+                MessageBox.Show("系统错误：" + e1.Message);
+            }            
         }
 
         private void TBStaff_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            MainWindow mw = System.Windows.Window.GetWindow(this) as MainWindow;
-            mw.ContentSource = new Uri("/Pages/BaseData/Straff.xaml", UriKind.RelativeOrAbsolute);
+            try
+            {
+                MainWindow mw = System.Windows.Window.GetWindow(this) as MainWindow;
+                mw.ContentSource = new Uri("/Pages/BaseData/Straff.xaml", UriKind.RelativeOrAbsolute);
+            }
+            catch (Exception e1)
+            {
+                MessageBox.Show("系统错误：" + e1.Message);
+            }
         }
 
         private void Customs_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            MainWindow mw = System.Windows.Window.GetWindow(this) as MainWindow;
-            mw.ContentSource = new Uri("/Pages/BaseData/Shelf.xaml", UriKind.RelativeOrAbsolute);
+            try
+            {
+                MainWindow mw = System.Windows.Window.GetWindow(this) as MainWindow;
+                mw.ContentSource = new Uri("/Pages/BaseData/Shelf.xaml", UriKind.RelativeOrAbsolute);
+            }
+            catch (Exception e1)
+            {
+                MessageBox.Show("系统错误：" + e1.Message);
+            }
         }
 
         private void TBCoupon_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            MainWindow mw = System.Windows.Window.GetWindow(this) as MainWindow;
-            mw.ContentSource = new Uri("/Pages/BaseData/Coupon.xaml", UriKind.RelativeOrAbsolute);
+            try
+            {
+                MainWindow mw = System.Windows.Window.GetWindow(this) as MainWindow;
+                mw.ContentSource = new Uri("/Pages/BaseData/Coupon.xaml", UriKind.RelativeOrAbsolute);
+            }
+            catch (Exception e1)
+            {
+                MessageBox.Show("系统错误：" + e1.Message);
+            }
         }
 
         private void TBIssueCoupon_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            MainWindow mw = System.Windows.Window.GetWindow(this) as MainWindow;
-            mw.ContentSource = new Uri("/Pages/BaseData/IssueCoupon.xaml", UriKind.RelativeOrAbsolute);     
+            try
+            {
+                MainWindow mw = System.Windows.Window.GetWindow(this) as MainWindow;
+                mw.ContentSource = new Uri("/Pages/BaseData/IssueCoupon.xaml", UriKind.RelativeOrAbsolute);
+            }
+            catch (Exception e1)
+            {
+                MessageBox.Show("系统错误：" + e1.Message);
+            }
         }
     }
 }

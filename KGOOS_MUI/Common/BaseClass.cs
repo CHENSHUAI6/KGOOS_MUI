@@ -143,6 +143,58 @@ namespace KGOOS_MUI.Common
             MessageBeep(beep);
         }
 
+        /// <summary>
+        /// datagrid 中 checkbox 点击事件总写
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="TableData"></param>
+        /// <param name="id_name"></param>
+        /// <param name="select_name"></param>
+        /// <returns></returns>
+        public static DataTable TB_CheckBox_Click(object sender, DataTable TableData, string id_name, string select_name)
+        {
+            CheckBox cb = sender as CheckBox;
+            string weight_id = cb.Tag.ToString();
+            for (int i = 0; i < TableData.Rows.Count; i++)
+            {
+                string id = TableData.Rows[i][id_name].ToString();
+                if (id.Equals(weight_id))
+                {
+
+                    if (bool.Parse(TableData.Rows[i][select_name].ToString()) == true)
+                    {
+                        TableData.Rows[i][select_name] = false;
+                    }
+                    else
+                    {
+                        TableData.Rows[i][select_name] = true;
+                    }
+
+                    if (TableData.Rows[i]["is_shipments"].ToString() == "Y")
+                    {
+                        TableData.Rows[i]["pack_state"] = "已发件";
+                    }
+                    else if (TableData.Rows[i]["is_shipments"].ToString() == "D")
+                    {
+                        TableData.Rows[i]["pack_state"] = "已打包";
+                    }
+                    else
+                    {
+                        TableData.Rows[i]["pack_state"] = "已申请";
+                    }
+
+                    if (bool.Parse(TableData.Rows[i]["paid"].ToString()) == true)
+                    {
+                        TableData.Rows[i]["pack_state"] = "已付款";
+                    }
+
+                    return TableData;
+                }
+            }
+            return TableData;
+
+        }
+
 
     }
 

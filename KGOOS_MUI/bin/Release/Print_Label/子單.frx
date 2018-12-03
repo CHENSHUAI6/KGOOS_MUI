@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="09/14/2018 15:08:43" ReportInfo.Modified="09/19/2018 22:19:45" ReportInfo.CreatorVersion="2017.1.16.0">
+  <Dictionary>
+    <MsSqlDataConnection Name="Connection" ConnectionString="rijcmlqveABMfnqRj7Azp6bE+ejNsHAymJttqzOg+itt9pzA3EgYDn+7Vl7Pc4FVSdWHgDr6I4ROVL7aN6XZwEFeST4Lnztqa3IQaX5agiqrYb4LVegmmNMX2XIxIR00z/MBfDAugf0VUjdC1IJXG+5hdkHKz6S5YZWluApSorXL/WFBAkJ/jm5ZsIqQsSxlCOlW2g4Ff90vgrgRhh+keUEWlm1oQ==">
+      <TableDataSource Name="print_data" DataType="System.Int32" Enabled="true" TableName="print_data">
+        <Column Name="head" DataType="System.String"/>
+        <Column Name="name" DataType="System.String"/>
+        <Column Name="phone" DataType="System.String"/>
+        <Column Name="adress" DataType="System.String"/>
+        <Column Name="contran_id" DataType="System.String"/>
+        <Column Name="case_num" DataType="System.String"/>
+        <Column Name="contran_page" DataType="System.String"/>
+        <Column Name="Column" DataType="System.Int32" Calculated="true" Expression=""/>
+      </TableDataSource>
+    </MsSqlDataConnection>
+  </Dictionary>
+  <ReportPage Name="Page1" PaperWidth="99.9998" PaperHeight="99.9998" LeftMargin="0" TopMargin="0" RightMargin="0" BottomMargin="0">
+    <DataBand Name="Data1" Width="378" Height="378" DataSource="print_data">
+      <TextObject Name="Text1" Width="378" Height="56.7" Fill.Color="Black" Text="快購集運-子單123" HorzAlign="Center" VertAlign="Center" Font="黑体, 26pt, style=Bold" TextFill.Color="White"/>
+      <TextObject Name="Text2" Left="9.45" Top="66.15" Width="359.1" Height="37.8" Text="[print_data.head]" VertAlign="Center" Font="黑体, 18pt, style=Bold"/>
+      <TextObject Name="Text3" Left="9.45" Top="113.4" Width="151.2" Height="28.35" EvenStylePriority="UseAll" Text="[print_data.name]" AutoWidth="true" VertAlign="Center" Font="黑体, 12pt, style=Bold" TabWidth="120"/>
+      <TextObject Name="Text4" Left="170.1" Top="113.4" Width="198.45" Height="28.35" Text="[print_data.phone]" AutoWidth="true" VertAlign="Center" Font="黑体, 12pt, style=Bold"/>
+      <TextObject Name="Text5" Left="9.45" Top="151.2" Width="359.1" Height="37.8" Text="[print_data.adress]" AutoWidth="true" VertAlign="Center" Font="黑体, 10pt, style=Bold" TabWidth="200"/>
+      <TextObject Name="Text6" Left="9.45" Top="198.45" Width="113.4" Height="37.8" Text="主單號：" VertAlign="Center" Font="黑体, 18pt, style=Bold"/>
+      <TextObject Name="Text7" Left="113.4" Top="198.45" Width="255.15" Height="37.8" Text="[print_data.contran_id]" AutoWidth="true" VertAlign="Center" Font="黑体, 18pt, style=Bold" TabWidth="120"/>
+      <TextObject Name="Text8" Left="9.45" Top="245.7" Width="113.4" Height="37.8" Text="件數：" VertAlign="Center" Font="黑体, 18pt, style=Bold"/>
+      <TextObject Name="Text9" Left="9.45" Top="292.95" Width="113.4" Height="37.8" Text="子單號：" VertAlign="Center" Font="黑体, 18pt, style=Bold"/>
+      <BarcodeObject Name="Barcode1" Left="113.4" Top="292.95" Width="153.75" Height="47.25" DataColumn="print_data.contran_page" Text="1809000001002" AllowExpressions="true" Barcode="GS1-128 (UCC/EAN-128)" Barcode.AutoEncode="true"/>
+      <TextObject Name="Text10" Left="9.45" Top="349.65" Width="94.5" Height="18.9" Text="打印時間：" VertAlign="Center" Font="黑体, 10pt, style=Bold"/>
+      <TextObject Name="Text11" Left="113.4" Top="349.65" Width="255.15" Height="18.9" Text="[Date]" AutoWidth="true" VertAlign="Center" Font="黑体, 8pt, style=Bold" TabWidth="60"/>
+      <TextObject Name="Text12" Left="359.1" Top="9.45" Width="94.5" Height="18.9"/>
+      <TextObject Name="Text13" Left="113.4" Top="245.7" Width="255.15" Height="37.8" Text="[print_data.case_num]" AutoWidth="true" VertAlign="Center" Font="黑体, 18pt, style=Bold" TabWidth="120"/>
+    </DataBand>
+  </ReportPage>
+</Report>

@@ -35,16 +35,16 @@
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <!--第一行-->
-            <TextBlock Grid.Row="0" Grid.Column="0" Text="承运商" Margin="2,2,2,2" FontSize="18" FontFamily="宋体" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="区 域" Margin="2,2,2,2" FontSize="18" FontFamily="宋体" HorizontalAlignment="Right" VerticalAlignment="Center"/>
             <!--<TextBox Grid.Row="0" Grid.Column="1" Text="" Margin="2,2,2,2" FontSize="12" FontFamily="宋体" VerticalAlignment="Center"/>-->
-            <ComboBox Name="CBCom"  Grid.Row="0" Grid.Column="1" Margin="2,2,2,2" FontSize="18" FontFamily="宋体" VerticalAlignment="Center"/>
+            <ComboBox Name="CBRegion"  Grid.Row="0" Grid.Column="1" Margin="2,2,2,2" FontSize="18" FontFamily="宋体" VerticalAlignment="Center" SelectionChanged="CBRegion_SelectionChanged" />
             <TextBlock Grid.Row="0" Grid.Column="2" Text="目的地" Margin="2,2,2,2" FontSize="18" FontFamily="宋体" HorizontalAlignment="Right" VerticalAlignment="Center"/>
             <!--<TextBox Grid.Row="0" Grid.Column="3" Text="" Margin="2,2,2,2" FontSize="12" FontFamily="宋体" VerticalAlignment="Center"/>-->
-            <ComboBox Name="CBDestination" Grid.Row="0" Grid.Column="3" Margin="2,2,2,2" FontSize="18" FontFamily="宋体" VerticalAlignment="Center"/>
-            <TextBlock Grid.Row="0" Grid.Column="4" Text="快递类型" Margin="2,2,2,2" FontSize="18" FontFamily="宋体" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <ComboBox Name="CBDestination" Grid.Row="0" Grid.Column="3" Margin="2,2,2,2" FontSize="18" FontFamily="宋体" VerticalAlignment="Center" SelectionChanged="CBDestination_SelectionChanged"/>
+            <TextBlock Grid.Row="0" Grid.Column="4" Text="派件公司" Margin="2,2,2,2" FontSize="18" FontFamily="宋体" HorizontalAlignment="Right" VerticalAlignment="Center"/>
             <!--<TextBox Grid.Row="0" Grid.Column="5" Text="" Margin="2,2,2,2" FontSize="12" FontFamily="宋体" VerticalAlignment="Center"/>-->
-            <ComboBox Name="CBType"  Grid.Row="0" Grid.Column="5" Margin="2,2,2,2" FontSize="18" FontFamily="宋体" VerticalAlignment="Center"/>
-
+            <ComboBox Name="CBCom"  Grid.Row="0" Grid.Column="5" Margin="2,2,2,2" FontSize="18" FontFamily="宋体" VerticalAlignment="Center"/>
+            
             <!--第二行-->
             <TextBlock Grid.Row="1" Grid.Column="0" Text="旺旺名"  Margin="2,2,2,2" FontSize="18" FontFamily="宋体" HorizontalAlignment="Right" VerticalAlignment="Center"/>
             <!--<TextBox Name="TBUser_Name" Grid.Row="1" Grid.Column="1" Text="" Margin="2,2,2,2" FontSize="12" FontFamily="宋体" VerticalAlignment="Center"/>-->

@@ -5,6 +5,7 @@
              xmlns:wfi ="clr-namespace:System.Windows.Forms.Integration;assembly=WindowsFormsIntegration"
              xmlns:wf ="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:tbnew="clr-namespace:KGOOS_MUI.Control"
              xmlns:mui="http://firstfloorsoftware.com/ModernUI"
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="1400">
@@ -12,11 +13,11 @@
     <Grid Style="{StaticResource ContentRoot}">
         <Grid.RowDefinitions>
             <RowDefinition Height="40"></RowDefinition>
-            <RowDefinition Height="40"></RowDefinition>
-            <RowDefinition Height="180"></RowDefinition>
-            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="25"></RowDefinition>
+            <RowDefinition Height="120"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="230"></RowDefinition>
+            <RowDefinition Height="160"></RowDefinition>
         </Grid.RowDefinitions>
 
         <TextBlock Grid.Row="0" Text="集运订单" Margin="2,2,2,2" FontSize="25" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold"/>
@@ -27,52 +28,57 @@
         <!--顶端按钮栏-->
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="65"></ColumnDefinition>
+                <ColumnDefinition Width="45"></ColumnDefinition>
                 <ColumnDefinition Width="60"></ColumnDefinition>
-                <ColumnDefinition Width="60"></ColumnDefinition>
-                <ColumnDefinition Width="60"></ColumnDefinition>
+                <ColumnDefinition Width="40"></ColumnDefinition>
+                <ColumnDefinition Width="40"></ColumnDefinition>
+                <ColumnDefinition Width="40"></ColumnDefinition>
+                <ColumnDefinition Width="40"></ColumnDefinition>
+                <ColumnDefinition Width="70"></ColumnDefinition>
                 <ColumnDefinition Width="60"></ColumnDefinition>
                 <ColumnDefinition Width="60"></ColumnDefinition>
                 <ColumnDefinition Width="80"></ColumnDefinition>
-                <ColumnDefinition Width="80"></ColumnDefinition>
-                <ColumnDefinition Width="80"></ColumnDefinition>
+                <ColumnDefinition Width="60"></ColumnDefinition>
                 <ColumnDefinition Width="80"></ColumnDefinition>
                 <ColumnDefinition Width="80"></ColumnDefinition>
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Button Name="BtnSelect" Grid.Column="0" Height="30" Content="查 询" FontSize="18" Padding="1,1,1,1" Margin="7,2,2,2" Click="BtnSelect_Click" />
-            <Button Grid.Column="1" Height="30" Content="删 除" FontSize="18" Padding="1,1,1,1" Margin="2,2,2,2" />
-            <Button Grid.Column="2" Height="30" Content="保 存" FontSize="18" Padding="1,1,1,1" Margin="2,2,2,2" />
-            <Button Grid.Column="3" Height="30" Content="取 消" FontSize="18" Padding="1,1,1,1" Margin="2,2,2,2" />
-            <Button Grid.Column="4" Height="30" Content="打 印" FontSize="18" Padding="1,1,1,1" Margin="2,2,2,2" />
-            <Button Grid.Column="5" Height="30" Content="导 出" FontSize="18" Padding="1,1,1,1" Margin="2,2,2,2" />
-            <Button Grid.Column="6" Height="30" Content="生成打包单" FontSize="18" Padding="1,1,1,1" Margin="2,2,2,2" Click="Button_Click" />
-            <Button Grid.Column="7" Height="30" Content="打印面单" FontSize="18" Padding="1,1,1,1" Margin="2,2,2,2" />
-            <Button Grid.Column="8" Height="30" Content="其他操作" FontSize="18" Padding="1,1,1,1" Margin="2,2,2,2" />
-            <Button Grid.Column="9" Height="30" Content="计算运费" FontSize="18" Padding="1,1,1,1" Margin="2,2,2,2" />
-            <Button Grid.Column="10" Height="30" Content="复制物品名称" FontSize="18" Padding="1,1,1,1" Margin="2,2,2,2" />
+            <Button Name="BtnSelect" Grid.Column="0" Height="20" Content="查 询" FontSize="12" Padding="1,1,1,1" Margin="7,2,2,2" Click="BtnSelect_Click" />
+            <Button Name="BtnDeletePack" Grid.Column="1" Height="20" Content="取消打包" FontSize="12" Padding="1,1,1,1" Margin="2,2,2,2" Click="BtnDeletePack_Click" />
+            <Button Name="BtnSave" Grid.Column="2" Height="20" Content="保 存" FontSize="12" Padding="1,1,1,1" Margin="2,2,2,2" Click="BtnSave_Click" />
+            <Button Grid.Column="3" Height="20" Content="取 消" FontSize="12" Padding="1,1,1,1" Margin="2,2,2,2" />
+            <Button Grid.Column="4" Height="20" Content="打 印" FontSize="12" Padding="1,1,1,1" Margin="2,2,2,2" />
+            <Button Grid.Column="5" Height="20" Content="导 出" FontSize="12" Padding="1,1,1,1" Margin="2,2,2,2" />
+            <Button Grid.Column="6" Height="20" Content="生成打包单" FontSize="12" Padding="1,1,1,1" Margin="2,2,2,2" Click="Button_Click" />
+            <Button Grid.Column="7" Height="20" Content="打印面单" FontSize="12" Padding="1,1,1,1" Margin="0,2,2,3" Click="Btn_print_Main_Click" HorizontalAlignment="Right" Width="56"/>
+            <Button Grid.Column="8" Height="20" Content="打印子单" FontSize="12" Padding="1,1,1,1" Margin="2,2,2,2" Click="Btn_print_Page_Click" />
+            <Button Grid.Column="9" Height="20" Content="打印集运订单" FontSize="12" Padding="1,1,1,1" Margin="2,2,2,2" Click="Btn_print_Con_Click" />
+            <Button Grid.Column="10" Height="20" Content="计算运费" FontSize="12" Padding="1,1,1,1" Margin="2,2,2,2" />
+            <Button Name="BtnSaveGoods" Grid.Column="11" Height="20" Content="保存收货信息" FontSize="12" Padding="1,1,1,1" Margin="2,2,2,2" Click="BtnSaveGoods_Click" />
+            <Button Name="BtnSavePack" Grid.Column="12" Height="20" Content="保存打包信息" FontSize="12" Padding="1,1,1,1" Margin="2,2,2,2" Click="BtnSavePack_Click" />
         </Grid>
         <Border Grid.Row="1" VerticalAlignment="Bottom" Background="LightGray" BorderBrush="LightGray" BorderThickness="1"/>
         <!--中间信息填写区-->
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="200"></ColumnDefinition>
+                <ColumnDefinition Width="180"></ColumnDefinition>
                 <ColumnDefinition Width="220"></ColumnDefinition>
-                <ColumnDefinition Width="500"></ColumnDefinition>
+                <ColumnDefinition Width="400"></ColumnDefinition>
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
             <!--左侧填写栏-->
             <Grid Grid.Column="0">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="35"></RowDefinition>
+                    <RowDefinition Height="25"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
                 </Grid.RowDefinitions>
                 <!--第一行-->
-                <CheckBox Grid.Row="0" Content="按单号查询" Margin="5,0,0,4" VerticalAlignment="Center" FontFamily="宋体" FontSize="18" HorizontalAlignment="Left" />
-                <Button Grid.Row="0" Height="30" Content="清 空" FontSize="16" Padding="1,1,1,1" Margin="2,2,20,2" HorizontalAlignment="Right" VerticalAlignment="Center" />
+                <CheckBox Name="CBID" Grid.Row="0" Content="按单号查询" Margin="5,0,0,4" VerticalAlignment="Center" FontFamily="宋体" FontSize="12" HorizontalAlignment="Left" />
+                <Button Grid.Row="0" Width="40" Height="20" Content="清 空" FontSize="12" Padding="1,1,1,1" Margin="2,2,20,2" HorizontalAlignment="Right" VerticalAlignment="Center" />
                 <!--第二行-->
-                <TextBox Name="TBID" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" Height="135" Width="190" Grid.Row="1" Text="" Margin="2,2,2,2" FontSize="12" FontFamily="宋体"/>
+                <TextBox Name="TBID" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" 
+                          Grid.Row="1" Text="" Margin="2,2,2,2" FontSize="12" FontFamily="宋体"/>
 
             </Grid>
             <Border Grid.Column="0" Background="LightGray" BorderBrush="LightGray" BorderThickness="1" HorizontalAlignment="Right"/>
@@ -80,26 +86,26 @@
             <!--中间日期筛选-->
             <Grid Grid.Column="1">
                 <Grid.RowDefinitions>
+                    <RowDefinition Height="22"></RowDefinition>
                     <RowDefinition Height="25"></RowDefinition>
-                    <RowDefinition Height="30"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
-                    <RowDefinition Height="10"></RowDefinition>
+                    <RowDefinition Height="5"></RowDefinition>
                 </Grid.RowDefinitions>
                 <!--title-->
-                <TextBlock Grid.Row="0" Width="200" Text="扫描日期范围(31天以内)：" Margin="7,2,2,2" FontSize="18" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <TextBlock Grid.Row="0" Width="200" Text="扫描日期范围(31天以内)：" Margin="7,2,2,2" FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                 <GridSplitter Grid.Row="0" Height="2" HorizontalAlignment="Stretch" VerticalAlignment="Bottom"/>
                 <!--内容-->
-                <RadioButton Name="RBApply" Grid.Row="1" Content="申请日期" Margin="7,2,2,2" FontSize="18" VerticalAlignment="Center" FontFamily="宋体" HorizontalAlignment="Left"/>
-                <RadioButton Name="RBPayment" Grid.Row="1" Content="付款日期" Margin="110,2,2,2" FontSize="18" VerticalAlignment="Center" FontFamily="宋体" HorizontalAlignment="Left" />
-                <TextBlock Grid.Row="2" Width="55" Text="开始" Margin="20,5,2,2" FontSize="15" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <RadioButton Name="RBApply" Grid.Row="1" Content="申请日期" Margin="7,2,2,2" FontSize="12" VerticalAlignment="Center" FontFamily="宋体" HorizontalAlignment="Left" IsChecked="True"/>
+                <RadioButton Name="RBPayment" Grid.Row="1" Content="付款日期" Margin="110,2,2,2" FontSize="12" VerticalAlignment="Center" FontFamily="宋体" HorizontalAlignment="Left" />
+                <TextBlock Grid.Row="2" Width="55" Text="开始" Margin="20,5,2,2" FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                 <!--<DatePicker Grid.Row="2" Margin="60,2,2,2" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="12" FontFamily="宋体" />-->
-                <wfi:WindowsFormsHost Width="150" Grid.Row="2" Margin="60,2,2,2" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="12" FontFamily="宋体">
+                <wfi:WindowsFormsHost Width="150" Grid.Row="2" Margin="60,2,2,2" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="10" FontFamily="宋体">
                     <wf:DateTimePicker x:Name="TBStartTime" Width="150" Height="20" Format="Custom" CustomFormat="yyyy-MM-dd: HH:mm:ss"/>
                 </wfi:WindowsFormsHost>
-                <TextBlock Grid.Row="3" Width="55" Text="结束" Margin="20,9.667,0,5" FontSize="15" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <TextBlock Grid.Row="3" Width="55" Text="结束" Margin="20,9.667,0,5" FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                 <!--<DatePicker  Grid.Row="3" Margin="60,2,2,2" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="12" FontFamily="宋体" />-->
-                <wfi:WindowsFormsHost Width="150" Grid.Row="3" Margin="60,2,2,2" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="12" FontFamily="宋体">
+                <wfi:WindowsFormsHost Width="150" Grid.Row="3" Margin="60,2,2,2" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="10" FontFamily="宋体">
                     <wf:DateTimePicker x:Name="TBEndTime" Width="150" Height="20" Format="Custom" CustomFormat="yyyy-MM-dd: HH:mm:ss"/>
                 </wfi:WindowsFormsHost>
             </Grid>
@@ -119,34 +125,44 @@
                     <RowDefinition Height="*"></RowDefinition>
                 </Grid.RowDefinitions>
                 <TextBlock Grid.Row="0" Grid.Column="0" Text="承运商" Margin="7,2,2,2" 
-                           FontSize="18" FontFamily="宋体" HorizontalAlignment="Left" 
+                           FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                            VerticalAlignment="Center"/>
-                <TextBox Width="160" Grid.Row="0" Grid.Column="0" Text="" Margin="85,2,2,2" 
-                         FontSize="18" FontFamily="宋体" HorizontalAlignment="Left" 
-                         VerticalAlignment="Center" IsReadOnly="True"/>
+                <!--<TextBox Width="120" Grid.Row="0" Grid.Column="0" Text="" Margin="65,2,2,2" 
+                         FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
+                         VerticalAlignment="Center" IsReadOnly="True"/>-->
+                <ComboBox Name="CBCom"  Grid.Row="0" Grid.Column="0" Margin="65,2,2,2" FontSize="12" FontFamily="宋体" 
+                          HorizontalAlignment="Left" VerticalAlignment="Center" Width="120"/>
+
                 <TextBlock Grid.Row="1" Grid.Column="0" Text="目的地" Margin="7,2,2,2" 
-                           FontSize="18" FontFamily="宋体" HorizontalAlignment="Left" 
+                           FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                            VerticalAlignment="Center"/>
-                <TextBox Width="160" Grid.Row="1" Grid.Column="0" Text="" Margin="85,2,2,2" 
-                         FontSize="18" FontFamily="宋体" HorizontalAlignment="Left" 
+                <!--<TextBox Width="120" Grid.Row="1" Grid.Column="0" Text="" Margin="65,2,2,2" 
+                         FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
+                         VerticalAlignment="Center"/>-->
+                <ComboBox Name="CBDestination" Width="120" Grid.Row="1" Grid.Column="0" Text="" Margin="65,2,2,2" 
+                         FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                          VerticalAlignment="Center"/>
                 <TextBlock Grid.Row="2" Grid.Column="0" Text="打包师傅" Margin="7,2,2,2" 
-                           FontSize="18" FontFamily="宋体" HorizontalAlignment="Left" 
+                           FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                            VerticalAlignment="Center"/>
-                <TextBox Width="160" Grid.Row="2" Grid.Column="0" Text="" Margin="85,2,2,2" 
-                         FontSize="18" FontFamily="宋体" HorizontalAlignment="Left" 
+                <TextBox Width="120" Grid.Row="2" Grid.Column="0" Text="" Margin="65,2,2,2" 
+                         FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                          VerticalAlignment="Center"/>
                 <TextBlock Grid.Row="0" Grid.Column="1" Text="旺旺名" Margin="2,2,2,2" 
-                           FontSize="18" FontFamily="宋体" HorizontalAlignment="Left" 
+                           FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                            VerticalAlignment="Center"/>
-                <TextBox Width="160" Grid.Row="0" Grid.Column="1" Text="" Margin="80,2,2,2" 
-                         FontSize="18" FontFamily="宋体" HorizontalAlignment="Left" 
-                         VerticalAlignment="Center" IsReadOnly="True"/>
+                <!--<TextBox Width="120" Grid.Row="0" Grid.Column="1" Text="" Margin="60,2,2,2" 
+                         FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
+                         VerticalAlignment="Center" IsReadOnly="True"/>-->
+                <tbnew:AutoCompleteTextBox x:Name="TBUser_Name" Height="20" Width="120" Grid.Row="0" Grid.Column="1" Text="" Margin="60,2,2,2" 
+                         FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
+                         VerticalAlignment="Center"/>
+
                 <TextBlock Grid.Row="1" Grid.Column="1" Text="默认客服" Margin="2,2,2,2" 
-                           FontSize="18" FontFamily="宋体" HorizontalAlignment="Left" 
+                           FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                            VerticalAlignment="Center"/>
-                <TextBox Width="160" Grid.Row="1" Grid.Column="1" Text="" Margin="80,2,2,2" 
-                         FontSize="18" FontFamily="宋体" HorizontalAlignment="Left" 
+                <TextBox Width="120" Grid.Row="1" Grid.Column="1" Text="" Margin="60,2,2,2" 
+                         FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                          VerticalAlignment="Center"/>
             </Grid>
             <Border Grid.Column="2" Background="LightGray" BorderBrush="LightGray" BorderThickness="1" HorizontalAlignment="Right"
@@ -155,83 +171,170 @@
             <!--右侧勾选-->
             <Grid Grid.Column="3">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="30"></RowDefinition>
                     <RowDefinition Height="60"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
                 </Grid.RowDefinitions>
-                <TextBlock Grid.Row="0" Text="业务勾选：" Margin="2,2,2,2" FontSize="18" 
+                <TextBlock Grid.Row="0" Text="业务勾选：" Margin="2,2,2,2" FontSize="12" 
                        FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <Button Height="20" Width="45" Content="清 空" FontSize="12" Padding="1,1,1,1" 
+                        Margin="120,2,2,2" HorizontalAlignment="Left" Click="Button_Click_1" />
+
                 <Grid Grid.Row="1">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="30"></RowDefinition>
                         <RowDefinition Height="30"></RowDefinition>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="120"></ColumnDefinition>
-                        <ColumnDefinition Width="120"></ColumnDefinition>
-                        <ColumnDefinition Width="120"></ColumnDefinition>
+                        <ColumnDefinition Width="90"></ColumnDefinition>
+                        <ColumnDefinition Width="90"></ColumnDefinition>
+                        <ColumnDefinition Width="90"></ColumnDefinition>
                         <ColumnDefinition Width="*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                    <CheckBox Grid.Row="0" Grid.Column="0" Content="只查已申请" Margin="2" 
-                              VerticalAlignment="Center" FontFamily="宋体" FontSize="18" HorizontalAlignment="Left" />
-                    <CheckBox Grid.Row="1" Grid.Column="0" Content="只查已发货" Margin="2" 
-                              VerticalAlignment="Center" FontFamily="宋体" FontSize="18" HorizontalAlignment="Left" />
-                    <CheckBox Grid.Row="0" Grid.Column="1" Content="只查已处理" Margin="2" 
-                              VerticalAlignment="Center" FontFamily="宋体" FontSize="18" HorizontalAlignment="Left" />
-                    <CheckBox Grid.Row="1" Grid.Column="1" Content="只查未处理" Margin="2" 
-                              VerticalAlignment="Center" FontFamily="宋体" FontSize="18" HorizontalAlignment="Left" />
-                    <CheckBox Grid.Row="0" Grid.Column="2" Content="只查已付款" Margin="2" 
-                              VerticalAlignment="Center" FontFamily="宋体" FontSize="18" HorizontalAlignment="Left" />
-                    <CheckBox Grid.Row="1" Grid.Column="2" Content="只查未付款" Margin="2" 
-                              VerticalAlignment="Center" FontFamily="宋体" FontSize="18" HorizontalAlignment="Left" />
+                    <RadioButton Name="RB_Apply" Grid.Row="0" Grid.Column="0" Content="只查已申请" Margin="2" 
+                              VerticalAlignment="Center" FontFamily="宋体" FontSize="12" HorizontalAlignment="Left" 
+                                 Click="RB_Apply_Click" />
+                    <RadioButton Name="RB_Pack" Grid.Row="1" Grid.Column="0" Content="只查已打包" Margin="2" 
+                              VerticalAlignment="Center" FontFamily="宋体" FontSize="12" HorizontalAlignment="Left" Click="RB_Pack_Click" 
+                                 />
+                    <RadioButton Name="RB_Deliver" Grid.Row="0" Grid.Column="1" Content="只查已发货" Margin="2" 
+                              VerticalAlignment="Center" FontFamily="宋体" FontSize="12" HorizontalAlignment="Left" />
+                    <RadioButton Name="RB_Processed" Grid.Row="1" Grid.Column="1" Content="只查待处理" Margin="2" 
+                              VerticalAlignment="Center" FontFamily="宋体" FontSize="12" HorizontalAlignment="Left" />
+                    <RadioButton Name="RB_Paid" Grid.Row="0" Grid.Column="2" Content="只查已付款" Margin="2" 
+                              VerticalAlignment="Center" FontFamily="宋体" FontSize="12" HorizontalAlignment="Left" />
+                    <RadioButton Name="RB_NoPaid" Grid.Row="1" Grid.Column="2" Content="只查未付款" Margin="2" 
+                              VerticalAlignment="Center" FontFamily="宋体" FontSize="12" HorizontalAlignment="Left" />
 
                 </Grid>
             </Grid>
         </Grid>
         <Border Grid.Row="2" VerticalAlignment="Bottom" Background="LightGray" BorderBrush="LightGray" BorderThickness="1"/>
+        <GridSplitter Grid.Row="2" Height="1" HorizontalAlignment="Stretch" VerticalAlignment="Bottom"></GridSplitter>
 
         <!--中间夹层-->
         <Grid Grid.Row="3">
             <TextBlock Text="网格背景颜色：" Margin="2,2,2,2" FontSize="12" 
                        FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Path Stroke="Black" Fill="Lime" StrokeThickness="1" Margin="85,10,10,10" 
+            <Path Stroke="Black" Fill="#FF9FF59F" StrokeThickness="1" Margin="85,2,2,2" 
                   VerticalAlignment="Center" HorizontalAlignment="Left">
                 <Path.Data>
-                    <RectangleGeometry Rect="0,0,15,15"></RectangleGeometry>
+                    <RectangleGeometry Rect="0,0,12,12"></RectangleGeometry>
                 </Path.Data>
             </Path>
             <TextBlock Text="已发件" Margin="105,2,2,2" FontSize="12" 
                        FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Path Stroke="Black" Fill="Pink" StrokeThickness="1" Margin="155,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Left">
+            <Path Stroke="Black" Fill="#F1FF83" StrokeThickness="1" Margin="155,2,2,2" VerticalAlignment="Center" HorizontalAlignment="Left">
                 <Path.Data>
-                    <RectangleGeometry Rect="0,0,15,15"></RectangleGeometry>
+                    <RectangleGeometry Rect="0,0,12,12"></RectangleGeometry>
                 </Path.Data>
             </Path>
-            <TextBlock Text="已付款" Margin="175,2,2,2" FontSize="12" 
+            <TextBlock Text="已打包" Margin="175,2,2,2" FontSize="12" 
                        FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Path Stroke="Black" Fill="Yellow" StrokeThickness="1" Margin="230,10,10,10" VerticalAlignment="Center" HorizontalAlignment="Left">
+            <Path Stroke="Black" Fill="#A8C2F7" StrokeThickness="1" Margin="230,2,2,2" VerticalAlignment="Center" HorizontalAlignment="Left">
                 <Path.Data>
-                    <RectangleGeometry Rect="0,0,15,15"></RectangleGeometry>
+                    <RectangleGeometry Rect="0,0,12,12"></RectangleGeometry>
                 </Path.Data>
             </Path>
-            <TextBlock Text="已打包" Margin="250,2,2,2" FontSize="12" 
+            <TextBlock Text="已申请" Margin="250,2,2,2" FontSize="12" 
                        FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            
+            <Path Stroke="Black" Fill="#FF85DB" StrokeThickness="1" Margin="300,2,2,2" VerticalAlignment="Center" HorizontalAlignment="Left">
+                <Path.Data>
+                    <RectangleGeometry Rect="0,0,12,12"></RectangleGeometry>
+                </Path.Data>
+            </Path>
+            <TextBlock Text="已付款" Margin="320,2,2,2" FontSize="12" 
+                       FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
         </Grid>
         <Border Grid.Row="3" VerticalAlignment="Bottom" Background="LightGray" BorderBrush="LightGray" BorderThickness="1"/>
         <GridSplitter Grid.Row="3" Height="1" HorizontalAlignment="Stretch" VerticalAlignment="Bottom"></GridSplitter>
 
         <!--中间表格-->
-        <Grid Grid.Row="4">                      
+        <Grid Grid.Row="4">
             <DataGrid Name="DG1" ItemsSource="{Binding}" AutoGenerateColumns="False" FontSize="12" 
                           FontFamily="宋体" MinWidth="200" CanUserSortColumns="False" CanUserResizeColumns="True" 
-                          IsReadOnly="True" LoadingRow="DG1_LoadingRow" MouseDown="DG1_MouseDown">
+                          LoadingRow="DG1_LoadingRow" KeyUp="DG1_KeyUp" SelectionChanged="DG1_SelectionChanged">
                 <DataGrid.Columns>
                     <!--表一：基本信息-->
-                    <DataGridCheckBoxColumn Header="已付款" Binding="{Binding paid}"/>
-                    <DataGridCheckBoxColumn Header="通知付款"  Binding="{Binding informPay}"/>
-                    <DataGridCheckBoxColumn Header="已处理" Binding="{Binding processed}" />
-                    <DataGridCheckBoxColumn Header="消息已读" Binding="{Binding read}"/>
+                    <!--<DataGridTextColumn Header="序号" Binding="{Binding n_num}"/>-->
+
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.HeaderTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="选择" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.HeaderTemplate>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <CheckBox IsChecked="{Binding Select}" VerticalAlignment="Center" 
+                                      HorizontalAlignment="Center" Click="CBSelect_Click"
+                                      Tag="{Binding order_id}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <!--选择-->
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.HeaderTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="已付款" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.HeaderTemplate>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <CheckBox IsChecked="{Binding paid}" VerticalAlignment="Center" 
+                                      HorizontalAlignment="Center" Click="CBPaid_Click"
+                                      Tag="{Binding order_id}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <!--已付款-->
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.HeaderTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="通知付款" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.HeaderTemplate>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <CheckBox IsChecked="{Binding informPay}" VerticalAlignment="Center" 
+                                      HorizontalAlignment="Center" Click="CBInformPay_Click"
+                                      Tag="{Binding order_id}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <!--通知付款-->
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.HeaderTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="待处理" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.HeaderTemplate>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <CheckBox IsChecked="{Binding processed}" VerticalAlignment="Center" 
+                                      HorizontalAlignment="Center" Click="CBProcessed_Click"
+                                      Tag="{Binding order_id}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <!--待处理-->
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.HeaderTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="消息已读" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.HeaderTemplate>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <CheckBox IsChecked="{Binding read}" VerticalAlignment="Center" 
+                                      HorizontalAlignment="Center" Click="CBRead_Click"
+                                      Tag="{Binding order_id}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <!--消息已读-->
+
                     <DataGridTextColumn Header="状态" Binding="{Binding pack_state}"/>
                     <DataGridTextColumn Header="客户编号" Binding="{Binding pack_user_id}"/>
                     <DataGridTextColumn Header="客户名称" Binding="{Binding pack_user_name}"/>
@@ -241,8 +344,13 @@
                     <DataGridTextColumn Header="订单号" Binding="{Binding order_id}" />
                     <DataGridTextColumn Header="承运商" Binding="{Binding order_con}"/>
                     <DataGridTextColumn Header="目的地" Binding="{Binding order_destrination}"/>
+                    <DataGridTextColumn Header="优惠券金额" Binding="{Binding order_coupon}"/>
+                    <DataGridTextColumn Header="保价金额" Binding="{Binding order_support}"/>
+                    <DataGridTextColumn Header="包税金额" Binding="{Binding order_tax}"/>
+                    <DataGridTextColumn Header="使用积分" Binding="{Binding order_integral}"/>
+                    <DataGridTextColumn Header="使用k币" Binding="{Binding order_kb}"/>
                     <DataGridTextColumn Header="快件类型" Binding="{Binding pack_type}"/>
-                    <DataGridTextColumn Header="备注" Binding="{Binding order_note}"/>
+                    <DataGridTextColumn Header="备注" Binding="{Binding order_note}" />
                     <DataGridTextColumn Header="提交方式" Binding="{Binding order_put_type}"/>
                     <!--表三：收件信息-->
                     <DataGridTextColumn Header="收件人" Binding="{Binding order_person}"/>
@@ -250,7 +358,7 @@
                     <DataGridTextColumn Header="收件人地址" Binding="{Binding order_adress}" />
                     <DataGridTextColumn Header="收件公司" Binding="{Binding order_company}"/>
                     <DataGridTextColumn Header="州/周" Binding="{Binding order_zhou}"/>
-                    <!--表四：申报信息-->                  
+                    <!--表四：申报信息-->
                     <DataGridTextColumn Header="申报品名" Binding="{Binding order_thing}"/>
                     <DataGridTextColumn Header="申报金额"  Binding="{Binding order_money}"/>
                     <DataGridTextColumn Header="物品中文" Binding="{Binding order_china}" />
@@ -281,7 +389,8 @@
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>
-        
+        <GridSplitter Grid.Row="4" Height="1" HorizontalAlignment="Stretch" VerticalAlignment="Bottom"></GridSplitter>
+
         <!--下端其他-->
         <Grid Grid.Row="5">
             <Grid.ColumnDefinitions>
@@ -289,7 +398,7 @@
                 <ColumnDefinition Width="*"></ColumnDefinition>
                 <ColumnDefinition Width="230"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            
+
             <!--下左边-->
             <Grid Grid.Column="0">
                 <Grid.RowDefinitions>
@@ -318,7 +427,7 @@
                            FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                            VerticalAlignment="Center"/>
                     <TextBox Name="TB_Num" Width="130" Grid.Row="1" Grid.Column="0" Text="" Margin="60,2,2,2" 
-                         FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
+                         FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" IsReadOnly="True"
                          VerticalAlignment="Center"/>
                     <TextBlock Width="50" Grid.Row="0" Grid.Column="1" Text="目的地" Margin="7,2,2,2" 
                            FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
@@ -332,11 +441,17 @@
                     <TextBox Name="TB_Font_Helf" Width="130" Grid.Row="1" Grid.Column="1" Text="" Margin="65,2,2,2" 
                          FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                          VerticalAlignment="Center" IsReadOnly="True"/>
-                    <TextBlock Width="50" Grid.Row="0" Grid.Column="2" Text="快件类型" Margin="2,2,2,2" 
+                    <!--<TextBlock Width="50" Grid.Row="0" Grid.Column="2" Text="快件类型" Margin="2,2,2,2" 
                            FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                            VerticalAlignment="Center"/>
                     <TextBox Name="TB_Pack_Type" Width="130" Grid.Row="0" Grid.Column="2" Text="" Margin="65,2,2,2" 
-                         FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
+                         FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" IsReadOnly="True"
+                         VerticalAlignment="Center"/>-->
+                    <TextBlock Width="50" Grid.Row="0" Grid.Column="2" Text="订单号" Margin="2,2,2,2" 
+                           FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
+                           VerticalAlignment="Center"/>
+                    <TextBox Name="TB_Order_Id" Width="130" Grid.Row="0" Grid.Column="2" Text="" Margin="65,2,2,2" 
+                         FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" IsReadOnly="True"
                          VerticalAlignment="Center"/>
                     <TextBlock Grid.Row="1" Grid.Column="2" Text="打包前运费" Margin="2,2,2,2" 
                            FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
@@ -351,9 +466,9 @@
                 <Grid Grid.Row="1">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="30"></RowDefinition>
-                        <RowDefinition Height="80"></RowDefinition>
-                        <RowDefinition Height="30"></RowDefinition>
                         <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="5"></RowDefinition>
                     </Grid.RowDefinitions>
 
                     <TextBlock Grid.Row="0" Text="收件电话" Margin="7,2,2,2" 
@@ -368,89 +483,87 @@
                     <TextBox Name="TB_Person" Width="130"  Text="" Margin="260,2,2,2" 
                          FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                          VerticalAlignment="Center"/>
-                    
+
                     <TextBlock Grid.Row="1" Text="收货地址" Margin="7,2,2,2" 
                            FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                            VerticalAlignment="Center"/>
                     <TextBox Name="TB_Adress" Grid.Row="1" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" 
                              Text="" Margin="60,2,2,2" FontSize="12" FontFamily="宋体"/>
-                    
+
                     <TextBlock Grid.Row="2" Text="备注" Margin="7,2,2,2" 
                            FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
                            VerticalAlignment="Center"/>
-                    <TextBox Name="TB_Oder_Note" Grid.Row="2" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" 
-                             Text="" Margin="60,2,2,2" FontSize="12" FontFamily="宋体"/>
+                    <TextBox Name="TB_Order_Note" Grid.Row="2" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" 
+                             Text="" Margin="60,2,2,2" FontSize="12" FontFamily="宋体" />
 
                 </Grid>
 
             </Grid>
             <GridSplitter Grid.Column="0" Width="1" HorizontalAlignment="Right" VerticalContentAlignment="Stretch"/>
-            
+
             <!--下中间-->
-            <ScrollViewer Grid.Column="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
-                <StackPanel Orientation="Horizontal">
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="30"></RowDefinition>
-                            <RowDefinition Height="*"></RowDefinition>
-                            <RowDefinition Height="30"></RowDefinition>
-                        </Grid.RowDefinitions>
-                        <Grid Grid.Row="0">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="80"></ColumnDefinition>
-                                <ColumnDefinition Width="140"></ColumnDefinition>
-                                <ColumnDefinition Width="70"></ColumnDefinition>
-                                <ColumnDefinition Width="*"></ColumnDefinition>
-                            </Grid.ColumnDefinitions>
-                            <TextBlock Grid.Column="0" Text="单号扫描确认" Margin="7,2,2,2" FontSize="12" Foreground="Red" 
+            <!--<ScrollViewer Grid.Column="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                <StackPanel Orientation="Horizontal">                    
+                </StackPanel>
+            </ScrollViewer>-->
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="5"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="80"></ColumnDefinition>
+                        <ColumnDefinition Width="140"></ColumnDefinition>
+                        <ColumnDefinition Width="70"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="单号扫描确认" Margin="7,2,2,2" FontSize="12" Foreground="Red" 
                                      FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                            <TextBox Grid.Column="1" Name="tb_con_affirm" Width="130" Text="" Margin="2,2,2,2" FontSize="12" 
+                    <TextBox Grid.Column="1" Name="tb_con_affirm" Width="130" Text="" Margin="2,2,2,2" FontSize="12" 
                                     FontFamily="宋体" HorizontalAlignment="Center" VerticalAlignment="Center" KeyDown="tb_con_affirm_KeyDown"/>
-                            <TextBlock Grid.Column="2" Text="确认件数：" Margin="2,2,2,2" FontSize="12" Foreground="Red" 
+                    <TextBlock Grid.Column="2" Text="确认件数：" Margin="2,2,2,2" FontSize="12" Foreground="Red" 
                                     FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                            <TextBlock Grid.Column="3" Name="text_num_affirm" Text="0" Margin="2,2,2,2" FontSize="20" Foreground="Red" 
+                    <TextBlock Grid.Column="3" Name="text_num_affirm" Text="0" Margin="2,2,2,2" FontSize="20" Foreground="Red" 
                                     FontFamily="宋体" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold"/>
-                        </Grid>
-                        <DataGrid Grid.Row="1" Name="DGDown" AutoGenerateColumns="False" FontSize="12" 
+                </Grid>
+                <DataGrid Grid.Row="1" Name="DGDown" AutoGenerateColumns="False" FontSize="12" 
                           FontFamily="宋体" MinWidth="200" CanUserSortColumns="False" CanUserResizeColumns="True" 
                           IsReadOnly="True" LoadingRow="DGDown_LoadingRow"  >
-                            <DataGrid.Columns>
-                                <DataGridCheckBoxColumn Header="已核对" Binding="{Binding is_Affirm}"/>
-                                <DataGridTextColumn Header="承运商"  Binding="{Binding con_name}"/>
-                                <DataGridTextColumn Header="运单编号" Binding="{Binding weight_con}" />
-                                <DataGridTextColumn Header="件数" Binding="{Binding num}"/>
-                                <DataGridTextColumn Header="重量" Binding="{Binding helf}"/>
-                                <DataGridTextColumn Header="物品类型" Binding="{Binding type}"/>
-                                <DataGridTextColumn Header="货架" Binding="{Binding shelf}"/>
-                                <DataGridTextColumn Header="运费" Binding="{Binding freight}"/>
-                                <DataGridTextColumn Header="备注" Binding="{Binding comment}"/>
-                                <DataGridTextColumn Header="认领方式" Binding="{Binding pack_type}"/>
-                                <DataGridTextColumn Header="仓库录入" Binding="{Binding weight_person}"/>
-                                <DataGridTextColumn Header="集运单号" Binding="{Binding con_id}"/>                               
-                            </DataGrid.Columns>
-                        </DataGrid>
-
-                    </Grid>
-                   
-                    
-                    
-                    
-                </StackPanel>
-            </ScrollViewer>
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="序号"  Binding="{Binding id}"/>
+                        <DataGridCheckBoxColumn Header="已核对" Binding="{Binding is_Affirm}"/>
+                        <DataGridTextColumn Header="承运商"  Binding="{Binding con_name}"/>
+                        <DataGridTextColumn Header="运单编号" Binding="{Binding weight_con}" />
+                        <DataGridTextColumn Header="件数" Binding="{Binding num}"/>
+                        <DataGridTextColumn Header="重量" Binding="{Binding helf}"/>
+                        <DataGridTextColumn Header="物品类型" Binding="{Binding type}"/>
+                        <DataGridTextColumn Header="货架" Binding="{Binding shelf}"/>
+                        <DataGridTextColumn Header="运费" Binding="{Binding freight}"/>
+                        <DataGridTextColumn Header="客户备注" Binding="{Binding comment}"/>
+                        <DataGridTextColumn Header="认领方式" Binding="{Binding pack_type}"/>
+                        <DataGridTextColumn Header="仓库录入" Binding="{Binding weight_person}"/>
+                        <DataGridTextColumn Header="集运单号" Binding="{Binding con_id}"/>
+                        <DataGridTextColumn Header="内部备注" Binding="{Binding Weight_NoteStaff}"/>
+                        
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
             <GridSplitter Grid.Column="1" Width="1" HorizontalAlignment="Right" VerticalContentAlignment="Stretch"/>
-            
+
             <!--下右边-->
             <Grid Grid.Column="2">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="30"></RowDefinition>
-                    <RowDefinition Height="30"></RowDefinition>
-                    <RowDefinition Height="30"></RowDefinition>
-                    <RowDefinition Height="80"></RowDefinition>
-                    <RowDefinition Height="30"></RowDefinition>
+                    <RowDefinition Height="25"></RowDefinition>
+                    <RowDefinition Height="25"></RowDefinition>
+                    <RowDefinition Height="25"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="25"></RowDefinition>
+                    <RowDefinition Height="5"></RowDefinition>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="80"></ColumnDefinition>
+                    <ColumnDefinition Width="70"></ColumnDefinition>
                     <ColumnDefinition Width="*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <TextBlock Grid.Row="0" Grid.Column="0" Text="打包师傅" Margin="2,2,7,2" 
@@ -475,10 +588,13 @@
                              Text="" Margin="2,2,7,2" FontSize="12" FontFamily="宋体"/>
                 <CheckBox Name="CB_IsPay" Grid.Row="4" Grid.Column="0" Content="已付款" Margin="2,2,12,2" FontFamily="宋体" FontSize="12" 
                           HorizontalAlignment="Right" VerticalAlignment="Center" />
-                <TextBox Grid.Row="4" Grid.Column="1" Text="" Margin="2,2,7,2" 
-                         FontSize="12" FontFamily="宋体" IsReadOnly="True" VerticalAlignment="Center"/>
+
+                <TextBlock Grid.Row="4" Grid.Column="1" Text="打包件数" Margin="7,2,2,2" 
+                           FontSize="12" FontFamily="宋体" HorizontalAlignment="Left" 
+                           VerticalAlignment="Center"/>
+                <TextBox Name="TB_Page_Num" Grid.Row="4" Grid.Column="1" Text="" Margin="70,2,7,2" 
+                         FontSize="12" FontFamily="宋体" VerticalAlignment="Center"/>
             </Grid>
         </Grid>
-        
     </Grid>
 </UserControl>

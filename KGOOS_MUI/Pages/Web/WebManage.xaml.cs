@@ -39,5 +39,11 @@ namespace KGOOS_MUI.Pages.Web
             MainWindow mw = System.Windows.Window.GetWindow(this) as MainWindow;
             mw.ContentSource = new Uri("/Pages/Web/Select.xaml", UriKind.RelativeOrAbsolute);
         }
+
+        private void NewSPut_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            MainWindow mw = System.Windows.Window.GetWindow(this) as MainWindow;
+            mw.ContentSource = new Uri("/Pages/Web/NewSPut.xaml", UriKind.RelativeOrAbsolute);
+        }
     }
 }

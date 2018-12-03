@@ -52,7 +52,7 @@
 	<summary>
 		<codepage>1252</codepage>
 		<title>Installation Database</title>
-		<subject>Setup1</subject>
+		<subject>KGOOS</subject>
 		<author>##ID_STRING4##</author>
 		<keywords>Installer,MSI,Database</keywords>
 		<comments>Contact:  Your local administrator</comments>
@@ -346,6 +346,7 @@
 		<row><td>FirstFloor.ModernUI.dll</td><td>{2E867678-60BE-4AF3-BEC5-8554A088250E}</td><td>INSTALLDIR</td><td>2</td><td/><td>firstfloor.modernui.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>Freight.dll</td><td>{ACE96B60-F06E-486B-BC7B-4CF09DE20E5E}</td><td>INSTALLDIR</td><td>2</td><td/><td>freight.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>ISX_DEFAULTCOMPONENT</td><td>{0F3895E9-7032-487C-BE9B-E0555559A214}</td><td>INSTALLDIR</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>ISX_DEFAULTCOMPONENT1</td><td>{B795F966-BCDF-45AE-BA67-5F483971B98B}</td><td>PRINT_LABEL</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>KGOOS_MUI.exe</td><td>{996FBECC-47E6-457C-820C-ED9E049FE1F3}</td><td>INSTALLDIR</td><td>2</td><td/><td>kgoos_mui.exe</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>KGOOS_MUI.vshost.exe</td><td>{2CCACA4F-81CF-4515-A04B-E9B77D234C57}</td><td>INSTALLDIR</td><td>2</td><td/><td>kgoos_mui.vshost.exe</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 	</table>
@@ -1145,16 +1146,18 @@
 		<row><td>FavoritesFolder</td><td>TARGETDIR</td><td>.:FAVORI~1|Favorites</td><td/><td>0</td><td/></row>
 		<row><td>FontsFolder</td><td>TARGETDIR</td><td>.:Fonts</td><td/><td>0</td><td/></row>
 		<row><td>GlobalAssemblyCache</td><td>TARGETDIR</td><td>.:Global~1|GlobalAssemblyCache</td><td/><td>0</td><td/></row>
-		<row><td>INSTALLDIR</td><td>SETUP1</td><td>.</td><td/><td>0</td><td/></row>
+		<row><td>INSTALLDIR</td><td>KGOOS1</td><td>.</td><td/><td>0</td><td/></row>
 		<row><td>ISCommonFilesFolder</td><td>CommonFilesFolder</td><td>Instal~1|InstallShield</td><td/><td>0</td><td/></row>
 		<row><td>ISMyCompanyDir</td><td>ProgramFilesFolder</td><td>MYCOMP~1|My Company Name</td><td/><td>0</td><td/></row>
 		<row><td>ISMyProductDir</td><td>ISMyCompanyDir</td><td>MYPROD~1|My Product Name</td><td/><td>0</td><td/></row>
 		<row><td>ISYourDataBaseDir</td><td>INSTALLDIR</td><td>Database</td><td/><td>0</td><td/></row>
 		<row><td>KGOOS</td><td>ProgramFilesFolder</td><td>KGOOS</td><td/><td>0</td><td/></row>
+		<row><td>KGOOS1</td><td>KGOOS</td><td>KGOOS</td><td/><td>0</td><td/></row>
 		<row><td>LocalAppDataFolder</td><td>TARGETDIR</td><td>.:LocalA~1|LocalAppData</td><td/><td>0</td><td/></row>
 		<row><td>MY_PRODUCT_NAME</td><td>KGOOS</td><td>MYPROD~1|My Product Name</td><td/><td>0</td><td/></row>
 		<row><td>MyPicturesFolder</td><td>TARGETDIR</td><td>.:MyPict~1|MyPictures</td><td/><td>0</td><td/></row>
 		<row><td>NetHoodFolder</td><td>TARGETDIR</td><td>.:NetHood</td><td/><td>0</td><td/></row>
+		<row><td>PRINT_LABEL</td><td>INSTALLDIR</td><td>PRINT_~1|Print_Label</td><td/><td>0</td><td/></row>
 		<row><td>PersonalFolder</td><td>TARGETDIR</td><td>.:Personal</td><td/><td>0</td><td/></row>
 		<row><td>PrimaryVolumePath</td><td>TARGETDIR</td><td>.:Primar~1|PrimaryVolumePath</td><td/><td>0</td><td/></row>
 		<row><td>PrintHoodFolder</td><td>TARGETDIR</td><td>.:PRINTH~1|PrintHood</td><td/><td>0</td><td/></row>
@@ -1874,6 +1877,7 @@
 		<row><td>AlwaysInstall</td><td>FirstFloor.ModernUI.dll</td></row>
 		<row><td>AlwaysInstall</td><td>Freight.dll</td></row>
 		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT</td></row>
+		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT1</td></row>
 		<row><td>AlwaysInstall</td><td>KGOOS_MUI.exe</td></row>
 		<row><td>AlwaysInstall</td><td>KGOOS_MUI.vshost.exe</td></row>
 	</table>
@@ -1891,6 +1895,10 @@
 		<col def="I4">ISAttributes</col>
 		<col def="S72">ISComponentSubFolder_</col>
 		<row><td>File</td><td>Component</td><td>KGOOS_MUI.内容文件</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;KGOOS_MUI&gt;|ContentFiles</td><td>3</td><td/></row>
+		<row><td>File.frx</td><td>ISX_DEFAULTCOMPONENT1</td><td>主單.frx</td><td>0</td><td/><td/><td/><td>1</td><td>Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\bin\Release\Print_Label\主單.frx</td><td>1</td><td/></row>
+		<row><td>File.frx1</td><td>ISX_DEFAULTCOMPONENT1</td><td>到件标签.frx</td><td>0</td><td/><td/><td/><td>1</td><td>Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\bin\Release\Print_Label\到件标签.frx</td><td>1</td><td/></row>
+		<row><td>File.frx2</td><td>ISX_DEFAULTCOMPONENT1</td><td>子單.frx</td><td>0</td><td/><td/><td/><td>1</td><td>Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\bin\Release\Print_Label\子單.frx</td><td>1</td><td/></row>
+		<row><td>File.frx3</td><td>ISX_DEFAULTCOMPONENT1</td><td>集運訂單.frx</td><td>0</td><td/><td/><td/><td>1</td><td>Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\bin\Release\Print_Label\集運訂單.frx</td><td>1</td><td/></row>
 		<row><td>File1</td><td>Component1</td><td>KGOOS_MUI.主输出</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;KGOOS_MUI&gt;|Built</td><td>3</td><td/></row>
 		<row><td>File2</td><td>Component2</td><td>KGOOS_MUI.源文件</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;KGOOS_MUI&gt;|SourceFiles</td><td>3</td><td/></row>
 		<row><td>firstfloor.modernui.dll</td><td>FirstFloor.ModernUI.dll</td><td>FIRSTF~1.DLL|FirstFloor.ModernUI.dll</td><td>0</td><td/><td/><td/><td>1</td><td>Y:\文稿\Visual Studio 2013\Projects\KGOOS_MUI\KGOOS_MUI\bin\Release\FirstFloor.ModernUI.dll</td><td>1</td><td/></row>
@@ -2049,6 +2057,7 @@
 		<row><td>FirstFloor.ModernUI.dll</td><td/><td/><td>_BEBC8DF2_60AB_4354_AC90_49CC8B7E0FF1_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>Freight.dll</td><td/><td/><td>_6C7CD590_656D_40FF_9744_4DE554C00058_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>ISX_DEFAULTCOMPONENT</td><td/><td/><td>_C0F3D158_9FA5_448A_88FA_278AB177E301_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>ISX_DEFAULTCOMPONENT1</td><td/><td/><td>_1B3D457D_B21F_41A1_8D39_73776B369E09_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>KGOOS_MUI.exe</td><td/><td/><td>_BC2573AC_FDEE_4392_8556_31AD2780ABEF_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>KGOOS_MUI.vshost.exe</td><td/><td/><td>_8CB25DEC_77CE_4A1E_AE54_E68B8A895ACC_FILTER</td><td/><td/><td/><td/></row>
 	</table>
@@ -2669,7 +2678,7 @@
 		<col def="I2">Encoded</col>
 		<col def="S0">Comment</col>
 		<col def="I4">TimeStamp</col>
-		<row><td>COMPANY_NAME</td><td>2052</td><td>KGOOS</td><td>0</td><td/><td>304501505</td></row>
+		<row><td>COMPANY_NAME</td><td>2052</td><td>KGOOS</td><td>0</td><td/><td>-458856270</td></row>
 		<row><td>DN_AlwaysInstall</td><td>2052</td><td>始终安装</td><td>0</td><td/><td>304483073</td></row>
 		<row><td>IDPROP_EXPRESS_LAUNCH_CONDITION_COLOR</td><td>2052</td><td>系统颜色设置不足以运行 [ProductName]。</td><td>0</td><td/><td>304483073</td></row>
 		<row><td>IDPROP_EXPRESS_LAUNCH_CONDITION_DOTNETVERSION45FULL</td><td>1033</td><td>Microsoft .NET Framework 4.5 Full package or greater needs to be installed for this installation to continue.</td><td>0</td><td/><td>304536321</td></row>
@@ -3778,9 +3787,9 @@
 		<row><td>ID_STRING1</td><td>2052</td><td/><td>0</td><td/><td>304483073</td></row>
 		<row><td>ID_STRING2</td><td>2052</td><td/><td>0</td><td/><td>304483073</td></row>
 		<row><td>ID_STRING3</td><td>1033</td><td/><td>0</td><td/><td>304489217</td></row>
-		<row><td>ID_STRING3</td><td>2052</td><td>http://www.KGOOS.com</td><td>0</td><td/><td>304501505</td></row>
+		<row><td>ID_STRING3</td><td>2052</td><td>http://www.KGOOS.com</td><td>0</td><td/><td>-458856270</td></row>
 		<row><td>ID_STRING4</td><td>1033</td><td>KGOOS</td><td>0</td><td/><td>304501505</td></row>
-		<row><td>ID_STRING4</td><td>2052</td><td>KGOOS</td><td>0</td><td/><td>304501505</td></row>
+		<row><td>ID_STRING4</td><td>2052</td><td>KGOOS</td><td>0</td><td/><td>-458856270</td></row>
 		<row><td>ID_STRING5</td><td>1033</td><td>ST</td><td>0</td><td/><td>304509697</td></row>
 		<row><td>ID_STRING5</td><td>2052</td><td>Setup1</td><td>0</td><td/><td>304524033</td></row>
 		<row><td>ID_STRING6</td><td>1033</td><td>LAUNCH~1.EXE|Launch KGOOS_MUI.vshost.exe</td><td>0</td><td/><td>304505665</td></row>
@@ -3897,8 +3906,6 @@
 		<row><td>ARPPRODUCTICON.exe</td><td/><td>&lt;ISProductFolder&gt;\redist\Language Independent\OS Independent\setupicon.ico</td><td>0</td></row>
 		<row><td>KGOOS_MUI.exe1_C81716F6204C45E49F709A58A586784B.exe</td><td/><td>&lt;ISProductFolder&gt;\redist\Language Independent\OS Independent\GenericExe.ico</td><td>0</td></row>
 		<row><td>KGOOS_MUI.exe_9433E1FE1EEE4E658F3DBCEC08419327.exe</td><td/><td>&lt;ISProductFolder&gt;\redist\Language Independent\OS Independent\GenericExe.ico</td><td>0</td></row>
-		<row><td>KGOOS_MUI.vshost.e_6354EDE0D201445BBEFDAFF94EEAA7BE.exe</td><td/><td>&lt;ISProductFolder&gt;\redist\Language Independent\OS Independent\GenericExe.ico</td><td>0</td></row>
-		<row><td>KGOOS_MUI.vshost.e_EE54DC3807504A0D9A55FFB188719737.exe</td><td/><td>&lt;ISProductFolder&gt;\redist\Language Independent\OS Independent\GenericExe.ico</td><td>0</td></row>
 	</table>
 
 	<table name="IniFile">
@@ -4404,8 +4411,8 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>PROGMSG_IIS_ROLLBACKAPPPOOLS</td><td>##IDS_PROGMSG_IIS_ROLLBACKAPPPOOLS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKVROOTS</td><td>##IDS_PROGMSG_IIS_ROLLBACKVROOTS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS</td><td>##IDS_PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS##</td><td/></row>
-		<row><td>ProductCode</td><td>{A9205ADC-5F43-4783-9ECF-7894D3635C16}</td><td/></row>
-		<row><td>ProductName</td><td>Setup1</td><td/></row>
+		<row><td>ProductCode</td><td>{FB87B1E7-CAAB-4DCA-94FA-C6DFC8E9BD3F}</td><td/></row>
+		<row><td>ProductName</td><td>KGOOS</td><td/></row>
 		<row><td>ProductVersion</td><td>1.00.0000</td><td/></row>
 		<row><td>ProgressType0</td><td>install</td><td/></row>
 		<row><td>ProgressType1</td><td>Installing</td><td/></row>
@@ -4485,7 +4492,6 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>FileKey1</td><td>KGOOS_MUI.exe</td><td/><td>kgoos</td><td>2</td></row>
 		<row><td>FileKey2</td><td>KGOOS_MUI.exe</td><td/><td>setup1</td><td>2</td></row>
 		<row><td>KGOOS_MUI.exe</td><td>KGOOS_MUI.exe</td><td/><td>setup1</td><td>2</td></row>
-		<row><td>KGOOS_MUI.vshost.exe</td><td>KGOOS_MUI.vshost.exe</td><td/><td>setup1</td><td>2</td></row>
 	</table>
 
 	<table name="RemoveIniFile">
@@ -4573,8 +4579,6 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="I4">ISAttributes</col>
 		<row><td>KGOOS_MUI.exe</td><td>setup1</td><td>##IDS_SHORTCUT_DISPLAY_NAME1##</td><td>KGOOS_MUI.exe</td><td>AlwaysInstall</td><td/><td/><td/><td>KGOOS_MUI.exe_9433E1FE1EEE4E658F3DBCEC08419327.exe</td><td>0</td><td>1</td><td>INSTALLDIR</td><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>KGOOS_MUI.exe1</td><td>DesktopFolder</td><td>##IDS_SHORTCUT_DISPLAY_NAME1##</td><td>KGOOS_MUI.exe</td><td>AlwaysInstall</td><td/><td/><td/><td>KGOOS_MUI.exe1_C81716F6204C45E49F709A58A586784B.exe</td><td>0</td><td>1</td><td>INSTALLDIR</td><td/><td/><td/><td/><td/><td/><td/></row>
-		<row><td>KGOOS_MUI.vshost.exe</td><td>setup1</td><td>##IDS_SHORTCUT_DISPLAY_NAME2##</td><td>KGOOS_MUI.vshost.exe</td><td>AlwaysInstall</td><td/><td/><td/><td>KGOOS_MUI.vshost.e_6354EDE0D201445BBEFDAFF94EEAA7BE.exe</td><td>0</td><td>1</td><td>INSTALLDIR</td><td/><td/><td/><td/><td/><td/><td/></row>
-		<row><td>KGOOS_MUI.vshost.exe1</td><td>DesktopFolder</td><td>##IDS_SHORTCUT_DISPLAY_NAME2##</td><td>KGOOS_MUI.vshost.exe</td><td>AlwaysInstall</td><td/><td/><td/><td>KGOOS_MUI.vshost.e_EE54DC3807504A0D9A55FFB188719737.exe</td><td>0</td><td>1</td><td>INSTALLDIR</td><td/><td/><td/><td/><td/><td/><td/></row>
 	</table>
 
 	<table name="Signature">

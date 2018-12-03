@@ -28,6 +28,7 @@ namespace KGOOS_MUI.Pages.Up
     {
         private string staff_name = "";
         private string staff_region = "";
+        private string weightIdList = "";
 
         public Packer()
         {
@@ -57,38 +58,79 @@ namespace KGOOS_MUI.Pages.Up
                 staff_region = "1";
             }
 
-            getType();
+            weightIdList = Application.Current.Properties["weightIdList"].ToString();
+
+            getRegion();
+            getDestination();
             getCon();
+            getType();           
             getAutoCompleteTextBox();
             getInitial();
         }
 
         /// <summary>
-        /// 获取名称，目的地
+        /// 获取区域
+        /// </summary>
+        public void getRegion()
+        {
+            DataSet ds1 = new DataSet();
+            string sql1 = "";
+            string id = "";
+            string name = "";
+            List<KeyValuePair<string, string>> RegionList = new List<KeyValuePair<string, string>>();
+            RegionList.Add(new KeyValuePair<string, string>("0", "请选择区域"));
+
+            sql1 = "select t1.Region_Id, t1.Region_Name from T_Region as t1";
+          
+            ds1 = DBClass.execQuery(sql1);
+
+            for (int i = 0; i < ds1.Tables[0].Rows.Count; i++)
+            {
+                id = "";
+                name = "";
+                id = ds1.Tables[0].Rows[i][0].ToString();
+                name = ds1.Tables[0].Rows[i][1].ToString();
+                RegionList.Add(new KeyValuePair<string, string>(id, name));
+            }
+
+            CBRegion.ItemsSource = RegionList;
+            CBRegion.SelectedValuePath = "Key";
+            CBRegion.DisplayMemberPath = "Value";
+            CBRegion.SelectedItem = new KeyValuePair<string, string>("0", "请选择区域");
+        }
+
+        /// <summary>
+        /// 获取派件公司
         /// </summary>
         public void getCon()
         {
             DataSet ds1 = new DataSet();
-            DataSet ds2 = new DataSet();
             string sql1 = "";
-            string sql2 = "";
-            int id1 = 0;
-            int id2 = 0;
             string name = "";
             string destination = "";
-            List<KeyValuePair<string, string>> RegionList = new List<KeyValuePair<string, string>>();
-            RegionList.Add(new KeyValuePair<string, string>("0", "请选择承运商"));
-            List<KeyValuePair<string, string>> DestinationList = new List<KeyValuePair<string, string>>();
-            DestinationList.Add(new KeyValuePair<string, string>("0", "请选择目的地"));
+            string order_region = "";
 
-            sql1 = "select t1.name from T_con_carrier as t1 where t1.region_id = '" + staff_region + "' " +
+            try
+            {
+                order_region = CBRegion.SelectedIndex.ToString();
+                destination = CBDestination.SelectedValue.ToString();
+            }
+            catch(Exception e1)
+            {
+                order_region = "";
+                destination = "";
+            }
+           
+
+            List<KeyValuePair<string, string>> RegionList = new List<KeyValuePair<string, string>>();
+            RegionList.Add(new KeyValuePair<string, string>("0", "请选择派件公司"));
+
+            sql1 = "select t1.name from T_con_carrier as t1 " +
+                "where t1.region_id = '" + order_region + "' " +
+                "and t1.destination = '" + destination + "' " +
                 "group by t1.name";
 
-            sql2 = "select t1.destination from T_con_carrier as t1 where t1.region_id = '" + staff_region + "' " +
-                "group by t1.destination";
-
             ds1 = DBClass.execQuery(sql1);
-            ds2 = DBClass.execQuery(sql2);
 
             for (int i = 0; i < ds1.Tables[0].Rows.Count; i++)
             {
@@ -97,17 +139,45 @@ namespace KGOOS_MUI.Pages.Up
                 RegionList.Add(new KeyValuePair<string, string>(name, name));
             }
 
-            for (int i = 0; i < ds2.Tables[0].Rows.Count; i++)
-            {
-                destination = "";
-                destination = ds2.Tables[0].Rows[i][0].ToString();
-                DestinationList.Add(new KeyValuePair<string, string>(destination, destination));
-            }
-
             CBCom.ItemsSource = RegionList;
             CBCom.SelectedValuePath = "Key";
             CBCom.DisplayMemberPath = "Value";
-            CBCom.SelectedItem = new KeyValuePair<string, string>("0", "请选择承运商");
+            CBCom.SelectedItem = new KeyValuePair<string, string>("0", "请选择派件公司");
+        }
+
+        /// <summary>
+        /// 获取目的地
+        /// </summary>
+        public void getDestination()
+        {
+            DataSet ds1 = new DataSet();
+            string sql1 = "";
+            string name = "";
+            string order_region = "";
+
+            try
+            {
+                order_region = CBRegion.SelectedIndex.ToString();
+            }
+            catch (Exception e1)
+            {
+                order_region = "";
+            }
+
+            List<KeyValuePair<string, string>> DestinationList = new List<KeyValuePair<string, string>>();
+            DestinationList.Add(new KeyValuePair<string, string>("0", "请选择目的地"));          
+
+            sql1 = "select t1.destination from T_con_carrier as t1 where t1.region_id = '" + order_region + "' " +
+                "group by t1.destination";
+
+            ds1 = DBClass.execQuery(sql1);
+
+            for (int i = 0; i < ds1.Tables[0].Rows.Count; i++)
+            {
+                name = "";
+                name = ds1.Tables[0].Rows[i][0].ToString();
+                DestinationList.Add(new KeyValuePair<string, string>(name, name));
+            }
 
             CBDestination.ItemsSource = DestinationList;
             CBDestination.SelectedValuePath = "Key";
@@ -120,230 +190,28 @@ namespace KGOOS_MUI.Pages.Up
         /// </summary>
         public void getType()
         {
-            DataSet ds = new DataSet();
-            string sql = "";
-            int id = 0;
-            string name = "";
-            List<KeyValuePair<int, string>> RegionList = new List<KeyValuePair<int, string>>();
-            RegionList.Add(new KeyValuePair<int, string>(0, "请选择快件类型"));
+            //DataSet ds = new DataSet();
+            //string sql = "";
+            //int id = 0;
+            //string name = "";
+            //List<KeyValuePair<int, string>> RegionList = new List<KeyValuePair<int, string>>();
+            //RegionList.Add(new KeyValuePair<int, string>(0, "请选择快件类型"));
 
-            sql = "select t1.id, t1.name from T_Type as t1";
-            ds = DBClass.execQuery(sql);
-            for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
-            {
-                id = 0;
-                name = "";
-                id = int.Parse(ds.Tables[0].Rows[i][0].ToString());
-                name = ds.Tables[0].Rows[i][1].ToString();
-                RegionList.Add(new KeyValuePair<int, string>(id, name));
-            }
+            //sql = "select t1.id, t1.name from T_Type as t1";
+            //ds = DBClass.execQuery(sql);
+            //for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+            //{
+            //    id = 0;
+            //    name = "";
+            //    id = int.Parse(ds.Tables[0].Rows[i][0].ToString());
+            //    name = ds.Tables[0].Rows[i][1].ToString();
+            //    RegionList.Add(new KeyValuePair<int, string>(id, name));
+            //}
 
-            CBType.ItemsSource = RegionList;
-            CBType.SelectedValuePath = "Key";
-            CBType.DisplayMemberPath = "Value";
-            CBType.SelectedItem = new KeyValuePair<int, string>(0, "请选择快件类型");
-        }
-
-        /// <summary>
-        /// 写入数据库--废掉
-        /// </summary>
-        public void inputDB()
-        {
-            SqlConnection conn = DBClass.getConnection();
-            SqlTransaction tran = conn.BeginTransaction();
-            try
-            {
-                string sql = "";
-                string pack_id, pack_com_carrier, pack_destination, pack_type, pack_user_id, pack_user_name, pack_phone,
-                    pack_name, pack_address, pack_postcode, pack_city, pack_thing, pack_note,
-                    pack_shop, pack_more_name, pack_con_id;
-
-                float pack_declare = 0, pack_front_helf = 0, pack_freight = 0, pack_loans = 0;
-                int pack_num = 0;
-                DataSet ds = new DataSet();
-
-                pack_id = BaseClass.getInsertMaxId("T_Pack", "pack_id", "000001");
-                pack_con_id = pack_id.Substring(2);
-
-                #region 获取前台数据
-                pack_com_carrier = CBCom.SelectedValue.ToString();
-                pack_destination = CBDestination.SelectedValue.ToString();
-                pack_type = CBType.SelectedIndex.ToString();
-
-                if (TBUser_Name.Tag == null || TBUser_Name.Tag.ToString() == "")
-                {
-                    //sql1 = "select * from "
-                    MessageBox.Show(TBUser_Name.Text + "  用户不存在请重新输入");
-                    TBUser_Name.Text = null;
-                    TBUser_Name.Focus();
-                    return;
-                }
-                else
-                {
-                    pack_user_id = TBUser_Name.Tag.ToString();
-                    pack_user_name = TBUser_Name.Text;
-                }
-
-                if (TBPhone.Text != "")
-                {
-                    pack_phone = TBPhone.Text;
-                }
-                else
-                {
-                    pack_phone = "";
-                }
-
-                if (TBName.Text != "")
-                {
-                    pack_name = TBName.Text;
-                }
-                else
-                {
-                    pack_name = "";
-                }
-
-
-                if (TBAddress.Text != "")
-                {
-                    pack_address = TBAddress.Text;
-                }
-                else
-                {
-                    pack_address = "";
-                }
-
-
-                if (TBpostcode.Text != "")
-                {
-                    pack_postcode = TBpostcode.Text;
-                }
-                else
-                {
-                    pack_postcode = "";
-                }
-
-                if (TBCity.Text != "")
-                {
-                    pack_city = TBCity.Text;
-                }
-                else
-                {
-                    pack_city = "";
-                }
-
-                if (TBThing.Text != "")
-                {
-                    pack_thing = TBThing.Text;
-                }
-                else
-                {
-                    pack_thing = "";
-                }
-
-                if (TBNote.Text != "")
-                {
-                    pack_note = TBNote.Text;
-                }
-                else
-                {
-                    pack_note = "";
-                }
-
-                if (TBShop.Text != "")
-                {
-                    pack_shop = TBShop.Text;
-                }
-                else
-                {
-                    pack_shop = "";
-                }
-
-                if (TBmore_Name.Text != "")
-                {
-                    pack_more_name = TBmore_Name.Text;
-                }
-                else
-                {
-                    pack_more_name = "";
-                }
-
-                if (TBDeclare.Text != "")
-                {
-                    pack_declare = float.Parse(TBDeclare.Text);
-                }
-                else
-                {
-                    pack_declare = 0;
-                }
-
-                if (TBFront_helf.Text != "")
-                {
-                    pack_front_helf = float.Parse(TBFront_helf.Text);
-                }
-                else
-                {
-                    pack_front_helf = 0;
-                }
-
-                if (TBFreight.Text != "")
-                {
-                    pack_freight = float.Parse(TBFreight.Text);
-                }
-                else
-                {
-                    pack_freight = 0;
-                }
-
-                if (TBLoans.Text != "")
-                {
-                    pack_loans = float.Parse(TBLoans.Text);
-                }
-                else
-                {
-                    pack_loans = 0;
-                }
-
-                if (TBNum.Text != "")
-                {
-                    pack_num = int.Parse(TBNum.Text);
-                }
-                else
-                {
-                    pack_num = 0;
-                }
-                #endregion
-
-
-                sql = "insert into T_Pack " +
-                "(pack_id, pack_com_carrier, pack_destination, pack_type, pack_user_id, pack_user_name, pack_phone, " +
-                " pack_name, pack_address, pack_postcode, pack_city, pack_thing, pack_note,pack_shop, " +
-                "pack_more_name, pack_con_id, pack_declare, pack_front_helf, pack_freight, pack_loans, " +
-                "pack_num ) " +
-                "values ('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}','{13}', " +
-                "'{14}', '{15}', '{16}', '{17}', '{18}', '{19}', '{20}')";
-
-                sql = string.Format(sql, pack_id, pack_com_carrier, pack_destination, pack_type, pack_user_id,
-                    pack_user_name, pack_phone, pack_name, pack_address, pack_postcode, pack_city, pack_thing,
-                    pack_note, pack_shop, pack_more_name, pack_con_id, pack_declare, pack_front_helf, pack_freight,
-                    pack_loans, pack_num);
-
-                int n = DBClass.execUpdate(conn, tran, sql);
-
-                if (n > 0)
-                {
-                    n = 0;
-                    inputPackStr(conn, tran);
-                    if (n > 0)
-                    {
-                        tran.Commit();
-                        MessageBox.Show("打包成功！");                     
-                    }
-                }
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show("操作失败。请重试" + e.Message);
-            }
+            //CBType.ItemsSource = RegionList;
+            //CBType.SelectedValuePath = "Key";
+            //CBType.DisplayMemberPath = "Value";
+            //CBType.SelectedItem = new KeyValuePair<int, string>(0, "请选择快件类型");
         }
 
         /// <summary>
@@ -351,14 +219,12 @@ namespace KGOOS_MUI.Pages.Up
         /// </summary>
         public void getInitial()
         {
-            string weightIdList = "";
             string sql = "";
             DataSet ds = new DataSet();
             float helf = 0;
 
             try
             {
-                weightIdList = Application.Current.Properties["weightIdList"].ToString();
                 sql = "select Weight_UserId, Weight_UserName, Weight_Helf from t_weight as t2 where t2.Weight_ConId in " + weightIdList;
                 ds = DBClass.execQuery(sql);
 
@@ -391,35 +257,37 @@ namespace KGOOS_MUI.Pages.Up
         /// <param name="conn"></param>
         /// <param name="tran"></param>
         /// <returns></returns>
-        public void inputPackStr(SqlConnection conn, SqlTransaction tran)
+        public void inputPackStr()
         {
-            string weightIdList = "";
             string sql = "";
             string orderId = "", time = "", Con_Express_Id = "";
 
             string pack_com_carrier, pack_destination, pack_type, pack_user_id, pack_user_name, pack_phone,
                     pack_name, pack_address, pack_postcode, pack_city, pack_thing, pack_note,
-                    pack_shop, pack_more_name, pack_con_id;
+                    pack_shop, pack_more_name, pack_con_id, order_region;
 
             float pack_declare = 0, pack_front_helf = 0, pack_freight = 0, pack_loans = 0;
             int pack_num = 0;
 
+            SqlConnection conn = DBClass.getConnection();
+            SqlTransaction tran = conn.BeginTransaction();
+
             try
             {
-                if (Application.Current.Properties["weightIdList"] != null)
-                {
-                    weightIdList = Application.Current.Properties["weightIdList"].ToString();
-                }
-                sql = "update t_weight set Weight_Type = 'D', Order_id = '" + orderId + "' " +
+                orderId = BaseClass.getInsertMaxId("T_Order", "id", "000001");
+
+                sql = "update t_weight set Weight_Type = 'S', Order_id = '" + orderId + "' " +
                     " where Weight_ConID in " + weightIdList;
                 int n = 0; int n1 = 0;
 
                 n = DBClass.execUpdate(conn, tran, sql);
 
                 #region 获取前台数据
+                order_region = CBRegion.SelectedIndex.ToString();
                 pack_com_carrier = CBCom.SelectedValue.ToString();
                 pack_destination = CBDestination.SelectedValue.ToString();
-                pack_type = CBType.SelectedIndex.ToString();
+                //pack_type = CBType.SelectedIndex.ToString();
+                pack_type = "";
 
                 if (TBUser_Name.Tag == null || TBUser_Name.Tag.ToString() == "")
                 {
@@ -563,9 +431,7 @@ namespace KGOOS_MUI.Pages.Up
                     pack_num = 0;
                 }
                 #endregion
-
-
-                orderId = BaseClass.getInsertMaxId("T_Order", "id", "000001");
+                
                 time = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
                 Con_Express_Id = orderId.Substring(2);
 
@@ -580,7 +446,7 @@ namespace KGOOS_MUI.Pages.Up
                 sql = string.Format(sql, orderId, Con_Express_Id, pack_com_carrier, pack_destination, pack_type, pack_user_id,
                     pack_user_name, pack_phone, pack_name, pack_address, pack_postcode, pack_city, pack_declare, pack_thing,
                     pack_num, pack_front_helf, pack_freight, pack_note, pack_loans, pack_shop, pack_more_name,
-                    staff_name, staff_region, time);
+                    staff_name, order_region, time);
 
                 n1 = DBClass.execUpdate(conn, tran, sql);
 
@@ -761,7 +627,7 @@ namespace KGOOS_MUI.Pages.Up
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            inputDB();
+            inputPackStr();
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
@@ -809,6 +675,17 @@ namespace KGOOS_MUI.Pages.Up
             this.TBPhone.Text = phone;
             this.TBName.Text = name;
             this.TBAddress.Text = adress;
+        }
+
+        private void CBRegion_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            getDestination();
+            getCon();
+        }
+
+        private void CBDestination_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            getCon();
         }
     }
 }

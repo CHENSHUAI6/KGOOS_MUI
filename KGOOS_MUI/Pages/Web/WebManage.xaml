@@ -9,10 +9,14 @@
     <Grid Style="{StaticResource ContentRoot}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition  Width="*" />
-            <ColumnDefinition  Width="1" />
+            <ColumnDefinition  Width="*" />
             <ColumnDefinition  Width="*" />
         </Grid.ColumnDefinitions>
         <ScrollViewer Grid.Column="0" Grid.Row="0">
+            <TextBlock Name="NewSPut" Text="新闻发布" FontSize="36" FontWeight="Bold" HorizontalAlignment="Center" 
+                       VerticalAlignment="Center" FontFamily="微软雅黑" MouseDown="NewSPut_MouseDown"/>
+        </ScrollViewer>
+        <ScrollViewer Grid.Column="1" Grid.Row="0">
             <TextBlock Name="Entering" Text="包裹登记" FontSize="36" FontWeight="Bold" HorizontalAlignment="Center" 
                        VerticalAlignment="Center" FontFamily="微软雅黑" MouseDown="Entering_MouseDown" />
         </ScrollViewer>

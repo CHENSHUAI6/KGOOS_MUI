@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="09/15/2018 13:15:01" ReportInfo.Modified="09/15/2018 13:42:20" ReportInfo.CreatorVersion="2017.1.16.0">
+  <ScriptText>using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Windows.Forms;
+using System.Drawing;
+using System.Data;
+using FastReport;
+using FastReport.Data;
+using FastReport.Dialog;
+using FastReport.Barcode;
+using FastReport.Table;
+using FastReport.Utils;
+
+namespace FastReport
+{
+  public class ReportScript
+  {
+
+    private void Table1_ManualBuild(object sender, EventArgs e)
+    {
+      DataSourceBase data1 = Report.GetDataSource(&quot;print_table&quot;); // 获取DataSet中表名为Table1的数据源
+      data1.Init(); // 初始化       
+
+      Table1.PrintRow(0); // 控件Table1打印第0行
+      Table1.PrintColumns(); // 每打印一行，都要调用 PrintColumn或PrintColumns     
+
+      while(data1.HasMoreRows) // 打印重复循环的行
+      {
+        Table1.PrintRow(1);
+        Table1.PrintColumns();
+        data1.Next(); // 读取下一行
+      }
+    }
+  }
+}
+</ScriptText>
+  <Dictionary>
+    <MsSqlDataConnection Name="Connection" ConnectionString="rijcmlqveABMfnqRj7Azp6bE+ejNsHAymJttqzOg+itt9pzA3EgYDn+7Vl7Pc4FVSdWHgDr6I4ROVL7aN6XZwEFeST4Lnztqa3IQaX5agiqrYb4LVegmmNMX2XIxIR00z/MBfDAugf0VUjdC1IJXG+5hdkHKz6S5YZWluApSorXL/WFBAkJ/jm5ZsIqQsSxlCOlW2g4TjUcUvTgO1+qPoEN+GvgGA==">
+      <TableDataSource Name="print_table" DataType="System.Int32" Enabled="true" TableName="print_table">
+        <Column Name="id" DataType="System.Int32"/>
+        <Column Name="con_id" DataType="System.String"/>
+        <Column Name="shelf" DataType="System.String"/>
+        <Column Name="helf" DataType="System.Double"/>
+      </TableDataSource>
+      <TableDataSource Name="print_data" DataType="System.Int32" Enabled="true" TableName="print_data">
+        <Column Name="head" DataType="System.String"/>
+        <Column Name="name" DataType="System.String"/>
+        <Column Name="phone" DataType="System.String"/>
+        <Column Name="adress" DataType="System.String"/>
+        <Column Name="contran_id" DataType="System.String"/>
+        <Column Name="case_num" DataType="System.String"/>
+        <Column Name="contran_page" DataType="System.String"/>
+        <Column Name="order_id" DataType="System.String"/>
+        <Column Name="user_id" DataType="System.String"/>
+        <Column Name="user_name" DataType="System.String"/>
+        <Column Name="user_tb" DataType="System.String"/>
+        <Column Name="company" DataType="System.String"/>
+      </TableDataSource>
+    </MsSqlDataConnection>
+  </Dictionary>
+  <ReportPage Name="Page1" PaperWidth="80" PaperHeight="5000" LeftMargin="0" TopMargin="0" RightMargin="0" BottomMargin="0" FirstPageSource="15" OtherPagesSource="15">
+    <DataBand Name="Data1" Width="302.4" Height="567" DataSource="print_data">
+      <TextObject Name="Text1" Left="9.45" Top="9.45" Width="283.5" Height="47.25" Text="集運訂單" HorzAlign="Center" Font="黑体, 26pt, style=Bold"/>
+      <TextObject Name="Text2" Left="9.45" Top="66.15" Width="94.5" Height="28.35" Text="下單時間：" VertAlign="Center" Font="黑体, 12pt, style=Bold"/>
+      <TextObject Name="Text3" Left="103.95" Top="66.15" Width="189" Height="28.35" Text="[Date]" VertAlign="Center" Font="隶书, 12pt, style=Bold"/>
+      <TextObject Name="Text4" Left="9.45" Top="94.5" Width="94.5" Height="28.35" Text="訂單號：" VertAlign="Center" Font="黑体, 12pt, style=Bold"/>
+      <TextObject Name="Text5" Left="103.95" Top="94.5" Width="189" Height="28.35" Text="[print_data.order_id]" VertAlign="Center" Font="黑体, 12pt, style=Bold"/>
+      <TextObject Name="Text6" Left="9.45" Top="122.85" Width="122.85" Height="28.35" Text="[print_data.user_id]" VertAlign="Center" Font="黑体, 12pt, style=Bold"/>
+      <TextObject Name="Text8" Left="141.75" Top="122.85" Width="151.2" Height="28.35" Text="[print_data.user_name]" VertAlign="Center" Font="黑体, 12pt, style=Bold"/>
+      <TextObject Name="Text10" Left="9.45" Top="151.2" Width="122.85" Height="28.35" Text="[print_data.name]" VertAlign="Center" Font="黑体, 12pt, style=Bold"/>
+      <TextObject Name="Text11" Left="141.75" Top="151.2" Width="151.2" Height="28.35" Text="[print_data.phone]" VertAlign="Center" Font="黑体, 12pt, style=Bold"/>
+      <TextObject Name="Text12" Left="9.45" Top="179.55" Width="283.5" Height="47.25" Text="[print_data.adress]" VertAlign="Center" Font="黑体, 12pt, style=Bold"/>
+      <TextObject Name="Text13" Left="9.45" Top="226.8" Width="94.5" Height="28.35" Text="派件公司：" VertAlign="Center" Font="黑体, 12pt, style=Bold"/>
+      <TextObject Name="Text14" Left="103.95" Top="226.8" Width="189" Height="28.35" Text="[print_data.company]" VertAlign="Center" Font="黑体, 12pt, style=Bold"/>
+      <TableObject Name="Table1" Left="9.45" Top="274.05" Width="283.45" Height="56.7" ManualBuildEvent="Table1_ManualBuild">
+        <TableColumn Name="Column1" Width="40.15"/>
+        <TableColumn Name="Column2" Width="115.75"/>
+        <TableColumn Name="Column3" Width="59.05"/>
+        <TableColumn Name="Column4" Width="68.5"/>
+        <TableRow Name="Row1" Height="28.35">
+          <TableCell Name="Cell1" Text="序號" HorzAlign="Center" VertAlign="Center" Font="黑体, 9pt, style=Bold"/>
+          <TableCell Name="Cell2" Text="單號" VertAlign="Center" Font="宋体, 9pt, style=Bold"/>
+          <TableCell Name="Cell3" Text="貨架" VertAlign="Center" Font="宋体, 9pt, style=Bold"/>
+          <TableCell Name="Cell4" Text="重量" VertAlign="Center" Font="宋体, 9pt, style=Bold"/>
+        </TableRow>
+        <TableRow Name="Row2" Height="28.35">
+          <TableCell Name="Cell6" Text="[print_table.id]" HorzAlign="Center" VertAlign="Center"/>
+          <TableCell Name="Cell7" Text="[print_table.con_id]" VertAlign="Center"/>
+          <TableCell Name="Cell8" Text="[print_table.shelf]" VertAlign="Center"/>
+          <TableCell Name="Cell9" Text="[print_table.helf]" VertAlign="Center"/>
+        </TableRow>
+      </TableObject>
+    </DataBand>
+  </ReportPage>
+</Report>

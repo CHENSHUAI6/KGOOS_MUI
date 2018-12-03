@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="09/14/2018 15:08:43" ReportInfo.Modified="09/22/2018 12:46:39" ReportInfo.CreatorVersion="2017.1.16.0">
+  <Dictionary>
+    <MsSqlDataConnection Name="Connection" ConnectionString="rijcmlqveABMfnqRj7Azp6bE+ejNsHAymJttqzOg+itt9pzA3EgYDn+7Vl7Pc4FVSdWHgDr6I4ROVL7aN6XZwEFeST4Lnztqa3IQaX5agiqrYb4LVegmmNMX2XIxIR00z/MBfDAugf0VUjdC1IJXG+5hdkHKz6S5YZWluApSorXL/WFBAkJ/jm5ZsIqQsSxlCOlW2g4T39NKVSdtz0j/NbW2IHpCw==">
+      <TableDataSource Name="print_weight" DataType="System.Int32" Enabled="true" TableName="print_weight">
+        <Column Name="weight_id" DataType="System.String"/>
+        <Column Name="user_id" DataType="System.String"/>
+        <Column Name="user_name" DataType="System.String"/>
+        <Column Name="shelf" DataType="System.String"/>
+      </TableDataSource>
+    </MsSqlDataConnection>
+  </Dictionary>
+  <ReportPage Name="Page1" Landscape="true" PaperWidth="70" PaperHeight="50" LeftMargin="0" TopMargin="0" RightMargin="0" BottomMargin="0" FirstPageSource="15" OtherPagesSource="15">
+    <DataBand Name="Data1" Width="264.6" Height="179.55" DataSource="print_weight">
+      <TextObject Name="Text6" Left="18.9" Top="113.4" Width="226.8" Height="37.8" Text="[print_weight.shelf]" VertAlign="Center" Font="黑体, 18pt, style=Bold"/>
+      <BarcodeObject Name="Barcode1" Left="18.9" Top="9.45" Width="153.75" Height="47.25" DataColumn="print_weight.weight_id" Text="1809000001002" AllowExpressions="true" Barcode="GS1-128 (UCC/EAN-128)" Barcode.AutoEncode="true"/>
+      <TextObject Name="Text10" Left="18.9" Top="151.2" Width="94.5" Height="18.9" Text="打印時間：" VertAlign="Center" Font="黑体, 10pt, style=Bold"/>
+      <TextObject Name="Text11" Left="103.95" Top="151.2" Width="264.6" Height="18.9" Text="[Date]" AutoWidth="true" VertAlign="Center" Font="黑体, 8pt, style=Bold" TabWidth="60"/>
+      <TextObject Name="Text12" Left="359.1" Top="9.45" Width="94.5" Height="18.9"/>
+      <TextObject Name="Text14" Left="18.9" Top="56.7" Width="85.05" Height="28.35" EvenStylePriority="UseAll" Text="会员号：" AutoWidth="true" VertAlign="Center" Font="黑体, 12pt, style=Bold" TabWidth="120"/>
+      <TextObject Name="Text15" Left="18.9" Top="85.05" Width="85.05" Height="28.35" EvenStylePriority="UseAll" Text="会员名：" AutoWidth="true" VertAlign="Center" Font="黑体, 12pt, style=Bold" TabWidth="120"/>
+      <TextObject Name="Text16" Left="94.5" Top="85.05" Width="151.2" Height="28.35" EvenStylePriority="UseAll" Text="[print_weight.user_name]" AutoWidth="true" VertAlign="Center" Font="黑体, 12pt, style=Bold" TabWidth="120"/>
+      <TextObject Name="Text3" Left="94.5" Top="56.7" Width="151.2" Height="28.35" EvenStylePriority="UseAll" Text="[print_weight.user_id]" AutoWidth="true" VertAlign="Center" Font="黑体, 12pt, style=Bold" TabWidth="120"/>
+    </DataBand>
+  </ReportPage>
+</Report>

@@ -1,4 +1,5 @@
-﻿using KGOOS_MUI.Common;
+﻿using FastReport;
+using KGOOS_MUI.Common;
 using KGOOS_MUI.Model;
 using System;
 using System.Collections.Generic;
@@ -8,6 +9,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -31,6 +33,9 @@ namespace KGOOS_MUI.Pages.Scan
         private string staff_region = "";
         private bool IsOK = false;
         private float Weight_Size = 0;
+
+        FastReport.Preview.PreviewControl prew = new FastReport.Preview.PreviewControl();
+        Report report = new Report();
 
         public Weigh()
         {
@@ -227,8 +232,8 @@ namespace KGOOS_MUI.Pages.Scan
                         "Weight_Note = '{4}',Weight_Shelf = '{5}',Weight_UserId = '{6}', " +
                         "Weight_UserName = '{7}', Weight_Size = '{8}', Weight_Helf = '{9}', Weight_WorkderId = '{10}', " +
                         "Weight_Region = '{11}', Weight_Pack = '{12}', Weight_NoteStaff = '{13}', " +
-                        "Weight_OverLong = '{14}', Weight_OverHelf = '{15}' " +
-                        "where Weight_ConID = '{1}'";
+                        "Weight_OverLong = '{14}', Weight_OverHelf = '{15}',Weight_Type = null " +
+                        "where Weight_ConID = '{1}' ";
                     sql = string.Format(sql, Weight_Time, Weight_ConID, Weight_Num, Weight_Weitgh, Weight_Note, Weight_Shelf,
                     Weight_UserId, Weight_UserName, Weight_Size, Weight_Helf, staff_name, staff_region, Weight_Pack,
                     Weight_NoteStaff, Weight_OverLong, Weight_OverHelf);
@@ -266,7 +271,7 @@ namespace KGOOS_MUI.Pages.Scan
             string sql = "";
             DataSet ds = new DataSet();
             sql = "select * from T_Weight as t1 where t1.Weight_WorkderId = '" + staff_name + "' " +
-                "and t1.Weight_Type is null order by t1.Weight_Time ";
+                "and t1.Weight_Type is null order by t1.Weight_Time desc";
             ds = DBClass.execQuery(sql);
             DataTable dt = new DataTable();
             dt.Columns.Add(new DataColumn("IsSelect", typeof(object)));
@@ -322,10 +327,9 @@ namespace KGOOS_MUI.Pages.Scan
             this.DG1.ItemsSource = dt.DefaultView;     
         }
 
-        public void getShelf()
+        public void getShelf(string tb_name)
         {
             string sql = "";
-            string tb_name = "";
             int type = 1; //1：小货区，2：大货区
             string shelf = "";
             DataSet ds = new DataSet();
@@ -335,8 +339,6 @@ namespace KGOOS_MUI.Pages.Scan
                 {
                     type = 2;
                 }
-
-                tb_name = TBName.Text;
 
                 sql = "SELECT t1.user_shelf_big, t1.user_shelf_small from T_User as t1 " +
                     "where t1.tb_user = '" + tb_name + "' ";
@@ -484,15 +486,13 @@ namespace KGOOS_MUI.Pages.Scan
                     if (CBInputTime.IsChecked == false)
                     {
                         TBsacnTime.Value = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                        this.TBName.Focus();
+                        getDataByTranId();
                     }
 
                     if (RBimportWeigh.IsChecked == true)
                     {
                         this.TBweigh.Focus();
-                    }
-                    else
-                    {
-                        this.TBName.Focus();
                     }
                 }
                 else
@@ -501,6 +501,44 @@ namespace KGOOS_MUI.Pages.Scan
                 }
 
                 
+            }
+        }
+
+        /// <summary>
+        /// 根据运单号获取淘宝名，货架
+        /// </summary>
+        public void getDataByTranId()
+        {
+            string sql = "";
+            string tranid = "";
+            DataSet ds = new DataSet();
+            try
+            {
+                tranid = TBtranId.Text.Trim();
+
+                sql = "SELECT t1.Web_UserId, t1.Web_TBId " +
+                    "from T_Weight as t1 " +
+                    "where t1.Weight_ConID = '" + tranid + "' ";
+                ds = DBClass.execQuery(sql);
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    if (ds.Tables[0].Rows[0][0].ToString().Length > 0)
+                    {
+                        TBName.Tag = ds.Tables[0].Rows[0][0].ToString();
+                    }
+                    if (ds.Tables[0].Rows[0][1].ToString().Length > 0)
+                    {
+                        TBName.Text = ds.Tables[0].Rows[0][1].ToString();
+                        this.TBShelf.Focus();
+                    }
+
+                    getShelf(ds.Tables[0].Rows[0][1].ToString());
+                }
+
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show("获取信息失败：" + e.Message);
             }
         }
 
@@ -560,7 +598,8 @@ namespace KGOOS_MUI.Pages.Scan
         {
             if (e.Key == Key.Enter)
             {
-                getShelf();
+                string tb_name = TBName.Text;
+                getShelf(tb_name);
                 TBShelf.SelectionStart = TBShelf.Text.Length;
                 this.TBShelf.Focus();                
             }
@@ -596,82 +635,149 @@ namespace KGOOS_MUI.Pages.Scan
         /// <param name="e"></param>
         private void TBNote_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key == Key.Enter)
+            try
             {
-                inputDB();
-                getTableData();
-                if (IsOK == true)
+                if (e.Key == Key.Enter)
                 {
-                    TBNumber.Text = "1";
-                    if (CBlastName.IsChecked == false)
+                    inputDB();
+                    getTableData();
+
+                    if (IsOK == true)
                     {
-                        TBName.Text = null;
-                        TBName.Tag = null;
-                    }                  
-                    TBNote.Clear();
-                    TBNoteStaff.Clear();
-                    TBShelf.Clear();
-                    TBSize.Clear();
-                    TBtranId.Clear();
-                    TBweigh.Clear();
-                    CBHelf.IsChecked = false;
-                    CBLong.IsChecked = false;
-                    TBtranId.Focus();
-                    IsOK = false;
-                    Weight_Size = 0;
-                }               
+                        if (CBEnterPrint.IsChecked == true)
+                        {
+                            string userid = "", tbname = "", conId = "", shelf = "";
+
+                            if (TBName.Tag == null || TBName.Tag.ToString() == "")
+                            {
+                                //MessageBox.Show(TBName.Text + "  用户不存在请重新输入");
+                                //TBName.Text = null;
+                                //TBName.Focus();
+                                //return;
+                                userid = "";
+                            }
+                            else
+                            {
+                                userid = TBName.Tag.ToString();
+                            }
+
+                            tbname = TBName.Text;
+
+                            if (TBShelf.Text != "")
+                            {
+                                shelf = TBShelf.Text;
+                            }
+                            else
+                            {
+                                shelf = "";
+                            }
+
+                            if (TBtranId.Text.Length >= 5)
+                            {
+                                conId = TBtranId.Text;
+                            }
+                            else
+                            {
+                                conId = "";
+                            }
+
+                            //调取打印机并打印
+                            //PrintForm.PrintWeight pw = new PrintForm.PrintWeight(userid, tbname, conId, shelf);
+                            ////pw.ContentSource = @"/Pages/Print/Test.xaml";
+                            ////pw.ShowInTaskbar = false;
+                            //pw.Show();
+                            ////pw.Visibility = Visibility.Hidden;
+                            ////Thread.Sleep(90); 
+                            //pw.Close();
+
+                            PrintWeight(userid, tbname, conId, shelf);
+
+                        }
+
+                        //清空数据
+                        TBNumber.Text = "1";
+                        if (CBlastName.IsChecked == false)
+                        {
+                            TBName.Text = null;
+                            TBName.Tag = null;
+                        }
+                        TBNote.Clear();
+                        TBNoteStaff.Clear();
+                        TBShelf.Clear();
+                        TBSize.Clear();
+                        TBtranId.Clear();
+                        TBweigh.Clear();
+                        CBHelf.IsChecked = false;
+                        CBLong.IsChecked = false;
+                        TBtranId.Focus();
+                        IsOK = false;
+                        Weight_Size = 0;
+                    }
+                }
+            }catch(Exception e1)
+            {
+                MessageBox.Show(e1.Message);
             }
+            
+            
         }
 
         private void BTNSave_Click(object sender, RoutedEventArgs e)
         {
-            string sql = "";
-            sql = "select t1.id, t1.Weight_UserName, t1.Web_TBId " + 
-                " from t_weight as t1 " + 
-                " where t1.Weight_WorkderId = '" + staff_name + "' " +
-                " and t1.Weight_Type is null order by t1.Weight_Time ";
-
-            DataSet ds = new DataSet();
-            ds = DBClass.execQuery(sql);
-            DataTable dt = new DataTable();
-            dt = ds.Tables[0];
-
-            string N_ID = "(''";
-            string Y_ID = "(''";
-
-            if (dt.Rows.Count > 0)
+            try
             {
-                for (int i = 0; i < dt.Rows.Count; i++)
-                {
-                    string Weight_tb = dt.Rows[i][1].ToString();
-                    string Web_tb = dt.Rows[i][2].ToString();
+                string sql = "";
+                sql = "select t1.id, t1.Weight_UserName, t1.Web_TBId " +
+                    " from t_weight as t1 " +
+                    " where t1.Weight_WorkderId = '" + staff_name + "' " +
+                    " and t1.Weight_Type is null order by t1.Weight_Time ";
 
-                    if (Weight_tb.Equals(Web_tb))
+                DataSet ds = new DataSet();
+                ds = DBClass.execQuery(sql);
+                DataTable dt = new DataTable();
+                dt = ds.Tables[0];
+
+                string N_ID = "(''";
+                string Y_ID = "(''";
+
+                if (dt.Rows.Count > 0)
+                {
+                    for (int i = 0; i < dt.Rows.Count; i++)
                     {
-                        Y_ID += ",'" + dt.Rows[i][0].ToString() + "'";
-                    }
-                    else
-                    {
-                        N_ID += ",'" + dt.Rows[i][0].ToString() + "'";
+                        string Weight_tb = dt.Rows[i][1].ToString();
+                        string Web_tb = dt.Rows[i][2].ToString();
+
+                        if (Weight_tb.Equals(Web_tb))
+                        {
+                            Y_ID += ",'" + dt.Rows[i][0].ToString() + "'";
+                        }
+                        else
+                        {
+                            N_ID += ",'" + dt.Rows[i][0].ToString() + "'";
+                        }
                     }
                 }
-            }
 
-            Y_ID += ")";
-            N_ID += ")";
-            
-            sql = "update T_Weight set Weight_Type = 'N' " +
-                "where id in " + N_ID;
+                Y_ID += ")";
+                N_ID += ")";
 
-            sql += " ; update T_Weight set Weight_Type = 'Y' " +
-                "where id in " + Y_ID;
-            int n = DBClass.execUpdate(sql);
-            if (n > 0)
+                sql = "update T_Weight set Weight_Type = 'N' " +
+                    "where id in " + N_ID;
+
+                sql += " ; update T_Weight set Weight_Type = 'Y' " +
+                    "where id in " + Y_ID;
+                int n = DBClass.execUpdate(sql);
+                if (n > 0)
+                {
+                    MessageBox.Show("保存成功！");
+                    TBNum.Text = "0";
+                    getTableData();
+                }
+            }catch(Exception e1)
             {
-                MessageBox.Show("保存成功！");
-                TBNum.Text = "0";
-                getTableData();
+                MessageBox.Show(e1.Message);
             }
+            
         }
 
         private void BTNDelete_Click(object sender, RoutedEventArgs e)
@@ -817,8 +923,57 @@ namespace KGOOS_MUI.Pages.Scan
             TBShelf.Text = shelf;
         }
 
+        private void BTNUpdate_Click(object sender, RoutedEventArgs e)
+        {
+            initialize();
+        }
 
-        
+
+        private void PrintWeight(string userid, string tbname, string conId, string shelf)
+        {
+            string print_adress = Environment.CurrentDirectory;
+
+            DataSet ds_print = new DataSet();
+
+            DataTable table1 = new DataTable();
+            table1.TableName = "print_weight"; // 一定要设置表名称
+            ds_print.Tables.Add(table1);
+
+            // 添加表中的列
+            table1.Columns.Add("weight_id", typeof(string));
+            table1.Columns.Add("user_id", typeof(string));
+            table1.Columns.Add("user_name", typeof(string));
+            table1.Columns.Add("shelf", typeof(string));
+
+            // 任意添加一些数据           
+            for (int i = 0, maxI = 1; i < maxI; i++)
+            {
+                DataRow row = table1.NewRow();
+                row["weight_id"] = conId;
+                row["user_id"] = userid;
+                row["user_name"] = tbname;
+                row["shelf"] = shelf;
+               
+                table1.Rows.Add(row);
+            }
+
+            report = new FastReport.Report();
+            report.Preview = prew;//preview1是private FastReport.Preview.PreviewControl preview1;          
+
+            //FDataSet.Tables[0].TableName = "Table1";//数据源名称
+            //report.Load(@"C:\集運訂單.frx");
+            //发布后地址
+            report.Load(print_adress + @"\Print_Label\到件标签.frx");
+            report.RegisterData(ds_print);
+            report.GetDataSource("print_weight").Enabled = true;
+
+            report.Prepare();
+            report.ShowPrepared();
+            //WindowsFormsHost1.Child = prew;
+
+            report.PrintSettings.ShowDialog = false;
+            report.Print();
+        }
 
 
 

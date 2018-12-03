@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="09/14/2018 15:08:43" ReportInfo.Modified="09/19/2018 16:48:33" ReportInfo.CreatorVersion="2017.1.16.0">
+  <Dictionary>
+    <MsSqlDataConnection Name="Connection" ConnectionString="rijcmlqveABMfnqRj7Azp6bE+ejNsHAymJttqzOg+itt9pzA3EgYDn+7Vl7Pc4FVSdWHgDr6I4ROVL7aN6XZwEFeST4Lnztqa3IQaX5agiqrYb4LVegmmNMX2XIxIR00z/MBfDAugf0VUjdC1IJXG+5hdkHKz6S5YZWluApSorXL/WFBAkJ/jm5ZsIqQsSxlCOlW2g4qoZFuO+JhgyJ7huS+Zuj8g==">
+      <TableDataSource Name="print_data" DataType="System.Int32" Enabled="true" TableName="print_data">
+        <Column Name="head" DataType="System.String"/>
+        <Column Name="name" DataType="System.String"/>
+        <Column Name="phone" DataType="System.String"/>
+        <Column Name="adress" DataType="System.String"/>
+        <Column Name="contran_id" DataType="System.String"/>
+        <Column Name="case_num" DataType="System.String"/>
+        <Column Name="contran_page" DataType="System.String"/>
+        <Column Name="order_id" DataType="System.String"/>
+        <Column Name="user_id" DataType="System.String"/>
+        <Column Name="user_tb" DataType="System.String"/>
+      </TableDataSource>
+    </MsSqlDataConnection>
+  </Dictionary>
+  <ReportPage Name="Page1" PaperWidth="100" PaperHeight="180" LeftMargin="0" TopMargin="0" RightMargin="0" BottomMargin="0" FirstPageSource="15" OtherPagesSource="15" Guides="368.55,9.45,368.55">
+    <DataBand Name="Data1" Width="378" Height="680.4" Guides="415.8,0,0">
+      <TextObject Name="Text1" Left="-18.9" Width="406.35" Height="56.7" Fill.Color="Black" Text="快購集運-主單" HorzAlign="Center" VertAlign="Center" Font="黑体, 26pt, style=Bold" TextFill.Color="White"/>
+      <TextObject Name="Text2" Left="9.45" Top="66.15" Width="359.1" Height="37.8" Text="[print_data.head]" VertAlign="Center" Font="隶书, 18pt, style=Bold"/>
+      <TextObject Name="Text3" Left="9.45" Top="113.4" Width="151.2" Height="28.35" EvenStylePriority="UseAll" Text="[print_data.name]" AutoWidth="true" VertAlign="Center" Font="隶书, 12pt, style=Bold" TabWidth="120"/>
+      <TextObject Name="Text4" Left="170.1" Top="113.4" Width="198.45" Height="28.35" Text="[print_data.phone]" AutoWidth="true" VertAlign="Center" Font="隶书, 12pt, style=Bold"/>
+      <TextObject Name="Text5" Left="9.45" Top="151.2" Width="359.1" Height="37.8" Text="[print_data.adress]" AutoWidth="true" VertAlign="Center" Font="隶书, 10pt, style=Bold" TabWidth="200"/>
+      <TextObject Name="Text6" Left="9.45" Top="198.45" Width="113.4" Height="37.8" Text="主單號：" VertAlign="Center" Font="黑体, 18pt, style=Bold"/>
+      <TextObject Name="Text8" Left="9.45" Top="245.7" Width="113.4" Height="37.8" Text="件數：" VertAlign="Center" Font="黑体, 18pt, style=Bold"/>
+      <TextObject Name="Text9" Left="9.45" Top="283.5" Width="132.3" Height="37.8" Text="集運訂單號：" VertAlign="Center" Font="黑体, 14pt, style=Bold"/>
+      <TextObject Name="Text10" Left="9.45" Top="396.9" Width="94.5" Height="18.9" Text="打印時間：" VertAlign="Center" Font="黑体, 10pt, style=Bold"/>
+      <TextObject Name="Text11" Left="122.85" Top="396.9" Width="255.15" Height="18.9" Text="[Date]" AutoWidth="true" VertAlign="Center" Font="隶书, 8pt, style=Bold" TabWidth="120"/>
+      <TextObject Name="Text12" Left="368.55" Top="9.45" Width="94.5" Height="18.9"/>
+      <BarcodeObject Name="Barcode2" Left="120.3" Top="198.45" Width="153.75" Height="47.25" DataColumn="print_data.contran_id" Text="1809000001002" AllowExpressions="true" Barcode="GS1-128 (UCC/EAN-128)" Barcode.AutoEncode="true"/>
+      <TextObject Name="Text13" Left="122.85" Top="283.5" Width="245.7" Height="37.8" EvenStylePriority="UseAll" Text="[print_data.order_id]" AutoWidth="true" VertAlign="Center" Font="隶书, 12pt, style=Bold" TabWidth="120"/>
+      <TextObject Name="Text14" Left="9.45" Top="321.3" Width="113.4" Height="37.8" Text="會員編號：" VertAlign="Center" Font="黑体, 14pt, style=Bold"/>
+      <TextObject Name="Text15" Left="9.45" Top="359.1" Width="113.4" Height="37.8" Text="旺旺名：" VertAlign="Center" Font="黑体, 14pt, style=Bold"/>
+      <TextObject Name="Text16" Left="122.85" Top="321.3" Width="245.7" Height="37.8" Text="[print_data.user_id]" VertAlign="Center" Font="隶书, 12pt, style=Bold"/>
+      <TextObject Name="Text17" Left="122.85" Top="359.1" Width="245.7" Height="37.8" Text="[print_data.user_tb]" VertAlign="Center" Font="隶书, 12pt, style=Bold"/>
+      <TextObject Name="Text18" Left="-9.45" Top="633.15" Width="406.35" Height="47.25" Fill.Color="Black" Text="快購集運：www.kgoos.com" HorzAlign="Center" VertAlign="Center" Font="黑体, 22pt, style=Bold" TextFill.Color="White"/>
+      <TextObject Name="Text19" Left="9.45" Top="434.7" Width="113.4" Height="37.8" Text="主單號：" VertAlign="Center" Font="黑体, 18pt, style=Bold"/>
+      <BarcodeObject Name="Barcode3" Left="122.85" Top="434.7" Width="153.75" Height="47.25" DataColumn="print_data.contran_id" Text="1809000001002" AllowExpressions="true" Barcode="GS1-128 (UCC/EAN-128)" Barcode.AutoEncode="true"/>
+      <TextObject Name="Text20" Left="9.45" Top="491.4" Width="151.2" Height="28.35" EvenStylePriority="UseAll" Text="[print_data.name]" AutoWidth="true" VertAlign="Center" Font="隶书, 12pt, style=Bold" TabWidth="120"/>
+      <TextObject Name="Text21" Left="170.1" Top="491.4" Width="198.45" Height="28.35" Text="[print_data.phone]" AutoWidth="true" VertAlign="Center" Font="隶书, 12pt, style=Bold"/>
+      <TextObject Name="Text22" Left="9.45" Top="529.2" Width="359.1" Height="37.8" Text="[print_data.adress]" AutoWidth="true" VertAlign="Center" Font="隶书, 10pt, style=Bold" TabWidth="200"/>
+      <TextObject Name="Text23" Left="9.45" Top="567" Width="113.4" Height="37.8" Text="件數：" VertAlign="Center" Font="黑体, 18pt, style=Bold"/>
+      <TextObject Name="Text24" Left="9.45" Top="604.8" Width="94.5" Height="18.9" Text="打印時間：" VertAlign="Center" Font="黑体, 10pt, style=Bold"/>
+      <TextObject Name="Text25" Left="122.85" Top="604.8" Width="255.15" Height="18.9" Text="[Date]" AutoWidth="true" VertAlign="Center" Font="隶书, 8pt, style=Bold" TabWidth="120"/>
+    </DataBand>
+  </ReportPage>
+</Report>
